@@ -1,0 +1,45 @@
+<!-- 
+    Author: Serhii Kyslytsia (kyslytsia007@gmail.com)
+-->
+ <!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+    <body class="page">
+        <div class="mask"></div>
+        %=symbols=%
+        <section class="page__wrapper">
+            {{> header/header}}
+            {{> listing/breadcrumbs}}
+            {{> card/about-product-panel}}
+
+            <div class="main-content">
+                {{> card/product-store-information}}
+                <div class="colums-wrapper">
+                    <div class="left-col">
+                        {{> card/discount-variant}}
+                        {{> card/product-main-information}}
+                    </div>
+                    <div class="right-col">
+                        <div class="wrapper-block">
+                            {{>card/product-widget}}
+                            {{> card/discount-variant}}
+                        </div>
+                    </div>
+                </div>
+                {{>card/another-clients-visit}}
+                {{>card/accessories}}
+                {{>card/recomended}}
+            </div>
+        </section>
+            {{> footer/footer}}
+            {{>card/stores-popup}}
+        {{> js/owl.carousel.min}}
+        <script src="static/js/main.js"></script>
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+    </body>
+
+</html>

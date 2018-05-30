@@ -1,0 +1,426 @@
+<div class="product-store-information">
+	<div class="product-store-information__slider-block">
+		<div class="top-panel">
+			<span class="top-panel__informer discount">скидка 20%</span>
+			<span class="top-panel__informer bonus">бонус х15</span>
+			<div class="top-panel__brand">
+				<img src="%=static=%img/general/card/asus.png" alt="brand" class="brand-image">
+			</div>
+		</div>
+		<div class="slider-main owl-carousel owl-theme">
+			<img src="%=static=%img/general/card/asus-notebook.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102200.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102382.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473 (1).png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/asus-notebook.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102200.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102382.png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473 (1).png" alt="image" class="slider-image">
+			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473.png" alt="image" class="slider-image">
+		</div>
+
+		<script>
+			$(document).ready(function(){
+				$('.product-store-information__slider-block .slider-main').owlCarousel({
+					items: 1,
+					dots: true,
+					nav:true,
+					navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
+				});
+				var mainImage = $(".product-store-information .slider-image");
+				var thumbnail = $(".product-store-information .owl-dot");
+				var arr = [];
+
+				thumbnail.append("<img class='dot-img' alt='image'>");
+				var thumbnailImg = $(".product-store-information .dot-img");
+
+				$(".product-store-information .owl-item").each(function (i){
+					mainImage.eq(i).attr("src");
+					arr.push(mainImage.eq(i).attr("src"));
+				});
+
+				thumbnailImg.each(function (i) {
+					thumbnailImg.eq(i).attr("src", arr[i]);
+				});
+
+				// carousel for owl-dots
+				var lis = $(".product-store-information__slider-block .slider-main .owl-dot");
+
+				var arr = [];
+				lis.each(function() {
+					arr.push($(this).outerWidth(true));
+				});
+
+				function getMaxOfArray(numArray) {
+					return Math.max.apply(null, numArray);
+				};
+
+				var width = getMaxOfArray(arr);
+				var height = lis.outerHeight(true);
+				var count = lis.length;
+
+				if (lis.length > 4) {
+					count = 4;
+				}
+
+				var nav = $(".product-store-information__slider-block .owl-nav");
+
+				var carousel = $(".product-store-information__slider-block .owl-carousel");
+				var list = $(".product-store-information__slider-block .slider-main .owl-dots");
+				list.wrap("<div class='wrapper'></div>");
+				var wrapper = $(".product-store-information__slider-block .wrapper");
+				wrapper.after("<i class='fa fa-angle-right second'></i>");
+				wrapper.before("<i class='fa fa-angle-left second'></i>");
+				wrapper.width(width * count).height(height);
+				var listElems = $(".product-store-information__slider-block .slider-main .owl-dot");
+				var left = $(".product-store-information__slider-block .fa-angle-left.second");
+				var right = $(".product-store-information__slider-block .fa-angle-right.second");
+
+				if (lis.length <= 4) {
+					left.hide();
+					right.hide();
+				}
+
+				var position = 0;
+
+				nav.after("<div class='flex-cont'></div>");
+				$(".product-store-information__slider-block .flex-cont").append(left).append(wrapper).append(right);
+
+				if (list.hasClass("disabled") ) {
+					$(".product-store-information__slider-block .flex-cont").hide();
+				}
+
+				left.click(function() {
+
+					var currentPosition = +list.css("left").match(/\d+/gi).join('');
+
+					if (-currentPosition < -(list.outerWidth() ) || list.css("left") == (0 + "px") ) {
+						return false;
+					} else {
+						list.css("left", (-(currentPosition - width) ) + "px");
+					}
+				});
+
+				right.click(function() {
+					var currentPosition = +list.css("left").match(/\d+/gi).join('');
+					var ListRightBorder = list.offset().left + list.width();
+					var wrapperRightBorder = wrapper.offset().left + wrapper.width();
+					if (ListRightBorder <= wrapperRightBorder || -currentPosition < -(list.outerWidth() ) ) {
+						return false;
+					} else {
+						list.css("left", (-(currentPosition + width) ) + "px");
+					}
+				});
+			});
+		</script>
+	</div>
+	<div class="product-store-information__manage">
+		<div class="mark">
+			<p class="mark__text">Ноутбук Lenovo IdeaPad 320-15ISK (80XH00EARA) Onyx Black </p>
+		</div>
+		<div class="columns">
+			<div class="col-left">
+				<div class="opinion">
+					<div class="opinion__rating">
+						<img src="%=static=%img/general/icons/StarFill.svg" alt="icon" class="ratting-star">
+						<img src="%=static=%img/general/icons/StarFill.svg" alt="icon" class="ratting-star">
+						<img src="%=static=%img/general/icons/StarFill.svg" alt="icon" class="ratting-star">
+						<img src="%=static=%img/general/icons/Star.svg" alt="icon" class="ratting-star">
+						<img src="%=static=%img/general/icons/Star.svg" alt="icon" class="ratting-star">
+					</div>
+					<div class="opinion__reviews">
+						<a href="#" class="reviews-link">
+							<span class="review-number">178</span>
+							<span class="review-text">отзывов</span>
+						</a>
+						<img src="%=static=%img/general/icons/Group-1.svg" alt="icon" class="favorite">
+						<img src="%=static=%img/general/icons/Group.svg" alt="icon" class="compare">
+					</div>
+				</div>
+				<div class="price">
+					<p class="price__text">Цена:</p>
+					<div class="flex-wrapper">
+						<div class="price__not-relevant">
+							<span class="numb">14 925</span><span class="currency">грн</span>
+						</div>
+						<div class="price__relevant">
+							<span class="numb">1100 999</span><span class="currency">грн</span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="bonus">
+					<p class="bonus__text">Ваш бонус:</p>
+					<img src="%=static=%img/general/rolling/Group-8.svg" alt="rolling-product" class="bonus__icon">
+					<span class="bonus__calculation">x15</span>
+					<span class="bonus__sum">= 3129</span>
+					<span class="bonus__currency">грн</span>
+					<div class="answer-wrapper">
+						<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="answer-icon">
+						<div class="answer-popup">
+							<p class="answer-text">Вы можете оплатить часть заказа бонусами</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-right">
+				<div class="gift">
+					<div class="title-wrapper">
+						<p class="title">Подарок</p>
+					</div>
+					<div class="gift-inner">
+						<img src="%=static=%img/general/card/mouse.png" alt="gift" class="gift__image">
+						<div class="gift__descr">
+							<p class="model">Мышь Logitech M185 Wireless Grey</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="purchase">
+			<a href="#" class="purchase__button">Купить</a>
+			<div class="flex-wrapper">
+				<a href="#" class="purchase__parts">Оплата частями</a>
+				<a href="#" class="purchase__credit">Купить в кредит</a>
+			</div>
+			<span class="purchase__min-sum">от 100 грн</span>
+			<div class="answer-wrapper">
+				<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="answer-icon purchase__icon">
+				<div class="answer-popup">
+					<p class="answer-text">Вы можете купить товар в кредит по выгодным условиям</p>
+				</div>
+			</div>
+		</div>
+		<div class="callback">
+			<p class="callback__title">Мы перезвоним вам для оформления заказа</p>
+			<form>
+				<div class="input-wrapper">
+					<input type="text" data-required="true" class="callback-number" placeholder="Ваш номер телефона" maxlength="18">
+				</div>
+				<button type="button" class="callback-button">Перезвоните мне</button>
+			</form>
+		</div>
+		<div class="city">
+			<p class="city__text">Ваш город:</p>
+			<p class="city__variant">Киев</p>
+			<img src="%=static=%img/general/icons/arrow-down.png" alt="icon" class="city__arrow">
+			<div class="city__dropdown">
+				<div id="city-block">
+					<input type="text" class="city-input" placeholder="Введите название города">
+					<button class="city-button" type="submit">
+						<img src="%=static=%img/general/icons/search-rgey.svg" alt="icon" class="search-icon">
+					</button>
+				</div>
+				<ul class="choise-list">
+					<li class="choise-list__item"><span class="city-target">Киев</span></li>
+					<li class="choise-list__item"><span class="city-target">Днепр</span></li>
+					<li class="choise-list__item"><span class="city-target">Запорожье</span></li>
+					<li class="choise-list__item"><span class="city-target">Львов</span></li>
+					<li class="choise-list__item"><span class="city-target">Полтава</span></li>
+					<li class="choise-list__item"><span class="city-target">Тернополь</span></li>
+					<li class="choise-list__item"><span class="city-target">Харьков</span></li>
+					<li class="choise-list__item"><span class="city-target">Кривой Pог</span></li>
+					<li class="choise-list__item"><span class="city-target">Ивано-Франковск</span></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function () {
+				$(".city .city__variant, .city .city__arrow").click(function() {
+					$(".city .city__arrow").toggleClass("rotate");
+					$(".city__dropdown").slideToggle(500);
+				});
+				var cityButton = $(".city-button");
+
+				function boldCity() {
+					$(".city-target").each(function(i) {
+						if ($(this).text().toLowerCase() == $(".city .city__variant").text().toLowerCase() ) {
+							$(".city-target").removeClass("active");
+							$(this).addClass("active");
+						}
+					});
+				}
+				boldCity();
+
+				function dropDownCity() {
+					var arr = [];
+					var elctedCity = $(".city-input").val();
+					var cityText = $(".city-target").text();
+
+					$(".city-target").each(function(i) {
+						arr.push($(this).text() );
+					});
+					var noCity = arr.some(function(item) {
+						return elctedCity.toLowerCase() == item.toLowerCase();
+					});
+
+					arr.forEach(function(it,i) {
+						if (noCity) {
+							$(".city .city__variant").text(elctedCity);
+							$(".city__dropdown").slideUp(500);
+							boldCity();
+						}
+					});
+
+					if (!noCity) {
+						alert("\"" + elctedCity + "\"" + " " + "нет в списке городов");
+					}
+				}
+
+				cityButton.click(function() {
+					dropDownCity();
+					$(".city .city__arrow").toggleClass("rotate");
+				});
+				$(".city-input").keypress(function(e) {
+					if(e.which == 13) {
+						dropDownCity();
+						$(".city .city__arrow").toggleClass("rotate");
+					}
+				});
+				$(".city-target").click(function() {
+					var clickedCity = $(this).text();
+					$(".city .city__arrow").toggleClass("rotate");
+					$(".city .city__variant").text(clickedCity);
+							$(".city__dropdown").slideUp(500);
+							boldCity();
+				});
+			});
+		</script>
+		<div class="delivery-block">
+			<div class="delivery-block__top">
+				<div class="from-store">
+					<a href="#" class="from-store__link">Забрать в магазине</a>
+				</div>
+				<div class="map">
+					<img src="%=static=%img/general/icons/pin.svg" alt="icon" class="map__icon">
+					<a href="#" class="map__link">
+						Карта магазинов
+					</a>
+				</div>
+				<div class="today">
+					<img src="%=static=%img/general/icons/check-green.svg" alt="icon" class="today__icon">
+					<a href="#" class="today__link">Сегодня</a>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function() {
+
+					$(".mask, .stores-popup .close-icon").click(function() {
+						$(".mask").removeClass("full cover");
+						$(".stores-popup").hide();
+						$("body > *:not('.stores-popup, .mask, script')").show();
+					});
+					$(".delivery-block .from-store__link").click(function(e) {
+						e.preventDefault();
+						$(".stores-popup").show().addClass("show-popup");
+						$(".mask").addClass("full cover");
+						$("body > *:not('.stores-popup, .mask, script')").hide();
+
+						var popupBottom = document.querySelector(".stores-popup").getBoundingClientRect().bottom;
+						var bottom = $(window).height() - $(".stores-popup").height();
+						var prevScrollpos = window.pageYOffset;
+						var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+
+						// $(window).scroll(function() {
+
+						// 	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+						// 	var currentScrollPos = window.pageYOffset;
+						// 	console.log(scrolled);
+						// 	if ($(".stores-popup").hasClass("show-popup") ) {
+						// 		if (prevScrollpos > currentScrollPos) {
+						// 			//up
+
+						// 		} else {
+						// 			//down
+						// 			$(".stores-popup").css("top", (-scrolled) + "px");
+
+						// 			if (document.querySelector(".stores-popup").getBoundingClientRect().bottom <= window.innerHeight ) {
+						// 				// alert(scrolled);
+						// 			}
+						// 		}
+						// 	}
+						// 	// prevScrollpos = currentScrollPos;
+						// });
+					});
+				});
+			</script>
+			<div class="delivery-block__bottom">
+				<div class="free-delivery">
+					<p class="free-delivery__text">Бесплатная Доставка</p>
+					<p class="date-text">Ближайшая дата</p>
+				</div>
+				<div class="flex-wrapper">
+					<div class="to-adress">
+						<p class="to-adress__text">Курьером по адрессу</p>
+						<div class="answer-wrapper">
+							<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="to-adress__icon answer-icon">
+							<div class="answer-popup">
+								<p class="answer-text">Возможность доставки по адрессу</p>
+							</div>
+						</div>
+					</div>
+					<div class="new-post">
+						<img src="%=static=%img/general/icons/new-post.svg" alt="icon" class="new-post__icon">
+						<p class="new-post__text">Отделения новой почты</p>
+						<div class="answer-wrapper">
+							<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="answer-icon">
+							<div class="answer-popup">
+								<p class="answer-text">Вы можете заказать доставку в
+	ближайшее к вам отделение</p>
+							</div>
+						</div>
+					</div>
+					<div class="date">
+						<div class="date__content">
+							<p class="dat-text">20.12.2018</p>
+							<div class="answer-wrapper">
+								<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="answer-icon date-icon">
+								<div class="answer-popup">
+									<p class="answer-text">Вы можете выбрать удобную для Вас дату доставки</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="payment">
+			<p class="payment__text">Оплата:</p>
+			<a href="#" class="payment__cards">
+				<img src="%=static=%img/general/icons/wallet.svg" alt="icon" class="card-image">
+			</a>
+			<a href="#" class="payment__cards">
+				<img src="%=static=%img/general/icons/museum.svg" alt="icon" class="card-image">
+			</a>
+			<a href="#" class="payment__cards">
+				<img src="%=static=%img/general/icons/visa.svg" alt="icon" class="card-image">
+			</a>
+			<a href="#" class="payment__cards">
+				<img src="%=static=%img/general/icons/mastercard.svg" alt="icon" class="card-image">
+			</a>
+			<div class="answer-wrapper">
+				<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="answer-icon card-image">
+				<div class="answer-popup">
+					<p class="answer-text">Вы можете оплатить покупку удобным для Вас способом</p>
+				</div>
+			</div>
+		</div>
+		<div class="return">
+			<div class="return__item">
+				<img src="%=static=%img/general/icons/security.svg" alt="icon" class="item-image">
+				<div class="item-content">
+					<p class="header-text">Гарантия 12 месяцев</p>
+					<p class="descr-text">Официальная гарантия производителя.</p>
+				</div>
+			</div>
+			<div class="return__item">
+				<img src="%=static=%img/general/icons/two-circling-arrows.svg" alt="icon" class="item-image">
+				<div class="item-content">
+					<p class="header-text">Быстрый обмен и возврат</p>
+					<p class="descr-text">Неактивированного товара надлежащего качества в течение 14 дней.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

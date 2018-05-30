@@ -1,0 +1,31 @@
+<script>
+document.addEventListener( 'DOMContentLoaded', function() {
+    popup menu js for main-canegories block
+    let hoverElement = document.querySelector('.category-container .submenu-item');
+    let style = getComputedStyle(hoverElement);
+    let categoryItemChild = document.querySelectorAll('.category-container .category-menu-wrapper');
+    let marginTopParentElem = +style.marginTop.match(/\d/);
+    let parentHeight = hoverElement.offsetHeight + marginTopParentElem;
+    var step = 0;
+
+    for (let i = 1; i < categoryItemChild.length; i++) {
+        var step = parentHeight + step;
+        step;
+        categoryItemChild[i].style.top = "-" + step + "px";
+    }
+
+    // popup menu js for navigation panel
+    let hoverElem = document.querySelector('.catalog-submenu-wrapper .submenu-item');
+    let style2 = getComputedStyle(hoverElem);
+    let categoryChild = document.querySelectorAll('.catalog-submenu-wrapper .category-menu-wrapper');
+    let marginTopParElem = +style2.marginTop.match(/\d/);
+    let parHeight = hoverElement.offsetHeight + marginTopParElem;
+    var step2 = 0;
+
+    for (let i = 1; i < categoryChild.length; i++) {
+        var step2 = parHeight + step2 + 3;
+        step2;
+        categoryChild[i].style.top = "-" + step2 + "px";
+    }
+});
+</script>

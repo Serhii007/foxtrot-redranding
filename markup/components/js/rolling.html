@@ -1,0 +1,17 @@
+<script>
+$(document).ready(function(){
+	if ($('.rolling-carousel-item').length < 4){
+		$('.rolling-section').hide();
+	} else {
+        $('.rolling-section__carousel').owlCarousel({
+            items: 4,
+            lazyLoad: true,
+            loop: false,
+            nav:true,
+            dots: false,
+            autoplay: false,
+            navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
+        });
+    }
+});
+</script>

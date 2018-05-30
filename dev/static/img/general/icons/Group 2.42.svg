@@ -1,0 +1,38 @@
+<svg width="30" height="25" viewBox="0 0 30 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group 2.42</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-602 496)">
+<g id="Group 2.42">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(602 -492.06)" fill="#4F4F4F"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(612.451 -480.628)" fill="#4F4F4F"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(615.934 -480.628)" fill="#4F4F4F"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(608.967 -480.628)" fill="#4F4F4F"/>
+</g>
+</g>
+<g id="Group 2.1">
+<g id="Group 2.13">
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="translate(618.8 -496)" fill="#E54415"/>
+</g>
+<g id="2">
+<use xlink:href="#path3_fill" transform="translate(622.8 -492)" fill="#28250F"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 23.2235 7.82238L 19.2755 7.82238L 14.9792 0L 13.0052 1.20344L 16.6048 7.82238L 6.61871 7.82238L 10.3345 1.20344L 8.24435 0L 3.948 7.82238L 0 7.82238L 0 10.2293L 1.39341 10.2293L 3.48353 20.0975C 3.59965 20.6992 4.06412 21.0602 4.64471 21.0602L 18.5788 21.0602C 19.1594 21.0602 19.6239 20.6992 19.74 20.0975L 21.8301 10.2293L 23.2235 10.2293L 23.2235 7.82238ZM 17.6499 18.6534L 5.57365 18.6534L 3.71576 10.2293L 19.3916 10.2293L 17.6499 18.6534Z"/>
+<path id="path1_fill" d="M 2.32235 0L 0 0L 0 6.01721L 2.32235 6.01721L 2.32235 0Z"/>
+<path id="path2_fill" d="M 13 6.5C 13 10.0899 10.0899 13 6.5 13C 2.91015 13 0 10.0899 0 6.5C 0 2.91015 2.91015 0 6.5 0C 10.0899 0 13 2.91015 13 6.5Z"/>
+<path id="path3_fill" d="M 5.4 5.13L 5.4 6L 0.37 6L 0.37 5.32L 3.22 2.57C 3.56667 2.23667 3.8 1.95 3.92 1.71C 4.04 1.46333 4.1 1.21667 4.1 0.97C 4.1 0.603333 3.97 0.32 3.71 0.12C 3.45667 -0.0866668 3.09 -0.19 2.61 -0.19C 1.83667 -0.19 1.24 0.0633333 0.82 0.57L 0.14 -0.02C 0.413333 -0.353333 0.77 -0.613333 1.21 -0.8C 1.65667 -0.986667 2.15333 -1.08 2.7 -1.08C 3.43333 -1.08 4.01667 -0.903333 4.45 -0.55C 4.88333 -0.203333 5.1 0.27 5.1 0.87C 5.1 1.24333 5.02 1.59667 4.86 1.93C 4.7 2.26333 4.39667 2.64333 3.95 3.07L 1.81 5.13L 5.4 5.13Z"/>
+</defs>
+</svg>

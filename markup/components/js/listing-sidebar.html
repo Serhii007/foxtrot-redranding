@@ -1,0 +1,48 @@
+<script>
+/* sidebar for listing page js */
+$(document).ready(function(){
+	//dropdowns js
+	$(".sidebar__dropdown").each(function(index){
+		if (index < 5){
+			$(this).children(".dropdown-head-container").children(".arrow-icon").toggleClass("rotate");
+			$(this).children(".dropdown-main-container").addClass("visible");
+		}
+	});
+	$(".sidebar__dropdown").click(function(event){
+		if (event.target.classList.contains("arrow-icon") || event.target.classList.contains("title") ){
+			$(this).children(".dropdown-main-container").slideToggle();
+			$(this).children(".dropdown-head-container").children(".arrow-icon").toggleClass("rotate");
+		} else {
+			return;
+		}
+	});
+	// rotate arrow .more__icon
+	$(".dropdown-list__item.more").click(function(){
+		$(this).children(".more__icon").toggleClass("rotate");
+	});
+	// dropdown attributes js
+	let inputElem = $(".checked-block > input[type='checkbox']");
+	let labelElem = $(".checked-block > label");
+	inputElem.each(function(index, value){
+		$(this).attr("id", "sidebar-check-input-" + index);
+	});
+	labelElem.each(function(index, value){
+		$(this).attr("for", "sidebar-check-input-" + index);
+	});
+	/* slider range js */
+	$( function() {
+	$( ".slider-range" ).slider({
+		range: true,
+		min: 0,
+		max: 50000,
+		values: [ 10000, 30000 ],
+		slide: function( event, ui ) {
+		$( ".amount-1" ).val( ui.values[ 0 ] );
+		$( ".amount-2" ).val( ui.values[ 1 ] );
+		}
+	});
+	$( ".amount-1" ).val( $( ".slider-range" ).slider( "values", 0 ) );
+	$( ".amount-2" ).val( $( ".slider-range" ).slider( "values", 1 ) );
+	} );
+});
+</script>

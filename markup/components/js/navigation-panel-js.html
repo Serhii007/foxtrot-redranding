@@ -1,0 +1,84 @@
+<script>
+document.addEventListener( 'DOMContentLoaded' , function() {
+    // scroll hide/show navigation panel
+    let didScroll;
+    let lastScrollTop = 0;
+    let delta = 5;
+    let navbarHeight = $('.navigation').outerHeight();
+
+    $(window).scroll(function(){
+        didScroll = true;
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 400);
+
+    function hasScrolled() {
+        let st = $(this).scrollTop();
+
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+        
+        if (st > lastScrollTop && st > navbarHeight){
+            $('.navigation').addClass('nav-up');
+        } else {
+
+            if(st + $(window).height() < $(document).height()) {
+                $('.navigation').removeClass('nav-up');
+            }
+        }
+
+        lastScrollTop = st;
+    }
+});
+</script>
+<script>
+document.addEventListener( 'DOMContentLoaded' , function() {
+    let navigationPanel = document.querySelector('.navigation');
+    let navigationDropDown = document.querySelector('.catalog-submenu-wrapper');
+    window.onscroll = function(){
+
+        if ( navigationPanel.classList.contains('nav-up') ) {
+            navigationDropDown.classList.add('slide-up');
+         } else {
+            navigationDropDown.classList.remove('slide-up');
+        }
+
+        if ( navigationDropDown.classList.contains('slide-up') && navigationDropDown.classList.contains('toggle') ){
+            document.querySelector('.mask').classList.remove('full');
+        } else if ( navigationDropDown.classList.contains('toggle') ){
+            document.querySelector('.mask').classList.add('full');
+        }
+    }
+});
+</script>
+<script>
+    $(document).ready(function(){
+        //mask js
+        $('.mask').click(function(){
+            $(this).removeClass('full');
+            $('.catalog-submenu-wrapper').removeClass('toggle');
+        });
+    });
+</script>
+<script>
+$(document).ready(function(){
+    // navigation dropdown
+    if ($("body").hasClass("home-page")){
+        $('.catalog-submenu-wrapper').remove();
+    }
+    $('.navigation__catalog').click(function(){
+        $('.catalog-submenu-wrapper').toggleClass('toggle');
+
+        if ( $('.catalog-submenu-wrapper').hasClass('toggle') ) {
+            $('.mask').addClass('full');
+        } else {
+            $('.mask').removeClass('full');
+        }
+    });
+});
+</script>

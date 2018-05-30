@@ -1,0 +1,61 @@
+/*----------listing head banner block----------*/
+.head-banner {
+	text-decoration: none;
+	width: 98%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	height: 43px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	.head-banner-image {
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translate(0, -50%);
+			-ms-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+	}
+	.head-banner-text {
+		margin: .2% 0;
+		width: 100%;
+		z-index: 20;
+		color: #FFFFFF;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+			-ms-flex-pack: center;
+				justify-content: center;
+		-webkit-box-align: end;
+			-ms-flex-align: end;
+				align-items: flex-end;
+	}
+	.banner-title {
+		font-family: 'Montserrat Bold';
+		margin-right: 2%;
+		font-size: 25px;
+		line-height: 1;
+		z-index: 2;
+	}
+	.banner-description {
+		font-family: 'Montserrat Medium';
+		display: block;
+		font-size: 18px;
+		line-height: 1;
+		margin-left: 2%;
+		z-index: 2;
+	}
+}
+
+
+/*----------end listing head banner block----------*/

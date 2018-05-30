@@ -1,0 +1,22 @@
+/*-------------breadcrumbs block--------------*/
+.breadcrumbs {
+	width: 98%;
+	margin: .5% auto;
+	&__crumb {
+		text-decoration: none;
+		font-size: 12px;
+		color: #2F80ED;
+	}
+	&__crumb:after {
+		content: "/";
+		display: inline-block;
+		margin: 0 2px;
+	}
+	&__crumb:last-child {
+		color: #000000;
+	}
+	&__crumb:last-child:after {
+		content: none;
+	}
+}
+/*-------------end breadcrumbs block--------------*/

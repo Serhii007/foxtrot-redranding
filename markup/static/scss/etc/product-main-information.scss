@@ -1,0 +1,176 @@
+/*-----product-main-information-----*/
+.product-main-information {
+	background-color: #FFFFFF;
+	padding: 20px 2%;
+	.title-wrapper {
+		display: flex;
+		align-items: flex-end;
+	}
+	.mark{
+		&__text {
+			font: 18px/22px Montserrat Regular;
+			margin-left: 10px;
+		}
+	}
+}
+.characteristic {
+	margin-top: 20px;
+	&__block {
+		margin-top: 3%;
+	}
+}
+.points-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: 
+	space-between;
+	.point.hide {
+		display: none;
+	}
+	.point {
+		width: 48%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		list-style: none;
+		padding: 7px 0;
+		border-bottom: 1px solid #E5E5E5;
+		margin-top: 5px;
+		&__left-text {
+			font: 14px/20px Montserrat Regular;
+		}
+		&__right-text {
+			font: 14px/20px Montserrat Semibold;
+		}
+	}
+}
+.more-wrapper {
+	margin-top: 2%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	.more-toggler {
+		cursor: pointer;
+		font: 14px/20px Montserrat Regular;
+	}
+	.open {
+		display: none;
+	}
+	.more-arrow {
+		cursor: pointer;
+		display: block;
+		width: 12px;
+		height: auto;
+		margin-left: 5px;
+	}
+}
+.about {
+	margin-top: 3%;
+	.about-text-wrapper.overflow {
+		overflow-y: hidden;
+		height: calc(16px * 15);
+	}
+	&__text {
+		font: 14px/20px Montserrat Regular;
+	}
+	.first-row {
+		text-transform: uppercase;
+	}
+}
+.feedback {
+	margin-top: 3%;
+	&__top-container {
+		display: flex;
+		justify-content: space-between;
+	}
+	.amount {
+		font: 18px/22px Montserrat Regular;
+		margin: 0 auto 0 5px;
+		color: #A9A89F;
+	}
+	.add-recall {
+		color: #2F80ED;
+		font: 14px/17px Montserrat Regular;
+		border: 0;
+		box-shadow: none;
+		cursor: pointer;
+	}
+	.rating {
+		margin-top: 2%;
+		display: flex;
+		align-items: flex-end;
+		&__name {
+			font: 16px/20px Montserrat Semibold;
+			margin-right: 5px;
+		}
+		.ratting-star {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+		}
+		.date {
+			color: #828282;
+			font: 14px/20px Montserrat Regular;
+			margin-left: 10px;
+		}
+	}
+	.opinion {
+		margin-top: 2%;
+		&__text {
+			font: 14px/17px Montserrat Regular;
+		}
+	}
+	.advantages, .disadvantages {
+		display: flex;
+		align-items: flex-end;
+		margin-top: 2%;
+		&__bold {
+			font: 14px/17px Montserrat Semibold;
+			margin-right: 10px;
+		}
+		&__opinion {
+			font: 14px/17px Montserrat Regular;
+		}
+	}
+	.recall-panel {
+		font: 14px/17px Montserrat Regular;
+		margin-top: 2%;
+		display: flex;
+		justify-content: space-between;
+		.answerto {
+			color: #2F80ED;
+		}
+		.benefit {
+			display: flex;
+		}
+		.yes, .no {
+			margin-left: 8px;
+			box-sizing: border-box;
+			color: #2F80ED;
+			.count {
+				color: #000000;
+				margin-left: 5px;
+			}
+		}
+		.yes {
+			border-right: 1px solid #000000;
+			padding-right: 8px;
+		}
+	}
+	.wrapper-container {
+		margin-top: 5%;
+	}
+	.wrapper-container.hide {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1366px) {
+	.points-list {
+		display: block;
+		.point {
+			width: 100%;
+		}
+	}
+}
+/*-----end product-main-information---*/

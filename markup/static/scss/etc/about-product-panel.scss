@@ -1,0 +1,31 @@
+/*------------about-product-panel block----------*/
+.about-product-panel {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+		-ms-flex-align: start;
+			align-items: flex-start;
+	margin: 1.5% auto .5% 1%;
+	font-size: 14px;
+	.panel-list {
+		display: inline-block;
+		width: 56.5%;
+		&__item {
+			list-style: none;
+			display: inline-block;
+		}
+	}
+	.item-link {
+		text-decoration: none;
+		color: #000000;
+		margin-right: 10px;
+	}
+	.product-code {
+		display: inline-block;
+		&__text, &__code {
+			font-family: 'Montserrat Medium';
+		}
+	}
+}
+/*------------end about-product-panel block----------*/

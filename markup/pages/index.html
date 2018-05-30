@@ -1,0 +1,44 @@
+<!-- 
+    Author: Serhii Kyslytsia (kyslytsia007@gmail.com)
+-->
+ <!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+    <body class="page home-page">
+        <div class="mask"></div>
+        %=symbols=%
+        <section class="page__wrapper">
+            {{> header/header}}
+            {{> navigation/navigation}}
+            {{> main-categories/main-categories}}
+            <div class="main-content">
+                {{> special-offers/special-offers}}
+                {{> visited/visited}}
+                {{> simple-banners/simple-banners}}
+                {{> bestsellers/bestsellers}}
+                {{> simple-banners/simple-banners-2}}
+            </div>
+        </section>
+            {{> footer/footer}}
+        <script>
+            $(document).ready(function(){
+                // mask js
+                $('.category-container .catalog-submenu').mouseenter(function(){
+                    $('.mask').addClass('full');
+                });
+                $('.category-container .catalog-submenu').mouseleave(function(){
+                    $('.mask').removeClass('full');
+                });
+            });
+        </script>
+        <script src="static/js/main.js"></script>
+        {{> js/owl.carousel.min}}
+        {{> js/rolling}}
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+    </body>
+
+</html>

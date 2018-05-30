@@ -1,0 +1,93 @@
+/*------stores-popup-------*/
+.stores-popup {
+	display: none;
+	width: 91%;
+	margin-bottom: 50px;
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 50px);
+	background-color: #FFFFFF;
+	padding: 50px 5.5%;
+	box-sizing: border-box;
+	z-index: 1001;
+	.close-icon {
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 22px;
+		height: 22px;
+	}
+	.chiose-panel {
+		margin-bottom: 20px;
+		display: flex;
+		padding-bottom: 35px;
+		border-bottom: 1px solid #F2F2F2;
+		p {
+			font: 14px/20px Montserrat Semibold;
+			border-bottom: 1px dotted #EF4123;
+		}
+		p:nth-child(n+2) {
+			margin-left: 20px;
+		}
+		.store-visit {
+			color: #EF4123;
+			border-bottom: 1px solid transparent;
+		}
+	}
+	.adress-block {
+		border: 8px solid #F2F2F2;
+		padding: 1%;
+		box-sizing: border-box;
+	}
+	.adress-table {
+		width: 100%;
+		tr:nth-child(even) {
+			background-color: #F2F2F2;
+		}
+		th, .adres-text, .adress-button, .cell-able {
+			text-align: left;
+			font: 14px/20px Montserrat Semibold;
+		}
+		td.cell-able {
+			color: #1CA355;
+		}
+		th, td {
+			padding-left: 10px;
+			height: 60px;
+		}
+		.about-store {
+			cursor: pointer;
+			display: flex;
+			align-items: flex-end;
+			img {
+				display: block;
+				height: 15px;
+				margin-right: 2%;
+			}
+			.about-text {
+				font: 12px/14px Montserrat Regular;
+				border-bottom: 1px solid #000000;
+				margin-top: 5px;
+			}
+		}
+		.cell-take, .cell-workingtime {
+			font: 12px/14px Montserrat Regular;
+		}
+		.cell-button {
+			padding-right: 10px;
+		}
+		.adress-button {
+			color: #FFFFFF;
+			background-color: #EF4123;
+			box-shadow: none;
+			border: 0;
+			border-radius: 4px;
+			padding: 8px 12px;
+			float: right;
+		}
+	}
+}
+/*------end stores-popup-------*/

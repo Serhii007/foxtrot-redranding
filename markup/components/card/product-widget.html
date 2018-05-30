@@ -1,0 +1,106 @@
+<div class="product-widget">
+	<div class="mark">
+		<p class="mark__text">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)430 G4 (W6P97AV_V9)430 G4 (W6P97AV_V9)430 G4 (W6P97AV_V9)
+</p>
+	</div>
+	<div class="product-widget__main-content">
+		<img src="%=static=%img/general/card/asus.png" alt="brand" class="brand-image">
+		<div class="widget-inner">
+			<div class="img-wrapper">
+				<img src="%=static=%img/general/card/asus-notebook.png" alt="image" class="product-image">
+			</div>
+			<div class="widget-information">
+				<div class="price">
+					<p class="price__text">Цена:</p>
+					<div class="flex-container">
+						<div class="price__not-relevant">
+							<span class="numb">14 925</span><span class="currency">грн</span>
+						</div>
+						<div class="price__relevant">
+							<span class="numb">1100 999</span><span class="currency">грн</span>
+						</div>
+					</div>
+				</div>
+				<div class="bonus">
+					<p class="bonus__text">Ваш бонус:</p>
+					<img src="/static/img/general/rolling/Group-8.svg" alt="rolling-product" class="bonus__icon">
+					<span class="bonus__calculation">x15</span>
+					<span class="bonus__sum">= 3129</span>
+					<span class="bonus__currency">грн</span>
+					<div class="answer-wrapper">
+						<img src="%=static=%img/general/icons/answer.svg" alt="icon" class="answer-icon">
+						<div class="answer-popup">
+							<p class="answer-text">Вы можете купить товар в кредит по выгодным условиям</p>
+						</div>
+					</div>
+				</div>
+				<div class="opinion">
+					<div class="opinion__rating">
+						<img src="/static/img/general/icons/StarFill.svg" alt="icon" class="ratting-star">
+						<img src="/static/img/general/icons/StarFill.svg" alt="icon" class="ratting-star">
+						<img src="/static/img/general/icons/StarFill.svg" alt="icon" class="ratting-star">
+						<img src="/static/img/general/icons/Star.svg" alt="icon" class="ratting-star">
+						<img src="/static/img/general/icons/Star.svg" alt="icon" class="ratting-star">
+					</div>
+					<div class="opinion__reviews">
+						<a href="#" class="reviews-link">
+							<span class="review-number">178</span>
+							<span class="review-text">отзывов</span>
+						</a>
+					</div>
+				</div>
+				<div class="purchase">
+					<a href="#" class="purchase__button">Купить</a>
+					<a href="#" class="purchase__credit">Купить в кредит</a>
+					<div class="answer-wrapper">
+						<img src="/static/img/general/icons/answer.svg" alt="icon" class="purchase__icon answer-icon">
+						<div class="answer-popup">
+							<p class="answer-text">Вы можете оплатить часть заказа бонусами</p>
+						</div>
+					</div>
+				</div>
+				<div class="gift">
+					<img src="/static/img/general/card/mouse.png" alt="gift" class="gift__image">
+					<div class="gift__descr">
+						<p class="title">Подарок</p>
+						<p class="model">Мышь Logitech M185 Wireless Grey</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="take">
+			<a href="#" class="take__link">
+				<span class="take-text">Забрать из магазина</span><span class="take-date">20.02. 2018</span>
+			</a>
+		</div>
+	</div>
+</div>
+<script>
+
+$(document).ready( function(){
+
+	$(document).on('scroll', function () {
+		var header = document.querySelector(".header");
+		var columnRight = document.querySelector(".right-col");
+		var mainContainer = document.querySelector(".wrapper-block");
+		var topBorder = columnRight.getBoundingClientRect().top;
+		var bottomBorder = columnRight.getBoundingClientRect().bottom;
+		if (topBorder <= header.offsetHeight) {
+
+			mainContainer.classList.add("fixed");
+			if (mainContainer.classList.contains("fixed") ) {
+				mainContainer.classList.remove("absolute");
+			}
+		}
+		if (topBorder >= header.offsetHeight) {
+			mainContainer.classList.remove("fixed");
+			mainContainer.classList.remove("absolute");
+		}
+		if (bottomBorder < mainContainer.offsetHeight + header.offsetHeight) {
+			mainContainer.classList.remove("fixed");
+			mainContainer.classList.add("absolute");
+		}
+	});
+});
+
+</script>

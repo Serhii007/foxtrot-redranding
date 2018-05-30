@@ -1,0 +1,138 @@
+<div class="product-props">
+	<div class="product-props__kind">
+		<h2 class="kind-title">Ноутбуки</h2>
+	</div>
+	<div class="product-props__preferences">
+		<ul class="preference-list">
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Приват банк, оплата частями</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Приват банк, оплата частями</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Intel Celeron</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Приват банк, оплата частями</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Intel Celeron</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Intel Celeron</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Приват банк, оплата частями</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Intel Celeron</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Intel Celeron</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Приват банк, оплата частями</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+			<li class="preference-list__item">
+				<a href="#" class="preference-link">
+					<p class="preference-text">Intel Celeron</p>
+				</a>
+				<img src="%=static=%img/general/icons/error.svg" alt="" class="preference-close-icon">
+			</li>
+		</ul>
+	</div>
+	<div class="product-props__sort">
+		<div class="sort-wrapper">
+			<p class="sort-title">Сортировка</p>
+			<div class="sort-elected">
+				<p class="sort-elected__text">Популянрые</p>
+				<img src="%=static=%img/general/icons/arrow-down.png" alt="" class="sort-elected__icon">
+			</div>
+			<ul class="sort-dropdown">
+				<li class="sort-dropdown__item">
+					<span class="dropdown-text">От дешевых к дорогим</span>
+					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
+				</li>
+				<li class="sort-dropdown__item">
+					<span class="dropdown-text">От дорогих к дешевым</span>
+					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
+				</li>
+				<li class="sort-dropdown__item">
+					<span class="dropdown-text">Популянрые</span>
+					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
+				</li>
+				<li class="sort-dropdown__item">
+					<span class="dropdown-text">Новинки</span>
+					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
+				</li>
+				<li class="sort-dropdown__item">
+					<span class="dropdown-text">По рейтингу</span>
+					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	/* product-props icon js */
+	$(document).ready(function(){
+		$(".preference-list__item").click(function(e){
+			if (e.target.classList.contains("preference-close-icon") ){
+				$(this).hide();
+			} else {
+				return;
+			}
+			
+		});
+	});
+</script>
+<script>
+	/* product-props dropdown js */
+$(document).ready(function(){
+	var electedText = $(".sort-elected__text").text();
+	$(".sort-elected").click(function(){
+		$(".sort-dropdown").toggleClass("visible");
+		$(".sort-elected__icon").toggleClass("rotate");
+	});
+	$(".sort-dropdown__item").click(function(){
+		$(".sort-dropdown__item").children(".dropdown-icon").removeClass("active");
+		$(this).children(".dropdown-icon").toggleClass("active");
+		var originText = $(this).children(".dropdown-text").text();
+		$(".sort-elected__text").text(originText);
+		setTimeout(function(){
+			$(".sort-dropdown").toggleClass("visible");
+		}, 300);
+	});
+});
+</script>

@@ -1,0 +1,182 @@
+/*discount-variant block*/
+.discount-variant {
+	margin: 10px 0;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+	background-color: #FFFFFF;
+	padding: 1.5% 2% 2%;
+	&__title {
+		font: 18px/1 Montserrat Bold;
+		margin-bottom: 10px;
+	}
+	.slide-container {
+		width: 90%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+		.flex-container {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-pack: distribute;
+				justify-content: space-around;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+		}
+		&__product {
+			max-width: 185px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+			-ms-flex-item-align: start;
+				align-self: flex-start;
+			position: relative;
+		}
+		.plus, .equal {
+			color: #00102A;
+			font: 36px/42px Roboto Thin;
+			display: inline-block;
+		}
+		.equal {
+			-webkit-transform: translateX(-70%);
+				-ms-transform: translateX(-70%);
+					transform: translateX(-70%);
+		}
+		.product-image {
+			height: 91px;
+			width: auto;
+		}
+		.product-description {
+			font: 14px/17px Montserrat Regular;
+			text-align: center;
+		}
+		&__result {
+			text-align: center;
+			min-width: 190px;
+		}
+		.price {
+			margin: 1.5% 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+			&__not-relevant {
+				text-decoration: line-through;
+				font: 18px/21px Roboto Regular;
+				color: #828282;
+				.currency {
+					margin-left: 3px;
+				}
+			}
+			&__relevant {
+				margin-left: 5px;
+				font: 24px/29px Montserrat Extrabold;
+				.currency {
+					margin-left: 3px;
+				}
+			}
+		}
+		.bonus {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			margin-bottom: 1.5%;
+			&__icon {
+				width: 17px;
+				display: inline-block;
+				margin-right: 5px;
+				height: 17px;
+			}
+			&__calculation {
+				font-size: 16px;
+				color: #EF4123;
+			}
+			&__sum {
+				margin-left: 3px;
+			}
+			&__sum, &__currency {
+				font-size: 13px;
+			}
+			.answer-icon {
+				cursor: pointer;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+			}
+			.answer-popup {
+				right: 0;
+				left: auto;
+				-webkit-transform: translateX(3%);
+					-ms-transform: translateX(3%);
+						transform: translateX(3%);
+			}
+		}
+		.discount-button {
+			font: 16px/20px Montserrat Regular;
+			background-color: #FFFFFF;
+			border: 1px solid #EF4123;
+			padding: 6px 10px;
+			cursor: pointer;
+			margin-top: 7px;
+		}
+	}
+}
+body .discount-variant__carousel.owl-theme .owl-nav {
+	top: 40%;
+	width: 105%;
+	left: -2.5%;
+}
+
+@media only screen and (max-width: 1366px) {
+	.discount-variant .slide-container .product-description {
+		font: 12px/15px Montserrat Regular;
+	}
+	.discount-variant .slide-container .product-image {
+		height: 71px;
+	}
+	.discount-variant .slide-container__result {
+		max-width: 170px;
+	}
+	.discount-variant .slide-container .equal {
+		-webkit-transform: translateX(-20%);
+			-ms-transform: translateX(-20%);
+				transform: translateX(-20%);
+	}
+	.discount-variant .slide-container .bonus__calculation, 
+	.discount-variant .slide-container .bonus__currency {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.discount-variant .slide-container {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
+	}
+	.discount-variant .slide-container .product-image {
+		height: 91px;
+	}
+}
+/* end discount-variant block*/

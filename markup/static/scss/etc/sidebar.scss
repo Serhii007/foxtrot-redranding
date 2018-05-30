@@ -1,0 +1,202 @@
+/*-----------listing sidebar block-----------*/
+.sidebar {
+	font-size: 12px;
+	width: 20%;
+	min-width: 250px;
+	background-color: #FFFFFF;
+	border-top: 5px solid #F0F0F0;
+	border-bottom: 5px solid #F0F0F0;
+	padding: 10px 0;
+/*------------slider-range block ---------*/
+	&__slider {
+		padding: 0 7px;
+	}
+	.slider-price {
+		margin-bottom: 15px;
+		font-family: 'Montserrat Medium';
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+	}
+	.slider-info {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+		margin-bottom: 10px;
+		.hyphen, .currency {
+			margin: 0 5px;
+		}
+		.submit {
+			font-family: 'Montserrat Extralight';
+			cursor: pointer;
+			border-radius: 0;
+			background-color: #EF4123;
+			border: 0;
+			color: #FFFFFF;
+			min-width: 31px;
+			min-height: 23px;
+		}
+		.amount-1, .amount-2 {
+			width: 63px;
+			height: 23px;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+			text-align: center;
+			display: block;
+		}
+	}
+	.slider-range {
+		margin-top: 15px;
+		border: 0;
+		background-color: #E5E5E5;
+		height: 3px;
+		.ui-slider-range {
+			background-color: #828282;
+		}
+		.ui-state-default {
+			background-color: #EF4123;
+			width: 12px;
+			height: 12px;
+			border: 0;
+			border-radius: 50%;
+			top: -4px;
+		}
+		.ui-state-default:focus {
+			outline: none;
+		}
+	}
+	.info-icon {
+		margin-left: 6px;
+		cursor: pointer;
+		width: 15px;
+		height: 15px;
+	}
+/*------------end slider-range block ---------*/
+	&__dropdown {
+		margin-top: 30px;
+		padding: 0 10px;
+	}
+	.dropdown-head-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+		.title {
+			font-family: 'Montserrat Medium';
+			cursor: pointer;
+		}
+	}
+	.arrow-icon {
+		-webkit-transform: translateY(35%);
+			-ms-transform: translateY(35%);
+				transform: translateY(35%);
+		margin-left: auto;
+		cursor: pointer;
+		width: 11px;
+		height: 11px;
+	}
+	.rotate {
+		-webkit-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+		position: relative;
+		top: 5px;
+	}
+	.dropdown-main-container {
+		margin-top: 10px;
+		display: none;
+	}
+	.dropdown-main-container.visible {
+		display: block;
+	}
+	.dropdown-list {
+		&__item {
+			list-style: none;
+			margin-top: 8px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: end;
+				-ms-flex-align: end;
+					align-items: flex-end;
+			.brand {
+				margin-left: 8px;
+			}
+			.amount {
+				margin-left: 3px;
+			}
+		}
+		&__item.more {
+			display: block;
+		}
+		.more {
+			margin-top: 12px;
+			&__icon {
+				cursor: pointer;
+				margin-right: 8px;
+				margin-left: 3px;
+				width: 11px;
+			}
+			&__icon.rotate {
+				top: 0;
+			}
+			&__text {
+				cursor: pointer;
+			}
+		}
+	}
+	.checked-block {
+		margin-right: 8px;
+		position: relative;
+		label {
+			width: 15px;
+			height: 15px;
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+			background: #FFFFFF;
+			border: 1px solid #E5E5E5;
+			&:after {
+				content: '';
+				width: 8px;
+				height: 3px;
+				position: absolute;
+				top: 4px;
+				left: 3px;
+				border: 2px solid #EF4123;
+				border-top: none;
+				border-right: none;
+				background: transparent;
+				opacity: 0;
+				-webkit-transform: rotate(-45deg);
+					-ms-transform: rotate(-45deg);
+						transform: rotate(-45deg);
+			}
+		}
+		input[type=checkbox] {
+			visibility: hidden;
+			&:checked + label:after {
+				opacity: 1;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	.listing-content .sidebar {
+		display: none;
+	}
+}
+
+/*-----------end listing sidebar block-----------*/
