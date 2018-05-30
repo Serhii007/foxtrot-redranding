@@ -10,7 +10,7 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	background: #00102A;
+	background-color: #00102A;
 	font-size: 14px;
 	font-weight: 500;
 	.item-link{
@@ -132,6 +132,9 @@
 	width: 20%;
 	height: 30px;
 	text-align: center;
+	.nav-img {
+		display: none;
+	}
 }
 .catalog-text, .catalog-arrow {
 	cursor: pointer;
@@ -162,6 +165,38 @@
 		&__items {
 			width: 57%;
 		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	.navigation {
+		height: 115px;
+		background-color: #FFFFFF;
+		&__lang, &__catalog {
+			display: none;
+		}
+		.nav-text {
+			display: block;
+			color: #000000;
+			font: 14px/17px Montserrat Regular;
+			width: 79px;
+		}
+		&__items {
+			width: 100%;
+			align-items: flex-start;
+			justify-content: space-around;
+		}
+		.nav-item {
+			width: auto;
+			height: auto;
+			.nav-img {
+				display: block;
+				width: 79px;
+				height: 79px;
+			}
+		}
+	}
+	.navigation-buffer {
+		padding-bottom: 115px;
 	}
 }
 /*------------------- end navigation panel styles----------------*/

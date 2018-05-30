@@ -19,4 +19,10 @@
 		content: none;
 	}
 }
+
+@media only screen and (max-width: 768px) {
+	.breadcrumbs {
+		display: none;
+	}
+}
 /*-------------end breadcrumbs block--------------*/

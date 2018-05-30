@@ -494,7 +494,6 @@ body {
 		}
 		.phone-mobile {
 			display: block;
-			margin: 0 15%;
 			cursor: pointer;
 			.icon {
 				display: block;
@@ -516,6 +515,9 @@ body {
 				width: 27px;
 				height: 27px;
 			}
+		}
+		.compare {
+			margin: 0 14%;
 		}
 		.compare__icon {
 			width: 27px;

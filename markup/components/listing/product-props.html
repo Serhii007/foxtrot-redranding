@@ -102,24 +102,24 @@
 				</li>
 			</ul>
 		</div>
+		<div class="filter-block">
+			<span class="filter-text">Фильтр</span>
+			<img src="%=static=%img/general/icons/filter.svg" alt="" class="filter-image">
+		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	/* product-props icon js */
-	$(document).ready(function(){
-		$(".preference-list__item").click(function(e){
-			if (e.target.classList.contains("preference-close-icon") ){
-				$(this).hide();
-			} else {
-				return;
-			}
-			
-		});
-	});
-</script>
 <script>
 	/* product-props dropdown js */
 $(document).ready(function(){
+	/* product-props icon js */
+	$(".preference-list__item").click(function(e){
+		if (e.target.classList.contains("preference-close-icon") ){
+			$(this).hide();
+		} else {
+			return;
+		}
+	});
+
 	var electedText = $(".sort-elected__text").text();
 	$(".sort-elected").click(function(){
 		$(".sort-dropdown").toggleClass("visible");
@@ -132,6 +132,7 @@ $(document).ready(function(){
 		$(".sort-elected__text").text(originText);
 		setTimeout(function(){
 			$(".sort-dropdown").toggleClass("visible");
+			$(".sort-elected__icon").toggleClass("rotate");
 		}, 300);
 	});
 });
