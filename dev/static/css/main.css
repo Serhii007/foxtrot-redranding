@@ -524,7 +524,7 @@ body {
 }
 
 .header__logo {
-  width: 18%;
+  width: 35%;
   min-width: 140px;
 }
 
@@ -619,7 +619,8 @@ body {
 }
 
 .info-list {
-  margin: 0;
+  margin: 0 0 0 auto;
+  max-width: 600px;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -785,6 +786,9 @@ body {
   .header {
     box-sizing: border-box;
   }
+  .header__logo {
+    width: 25%;
+  }
   .sandwich {
     display: block;
   }
@@ -827,7 +831,7 @@ body {
   }
   .header__search {
     width: 30%;
-    margin: 0 6% 0 3%;
+    margin: 0 6% 0 0;
   }
   .header__main-information {
     min-width: 0;
