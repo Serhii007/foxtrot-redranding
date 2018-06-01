@@ -32,4 +32,9 @@
 		margin: 35px 20px 0 280px;
 	}
 }
+@media only screen and (max-width: 768px) {
+	.suggestions {
+		display: none;
+	}
+}
 /*-------------end suggestion block-------------*/

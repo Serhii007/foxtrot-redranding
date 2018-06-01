@@ -2,7 +2,7 @@
 .product-props {
 	position: relative;
 	width: 98%;
-	margin: .5% auto;
+	margin: 0 auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -146,10 +146,13 @@
 }
 @media only screen and (max-width: 768px) {
 	.product-props {
+		background-color: #FFFFFF;
+		border-top: 1px solid #E0E0E0;
 		height: 61px;
 		width: 100%;
 		padding: 15px;
 		box-sizing: border-box;
+		z-index: 889;
 		&__kind, &__preferences {
 			display: none;
 		}
@@ -185,18 +188,29 @@
 		.sort-elected {
 			width: 185px;
 			border: 0;
+			display: flex;
+			align-items: center;
 			&__text {
 				font: 14px/17px Montserrat Regular;
 				text-transform: none;
 			}
 			&__icon {
 				width: 15px;
+				position: static;
+				transform: translate(0, 0);
+				margin-left: 10px;
 			}
 		}
 		.sort-dropdown {
 			border-top: 1px solid #BDBDBD;
-			top: 100%;
+			border: 1px solid #BDBDBD;
+			top: 43px;
+			z-index: 889;
 		}
+	}
+}@media only screen and (max-width: 768px) {
+	.product-props .sort-elected__text {
+		letter-spacing: -1px;
 	}
 }
 /*----------end product-props block------------*/

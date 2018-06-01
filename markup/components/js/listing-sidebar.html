@@ -3,9 +3,17 @@
 $(document).ready(function(){
 	//dropdowns js
 	$(".sidebar__dropdown").each(function(index){
-		if (index < 5){
-			$(this).children(".dropdown-head-container").children(".arrow-icon").toggleClass("rotate");
-			$(this).children(".dropdown-main-container").addClass("visible");
+		if (window.innerWidth > 768) {
+			if (index < 5){
+				$(this).children(".dropdown-head-container").children(".arrow-icon").toggleClass("rotate");
+				$(this).children(".dropdown-main-container").addClass("visible");
+			}
+		}
+		if (window.innerWidth <= 768) {
+			if (index < 3){
+				$(this).children(".dropdown-head-container").children(".arrow-icon").toggleClass("rotate");
+				$(this).children(".dropdown-main-container").addClass("visible");
+			}
 		}
 	});
 	$(".sidebar__dropdown").click(function(event){
@@ -16,10 +24,7 @@ $(document).ready(function(){
 			return;
 		}
 	});
-	// rotate arrow .more__icon
-	$(".dropdown-list__item.more").click(function(){
-		$(this).children(".more__icon").toggleClass("rotate");
-	});
+
 	// dropdown attributes js
 	let inputElem = $(".checked-block > input[type='checkbox']");
 	let labelElem = $(".checked-block > label");
@@ -29,6 +34,43 @@ $(document).ready(function(){
 	labelElem.each(function(index, value){
 		$(this).attr("for", "sidebar-check-input-" + index);
 	});
+
+	// change font of the checked field
+	$(".dropdown-list__item").each(function(i) {
+		$(this).find("label").click(function() {
+			$(".dropdown-list__item").eq(i).find("span").toggleClass("checked");
+		});
+	});
+
+	// code for the 'more' dropdown toggler
+
+	let moreDDToggler = $(".sidebar .more-item");
+	let dDown = $(".sidebar__dropdown");
+
+	// configuration for the 'more' dropdown toggler
+	dDown.each(function(i) {
+
+		if (dDown.eq(i).find(".checked-block").length <= 4) {
+
+			$(this).find(".more-item").hide();
+		} else {
+			// old
+			var aboutWrapper = $(".sidebar .dropdown-list");
+
+			aboutWrapper.toggleClass("overflow");
+
+			dDown.eq(i).find(".more-item").click(function() {
+				$(this).children(".more__icon").toggleClass("rotate");
+
+				aboutWrapper.eq(i).toggleClass("overflow");
+
+				$(this).children(".more__text.opened").toggle();
+				$(this).children(".more__text.closed").toggle();
+			});
+			//old
+		}
+	});
+
 	/* slider range js */
 	$( function() {
 	$( ".slider-range" ).slider({
