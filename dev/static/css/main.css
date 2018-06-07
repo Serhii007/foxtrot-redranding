@@ -615,6 +615,7 @@ body {
   border-radius: 4px;
   border: 2px solid #A9A89F;
   color: #A9A89F;
+  box-sizing: content-box;
 }
 
 .header__search .search-icon {
@@ -802,7 +803,9 @@ body {
     box-sizing: border-box;
   }
   .header__logo {
-    width: 25%;
+    margin: 0 auto 0 20px;
+    width: 40%;
+    max-width: 250px;
   }
   .sandwich {
     display: block;
@@ -845,8 +848,44 @@ body {
     height: 27px;
   }
   .header__search {
-    width: 30%;
-    margin: 0 6% 0 0;
+    position: fixed;
+    top: 61px;
+    left: 0;
+    width: 100%;
+    max-width: 770px;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .header__search .search-input {
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #A9A89F;
+    border-right: 0;
+    border-left: 0;
+  }
+  .header__search .search-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: transparent;
+  }
+  .header__search .search-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: transparent;
+  }
+  .header__search .search-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: transparent;
+  }
+  .header__search .search-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: transparent;
+  }
+  .header__search .search-icon {
+    right: 15px;
+  }
+  .header-buffer {
+    padding-bottom: 100px;
   }
   .header__main-information {
     min-width: 0;
@@ -855,24 +894,9 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-  .header .header__search {
-    margin: 0 40px 0 0;
-    min-width: 0;
-  }
-  .header .header__search .search-input {
-    display: none;
-  }
-  .header .header__search .search-icon {
-    position: relative;
-    top: 0;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    margin: 0 auto;
-    width: 27px;
-    height: 27px;
-  }
   .header__logo {
     min-width: 100px;
+    margin: 0 auto 0 7px;
   }
 }
 

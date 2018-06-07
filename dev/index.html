@@ -63,7 +63,7 @@
             
                         $(".mask").click(hideMobMenu);
             
-                        // swope mob menu
+                        // swipe mob menu
                         var swipe = new Hammer(document);
             
                         swipe.on('swiperight swipeleft', function(e) {
@@ -73,6 +73,7 @@
                           } else {
                             hideMobMenu();
                             $(".mask").removeClass("full");
+                            $('.catalog-submenu-wrapper').removeClass('toggle');
                           }
                         });
                     });
