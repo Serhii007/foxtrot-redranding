@@ -4,6 +4,46 @@
         <div class="sandwich__line"></div>
         <div class="sandwich__line"></div>
     </div>
+    <script>
+        $(document).ready(function() {
+            var sandwich = $(".header .sandwich");
+            var mMenu = $(".mobile-menu");
+
+            function showMobMenu() {
+                mMenu.toggleClass("active");
+                $(".catalog-submenu-wrapper.show").toggleClass("toggle");
+                $(".header").addClass("mask-covered");
+                $(".product-props").addClass("mask-covered");
+                $(".mask").addClass("full");
+                $("body").addClass("fixed");
+            }
+
+            function hideMobMenu() {
+                mMenu.removeClass("active");
+                $("body").removeClass("fixed");
+                $(".header").removeClass("mask-covered");
+                $(".product-props").removeClass("mask-covered");
+            }
+
+            sandwich.click(showMobMenu);
+
+            $(".mask").click(hideMobMenu);
+
+            // swope mob menu
+            var swipe = new Hammer(document);
+
+            swipe.on('swiperight swipeleft', function(e) {
+              e.preventDefault();
+              if (e.type == 'swiperight') {
+                showMobMenu();
+              } else {
+                hideMobMenu();
+                $(".mask").removeClass("full");
+              }
+            });
+        });
+    </script>
+
     <div class="header__logo">
         <img src="%=static=%img/general/header/logo.svg" alt="logo" class="logo-img">
     </div>
@@ -44,4 +84,5 @@
         </ul>
     </div>
 </header>
+{{>mobile-menu/mobile-menu}}
 <div class="header-buffer"></div>

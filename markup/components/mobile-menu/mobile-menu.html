@@ -1,0 +1,139 @@
+<div class="mobile-menu">
+	<div class="wrapper">
+		<div class="slide-header">
+			<div class="slide-header__top">
+				<div class="mm-logo">
+					<img src="%=static=%img/general/header/logo.svg" alt="logo" class="logo-img">
+				</div>
+				<div class="mm-lang">
+					<span class="ua">Ua</span>
+					<span class="ru active">Ru</span>
+				</div>
+			</div>
+			<div class="slide-header__bottom">
+				<ul class="info-list">
+					<li class="info-list__item call">
+						<a href="#" class="call__cal-me">
+							<img src="%=static=%img/general/icons/red-phone.svg" alt="icon" class="icon">
+							<span class="call-me-text">Перезвоните мне</span>
+						</a>
+					</li>
+					<li class="info-list__item bonuses">
+						<a href="#" class="bonuses__link">
+							<img src="%=static=%img/general/icons/grn.svg" alt="icon" class="bonuses__icon">
+							<div class="bonuses__info">
+								<span class="bonuses-sum">8888 грн</span>
+								<span class="bonuses-text">бонусов</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="slide-content">
+			<ul class="slide-content__list">
+				<li class="mm-list-item categories">
+					<img src="%=static=%img/general/icons/category-icon.svg" alt="icon" class="mob-category-icon">
+					{{>header/catalog-megamenu}}
+					<img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="right-arrow slide-right-arrow">
+				</li>
+				<li class="mm-list-item compare">
+					<a class="compare__link" href="#">
+						<img src="%=static=%img/general/icons/red-compare.svg" alt="icon" class="compare__icon">
+						<span class="compare__text">Сравнение</span>
+						<img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="right-arrow">
+					</a>
+				</li>
+				<li class="mm-list-item find">
+					<img src="%=static=%img/general/icons/binoculars.svg" alt="icon">
+					<span>Отследить покупку</span>
+					<img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="right-arrow">
+				</li>
+				<li class="mm-list-item write-to-us">
+					<img src="%=static=%img/general/icons/letter.svg" alt="icon">
+					<span>Написать нам</span>
+					<img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="right-arrow">
+				</li>
+			</ul>
+		</div>
+		<div class="slide-footer">
+			<div class="unregistered">
+				<a href="#" class="unregistered__link enter">
+					<span>Вход</span>
+				</a>
+				<a href="#" class="unregistered__link registration">
+					<span>Регистрация</span>
+				</a>
+			</div>
+			<div class="registered">
+				<div class="registered__profile">
+					<img src="%=static=%img/general/icons/profile-img.svg" alt="icon">
+					<span class="name">Юля</span>
+				</div>
+				<div class="logout">
+					<span class="logout__text">Выйти</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function() {
+		var slideElem = $(".mobile-menu .slide-content .slide-content__list");
+		var fstActiveElem = $(".mobile-menu .submenu-item");
+		var scndActiveElem = $(".mobile-menu .category-item");
+		var mobCategory = $(".mobile-menu .category-menu-wrapper");
+		var thrdActiveElem = $(".mobile-menu .category-column .category-item");
+
+		fstActiveElem.click(function() {
+			fstActiveElem.removeClass("active");
+			$(this).addClass("active");
+		});
+		scndActiveElem.click(function() {
+			scndActiveElem.removeClass("active");
+			$(this).addClass("active");
+		});
+		thrdActiveElem.click(function(e) {
+			if (e.target.classList.contains("category-item__title") ) {
+				$(this).addClass("active");
+			}
+		});
+
+		function scrollToTop() {
+			document.querySelector(".mobile-menu .slide-content").scrollTo(0, 0);
+		}
+
+		$(".mobile-menu").click(function(e) {
+			// slide forward
+			if (e.target.classList.contains("categories") || e.target.classList.contains("mob-category-icon") || e.target.classList.contains("catalog-text") || e.target.classList.contains("slide-right-arrow") ) {
+
+				slideElem.addClass("scnd-lev");
+				scrollToTop();
+			} else if (e.target.classList.contains("submenu-item__link") || e.target.classList.contains("link-text") || e.target.classList.contains("link-arrow") ) {
+				slideElem.removeClass("scnd-lev");
+				slideElem.addClass("thrd-lev");
+				scrollToTop();
+			} else if (e.target.classList.contains("category-item__title") || e.target.classList.contains("category-item") ) {
+				slideElem.removeClass("thrd-lev");
+				slideElem.addClass("frth-lev");
+				scrollToTop();
+			} else if (e.target.classList.contains("second-controller") ) {//slide back
+				slideElem.removeClass("scnd-lev");
+			} else if (e.target.classList.contains("third-controller") ) {
+				slideElem.removeClass("thrd-lev");
+				slideElem.addClass("scnd-lev");
+			} else if (e.target.classList.contains("fourth-controller") ) {
+				slideElem.removeClass("frth-lev");
+				slideElem.addClass("thrd-lev");
+			} else {
+				return;
+			}
+		});
+	});
+</script>
+<script>
+	document.addEventListener( 'DOMContentLoaded' , function() {
+
+		
+	});
+</script>

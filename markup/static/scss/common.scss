@@ -6,6 +6,12 @@
 html, body {
 	height: 100%;
 }
+.fixed {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
 body {
 	font-family: 'Montserrat Regular', sans-serif;
 	.owl-theme .owl-nav {
@@ -217,7 +223,9 @@ img.rotate {
 	background-color: #FFFFFF;
 	font-family: 'Montserrat Regular', sans-serif;
 }
-
+.mobile-menu {
+	display: none;
+}
 * html .page__wrapper {
 	height: 100%;
 }
@@ -242,6 +250,9 @@ body {
 	&__line:nth-child(2) {
 		margin: 6px 0;
 	}
+}
+.mask-covered.header {
+	z-index: 10;
 }
 .header {
 	width: 100%;
@@ -447,7 +458,6 @@ body {
 		}
 	}
 }
-
 @media only screen and (max-width: 991px) {
 	.header {
 		&__logo {
