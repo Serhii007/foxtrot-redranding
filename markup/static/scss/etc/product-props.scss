@@ -1,4 +1,7 @@
 /*----------product-props block------------*/
+.mask-covered.product-props {
+	z-index: 10;
+}
 .product-props {
 	position: relative;
 	width: 98%;

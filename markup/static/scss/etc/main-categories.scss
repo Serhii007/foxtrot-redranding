@@ -160,6 +160,14 @@
 	.category-column {
 		width: 70%;
 	}
+	.back-button {
+		display: none;
+	}
+}
+.catalog-submenu-wrapper {
+	.back-button {
+		display: none;
+	}
 }
 .submenu-item:hover .category-menu-wrapper {
 	visibility: visible;
@@ -177,6 +185,9 @@
 	}
 	a {
 		color: #000000;
+	}
+	.category-item.mobile {
+		display: none;
 	}
 }
 .category-picture {
@@ -218,7 +229,6 @@
 		}
 	}
 }
-
 @media only screen and (max-width: 991px) {
 	.category-menu-wrapper {
 		width: 220%;
