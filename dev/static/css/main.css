@@ -1653,9 +1653,9 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   visibility: hidden;
   font-size: 12px;
   background-color: #FFFFFF;
-  position: absolute;
-  left: 100%;
-  top: 0;
+  position: fixed;
+  left: calc(2% + 230px);
+  top: 111px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1667,8 +1667,9 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   border-bottom: none;
   border-top: none;
   border-radius: 3px;
-  width: 300%;
-  min-height: 408px;
+  width: calc(93% - 230px);
+  max-width: 1000px;
+  min-height: 406px;
 }
 
 .category-menu-wrapper .category-column {
@@ -1754,7 +1755,6 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 
 @media only screen and (max-width: 991px) {
   .category-menu-wrapper {
-    width: 220%;
     font-size: 11px;
   }
   .category-menu-wrapper .category-item {
@@ -1762,12 +1762,6 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   }
   .category-menu-wrapper .category-picture {
     width: 36%;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .category-menu-wrapper {
-    width: 214%;
   }
 }
 
@@ -2128,6 +2122,14 @@ body .category-slider .owl-nav .owl-next:hover {
     width: 83%;
     bottom: 2%;
     max-height: 110px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .category-menu-wrapper {
+    position: absolute;
+    top: 0;
+    left: 100%;
   }
 }
 
@@ -2644,9 +2646,11 @@ body .category-slider .owl-nav .owl-next:hover {
 }
 
 .navigation__catalog {
+  box-sizing: content-box;
   background-color: #334055;
   margin-left: 2%;
-  width: 16%;
+  box-sizing: border-box;
+  width: 230px;
   min-width: 210px;
   padding: 0 1%;
   position: relative;
@@ -2711,6 +2715,17 @@ body .category-slider .owl-nav .owl-next:hover {
   left: 2%;
 }
 
+.navigation .dd-wrapper {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 434px;
+  width: 100vw;
+  direction: rtl;
+}
+
 .navigation .catalog-submenu {
   z-index: 5;
   display: -webkit-box;
@@ -2724,18 +2739,18 @@ body .category-slider .owl-nav .owl-next:hover {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  position: absolute;
-  top: 50px;
-  left: 0;
+  padding: 0 1%;
+  box-sizing: content-box;
+  width: 230px;
+  direction: ltr;
+  position: relative;
+  float: left;
   padding: 0;
   margin: 0;
   background-color: #FFFFFF;
   color: #000000;
   font-size: 12px;
-}
-
-.navigation .catalog-submenu .category-menu-wrapper {
-  min-height: 406px;
+  max-height: 434px;
 }
 
 .nav-up {
