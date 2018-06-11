@@ -67,12 +67,12 @@
 			-ms-flex-align: center;
 				align-items: center;
 		.slider-image {
-			max-width: 100%;
-			width: auto;
-			height: -webkit-fill-available;
-			max-height: 480px;
 			display: block;
 			margin: 0 auto;
+			height: auto;
+			width: auto;
+			min-height: 450px;
+			max-height: 450px;
 		}
 		.owl-dots {
 			margin: 5px 0;
@@ -177,4 +177,7 @@
 		}
 	}
 }
+.product-store-information__slider-block .owl-carousel.owl-drag .owl-item {
+			overflow: hidden;
+		}
 /*----------end product-store-information__slider-block---------*/

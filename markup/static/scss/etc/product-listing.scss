@@ -314,6 +314,11 @@ body {
 			}
 		}
 	}
+	.show-more {
+		-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+				transform: translateX(0);
+	}
 }
 @media only screen and (max-width: 480px) {
 	.product-listing{
