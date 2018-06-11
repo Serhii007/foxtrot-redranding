@@ -2588,48 +2588,6 @@
                 					<a href="#" class="today__link">Сегодня</a>
                 				</div>
                 			</div>
-                			<script>
-                				$(document).ready(function() {
-                
-                					$(".mask, .stores-popup .close-icon").click(function() {
-                						$(".mask").removeClass("full cover");
-                						$(".stores-popup").hide();
-                						$("body > *:not('.stores-popup, .mask, script')").show();
-                					});
-                					$(".delivery-block .from-store__link").click(function(e) {
-                						e.preventDefault();
-                						$(".stores-popup").show().addClass("show-popup");
-                						$(".mask").addClass("full cover");
-                						$("body > *:not('.stores-popup, .mask, script')").hide();
-                
-                						var popupBottom = document.querySelector(".stores-popup").getBoundingClientRect().bottom;
-                						var bottom = $(window).height() - $(".stores-popup").height();
-                						var prevScrollpos = window.pageYOffset;
-                						var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-                
-                						// $(window).scroll(function() {
-                
-                						// 	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-                						// 	var currentScrollPos = window.pageYOffset;
-                						// 	console.log(scrolled);
-                						// 	if ($(".stores-popup").hasClass("show-popup") ) {
-                						// 		if (prevScrollpos > currentScrollPos) {
-                						// 			//up
-                
-                						// 		} else {
-                						// 			//down
-                						// 			$(".stores-popup").css("top", (-scrolled) + "px");
-                
-                						// 			if (document.querySelector(".stores-popup").getBoundingClientRect().bottom <= window.innerHeight ) {
-                						// 				// alert(scrolled);
-                						// 			}
-                						// 		}
-                						// 	}
-                						// 	// prevScrollpos = currentScrollPos;
-                						// });
-                					});
-                				});
-                			</script>
                 			<div class="delivery-block__bottom">
                 				<div class="free-delivery">
                 					<p class="free-delivery__text">Бесплатная Доставка</p>
@@ -4393,219 +4351,428 @@
                         });
                     }
                 });
-            </script>            <div class="stores-popup">
-            	<img src="/static/img/general/icons/close-icon.svg" alt="" class="close-icon">
-            	<div class="chiose-panel">
-            		<p class="adress-delivery">Доставка по адресу</p>
-            		<p class="store-visit">Забрать в магазине</p>
+            </script>            <div class="popup-wrapper">
+            	<div class="stores-popup">
+            		<img src="/static/img/general/icons/close-icon.svg" alt="" class="close-icon">
+            		<div class="chiose-panel">
+            			<p class="adress-delivery">Доставка по адресу</p>
+            			<p class="store-visit active">Забрать в магазине</p>
+            		</div>
+            		<div class="popup-delivery-slider">
+            			<div class="adress-block">
+            				<table class="adress-table" cellspacing="0">
+            					<tr class="table-row">
+            						<th class="cell-adress">Адрес</th>
+            						<th class="cell-able">Наличие</th>
+            						<th class="cell-workingtime">Режим работы</th>
+            						<th class="cell-button"></th>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able">Доставим</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button"><span class="take-it">Забрать</span><span class="when">13/06/2018</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            					<tr class="table-row">
+            						<td class="cell-adress">
+            							<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
+            							<a href="#" class="about-store">
+            								<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
+            								<p class="about-text">Подробнее о магазине</p>
+            							</a>
+            						</td>
+            						<td class="cell-able able">Есть в наличии</td>
+            						<td class="cell-workingtime">10:00 - 21:00</td>
+            						<td class="cell-button"><a href="#" class="adress-button today"><span class="take-it">Забрать</span><span class="when">Сегодня</span></a></td>
+            					</tr>
+            				</table>
+            			</div>			<div class="popup-delivery-to-adress">
+            				<ul class="contents">
+            					<li class="active">
+            						<div class="delivery-cols">
+            							<div class="col">
+            								<p>Доставка товаров осуществляется своей <strong>службой доставки</strong> и через партнера <strong>Новая почта</strong><!-- и <strong>Мост Экспресс</strong>-->.</p>
+            								<h3>Для городов: Киев, Днепр, Харьков, Львов, Одесса</h3>
+            								<div class="table-wrapper">
+            									<div class="table-wrapper-inner">
+            										<table class="striped">
+            											<tbody>
+            												<tr><th>Категория товаров</th><th>Стоимость</th></tr>
+            												<tr>
+            												<td>Стоимостью свыше 2500 грн</td>
+            												<td>Бесплатно</td>
+            												</tr>
+            												<tr>
+            												<td>Стиральные машины + встраиваемые стиральные машины</td>
+            												<td>199 грн</td>
+            												</tr>
+            												<tr>
+            												<td>Холодильники + Встраиваемые холодильники</td>
+            												<td>199 грн</td>
+            												</tr>
+            												<tr>
+            												<td>Плиты</td>
+            												<td>199 грн</td>
+            												</tr>
+            												<tr>
+            												<td>Посудомоечные машины + Встраиваемые посудомоечные машины</td>
+            												<td>199 грн</td>
+            												</tr>
+            												<tr>
+            												<td>Морозильные камеры</td>
+            												<td>199 грн</td>
+            												</tr>
+            												<tr>
+            												<td>Доставка мелкобытовой техники</td>
+            												<td>99 грн</td>
+            												</tr>
+            											</tbody>
+            										</table>
+            									</div>
+            								</div>
+            							</div>
+            							<div class="col">
+            								<br>
+            								<div class="grey-block">
+            									<p><strong>Сроки доставки</strong></p>
+            									<p><strong>от 1 до 4 рабочих дней</strong></p>
+            									<p>Для доставки с удаленных складов требуется дополнительно 2 дня.<br><br></p>
+            									<p><strong>График работы</strong></p>
+            									<p><strong>Будние дни с 9:00 до 20:00<br>Выходные дни с 9:00 до 18:00</strong></p>
+            								</div>
+            							</div>
+            						</div>
+            						<div class="delivery-cols">
+            							<div class="col">
+            								<h3>Другие города</h3>
+            							<div class="table-wrapper">
+            								<div class="table-wrapper-inner">
+            									<table class="striped">
+            										<tbody>
+            											<tr><th>Категория товаров</th><th>Стоимость</th></tr>
+            											<tr>
+            											<td>Стиральные машины + встраиваемые стиральные машины</td>
+            											<td>199 грн</td>
+            											</tr>
+            											<tr>
+            											<td>Холодильники + Встраиваемые холодильники</td>
+            											<td>199 грн</td>
+            											</tr>
+            											<tr>
+            											<td>Плиты</td>
+            											<td>199 грн</td>
+            											</tr>
+            											<tr>
+            											<td>Посудомоечные машины + Встраиваемые посудомоечные машины</td>
+            											<td>199 грн</td>
+            											</tr>
+            											<tr>
+            											<td>Морозильные камеры</td>
+            											<td>199 грн</td>
+            											</tr>
+            											<tr>
+            											<td>Доставка мелкобытовой техники</td>
+            											<td>99 грн</td>
+            											</tr>
+            										</tbody>
+            									</table>
+            								</div>
+            								</div>
+            							</div>
+            							<div class="col">
+            								<div class="grey-block"><img src="/static/img/general/card/np-logo.jpeg" alt="">
+            									<p><strong>Сроки доставки</strong></p>
+            									<p><strong>от 1 до 4 рабочих дней</strong></p>
+            									<p>Для доставки с удаленных складов требуется дополнительно 2 дня.<br><br></p>
+            									<p><strong>Коллцентр Новой Почты</strong></p>
+            									<p><strong>0-800-500-609<br>098-4-500-609<br>050-4-500-609</strong></p>
+            								</div>
+            							</div>
+            						</div>
+            						<h4>Карта отделений Новой Почты в городе <a href="#">Киев</a></h4>
+            						<div class="branch-map">
+            							<div class="col"><img src="/static/img/general/card/np-logo.jpeg" alt=""><br>
+            								<ul>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            									<li>
+            										<p><a href="#">Отделение №1</a> <strong>бульв. Чоколовский, 19</strong> +38(044) 323-02-22</p>
+            									</li>
+            								</ul>
+            							</div>
+            							<div class="col"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.5699865156735!2d30.45295331573066!3d50.430482979472615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cea4d58c86d5%3A0xe08bdf7def651d9e!2sChokolivs'kyi+Blvd%2C+19%2C+Kyiv!5e0!3m2!1sen!2sua!4v1444595259740" frameborder="0" allowfullscreen=""></iframe></div>
+            						</div>
+            						<div class="delivery-cols">
+            							<div class="col">
+            								<h4>Условия доставки</h4>
+            								<p>Доставка товаров осуществляется своей службой доставки и через партнера Новая почта<!-- и Мост Экспресс-->.<br><!--1.--> Доставка товаров в «Бизнес Центры» осуществляется до дверей «Бизнес Центра»<br></p>
+            								<h4>Стоимость подъема техники</h4>
+            								<p><b>Для городов: Киев, Днепр, Харьков, Львов, Одесса</b></p>
+            								<div class="table-wrapper table-wrapper1">
+            								<p>Стоимость подъема техники (за этаж)</p>
+            									<div class="table-wrapper-inner">
+            										<table class="striped">
+            											<tbody>
+            												<tr><th>При отсутствии грузового лифта</th><th>При наличии грузового лифта</th></tr>
+            												<tr>
+            												<td>50 грн/этаж (начиная с 1-го этажа)</td>
+            												<td>оплата проводится за 1-й и последний этаж, по тарифу 50 грн/этаж</td>
+            												</tr>
+            											</tbody>
+            										</table>
+            									</div>
+            								</div>
+            								<p><b><span color="red" >Для других городов</span></b></p>
+            								<p><b><span color="red">Подъем на этаж – бесплатно</span></b></p>
+            								<div class="hint">
+            									<p>Интернет магазин Фокстрот оставляет за собой право использовать курьерские службы 3-х лиц, без уведомления клиента.</p>
+            								</div>
+            								<h4>Доставка за черту города</h4>
+            								<p>Стоимость доставки в пригород товара на сумму от 600 грн на расстояние до 30 км от черты города осуществляется согласно фиксированным тарифам 50 и 100 грн. Подробную информацию уточняйте у менеджера. Если расстояние больше 30 км, доставка осуществляется курьерской службой, услуги которой заказчик оплачивает самостоятельно.</p>
+            								<h4>Приём техники</h4>
+            								<p>Внимательно рассмотрите товар, убедитесь в отсутствии видимых механических повреждений, проверьте работоспособность ручек, запоров, защелок, других механических узлов, наличие и правильность заполнения документов. Помните, что претензии по внешнему виду доставленного Вам товара, Вы можете предъявить только до передачи Вам товара водителем – экспедитором (курьером).</p>
+            								<p>Расчет за товар осуществляется на месте доставки (только в национальной валюте - гривне). После этого курьер отдает Вам пакет документов на товар: расходную накладную и гарантийный талон. Гарантийный талон заполняется после расчета и подписи всех сопроводительных документов. Гарантийное и послегарантийное обслуживание купленных Вами товаров мы рекомендуем производить в авторизованном сервисном центре (указаны в гарантийных талонах).</p>
+            								<p>Обращаем ваше внимание на то что, служба доставки не производит подключения, инсталляций, установок либо настройки поставляемой техники.</p>
+            							</div>
+            							<div class="col">
+            								<div class="hint">
+            								<p>Информацию о возможности доставки товаров в восточные регионы Украины, а также о её сроках, Вы можете получить у операторов Колл-центра.</p>
+            								</div>
+            							</div>
+            						</div>
+            					</li>
+            				</ul>
+            				<div class="share">
+            					<p>Поделиться</p>
+            					<ul class="social" data-url="http://www.foxtrot.com.ua/ru/article/1326">
+            						<li><a href="#" class="fb-small" data-id="fb"></a></li>
+            						<li><a href="#" class="gp-small" data-id="gp"></a></li>
+            						<li><a href="#" class="tw-small" data-id="tw"></a></li>
+            					</ul>
+            				</div>
+            			</div>		</div>
+            		
             	</div>
-            	<div class="adress-block">
-            		<table class="adress-table" cellspacing="0">
-            			<tr class="table-row">
-            				<th class="cell-adress">Адрес</th>
-            				<th class="cell-able">Наличие</th>
-            				<th class="cell-take">Забрать</th>
-            				<th class="cell-workingtime">Режим работы</th>
-            				<th class="cell-button"></th>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            			<tr class="table-row">
-            				<td class="cell-adress">
-            					<p class="adres-text">г.Киев, Гната Юры ул.б 20</p>
-            					<div class="about-store">
-            						<img src="/static/img/general/icons/pin.svg" alt="" class="about-img">
-            						<p class="about-text">Подробнее о магазине</p>
-            					</div>
-            				</td>
-            				<td class="cell-able">Есть в наличии</td>
-            				<td class="cell-take">Сегодня</td>
-            				<td class="cell-workingtime">10:00 - 21:00</td>
-            				<td class="cell-button"><button class="adress-button">Выбрать</button></td>
-            			</tr>
-            		</table>
-            	</div>
-            </div>        <script>
+            </div>
+            <script>
+            	$(document).ready(function() {
+            		// show-hide store popup
+            		$(".mask, .stores-popup .close-icon").click(function() {
+            			$(".mask").removeClass("full cover");
+            			$(".popup-wrapper").removeClass("show");
+            			$("body").removeClass("fixed");
+            		});
+            		$(".delivery-block .from-store__link, .product-widget .take__link").click(function(e) {
+            			e.preventDefault();
+            			$("body").addClass("fixed");
+            			$(".popup-wrapper").addClass("show");
+            			$(".mask").addClass("full cover");
+            		});
+            
+            		// slider
+            		var adressTogler = $(".popup-wrapper .adress-delivery");
+            		var storeTogler = $(".popup-wrapper .store-visit");
+            		var slideContainer = $(".popup-wrapper .popup-delivery-slider");
+            		var adressHeight = $(".popup-wrapper .adress-block").outerHeight(true);
+            
+            		adressTogler.click(function() {
+            			slideContainer.addClass("slide");
+            			$(this).addClass("active");
+            			storeTogler.removeClass("active");
+            		});
+            
+            		storeTogler.click(function() {
+            			slideContainer.removeClass("slide");
+            			$(this).addClass("active");
+            			adressTogler.removeClass("active");
+            		});
+            		//height of the .popup-delivery-slider
+            		slideContainer.css("height", adressHeight + "px");
+            		console.log(adressHeight);
+            		console.log(document.querySelector(".popup-wrapper .adress-block").offsetHeight);
+            	});
+            </script>        <script>
         	/**
          * Owl Carousel v2.3.3
          * Copyright 2013-2018 David Deutsch

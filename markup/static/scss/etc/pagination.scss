@@ -1,7 +1,9 @@
 /*---------pagination block--------*/
 .pagination {
 	width: 617px;
-	transform: translateX(20%);
+	-webkit-transform: translateX(20%);
+		-ms-transform: translateX(20%);
+			transform: translateX(20%);
 	margin: 30px auto;
 	li {
 		list-style: none;
@@ -13,8 +15,12 @@
 		text-decoration: none;
 	}
 	.pagination-list {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: center;
+		-webkit-box-pack: center;
+			-ms-flex-pack: center;
+				justify-content: center;
 		& > .pagination-list__item {
 			position: relative;
 			width: 150px;
@@ -27,7 +33,9 @@
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					transform: translate(-50%, -50%);
+					-webkit-transform: translate(-50%, -50%);
+						-ms-transform: translate(-50%, -50%);
+							transform: translate(-50%, -50%);
 					font: 14px/17px Montserrat Regular;
 					color: #000000;
 				}
@@ -41,15 +49,21 @@
 			}
 			.fa-angle-left {
 				left: 10px;
-				transform: translate(0, -50%);
+				-webkit-transform: translate(0, -50%);
+					-ms-transform: translate(0, -50%);
+						transform: translate(0, -50%);
 			}
 			.fa-angle-right {
 				right: 10px;
-				transform: translate(0, -50%);
+				-webkit-transform: translate(0, -50%);
+					-ms-transform: translate(0, -50%);
+						transform: translate(0, -50%);
 			}
 		}
 	}
 	.pagination-number-list {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		&__item {
 			width: 35px;
@@ -63,7 +77,9 @@
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					transform: translate(-50%, -50%);
+					-webkit-transform: translate(-50%, -50%);
+						-ms-transform: translate(-50%, -50%);
+							transform: translate(-50%, -50%);
 					font: 14px/17px Montserrat Regular;
 					color: #000000;
 				}
@@ -77,6 +93,13 @@
 				}
 			}
 		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	.pagination {
+		-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+				transform: translateX(0);
 	}
 }
 /*---------end pagination block--------*/

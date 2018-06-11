@@ -303,48 +303,6 @@
 					<a href="#" class="today__link">Сегодня</a>
 				</div>
 			</div>
-			<script>
-				$(document).ready(function() {
-
-					$(".mask, .stores-popup .close-icon").click(function() {
-						$(".mask").removeClass("full cover");
-						$(".stores-popup").hide();
-						$("body > *:not('.stores-popup, .mask, script')").show();
-					});
-					$(".delivery-block .from-store__link").click(function(e) {
-						e.preventDefault();
-						$(".stores-popup").show().addClass("show-popup");
-						$(".mask").addClass("full cover");
-						$("body > *:not('.stores-popup, .mask, script')").hide();
-
-						var popupBottom = document.querySelector(".stores-popup").getBoundingClientRect().bottom;
-						var bottom = $(window).height() - $(".stores-popup").height();
-						var prevScrollpos = window.pageYOffset;
-						var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-
-						// $(window).scroll(function() {
-
-						// 	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-						// 	var currentScrollPos = window.pageYOffset;
-						// 	console.log(scrolled);
-						// 	if ($(".stores-popup").hasClass("show-popup") ) {
-						// 		if (prevScrollpos > currentScrollPos) {
-						// 			//up
-
-						// 		} else {
-						// 			//down
-						// 			$(".stores-popup").css("top", (-scrolled) + "px");
-
-						// 			if (document.querySelector(".stores-popup").getBoundingClientRect().bottom <= window.innerHeight ) {
-						// 				// alert(scrolled);
-						// 			}
-						// 		}
-						// 	}
-						// 	// prevScrollpos = currentScrollPos;
-						// });
-					});
-				});
-			</script>
 			<div class="delivery-block__bottom">
 				<div class="free-delivery">
 					<p class="free-delivery__text">Бесплатная Доставка</p>
