@@ -151,12 +151,16 @@
 		&__item {
 			list-style: none;
 			margin-top: 8px;
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			-webkit-box-align: end;
-				-ms-flex-align: end;
-					align-items: flex-end;
+			& > a {
+				color: #000000;
+				text-decoration: none;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: end;
+					-ms-flex-align: end;
+						align-items: flex-end;
+			}
 			.brand {
 				margin-left: 8px;
 			}
@@ -170,7 +174,7 @@
 	}
 	.dropdown-list.overflow {
 		overflow-y: hidden;
-		height: calc(37px * 4);
+		height: calc(24px * 4);
 		transition: height .5s;
 	}
 	.checked-block {

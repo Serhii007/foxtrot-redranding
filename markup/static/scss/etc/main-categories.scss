@@ -169,9 +169,10 @@
 		display: none;
 	}
 }
-.submenu-item:hover .category-menu-wrapper {
+.submenu-item .category-menu-wrapper.visible {
 	visibility: visible;
 }
+
 .category-item {
 	width: 70%;
 	margin: 3% 5.5%;

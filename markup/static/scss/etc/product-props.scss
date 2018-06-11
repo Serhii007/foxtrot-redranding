@@ -67,6 +67,7 @@
 		background-color: #FFFFFF;
 	}
 	.sort-elected {
+		cursor: pointer;
 		position: relative;
 		width: 175px;
 		border: 1px solid #BDBDBD;
@@ -104,6 +105,7 @@
 		width: calc(100% - 2px);
 		background-color: #FFFFFF;
 		&__item {
+			cursor: pointer;
 			position: relative;
 			list-style: none;
 			margin: 5px auto;
@@ -120,16 +122,21 @@
 				-ms-transform: translateY(-50%);
 					transform: translateY(-50%);
 		}
-		.dropdown-icon.active {
-			display: block;
-		}
 		&__item:first-child {
 			border-top: none;
 			margin-top: 1px;
 		}
 	}
 }
-
+.product-props {
+	.sort-dropdown {
+		&__item.active {
+			.dropdown-icon {
+				display: block;
+			}
+		}
+	}
+}
 @media only screen and (max-width: 1366px) {
 	.product-props {
 		&__preferences {
