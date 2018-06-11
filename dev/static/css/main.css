@@ -1012,7 +1012,7 @@ body {
 }
 
 .discount-variant .slide-container__product {
-  max-width: 185px;
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1047,6 +1047,7 @@ body {
 .discount-variant .slide-container .product-description {
   font: 14px/17px Montserrat Regular;
   text-align: center;
+  width: 100%;
 }
 
 .discount-variant .slide-container__result {
@@ -4033,6 +4034,7 @@ body .product-listing .listing-item__img-container .item-image {
 .product-store-information__manage .gift {
   border: 1px solid #FFD44D;
   padding: 3% 6%;
+  width: 100%;
 }
 
 .product-store-information__manage .gift .gift-inner {
@@ -4294,6 +4296,7 @@ body .product-listing .listing-item__img-container .item-image {
 }
 
 .product-store-information__manage .delivery-block__bottom {
+  height: 100px;
   min-height: 100px;
   font-size: 14px;
   padding: 0 10px;
@@ -4606,12 +4609,12 @@ body .product-listing .listing-item__img-container .item-image {
 }
 
 .product-store-information__slider-block .slider-main .slider-image {
-  max-width: 100%;
-  width: auto;
-  height: -webkit-fill-available;
-  max-height: 480px;
   display: block;
   margin: 0 auto;
+  height: auto;
+  width: auto;
+  min-height: 450px;
+  max-height: 450px;
 }
 
 .product-store-information__slider-block .slider-main .owl-dots {
@@ -4718,6 +4721,10 @@ body .product-listing .listing-item__img-container .item-image {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.product-store-information__slider-block .owl-carousel.owl-drag .owl-item {
+  overflow: hidden;
 }
 
 /*----------end product-store-information__slider-block---------*/
