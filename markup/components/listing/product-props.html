@@ -76,7 +76,7 @@
 		<div class="sort-wrapper">
 			<p class="sort-title">Сортировка</p>
 			<div class="sort-elected">
-				<p class="sort-elected__text">Популянрые</p>
+				<p class="sort-elected__text"></p>
 				<img src="%=static=%img/general/icons/arrow-down.png" alt="" class="sort-elected__icon">
 			</div>
 			<ul class="sort-dropdown">
@@ -88,7 +88,7 @@
 					<span class="dropdown-text">От дорогих к дешевым</span>
 					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
 				</li>
-				<li class="sort-dropdown__item">
+				<li class="sort-dropdown__item active">
 					<span class="dropdown-text">Популянрые</span>
 					<img src="%=static=%img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
 				</li>
@@ -170,17 +170,24 @@ $(document).ready(function(){
 			});
 		}
 	});
+	//insert elected text to the field
+	var originText = $(".sort-dropdown__item.active").find(".dropdown-text").text();
+	$(".sort-elected__text").text(originText);
+
+	// click event on dropdown item
 	$(".sort-dropdown__item").click(function(){
+		var textPattern = $(this).find(".dropdown-text").text();
 
 		if (window.innerWidth <= 768) {
 			setTimeout(function() {
 				$(".mask").removeClass("full");
 			}, 300);
 		}
-		$(".sort-dropdown__item").children(".dropdown-icon").removeClass("active");
-		$(this).children(".dropdown-icon").toggleClass("active");
-		var originText = $(this).children(".dropdown-text").text();
-		$(".sort-elected__text").text(originText);
+
+		$(".sort-dropdown__item").removeClass("active");
+		$(this).addClass("active");
+
+		$(".sort-elected__text").text(textPattern);
 		setTimeout(function(){
 			$(".sort-dropdown").toggleClass("visible");
 			$(".sort-elected__icon").toggleClass("rotate");

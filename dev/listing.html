@@ -21,7 +21,7 @@
         <link href="/static/css/separate-css/owl.carousel.css" rel="stylesheet" type="text/css">
         <link href="/static/css/separate-css/owl.theme.default.css" rel="stylesheet" type="text/css">
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/static/js/separate-js/jquery.min.js"></script>
         <script src="/static/js/separate-js/hammer.min.js"></script>
         
         <script>
@@ -4309,6 +4309,7 @@
                     $('.navigation').addClass('nav-up');
                     $('.mask').removeClass('full');
                     $('.navigation .catalog-submenu-wrapper').removeClass('toggle');
+                    $(".catalog-submenu .submenu-item").find(".category-menu-wrapper").removeClass("visible");
                 } else {
         
                     if(st + $(window).height() < $(document).height()) {
@@ -4355,15 +4356,32 @@
             if ($("body").hasClass("home-page")){
                 $('.catalog-submenu-wrapper').remove();
             }
-            $('.navigation__catalog').click(function(){
-                $('.navigation .catalog-submenu-wrapper').toggleClass('toggle');
+            $('.navigation__catalog').click(function(e){
         
-                if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
-                    $('.mask').addClass('full');
-                } else if (!$('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
-                    $('.mask').removeClass('full');
-                    $('.mobile-menu').removeClass('active');
+                if (e.target.classList.contains("catalog-text") || e.target.tagName == "IMG" ) {
+        
+                    $('.navigation .catalog-submenu-wrapper').toggleClass('toggle');
+        
+                    if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+                        $('.mask').addClass('full');
+                    } else if (!$('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+                        $('.mask').removeClass('full');
+                        $('.mobile-menu').removeClass('active');
+                    }
                 }
+            });
+            var catalogItem = $(".catalog-submenu .submenu-item");
+        
+            catalogItem.each(function(i) {
+        
+                catalogItem.eq(i).mouseenter(function() {
+                    catalogItem.find(".category-menu-wrapper").removeClass("visible");
+                    $(this).find(".category-menu-wrapper").addClass("visible");
+                        $(".mask").addClass("full");
+                });
+                catalogItem.eq(i).mouseleave(function() {
+                    $(this).find(".category-menu-wrapper").removeClass("visible");
+                });
             });
         });
         </script><!-- end navigation panel block -->
@@ -4451,7 +4469,7 @@
             		<div class="sort-wrapper">
             			<p class="sort-title">Сортировка</p>
             			<div class="sort-elected">
-            				<p class="sort-elected__text">Популянрые</p>
+            				<p class="sort-elected__text"></p>
             				<img src="/static/img/general/icons/arrow-down.png" alt="" class="sort-elected__icon">
             			</div>
             			<ul class="sort-dropdown">
@@ -4463,7 +4481,7 @@
             					<span class="dropdown-text">От дорогих к дешевым</span>
             					<img src="/static/img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
             				</li>
-            				<li class="sort-dropdown__item">
+            				<li class="sort-dropdown__item active">
             					<span class="dropdown-text">Популянрые</span>
             					<img src="/static/img/general/icons/checked.svg" alt="icon" class="dropdown-icon">
             				</li>
@@ -4545,17 +4563,24 @@
             			});
             		}
             	});
+            	//insert elected text to the field
+            	var originText = $(".sort-dropdown__item.active").find(".dropdown-text").text();
+            	$(".sort-elected__text").text(originText);
+            
+            	// click event on dropdown item
             	$(".sort-dropdown__item").click(function(){
+            		var textPattern = $(this).find(".dropdown-text").text();
             
             		if (window.innerWidth <= 768) {
             			setTimeout(function() {
             				$(".mask").removeClass("full");
             			}, 300);
             		}
-            		$(".sort-dropdown__item").children(".dropdown-icon").removeClass("active");
-            		$(this).children(".dropdown-icon").toggleClass("active");
-            		var originText = $(this).children(".dropdown-text").text();
-            		$(".sort-elected__text").text(originText);
+            
+            		$(".sort-dropdown__item").removeClass("active");
+            		$(this).addClass("active");
+            
+            		$(".sort-elected__text").text(textPattern);
             		setTimeout(function(){
             			$(".sort-dropdown").toggleClass("visible");
             			$(".sort-elected__icon").toggleClass("rotate");
@@ -4612,60 +4637,74 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Apple</span>
-                						<span class="amount">(37)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Apple</span>
+                							<span class="amount">(37)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Dell</span>
-                						<span class="amount">(50)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Dell</span>
+                							<span class="amount">(50)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">HP (Hewlett Packard)</span>
-                						<span class="amount">(130)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">HP (Hewlett Packard)</span>
+                							<span class="amount">(130)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">HP (Hewlett Packard)</span>
-                						<span class="amount">(130)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">HP (Hewlett Packard)</span>
+                							<span class="amount">(130)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">HP (Hewlett Packard)</span>
-                						<span class="amount">(130)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">HP (Hewlett Packard)</span>
+                							<span class="amount">(130)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">HP (Hewlett Packard)</span>
-                						<span class="amount">(130)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">HP (Hewlett Packard)</span>
+                							<span class="amount">(130)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -4684,28 +4723,34 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Нетбук</span>
-                						<span class="amount">(40)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Нетбук</span>
+                							<span class="amount">(40)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Ноутбук</span>
-                						<span class="amount">(230)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Ноутбук</span>
+                							<span class="amount">(230)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Ультрабук</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Ультрабук</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -4724,73 +4769,89 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Для несложных задач</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Для несложных задач</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Для работы и учебы</span>
-                						<span class="amount">(20)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Для работы и учебы</span>
+                							<span class="amount">(20)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Геймерские ноутбуки</span>
-                						<span class="amount">(45)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Геймерские ноутбуки</span>
+                							<span class="amount">(45)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -4809,36 +4870,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -4857,54 +4926,66 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Мультимедийные 
-                	центры</span>
-                						<span class="amount">(150)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Мультимедийные 
+                		центры</span>
+                							<span class="amount">(150)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -4923,36 +5004,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -4971,36 +5060,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5019,36 +5116,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5067,36 +5172,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5115,36 +5228,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5163,36 +5284,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5211,36 +5340,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5259,36 +5396,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5307,36 +5452,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5355,36 +5508,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5403,36 +5564,44 @@
                 			<div class="dropdown-main-container">
                 				<ul class="dropdown-list">
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 					<li class="dropdown-list__item">
-                						<div class="checked-block">
-                							<input type="checkbox" value="None" name="check" />
-                							<label></label>
-                						</div>
-                						<span class="brand">Acer</span>
-                						<span class="amount">(30)</span>
+                						<a href="#">
+                							<div class="checked-block">
+                								<input type="checkbox" value="None" name="check" />
+                								<label></label>
+                							</div>
+                							<span class="brand">Acer</span>
+                							<span class="amount">(30)</span>
+                						</a>
                 					</li>
                 				</ul>
                 				<div class="more-item">
@@ -5466,6 +5635,7 @@
                 				}
                 			}
                 		});
+                	
                 		$(".sidebar__dropdown").click(function(event){
                 			if (event.target.classList.contains("arrow-icon") || event.target.classList.contains("title") ){
                 				$(this).children(".dropdown-main-container").slideToggle();
@@ -6787,7 +6957,57 @@
                 <div class="show-more">
                 	<p class="show-more__text">Показать ещё</p>
                 </div>
-                <div class="suggestions">
+                <div class="pagination">
+                	<ul class="pagination-list">
+                		<li class="pagination-list__item previous">
+                			<a href="#" class="pagination-link">
+                				<i class="fa fa-angle-left" aria-hidden="true"></i>
+                				<span class="pagination-text">Предыдущая</span></a>
+                		</li>
+                			<ul class="pagination-number-list">
+                				<li class="pagination-number-list__item">
+                					<a href="#" class="pagination-link"><span class="pagination-text">1</span></a>
+                				</li>
+                				<li class="pagination-number-list__item active">
+                					<a href="#" class="pagination-link"><span class="pagination-text">2</span></a>
+                				</li>
+                				<li class="pagination-number-list__item">
+                					<a href="#" class="pagination-link"><span class="pagination-text">3</span></a>
+                				</li>
+                				<li class="pagination-number-list__item">
+                					<a href="#" class="pagination-link"><span class="pagination-text">4</span></a>
+                				</li>
+                				<li class="pagination-number-list__item">
+                					<a href="#" class="pagination-link"><span class="pagination-text">5</span></a>
+                				</li>
+                				<li class="pagination-number-list__item">
+                					<a href="#" class="pagination-link"><span class="pagination-text">...</span></a>
+                				</li>
+                				<li class="pagination-number-list__item">
+                					<a href="#" class="pagination-link"><span class="pagination-text">9</span></a>
+                				</li>
+                			</ul>
+                		<li class="pagination-list__item next">
+                			<a href="#" class="pagination-link">
+                				<i class="fa fa-angle-right" aria-hidden="true"></i>
+                				<span class="pagination-text">Следующая</span></a>
+                		</li>
+                	</ul>
+                </div>
+                <script>
+                	$(document).ready(function() {
+                		var numberItem = $(".pagination-number-list__item");
+                		var prev = $(".pagination-list__item.previous");
+                
+                		if (numberItem.eq(0).hasClass("active") ) {
+                			prev.hide();
+                		}
+                
+                		if (numberItem.length <= 1) {
+                			$(".pagination").hide();
+                		}
+                	});
+                </script><div class="suggestions">
                 	<a href="#" class="suggestions__variant">Ноутбуки</a>
                 	<a href="#" class="suggestions__variant">Техника</a>
                 	<a href="#" class="suggestions__variant">Видеокарты</a>

@@ -1683,7 +1683,7 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   display: none;
 }
 
-.submenu-item:hover .category-menu-wrapper {
+.submenu-item .category-menu-wrapper.visible {
   visibility: visible;
 }
 
@@ -2780,6 +2780,10 @@ body .category-slider .owl-nav .owl-next:hover {
   transform: translate(0, -50%);
 }
 
+.catalog-arrow img {
+  padding: 10px 0 10px 30px;
+}
+
 .submenu-item {
   z-index: 999;
   list-style: none;
@@ -2848,6 +2852,107 @@ body .category-slider .owl-nav .owl-next:hover {
 }
 
 /*------------------- end navigation panel styles----------------*/
+/*---------pagination block--------*/
+.pagination {
+  width: 617px;
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+  margin: 30px auto;
+}
+
+.pagination li {
+  list-style: none;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.pagination a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.pagination .pagination-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination .pagination-list > .pagination-list__item {
+  position: relative;
+  width: 150px;
+  height: 35px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+}
+
+.pagination .pagination-list > .pagination-list__item .pagination-link .pagination-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font: 14px/17px Montserrat Regular;
+  color: #000000;
+}
+
+.pagination .pagination-list > .pagination-list__item .fa {
+  position: absolute;
+  top: 50%;
+  color: #E54415;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.pagination .pagination-list > .pagination-list__item .fa-angle-left {
+  left: 10px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.pagination .pagination-list > .pagination-list__item .fa-angle-right {
+  right: 10px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.pagination .pagination-number-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination .pagination-number-list__item {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+}
+
+.pagination .pagination-number-list__item .pagination-link .pagination-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font: 14px/17px Montserrat Regular;
+  color: #000000;
+}
+
+.pagination .pagination-number-list__item.active {
+  background-color: #E54415;
+}
+
+.pagination .pagination-number-list__item.active .pagination-link .pagination-text {
+  color: #FFFFFF;
+}
+
+/*---------end pagination block--------*/
 /*----------product-listing container-----------*/
 .listing-container {
   overflow: hidden;
@@ -3545,6 +3650,7 @@ body .product-listing .listing-item__img-container .item-image {
 }
 
 .product-props .sort-elected {
+  cursor: pointer;
   position: relative;
   width: 175px;
   border: 1px solid #BDBDBD;
@@ -3587,6 +3693,7 @@ body .product-listing .listing-item__img-container .item-image {
 }
 
 .product-props .sort-dropdown__item {
+  cursor: pointer;
   position: relative;
   list-style: none;
   margin: 5px auto;
@@ -3604,13 +3711,13 @@ body .product-listing .listing-item__img-container .item-image {
   transform: translateY(-50%);
 }
 
-.product-props .sort-dropdown .dropdown-icon.active {
-  display: block;
-}
-
 .product-props .sort-dropdown__item:first-child {
   border-top: none;
   margin-top: 1px;
+}
+
+.product-props .sort-dropdown__item.active .dropdown-icon {
+  display: block;
 }
 
 @media only screen and (max-width: 1366px) {
@@ -5286,6 +5393,11 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
 .sidebar .dropdown-list__item {
   list-style: none;
   margin-top: 8px;
+}
+
+.sidebar .dropdown-list__item > a {
+  color: #000000;
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5308,7 +5420,7 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
 
 .sidebar .dropdown-list.overflow {
   overflow-y: hidden;
-  height: calc(37px * 4);
+  height: calc(24px * 4);
   -webkit-transition: height .5s;
   transition: height .5s;
 }

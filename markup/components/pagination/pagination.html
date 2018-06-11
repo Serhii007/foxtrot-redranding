@@ -1,0 +1,51 @@
+<div class="pagination">
+	<ul class="pagination-list">
+		<li class="pagination-list__item previous">
+			<a href="#" class="pagination-link">
+				<i class="fa fa-angle-left" aria-hidden="true"></i>
+				<span class="pagination-text">Предыдущая</span></a>
+		</li>
+			<ul class="pagination-number-list">
+				<li class="pagination-number-list__item">
+					<a href="#" class="pagination-link"><span class="pagination-text">1</span></a>
+				</li>
+				<li class="pagination-number-list__item active">
+					<a href="#" class="pagination-link"><span class="pagination-text">2</span></a>
+				</li>
+				<li class="pagination-number-list__item">
+					<a href="#" class="pagination-link"><span class="pagination-text">3</span></a>
+				</li>
+				<li class="pagination-number-list__item">
+					<a href="#" class="pagination-link"><span class="pagination-text">4</span></a>
+				</li>
+				<li class="pagination-number-list__item">
+					<a href="#" class="pagination-link"><span class="pagination-text">5</span></a>
+				</li>
+				<li class="pagination-number-list__item">
+					<a href="#" class="pagination-link"><span class="pagination-text">...</span></a>
+				</li>
+				<li class="pagination-number-list__item">
+					<a href="#" class="pagination-link"><span class="pagination-text">9</span></a>
+				</li>
+			</ul>
+		<li class="pagination-list__item next">
+			<a href="#" class="pagination-link">
+				<i class="fa fa-angle-right" aria-hidden="true"></i>
+				<span class="pagination-text">Следующая</span></a>
+		</li>
+	</ul>
+</div>
+<script>
+	$(document).ready(function() {
+		var numberItem = $(".pagination-number-list__item");
+		var prev = $(".pagination-list__item.previous");
+
+		if (numberItem.eq(0).hasClass("active") ) {
+			prev.hide();
+		}
+
+		if (numberItem.length <= 1) {
+			$(".pagination").hide();
+		}
+	});
+</script>
