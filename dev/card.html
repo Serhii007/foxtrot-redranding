@@ -2265,6 +2265,7 @@
             		<li class="panel-list__item"><a href="#characteristic" class="item-link">Характеристики</a></li>
             		<li class="panel-list__item"><a href="#feedback" class="item-link">Отзывы</a></li>
             		<li class="panel-list__item"><a href="#accessories" class="item-link">Аксессуары</a></li>
+            		<li class="panel-list__item"><a href="#product-video" class="item-link">Видео</a></li>
             	</ul>
             	<div class="product-code">
             		<span class="product-code__text">Код товара:</span>
@@ -3041,6 +3042,47 @@
                         					$(".about .more-toggler.closed").toggle();
                         				});
                         			}
+                        		});
+                        	</script>
+                        	<div class="product-video" id="product-video">
+                        		<h3 class="title">Видео</h3>
+                        		<div class="video-gallery">
+                        			<div class="main-video">
+                        			</div>
+                        			<ul class="thumbnail-videos">
+                        				<li class="thumbnail">
+                        					<iframe src="https://player.vimeo.com/video/273262257" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        					<div class="thumb-mask"></div>
+                        				</li>
+                        				<li class="thumbnail">
+                        					<iframe src="https://player.vimeo.com/video/274430991" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        					<div class="thumb-mask"></div>
+                        				</li>
+                        				<li class="thumbnail">
+                        					<iframe src="https://player.vimeo.com/video/267618536" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        					<div class="thumb-mask"></div>
+                        				</li>
+                        				<li class="thumbnail">
+                        					<iframe src="https://player.vimeo.com/video/267618536" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        					<div class="thumb-mask"></div>
+                        				</li>
+                        			</ul>
+                        		</div>
+                        	</div>
+                        	<script>
+                        		$(document).ready(function() {
+                        			var mainVideo = $(".product-video .main-video > iframe");
+                        			var mainVideoWrapper = $(".product-video .main-video");
+                        			var thumb = $(".product-video .thumbnail");
+                        
+                        			mainVideoWrapper.append(thumb.eq(0).find("iframe").clone() );
+                        
+                        			thumb.click(function() {
+                        				mainVideoWrapper.empty();
+                        				var currentVideo = $(this).find("iframe");
+                        
+                        				mainVideoWrapper.append(currentVideo.clone());
+                        			});
                         		});
                         	</script>
                         	<div class="feedback" id="feedback">
