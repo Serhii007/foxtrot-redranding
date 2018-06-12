@@ -88,6 +88,7 @@
 			margin-right: 10px;
 		}
 		&__calculation {
+			display: none;
 			color: #EF4123;
 			font-size: 22px;
 			line-height: 1;
@@ -200,6 +201,7 @@
 	position: fixed;
 	top: 61px;
 	width: 42.15%;
+	height: auto;
 }
 body .wrapper-block.absolute > div {
 	margin-bottom: 0;
