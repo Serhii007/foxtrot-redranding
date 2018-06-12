@@ -28,6 +28,8 @@
 					align-items: center;
 		}
 		&__product {
+			color: #000000;
+			text-decoration: none;
 			width: 30%;
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -109,6 +111,7 @@
 				height: 17px;
 			}
 			&__calculation {
+				display: none;
 				font-size: 16px;
 				color: #EF4123;
 			}

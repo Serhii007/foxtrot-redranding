@@ -127,9 +127,12 @@ body {
 		}
 		&__img-container {
 			width: 100%;
-			/*margin: 6% 0;*/
 			margin: 10px 0;
 			display: block;
+		}
+		.listing-link {
+			color: #000000;
+			text-decoration: none;
 		}
 		&__info {
 			padding: 0 3%;
@@ -298,6 +301,11 @@ body {
 				width: 50%;
 			}
 		}
+	}
+	.show-more {
+		-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+				transform: translateX(0);
 	}
 }
 @media only screen and (max-width: 768px) {

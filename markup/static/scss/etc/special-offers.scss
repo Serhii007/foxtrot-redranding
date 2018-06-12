@@ -64,6 +64,13 @@
 				-ms-transform: translate(-50%);
 					transform: translate(-50%);
 			text-align: center;
+			& > a {
+				color: #000000;
+				text-decoration: none;
+				p {
+					font: 12px/15px Montserrat Medium;
+				}
+			}
 		}
 	}
 	.price {

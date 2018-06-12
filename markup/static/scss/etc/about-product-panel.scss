@@ -28,4 +28,18 @@
 		}
 	}
 }
+@media only screen and (max-width: 768px) {
+	.about-product-panel {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
+		.product-code {
+			margin: 8px 0;
+		}
+		.panel-list {
+			width: 100%;
+		}
+	}
+}
 /*------------end about-product-panel block----------*/

@@ -88,6 +88,7 @@
 			margin-right: 10px;
 		}
 		&__calculation {
+			display: none;
 			color: #EF4123;
 			font-size: 22px;
 			line-height: 1;
@@ -155,13 +156,17 @@
 	}
 	.gift {
 		border: 1px solid #FFD44D;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		padding: 3% 6%;
-		-webkit-box-align: center;
-			-ms-flex-align: center;
-				align-items: center;
+		.gift-link {
+			color: #000000;
+			text-decoration: none;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			padding: 3% 6%;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+		}
 		&__image {
 			margin-right: 15px;
 			max-height: 65px;
@@ -200,6 +205,7 @@
 	position: fixed;
 	top: 61px;
 	width: 42.15%;
+	height: auto;
 }
 body .wrapper-block.absolute > div {
 	margin-bottom: 0;
