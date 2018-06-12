@@ -60,11 +60,13 @@
 					</div>
 				</div>
 				<div class="gift">
-					<img src="%=static=%img/general/card/mouse.png" alt="gift" class="gift__image">
-					<div class="gift__descr">
-						<p class="title">Подарок</p>
-						<p class="model">Мышь Logitech M185 Wireless Grey</p>
-					</div>
+					<a href="#" class="gift-link">
+						<img src="%=static=%img/general/card/mouse.png" alt="gift" class="gift__image">
+						<div class="gift__descr">
+							<p class="title">Подарок</p>
+							<p class="model">Мышь Logitech M185 Wireless Grey</p>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -101,7 +103,11 @@ $(document).ready( function(){
 			mainContainer.removeClass("fixed");
 			mainContainer.addClass("absolute");
 		}
-		else if (bottomBorder >= 655) {
+		else if (bottomBorder >= 655 && window.innerWidth > 991) {
+			mainContainer.addClass("fixed");
+			mainContainer.removeClass("absolute");
+		}
+		else if (bottomBorder >= 960 && window.innerWidth <= 991) {
 			mainContainer.addClass("fixed");
 			mainContainer.removeClass("absolute");
 		}
