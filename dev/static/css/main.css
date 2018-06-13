@@ -5538,8 +5538,8 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
   text-decoration: none;
 }
@@ -5570,8 +5570,8 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .serch-dd .search-list .product .product-link .flex-container .product-name {
