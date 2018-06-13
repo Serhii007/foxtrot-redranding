@@ -35,7 +35,8 @@
             swipe.on('swiperight swipeleft', function(e) {
               e.preventDefault();
               if (e.type == 'swiperight') {
-                showMobMenu();
+                // showMobMenu();
+                return;
               } else {
                 hideMobMenu();
                 $(".mask").removeClass("full");

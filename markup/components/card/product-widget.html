@@ -89,27 +89,32 @@ $(document).ready( function(){
 		var bottomBorder = columnRight.getBoundingClientRect().bottom;
 		var wrapperBottomBorder = document.querySelector(".right-col .wrapper-block").getBoundingClientRect().bottom;
 
-		if (topBorder <= header.outerHeight(true) && bottomBorder > wrapperBottomBorder ) {
+		if (window.innerWidth > 768) {
+			if (topBorder <= header.outerHeight(true) && bottomBorder > wrapperBottomBorder ) {
 
-			mainContainer.addClass("fixed");
-			if (mainContainer.hasClass("fixed") ) {
+				mainContainer.addClass("fixed");
+				if (mainContainer.hasClass("fixed") ) {
+					mainContainer.removeClass("absolute");
+				}
+			} else if (topBorder >= header.outerHeight(true) ) {
+				mainContainer.removeClass("fixed");
 				mainContainer.removeClass("absolute");
 			}
-		} else if (topBorder >= header.outerHeight(true) ) {
+			 else if (bottomBorder < wrapperBottomBorder ) {
+				mainContainer.removeClass("fixed");
+				mainContainer.addClass("absolute");
+			}
+			else if (bottomBorder >= 655 && window.innerWidth > 991) {
+				mainContainer.addClass("fixed");
+				mainContainer.removeClass("absolute");
+			}
+			else if (bottomBorder >= 960 && window.innerWidth <= 991) {
+				mainContainer.addClass("fixed");
+				mainContainer.removeClass("absolute");
+			}
+		} else {
+			mainContainer.removeClass("absolute");
 			mainContainer.removeClass("fixed");
-			mainContainer.removeClass("absolute");
-		}
-		 else if (bottomBorder < wrapperBottomBorder ) {
-			mainContainer.removeClass("fixed");
-			mainContainer.addClass("absolute");
-		}
-		else if (bottomBorder >= 655 && window.innerWidth > 991) {
-			mainContainer.addClass("fixed");
-			mainContainer.removeClass("absolute");
-		}
-		else if (bottomBorder >= 960 && window.innerWidth <= 991) {
-			mainContainer.addClass("fixed");
-			mainContainer.removeClass("absolute");
 		}
 	}
 	stickyBlock();
