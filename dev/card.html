@@ -3175,7 +3175,16 @@
                         			var mainVideo = $(".product-video .main-video > iframe");
                         			var mainVideoWrapper = $(".product-video .main-video");
                         			var thumb = $(".product-video .thumbnail");
+                        			var videoList = $(".product-video .thumbnail-videos");
+                        			var videoBlock = $("#product-video");
                         
+                        			if (thumb.length == 1) {
+                        				videoList.hide();
+                        			}
+                        			if (thumb.length < 1) {
+                        				videoBlock.hide();
+                        				$("a[href='#product-video']").parent().hide();
+                        			}
                         			mainVideoWrapper.append(thumb.eq(0).find("iframe").clone() );
                         
                         			thumb.click(function() {
