@@ -2999,9 +2999,14 @@ body .category-slider .owl-nav .owl-next:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  .pagination {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+  .pagination .pagination-list > .pagination-list__item {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .pagination .pagination-number-list__item {
+    width: 27px;
   }
 }
 
