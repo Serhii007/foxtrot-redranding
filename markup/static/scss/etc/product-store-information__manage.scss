@@ -439,6 +439,9 @@
 			-webkit-box-pack: start;
 				-ms-flex-pack: start;
 					justify-content: flex-start;
+			.mob-date {
+				display: none;
+			}
 		}
 		.new-post {
 			position: relative;
@@ -474,8 +477,11 @@
 			-ms-flex-align: end;
 				align-items: flex-end;
 		margin: 20px 0;
+		.mob-payment {
+			display: none;
+		}
 		&__text {
-			font-size: 14px;
+			font: 14px/17px Montserrat Regular;
 		}
 		&__cards {
 			text-decoration: none;
@@ -670,6 +676,79 @@
 		.product-store-information__manage {
 			.purchase__min-sum {
 				display: none;
+			}
+			.delivery-block__top {
+				.map {
+					display: none;
+				}
+			}
+			.delivery-block__bottom {
+				.date {
+					display: none;
+				}
+				.to-adress__text, .new-post__text {
+					max-width: 100%;
+				}
+			}
+			.delivery-block {
+				.to-adress, .new-post {
+					.mob-date {
+						display: block;
+					}
+				}
+				.free-delivery .date-text {
+					display: none;
+				}
+				.flex-wrapper {
+					flex-direction: column;
+					align-items: flex-start;
+					justify-content: space-between;
+					.to-adress, .new-post {
+						width: 100%;
+						margin-top: 10px;
+						justify-content: space-between;
+					}
+				}
+				.new-post:before {
+					content: none;
+				}
+				.new-post__icon {
+					display: none;
+				}
+				.new-post__text {
+					margin-right: auto;
+				}
+			}
+			.payment {
+				align-items: flex-start;
+				.mob-payment {
+					margin-left: 10px;
+					display: block;
+					&__text {
+						margin-left: 3px;
+						font: 14px/17px Montserrat Regular;
+					}
+					&__text:after {
+						content: ",";
+					}
+					&__text:last-child:after {
+						content: none;
+					}
+				}
+				&__cards {
+					display: none;
+				}
+			}
+			.return {
+				flex-direction: column;
+				&__item {
+					width: 100%;
+					align-items: center;
+					margin-top: 15px;
+					.descr-text {
+						display: none;
+					}
+				}
 			}
 		}
 	}

@@ -4483,6 +4483,10 @@ body .product-listing .listing-item__img-container .item-image {
   justify-content: flex-start;
 }
 
+.product-store-information__manage .delivery-block .to-adress .mob-date, .product-store-information__manage .delivery-block .new-post .mob-date {
+  display: none;
+}
+
 .product-store-information__manage .delivery-block .new-post {
   position: relative;
 }
@@ -4519,8 +4523,12 @@ body .product-listing .listing-item__img-container .item-image {
   margin: 20px 0;
 }
 
+.product-store-information__manage .payment .mob-payment {
+  display: none;
+}
+
 .product-store-information__manage .payment__text {
-  font-size: 14px;
+  font: 14px/17px Montserrat Regular;
 }
 
 .product-store-information__manage .payment__cards {
@@ -4709,6 +4717,87 @@ body .product-listing .listing-item__img-container .item-image {
     transform: translateX(-50px);
   }
   body .product-store-information .product-store-information__manage .purchase__min-sum {
+    display: none;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block__top .map {
+    display: none;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block__bottom .date {
+    display: none;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block__bottom .to-adress__text, body .product-store-information .product-store-information__manage .delivery-block__bottom .new-post__text {
+    max-width: 100%;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .to-adress .mob-date, body .product-store-information .product-store-information__manage .delivery-block .new-post .mob-date {
+    display: block;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .free-delivery .date-text {
+    display: none;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .flex-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .flex-wrapper .to-adress, body .product-store-information .product-store-information__manage .delivery-block .flex-wrapper .new-post {
+    width: 100%;
+    margin-top: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .new-post:before {
+    content: none;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .new-post__icon {
+    display: none;
+  }
+  body .product-store-information .product-store-information__manage .delivery-block .new-post__text {
+    margin-right: auto;
+  }
+  body .product-store-information .product-store-information__manage .payment {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body .product-store-information .product-store-information__manage .payment .mob-payment {
+    margin-left: 10px;
+    display: block;
+  }
+  body .product-store-information .product-store-information__manage .payment .mob-payment__text {
+    margin-left: 3px;
+    font: 14px/17px Montserrat Regular;
+  }
+  body .product-store-information .product-store-information__manage .payment .mob-payment__text:after {
+    content: ",";
+  }
+  body .product-store-information .product-store-information__manage .payment .mob-payment__text:last-child:after {
+    content: none;
+  }
+  body .product-store-information .product-store-information__manage .payment__cards {
+    display: none;
+  }
+  body .product-store-information .product-store-information__manage .return {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .product-store-information .product-store-information__manage .return__item {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 15px;
+  }
+  body .product-store-information .product-store-information__manage .return__item .descr-text {
     display: none;
   }
 }
