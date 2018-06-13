@@ -4,7 +4,6 @@
 	padding: 20px 2%;
 	.title-wrapper {
 		display: flex;
-		align-items: flex-end;
 	}
 	.mark{
 		&__text {
@@ -31,7 +30,7 @@
 		width: 48%;
 		display: flex;
 		justify-content: space-between;
-		align-items: flex-end;
+		align-items: flex-start;
 		list-style: none;
 		padding: 7px 0;
 		border-bottom: 1px solid #E5E5E5;
@@ -141,6 +140,9 @@
 	&__top-container {
 		display: flex;
 		justify-content: space-between;
+		.wrapper {
+			display: flex;
+		}
 	}
 	.amount {
 		font: 18px/22px Montserrat Regular;
@@ -181,7 +183,7 @@
 	}
 	.advantages, .disadvantages {
 		display: flex;
-		align-items: flex-end;
+		align-items: flex-start;
 		margin-top: 2%;
 		&__bold {
 			font: 14px/17px Montserrat Semibold;
@@ -229,6 +231,44 @@
 		display: block;
 		.point {
 			width: 100%;
+		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	.product-main-information  {
+		.title-wrapper {
+			flex-direction: column;
+		}
+		.mark__text {
+			margin: 10px 0 0 0;
+		}
+		.point__left-text {
+			width: 48%;
+			margin-right: 2%;
+		}
+		.point__right-text {
+			width: 50%;
+			text-align: right;
+		}
+	}
+	.feedback {
+		.add-recall {
+			margin-top: 10px;
+		}
+		.amount:after {
+			content: ")";
+		}
+		.amount:before {
+			content: "(";
+		}
+	}
+	.feedback__top-container {
+		flex-wrap: wrap;
+		.wrapper {
+			width: 100%;
+		}
+		.add-recall {
+
 		}
 	}
 }
