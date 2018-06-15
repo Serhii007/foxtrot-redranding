@@ -1,16 +1,16 @@
 <script>
 $(document).ready(function(){
-	if ($('.rolling-carousel-item').length < 4){
+	if ($('.rolling-carousel-item.simple').length < 4){
 		$('.rolling-section').hide();
 	} else {
-        $('.rolling-section__carousel').owlCarousel({
-            items: 4,
+        $('.rolling-section__carousel.simple').owlCarousel({
             lazyLoad: true,
             loop: false,
             nav:true,
             dots: false,
             autoplay: false,
             navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+            responsiveClass: true,
             responsive:{
                 0:{
                     items:1

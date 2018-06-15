@@ -216,6 +216,9 @@ img.rotate {
 .hide {
 	top: -55px;
 }
+.hidden {
+	display: none !important;
+}
 .page__wrapper {
 	min-height: 100%;
 	width: 100%;
@@ -232,6 +235,24 @@ img.rotate {
 }
 body {
 	font-size: 12px;
+}
+.popup-wrapper.show {
+	display: block;
+	left: 50%;
+}
+.popup-wrapper {
+	width: 91%;
+	left: 150%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	transition: left .3s;
+	transform: translate(-50%, 0);
+	overflow: auto;
+	z-index: 1001;
+}
+.gift.hidden {
+	display: none;
 }
 /*---------------header block------------------*/
 .header-buffer {
@@ -529,7 +550,7 @@ body {
 				font-size: 10px;
 				line-height: 1.5;
 			}
-			img {
+			& > img {
 				display: block;
 				width: 27px;
 				height: 27px;

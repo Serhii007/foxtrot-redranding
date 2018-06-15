@@ -2,11 +2,11 @@
 <section class="rolling-section">
 	<div class="rolling-section__title">
 		<h3 class="title">
-			Рекомендованные
+			Также рекомендуем
 		</h3>
 	</div>
-	<div class="rolling-section__carousel simple owl-carousel owl-theme">
-		<div class="rolling-carousel-item simple owl-lazy" data-src="%=static=%img/general/transparent.png">
+	<div class="rolling-section__carousel basket owl-carousel owl-theme">
+		<div class="rolling-carousel-item basket owl-lazy" data-src="%=static=%img/general/transparent.png">
 			<div class="rolling-carousel-item__top-panel">
 				<span class="top-panel-informer exclusive">эксклюзив</span>
 				<span class="top-panel-informer new">эксклюзив</span>
@@ -46,7 +46,7 @@
 				<a href="#" class="buy-button">Купить</a>
 			</div>
 		</div>
-		<div class="rolling-carousel-item simple owl-lazy" data-src="%=static=%img/general/transparent.png">
+		<div class="rolling-carousel-item basket owl-lazy" data-src="%=static=%img/general/transparent.png">
 			<div class="rolling-carousel-item__top-panel">
 				<span class="top-panel-informer gift">подарок</span>
 				<span class="top-panel-informer hit">хит продаж</span>
@@ -86,7 +86,7 @@
 				<a href="#" class="buy-button">Купить</a>
 			</div>
 		</div>
-		<div class="rolling-carousel-item simple owl-lazy" data-src="%=static=%img/general/transparent.png">
+		<div class="rolling-carousel-item basket owl-lazy" data-src="%=static=%img/general/transparent.png">
 			<div class="rolling-carousel-item__top-panel">
 				<span class="top-panel-informer discount">скидка 20%</span>
 				<span class="top-panel-informer bonus">бонус х15</span>
@@ -126,7 +126,7 @@
 				<a href="#" class="buy-button">Купить</a>
 			</div>
 		</div>
-		<div class="rolling-carousel-item simple owl-lazy" data-src="%=static=%img/general/transparent.png">
+		<div class="rolling-carousel-item basket owl-lazy" data-src="%=static=%img/general/transparent.png">
 			<div class="rolling-carousel-item__top-panel">
 				<span class="top-panel-informer discount">скидка 20%</span>
 				<span class="top-panel-informer hit">хит продаж</span>
@@ -166,7 +166,7 @@
 				<a href="#" class="buy-button">Купить</a>
 			</div>
 		</div>
-		<div class="rolling-carousel-item simple owl-lazy" data-src="%=static=%img/general/transparent.png">
+		<div class="rolling-carousel-item basket owl-lazy" data-src="%=static=%img/general/transparent.png">
 			<div class="rolling-carousel-item__top-panel">
 				<span class="top-panel-informer discount">скидка 20%</span>
 				<span class="top-panel-informer hit">хит продаж</span>
@@ -206,7 +206,7 @@
 				<a href="#" class="buy-button">Купить</a>
 			</div>
 		</div>
-		<div class="rolling-carousel-item simple owl-lazy" data-src="%=static=%img/general/transparent.png">
+		<div class="rolling-carousel-item basket owl-lazy" data-src="%=static=%img/general/transparent.png">
 			<div class="rolling-carousel-item__top-panel">
 				<span class="top-panel-informer discount">скидка 20%</span>
 				<span class="top-panel-informer hit">хит продаж</span>
@@ -248,5 +248,28 @@
 		</div>
 	</div>
 </section>
-{{>js/rolling}}
+<script>
+$(document).ready(function(){
+    $('.rolling-section__carousel.basket').owlCarousel({
+        lazyLoad: true,
+        loop: false,
+        nav:true,
+        dots: false,
+        autoplay: false,
+        navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+        responsiveClass: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            480:{
+                items:2
+            },
+            768:{
+                items:3
+            }
+        }
+    });
+});
+</script>
 <!-- end rolling-section block -->

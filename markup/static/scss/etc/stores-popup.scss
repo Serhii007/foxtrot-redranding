@@ -1,19 +1,4 @@
 /*------stores-popup-------*/
-.popup-wrapper.show {
-	display: block;
-	left: 50%;
-}
-.popup-wrapper {
-	width: 91%;
-	left: 150%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	transition: left .3s;
-	transform: translate(-50%, 0);
-	overflow: auto;
-	z-index: 1001;
-}
 .popup-delivery-slider {
 	position: relative;
 	width: 100%;
