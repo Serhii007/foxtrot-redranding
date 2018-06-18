@@ -66,7 +66,7 @@ body {
 			right: 0;
 		}
 		.owl-prev:hover {
-			left: -6px; 
+			left: -6px;
 		}
 		.owl-next:hover {
 			right: -6px;
@@ -282,7 +282,7 @@ body {
 }
 .header {
 	width: 100%;
-	background-color: #FFFFFF; 
+	background-color: #FFFFFF;
 	position: fixed;
 	z-index: 999;
 	font-size: 12px;
@@ -424,6 +424,23 @@ body {
 		text-transform: lowercase;
 	}
 	.bonuses {
+        .answer-wrapper:hover:before {
+            left: 47px;
+            top: 31px;
+        }
+        .answer-wrapper {
+            margin-left: 0;
+            width: auto;
+            padding-bottom: 5px;
+            .answer-popup {
+                left: 60px;
+                width: 220px;
+                margin-top: 10px;
+                .price__relevant {
+                    font: 12px/15px Montserrat Bold;
+                }
+            }
+        }
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -501,7 +518,7 @@ body {
 			font-size: 10px;
 			letter-spacing: -1px;
 		}
-		.info-list__item.call, 
+		.info-list__item.call,
 		.info-list__item.entry {
 			font-size: 10px;
 			letter-spacing: -.5px;
