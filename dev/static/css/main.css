@@ -332,6 +332,10 @@ body .owl-item {
   --moz-justify-content: center;
 }
 
+body .rolling-section__carousel.simple .owl-item.active .owl-lazy {
+  opacity: 1;
+}
+
 body .owl-carousel .owl-nav .owl-prev {
   background-color: rgba(241, 241, 101, 0.7) !important;
   border-radius: 50%;
@@ -1332,6 +1336,10 @@ body {
 
 .basket-popup .bottom-block .make-order:focus {
   outline: none;
+}
+
+.rolling-section__carousel.basket .owl-item.active .owl-lazy {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 768px) {

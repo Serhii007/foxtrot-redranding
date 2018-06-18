@@ -3,6 +3,15 @@ $(document).ready(function(){
 	if ($('.rolling-carousel-item.simple').length < 4){
 		$('.rolling-section').hide();
 	} else {
+
+        $('.rolling-section__carousel.simple').each(function(i) {
+            $('.rolling-section__carousel.simple').eq(i).find(".owl-item").each(function(j) {
+            if (j <= 3) {
+                $('.rolling-section__carousel.simple').eq(i).find(".owl-item").eq(j).addClass("active");
+                }
+            });
+        });
+
         $('.rolling-section__carousel.simple').owlCarousel({
             lazyLoad: true,
             loop: false,
@@ -10,7 +19,6 @@ $(document).ready(function(){
             dots: false,
             autoplay: false,
             navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-            responsiveClass: true,
             responsive:{
                 0:{
                     items:1
@@ -26,6 +34,7 @@ $(document).ready(function(){
                 }
             }
         });
+
     }
 });
 </script>
