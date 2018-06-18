@@ -304,6 +304,9 @@
 		}
 	}
 }
+.rolling-section__carousel.basket .owl-item.active .owl-lazy {
+		opacity: 1;
+	}
 @media only screen and (max-width: 768px) {
 	.popup-wrapper.basket {
 		min-width: 320px;

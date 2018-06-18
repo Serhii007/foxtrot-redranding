@@ -85,7 +85,11 @@ body {
 		--moz-justify-content: center;
 	}
 }
+
 body {
+	.rolling-section__carousel.simple .owl-item.active .owl-lazy {
+		opacity: 1;
+	}
 	.owl-carousel {
 		.owl-nav {
 			.owl-prev {
