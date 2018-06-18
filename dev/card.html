@@ -1039,7 +1039,7 @@
         			    });
         			
         			    $('.rolling-section__carousel.basket .owl-item').each(function(i) {
-        			    console.log(i);
+        			
         			    if (i <= 2) {
         			        $('.rolling-section__carousel.basket').find(".owl-item").eq(i).addClass("active");
         			        }
@@ -4341,8 +4341,8 @@
                             	</div>
                             </div>
                             <script>
-                            
                             $(document).ready( function(){
+                            	var stopTarget;
                             
                             	function stickyBlock() {
                             		var header = $(".header");
@@ -4356,24 +4356,16 @@
                             			if (topBorder <= header.outerHeight(true) && bottomBorder > wrapperBottomBorder ) {
                             
                             				mainContainer.addClass("fixed");
-                            				if (mainContainer.hasClass("fixed") ) {
-                            					mainContainer.removeClass("absolute");
-                            				}
                             			} else if (topBorder >= header.outerHeight(true) ) {
                             				mainContainer.removeClass("fixed");
                             				mainContainer.removeClass("absolute");
-                            			}
-                            			 else if (bottomBorder < wrapperBottomBorder ) {
+                            			} else if (bottomBorder < wrapperBottomBorder && !mainContainer.hasClass("absolute") ) {
                             				mainContainer.removeClass("fixed");
                             				mainContainer.addClass("absolute");
-                            			}
-                            			else if (bottomBorder >= 655 && window.innerWidth > 991) {
-                            				mainContainer.addClass("fixed");
+                            				stopTarget = wrapperBottomBorder;
+                            			} else if (bottomBorder > stopTarget && mainContainer.hasClass("absolute") ) {
                             				mainContainer.removeClass("absolute");
-                            			}
-                            			else if (bottomBorder >= 960 && window.innerWidth <= 991) {
                             				mainContainer.addClass("fixed");
-                            				mainContainer.removeClass("absolute");
                             			}
                             		} else {
                             			mainContainer.removeClass("absolute");
@@ -4384,7 +4376,6 @@
                             
                             	$(document).on('scroll', stickyBlock);
                             });
-                            
                             </script>                            <div class="discount-variant">
                             	<div class="discount-variant__title">
                             		<h3 class="title">Вместе дешевле</h3>
