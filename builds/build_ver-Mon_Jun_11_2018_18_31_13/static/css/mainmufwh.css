@@ -4184,7 +4184,7 @@ body .product-listing .listing-item__img-container .item-image {
 
 .product-store-information__manage .city__dropdown {
   display: none;
-  min-width: 300px;
+  min-width: 285px;
   z-index: 2;
   position: absolute;
   top: 37px;
