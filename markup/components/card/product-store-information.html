@@ -193,6 +193,33 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			$(document).ready(function() {
+				 // bottom fixed position of buy button for mobile screens
+                var navPos, winPos, navHeight, purBlock;
+                function refreshPos() {
+                    purBlock = $('.product-store-information__manage .purchase');
+                    navPos = purBlock.offset().top;
+                    navHeight = purBlock.outerHeight(true);
+                }
+                refreshPos();
+                $(window).resize(refreshPos);
+                $('<div class="clone-purchase"></div>').insertBefore('.purchase').css('height', navHeight).hide();
+                $(window).scroll(function() {
+                    if( window.innerWidth <= 768){
+                        winPos = $(window).scrollTop();
+                        if (winPos >= navPos) {
+                            purBlock.addClass('fixed_purchase');
+                            $('.clone-purchase').show();
+                        }
+                        else {
+                            purBlock.removeClass('fixed_purchase');
+                            $('.clone-purchase').hide();
+                        }
+                    }
+                });
+			});
+		</script>
 		<div class="callback">
 			<p class="callback__title">Мы перезвоним вам для оформления заказа</p>
 			<form>

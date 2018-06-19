@@ -194,11 +194,15 @@
                         <a href="#" class="call__track">Отследить покупку</a>
                     </li>
                     <li class="info-list__item entry">
-                        <a href="#" class="entry_enter">Войти</a>
-                        <a href="#" class="entry_registration">Зарегистрироваться</a>
+                        <a href="#" class="entry_enter">Личный кабинет</a>
                     </li>
                     <li class="info-list__item bonuses">
-                        <img src="/static/img/general/icons/grn.svg" alt="icon" class="bonuses__icon">
+                        <div class="answer-wrapper">
+                            <img src="/static/img/general/icons/grn.svg" alt="icon" class="bonuses__icon">
+                            <div class="answer-popup">
+                                <p class="answer-text"><span class="price__relevant">200 грн бонусов</span> при первой покупке</p>
+                            </div>
+                        </div>
                         <div class="bonuses__info"><span class="bonuses-text">Мои бонусы</span><span class="bonuses-sum">0 000 грн</span></div>
                     </li>
                     <li class="info-list__item favorite">
@@ -3241,7 +3245,8 @@
         
         		
         	});
-        </script><div class="header-buffer"></div>        <section class="page__wrapper">
+        </script><div class="header-buffer"></div>
+        <section class="page__wrapper">
 
             <div class="breadcrumbs">
             	<a href="#" class="breadcrumbs__crumb">Интернет магазин</a>
@@ -3467,6 +3472,33 @@
                 				</div>
                 			</div>
                 		</div>
+                		<script>
+                			$(document).ready(function() {
+                				 // bottom fixed position of buy button for mobile screens
+                                var navPos, winPos, navHeight, purBlock;
+                                function refreshPos() {
+                                    purBlock = $('.product-store-information__manage .purchase');
+                                    navPos = purBlock.offset().top;
+                                    navHeight = purBlock.outerHeight(true);
+                                }
+                                refreshPos();
+                                $(window).resize(refreshPos);
+                                $('<div class="clone-purchase"></div>').insertBefore('.purchase').css('height', navHeight).hide();
+                                $(window).scroll(function() {
+                                    if( window.innerWidth <= 768){
+                                        winPos = $(window).scrollTop();
+                                        if (winPos >= navPos) {
+                                            purBlock.addClass('fixed_purchase');
+                                            $('.clone-purchase').show();
+                                        }
+                                        else {
+                                            purBlock.removeClass('fixed_purchase');
+                                            $('.clone-purchase').hide();
+                                        }
+                                    }
+                                });
+                			});
+                		</script>
                 		<div class="callback">
                 			<p class="callback__title">Мы перезвоним вам для оформления заказа</p>
                 			<form>
@@ -3836,6 +3868,40 @@
                         				</p>
                         			</div>
                         		</div>
+                                <div class="characteristic__core-list">
+                                    <div class="characteristic__core-list-item">
+                                        <div class="answer-wrapper">
+                                            <img src="/static/img/general/card/core.png" alt="core">
+                                            <div class="answer-popup">
+                                                <p class="answer-text">2x ядерный процессор</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="characteristic__core-list-item">
+                                        <div class="answer-wrapper">
+                                            <img src="/static/img/general/card/core.png" alt="core">
+                                            <div class="answer-popup">
+                                                <p class="answer-text">2x ядерный процессор</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="characteristic__core-list-item">
+                                        <div class="answer-wrapper">
+                                            <img src="/static/img/general/card/core.png" alt="core">
+                                            <div class="answer-popup">
+                                                <p class="answer-text">2x ядерный процессор</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="characteristic__core-list-item">
+                                        <div class="answer-wrapper">
+                                            <img src="/static/img/general/card/core.png" alt="core">
+                                            <div class="answer-popup">
+                                                <p class="answer-text">2x ядерный процессор</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         		<div class="characteristic__block">
                         			<ul class="points-list">
                         				<li class="point">
