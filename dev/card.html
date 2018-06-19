@@ -1,4 +1,4 @@
-<!-- 
+<!--
     Author: Serhii Kyslytsia (kyslytsia007@gmail.com)
 -->
  <!doctype html>
@@ -11,27 +11,27 @@
         <meta content="" name="description">
         <meta content="" name="keywords">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <meta content="telephone=no" name="format-detection">
-        
+
         <meta name="HandheldFriendly" content="true">
         <link href="/static/css/separate-css/jQuery-UI.css" rel="stylesheet" type="text/css">
         <link href="/static/css/separate-css/font-awesome.css" rel="stylesheet" type="text/css">
         <link href="/static/css/main.css" rel="stylesheet" type="text/css">
         <link href="/static/css/separate-css/owl.carousel.css" rel="stylesheet" type="text/css">
         <link href="/static/css/separate-css/owl.theme.default.css" rel="stylesheet" type="text/css">
-        
+
         <script src="/static/js/separate-js/jquery.min.js"></script>
         <script src="/static/js/separate-js/owl.carousel.min.js"></script>
         <script src="/static/js/separate-js/hammer.min.js"></script>
-        
+
         <script>
             (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
         </script>
     </head>
     <body class="page">
         <div class="mask"></div>
-        
+
         <header class="header">
             <div class="sandwich">
                 <div class="sandwich__line"></div>
@@ -42,7 +42,7 @@
                 $(document).ready(function() {
                     var sandwich = $(".header .sandwich");
                     var mMenu = $(".mobile-menu");
-        
+
                     function showMobMenu() {
                         mMenu.toggleClass("active");
                         $(".catalog-submenu-wrapper.show").toggleClass("toggle");
@@ -51,21 +51,21 @@
                         $(".mask").addClass("full");
                         $("body").addClass("fixed");
                     }
-        
+
                     function hideMobMenu() {
                         mMenu.removeClass("active");
                         $("body").removeClass("fixed");
                         $(".header").removeClass("mask-covered");
                         $(".product-props").removeClass("mask-covered");
                     }
-        
+
                     sandwich.click(showMobMenu);
-        
+
                     $(".mask").click(hideMobMenu);
-        
+
                     // swipe mob menu
                     var swipe = new Hammer(document);
-        
+
                     swipe.on('swiperight swipeleft', function(e) {
                       e.preventDefault();
                       if (e.type == 'swiperight') {
@@ -79,7 +79,7 @@
                     });
                 });
             </script>
-        
+
             <div class="header__logo">
                 <img src="/static/img/general/header/logo.svg" alt="logo" class="logo-img">
             </div>
@@ -1021,7 +1021,7 @@
         			</section>
         			<script>
         			$(document).ready(function(){
-        			
+
         			    $('.rolling-section__carousel.basket').owlCarousel({
         			        lazyLoad: true,
         			        loop: false,
@@ -1042,9 +1042,9 @@
         			            }
         			        }
         			    });
-        			
+
         			    $('.rolling-section__carousel.basket .owl-item').each(function(i) {
-        			
+
         			    if (i <= 2) {
         			        $('.rolling-section__carousel.basket').find(".owl-item").eq(i).addClass("active");
         			        }
@@ -1063,46 +1063,46 @@
         			$("body").removeClass("fixed");
         		});
         		$(".basket > .basket__icon").click(function() {
-        
+
         			$("body").addClass("fixed");
         			$(".popup-wrapper.basket").addClass("show");
         			$(".mask").addClass("full cover");
         		});
-        
+
         		// choose quantity product
         		var listItem = $(".basket-list__item");
-        
+
         		listItem.each(function(i) {
         			var number = $(this).find(".number");
         			var currentNumber = number.text();
         			var price = $(this).find(".product-descr .price__relevant .numb");
         			var calculatedPrice = $(this).find(".calculated .numb");
-        			
+
         			calculatedPrice.text(price.text() );
-        
+
         			listItem.eq(i).click(function(e) {
-        
+
         				if (e.target.classList.contains("minus") ) {
-        
+
         					//press "-"
         					if (parseInt(number.text() ) > 1) {
         						number.text(parseInt(number.text() ) - 1);
-        
+
         						var currentCalcPrice = parseInt(calculatedPrice.text().match(/\d+/gi).join('') );
         						var priceNumber = parseInt(price.text().match(/\d+/gi).join('') );
-        
+
         						calculatedPrice.text(currentCalcPrice - priceNumber );
         						let str = calculatedPrice.text();
         						str = str[0] + str[1] + str[2] + " " + str[3] + str[4] + str[5];
         						calculatedPrice.text(str);
         					}
         				} else if (e.target.classList.contains("plus") ) {
-        
+
         					//press "+"
         					number.text(parseInt(number.text() ) + 1);
         					var currentCalcPrice = parseInt(calculatedPrice.text().match(/\d+/gi).join('') );
         					var priceNumber = parseInt(price.text().match(/\d+/gi).join('') );
-        
+
         					calculatedPrice.text(currentCalcPrice + priceNumber );
         					let str = calculatedPrice.text();
         					str = str[0] + str[1] + str[2] + " " + str[3] + str[4] + str[5];
@@ -3143,7 +3143,7 @@
         					                    </div>                </li>
         					            </ul>
         					            </div>
-        					            
+
         					        </div>
         					    </div>					<img src="/static/img/general/icons/arrow-right.svg" alt="icon" class="right-arrow slide-right-arrow">
         				</li>
@@ -3194,7 +3194,7 @@
         		var scndActiveElem = $(".mobile-menu .category-item");
         		var mobCategory = $(".mobile-menu .category-menu-wrapper");
         		var thrdActiveElem = $(".mobile-menu .category-column .category-item");
-        
+
         		fstActiveElem.click(function() {
         			fstActiveElem.removeClass("active");
         			$(this).addClass("active");
@@ -3208,15 +3208,15 @@
         				$(this).addClass("active");
         			}
         		});
-        
+
         		function scrollToTop() {
         			document.querySelector(".mobile-menu .slide-content").scrollTo(0, 0);
         		}
-        
+
         		$(".mobile-menu").click(function(e) {
         			// slide forward
         			if (e.target.classList.contains("categories") || e.target.classList.contains("mob-category-icon") || e.target.classList.contains("catalog-text") || e.target.classList.contains("slide-right-arrow") ) {
-        
+
         				slideElem.addClass("scnd-lev");
         				scrollToTop();
         			} else if (e.target.classList.contains("submenu-item__link") || e.target.classList.contains("link-text") || e.target.classList.contains("link-arrow") ) {
@@ -3243,8 +3243,8 @@
         </script>
         <script>
         	document.addEventListener( 'DOMContentLoaded' , function() {
-        
-        		
+
+
         	});
         </script><div class="header-buffer"></div>
         <section class="page__wrapper">
@@ -3271,7 +3271,7 @@
             		e.preventDefault();
             		var dest = $(this).attr('href');
             		var headerHeight = document.querySelector(".header").offsetHeight;
-            
+
             		$('html,body').animate({
             			scrollTop: $(dest).offset().top - headerHeight
             		}, 'slow');
@@ -3299,7 +3299,7 @@
                 			<img src="/static/img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473 (1).png" alt="image" class="slider-image">
                 			<img src="/static/img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473.png" alt="image" class="slider-image">
                 		</div>
-                
+
                 		<script>
                 			$(document).ready(function(){
                 				$('.product-store-information__slider-block .slider-main').owlCarousel({
@@ -3311,41 +3311,41 @@
                 				var mainImage = $(".product-store-information .slider-image");
                 				var thumbnail = $(".product-store-information .owl-dot");
                 				var arr = [];
-                
+
                 				thumbnail.append("<img class='dot-img' alt='image'>");
                 				var thumbnailImg = $(".product-store-information .dot-img");
-                
+
                 				$(".product-store-information .owl-item").each(function (i){
                 					mainImage.eq(i).attr("src");
                 					arr.push(mainImage.eq(i).attr("src"));
                 				});
-                
+
                 				thumbnailImg.each(function (i) {
                 					thumbnailImg.eq(i).attr("src", arr[i]);
                 				});
-                
+
                 				// carousel for owl-dots
                 				var lis = $(".product-store-information__slider-block .slider-main .owl-dot");
-                
+
                 				var arr = [];
                 				lis.each(function() {
                 					arr.push($(this).outerWidth(true));
                 				});
-                
+
                 				function getMaxOfArray(numArray) {
                 					return Math.max.apply(null, numArray);
                 				};
-                
+
                 				var width = getMaxOfArray(arr);
                 				var height = lis.outerHeight(true);
                 				var count = lis.length;
-                
+
                 				if (lis.length > 4) {
                 					count = 4;
                 				}
-                
+
                 				var nav = $(".product-store-information__slider-block .owl-nav");
-                
+
                 				var carousel = $(".product-store-information__slider-block .owl-carousel");
                 				var list = $(".product-store-information__slider-block .slider-main .owl-dots");
                 				list.wrap("<div class='wrapper'></div>");
@@ -3356,32 +3356,32 @@
                 				var listElems = $(".product-store-information__slider-block .slider-main .owl-dot");
                 				var left = $(".product-store-information__slider-block .fa-angle-left.second");
                 				var right = $(".product-store-information__slider-block .fa-angle-right.second");
-                
+
                 				if (lis.length <= 4) {
                 					left.hide();
                 					right.hide();
                 				}
-                
+
                 				var position = 0;
-                
+
                 				nav.after("<div class='flex-cont'></div>");
                 				$(".product-store-information__slider-block .flex-cont").append(left).append(wrapper).append(right);
-                
+
                 				if (list.hasClass("disabled") ) {
                 					$(".product-store-information__slider-block .flex-cont").hide();
                 				}
-                
+
                 				left.click(function() {
-                
+
                 					var currentPosition = +list.css("left").match(/\d+/gi).join('');
-                
+
                 					if (-currentPosition < -(list.outerWidth() ) || list.css("left") == (0 + "px") ) {
                 						return false;
                 					} else {
                 						list.css("left", (-(currentPosition - width) ) + "px");
                 					}
                 				});
-                
+
                 				right.click(function() {
                 					var currentPosition = +list.css("left").match(/\d+/gi).join('');
                 					var ListRightBorder = list.offset().left + list.width();
@@ -3392,6 +3392,31 @@
                 						list.css("left", (-(currentPosition + width) ) + "px");
                 					}
                 				});
+
+                                    // bottom fixed position of buy button for mobile screens
+                                    var navPos, winPos, navHeight, purBlock;
+                                    function refreshPos() {
+                                        purBlock = $('.product-store-information__manage .purchase');
+                                        navPos = purBlock.offset().top;
+                                        navHeight = purBlock.outerHeight(true);
+                                    }
+                                    refreshPos();
+                                    $(window).resize(refreshPos);
+                                    $('<div class="clone-purchase"></div>').insertBefore('.purchase').css('height', navHeight).hide();
+                                    $(window).scroll(function() {
+                                        if( window.innerWidth <= 768){
+                                            winPos = $(window).scrollTop();
+                                            if (winPos >= navPos) {
+                                                purBlock.addClass('fixed_purchase');
+                                                $('.clone-purchase').show();
+                                            }
+                                            else {
+                                                purBlock.removeClass('fixed_purchase');
+                                                $('.clone-purchase').hide();
+                                            }
+                                        }
+                                    });
+
                 			});
                 		</script>
                 	</div>
@@ -3459,6 +3484,10 @@
                 				</div>
                 			</div>
                 		</div>
+
+
+
+
                 		<div class="purchase">
                 			<a href="#" class="purchase__button">Купить</a>
                 			<div class="flex-wrapper">
@@ -3473,6 +3502,11 @@
                 				</div>
                 			</div>
                 		</div>
+
+
+
+
+
                 		<div class="callback">
                 			<p class="callback__title">Мы перезвоним вам для оформления заказа</p>
                 			<form>
@@ -3520,7 +3554,7 @@
                 					$(".city__dropdown").slideToggle(500);
                 				});
                 				var cityButton = $(".city-button");
-                
+
                 				function boldCity() {
                 					$(".city-target").each(function(i) {
                 						if ($(this).text().toLowerCase() == $(".city .city__variant").text().toLowerCase() ) {
@@ -3530,19 +3564,19 @@
                 					});
                 				}
                 				boldCity();
-                
+
                 				function dropDownCity() {
                 					var arr = [];
                 					var elctedCity = $(".city-input").val();
                 					var cityText = $(".city-target").text();
-                
+
                 					$(".city-target").each(function(i) {
                 						arr.push($(this).text() );
                 					});
                 					var noCity = arr.some(function(item) {
                 						return elctedCity.toLowerCase() == item.toLowerCase();
                 					});
-                
+
                 					arr.forEach(function(it,i) {
                 						if (noCity) {
                 							$(".city .city__variant").text(elctedCity);
@@ -3550,12 +3584,12 @@
                 							boldCity();
                 						}
                 					});
-                
+
                 					if (!noCity) {
                 						alert("\"" + elctedCity + "\"" + " " + "нет в списке городов");
                 					}
                 				}
-                
+
                 				cityButton.click(function() {
                 					dropDownCity();
                 					$(".city .city__arrow").toggleClass("rotate");
@@ -3963,11 +3997,11 @@
                         			var item = $(".characteristic .point");
                         			var toggler = $(".characteristic-more .more-toggler, .characteristic-more .more-arrow");
                         			var rotatingArrow = $(".characteristic-more .more-arrow");
-                        
+
                         			function hideCharacteristicPoints() {
-                        
+
                         				item.each(function(i) {
-                        
+
                         					if (i > itemLimit) {
                         						item.eq(i).addClass("hide");
                         					}
@@ -3977,14 +4011,14 @@
                         					$(".characteristic .more-toggler.open").toggle();
                         					$(".characteristic .more-toggler.closed").toggle();
                         					item.each(function(i) {
-                        
+
                         						if (i > itemLimit) {
                         							item.eq(i).toggleClass("hide");
                         						}
                         					});
                         				});
                         			}
-                        
+
                         			if (window.innerWidth > 1366) {
                         				var itemLimit = 20-1;
                         				hideCharacteristicPoints();
@@ -4041,14 +4075,14 @@
                         			var aboutWrapper = $(".about-text-wrapper");
                         			var aboutToggler = $(".about .more-toggler, .about .more-arrow");
                         			var pureWrapperHeight = $(".about-text-wrapper").outerHeight();
-                        
+
                         			$(".about .about__text").css("margin-top", stringHeight);
-                        
+
                         			aboutWrapper.toggleClass("overflow");
                         			if (pureWrapperHeight < (stringHeight * 15) ) {
                         				aboutToggler.hide();
                         			} else {
-                        				
+
                         				aboutToggler.click(function() {
                         					aboutWrapper.toggleClass("overflow");
                         					$(".about .more-arrow").toggleClass("rotate");
@@ -4090,7 +4124,7 @@
                         			var thumb = $(".product-video .thumbnail");
                         			var videoList = $(".product-video .thumbnail-videos");
                         			var videoBlock = $("#product-video");
-                        
+
                         			if (thumb.length == 1) {
                         				videoList.hide();
                         			}
@@ -4099,11 +4133,11 @@
                         				$("a[href='#product-video']").parent().hide();
                         			}
                         			mainVideoWrapper.append(thumb.eq(0).find("iframe").clone() );
-                        
+
                         			thumb.click(function() {
                         				mainVideoWrapper.empty();
                         				var currentVideo = $(this).find("iframe");
-                        
+
                         				mainVideoWrapper.append(currentVideo.clone());
                         			});
                         		});
@@ -4244,9 +4278,9 @@
                         			var feedbackToggler = $(".feedback .more-toggler, .feedback .more-arrow");
                         			var rotatingArrow = $(".feedback .more-arrow");
                         			var itemLimit = 0;
-                        
+
                         			feedbackItem.each(function(i) {
-                        
+
                         				if (i > itemLimit) {
                         					feedbackItem.eq(i).addClass("hide");
                         				}
@@ -4256,7 +4290,7 @@
                         				$(".feedback .more-toggler.open").toggle();
                         				$(".feedback .more-toggler.closed").toggle();
                         				feedbackItem.each(function(i) {
-                        
+
                         					if (i > itemLimit) {
                         						feedbackItem.eq(i).toggleClass("hide");
                         					}
@@ -4349,7 +4383,7 @@
                             <script>
                             $(document).ready( function(){
                             	var stopTarget;
-                            
+
                             	function stickyBlock() {
                             		var header = $(".header");
                             		var columnRight = document.querySelector(".right-col");
@@ -4357,10 +4391,10 @@
                             		var topBorder = columnRight.getBoundingClientRect().top;
                             		var bottomBorder = columnRight.getBoundingClientRect().bottom;
                             		var wrapperBottomBorder = document.querySelector(".right-col .wrapper-block").getBoundingClientRect().bottom;
-                            
+
                             		if (window.innerWidth > 768) {
                             			if (topBorder <= header.outerHeight(true) && bottomBorder > wrapperBottomBorder ) {
-                            
+
                             				mainContainer.addClass("fixed");
                             			} else if (topBorder >= header.outerHeight(true) ) {
                             				mainContainer.removeClass("fixed");
@@ -4379,7 +4413,7 @@
                             		}
                             	}
                             	stickyBlock();
-                            
+
                             	$(document).on('scroll', stickyBlock);
                             });
                             </script>                            <div class="discount-variant">
@@ -4734,7 +4768,7 @@
                 	if ($('.rolling-carousel-item.simple').length < 4){
                 		$('.rolling-section').hide();
                 	} else {
-                
+
                         $('.rolling-section__carousel.simple').each(function(i) {
                             $('.rolling-section__carousel.simple').eq(i).find(".owl-item").each(function(j) {
                             if (j <= 3) {
@@ -4742,7 +4776,7 @@
                                 }
                             });
                         });
-                
+
                         $('.rolling-section__carousel.simple').owlCarousel({
                             lazyLoad: true,
                             loop: false,
@@ -4765,7 +4799,7 @@
                                 }
                             }
                         });
-                
+
                     }
                 });
                 </script><!-- end rolling-section block -->                <!-- rolling-section block -->
@@ -5011,7 +5045,7 @@
                 	if ($('.rolling-carousel-item.simple').length < 4){
                 		$('.rolling-section').hide();
                 	} else {
-                
+
                         $('.rolling-section__carousel.simple').each(function(i) {
                             $('.rolling-section__carousel.simple').eq(i).find(".owl-item").each(function(j) {
                             if (j <= 3) {
@@ -5019,7 +5053,7 @@
                                 }
                             });
                         });
-                
+
                         $('.rolling-section__carousel.simple').owlCarousel({
                             lazyLoad: true,
                             loop: false,
@@ -5042,7 +5076,7 @@
                                 }
                             }
                         });
-                
+
                     }
                 });
                 </script><!-- end rolling-section block -->                <!-- rolling-section block -->
@@ -5300,7 +5334,7 @@
                 	if ($('.rolling-carousel-item.simple').length < 4){
                 		$('.rolling-section').hide();
                 	} else {
-                
+
                         $('.rolling-section__carousel.simple').each(function(i) {
                             $('.rolling-section__carousel.simple').eq(i).find(".owl-item").each(function(j) {
                             if (j <= 3) {
@@ -5308,7 +5342,7 @@
                                 }
                             });
                         });
-                
+
                         $('.rolling-section__carousel.simple').owlCarousel({
                             lazyLoad: true,
                             loop: false,
@@ -5331,7 +5365,7 @@
                                 }
                             }
                         });
-                
+
                     }
                 });
                 </script><!-- end rolling-section block -->            </div>
@@ -5422,7 +5456,7 @@
                                 <li>
                                     <a href="/ru/GiftCard/NewIndex">Подарочные карты</a>
                                 </li>
-                                
+
                                 <li>
                                     <a href="/ru/delivery">Оплата, гарантия, доставка</a>
                                 </li>
@@ -5468,7 +5502,7 @@
                             <div class="ordercall">
                               <span>Обратный звонок</span>
                             </div>
-            
+
                             <div class="write-to-us">
                                <a href="/ru/feedback">Написать нам</a>
                                </div>
@@ -5477,7 +5511,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="cl"></div> 
+                        <div class="cl"></div>
                    </div>
                 </div>
                 <div class="footer-bottom">
@@ -5906,7 +5940,7 @@
             					</ul>
             				</div>
             			</div>		</div>
-            		
+
             	</div>
             </div>
             <script>
@@ -5923,19 +5957,19 @@
             			$(".popup-wrapper").addClass("show");
             			$(".mask").addClass("full cover");
             		});
-            
+
             		// slider
             		var adressTogler = $(".popup-wrapper .adress-delivery");
             		var storeTogler = $(".popup-wrapper .store-visit");
             		var slideContainer = $(".popup-wrapper .popup-delivery-slider");
             		var adressHeight = $(".popup-wrapper .adress-block").outerHeight(true);
-            
+
             		adressTogler.click(function() {
             			slideContainer.addClass("slide");
             			$(this).addClass("active");
             			storeTogler.removeClass("active");
             		});
-            
+
             		storeTogler.click(function() {
             			slideContainer.removeClass("slide");
             			$(this).addClass("active");
@@ -5945,8 +5979,8 @@
             		slideContainer.css("height", adressHeight + "px");
             	});
             </script>        <script src="static/js/main.js"></script>
-        
-        
+
+
     </body>
 
 </html>

@@ -249,6 +249,18 @@ html, body {
   width: 100%;
 }
 
+.fixed_purchase {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 body {
   font-family: 'Montserrat Regular', sans-serif;
 }
@@ -4850,7 +4862,7 @@ body .product-listing .listing-item__img-container .item-image {
 }
 
 .product-store-information__manage .purchase {
-  margin: 15px 0;
+  padding: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
