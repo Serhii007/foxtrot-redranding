@@ -27,10 +27,35 @@
 				-ms-flex-align: center;
 					align-items: center;
 		}
+		.vertical-slider-wrapper {
+			width: 30%;
+			.fa {
+				cursor: pointer;
+				display: block;
+				margin: 0 auto;
+				text-align: center;
+				font-size: 22px;
+				line-height: 1;
+				color: #E54415;
+			}
+			.fa-angle-down {
+				margin-top : 10px;
+			}
+			.fa-angle-up {
+				margin-bottom : 10px;
+			}
+		}
+		.add-prod-vertical-slider {
+			width: 100%;
+			overflow: hidden;
+			.vert-gallery {
+				transition: margin-top .3s;
+			}
+		}
 		&__product {
 			color: #000000;
 			text-decoration: none;
-			width: 30%;
+			width: 100%;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
@@ -42,7 +67,8 @@
 				-ms-flex-direction: column;
 					flex-direction: column;
 			-ms-flex-item-align: start;
-				align-self: flex-start;
+				align-self: center;
+			justify-content: center;
 			position: relative;
 		}
 		.plus, .equal {

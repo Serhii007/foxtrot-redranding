@@ -194,11 +194,15 @@
                         <a href="#" class="call__track">Отследить покупку</a>
                     </li>
                     <li class="info-list__item entry">
-                        <a href="#" class="entry_enter">Войти</a>
-                        <a href="#" class="entry_registration">Зарегистрироваться</a>
+                        <a href="#" class="entry_enter">Личный кабинет</a>
                     </li>
                     <li class="info-list__item bonuses">
-                        <img src="/static/img/general/icons/grn.svg" alt="icon" class="bonuses__icon">
+                        <div class="answer-wrapper">
+                            <img src="/static/img/general/icons/grn.svg" alt="icon" class="bonuses__icon">
+                            <div class="answer-popup">
+                                <p class="answer-text"><span class="price__relevant">200 грн бонусов</span> при первой покупке</p>
+                            </div>
+                        </div>
                         <div class="bonuses__info"><span class="bonuses-text">Мои бонусы</span><span class="bonuses-sum">0 000 грн</span></div>
                     </li>
                     <li class="info-list__item favorite">
@@ -3241,7 +3245,8 @@
         
         		
         	});
-        </script><div class="header-buffer"></div>        <section class="page__wrapper">
+        </script><div class="header-buffer"></div>
+        <section class="page__wrapper">
 
             <div class="breadcrumbs">
             	<a href="#" class="breadcrumbs__crumb">Интернет магазин</a>
@@ -3689,10 +3694,22 @@
                         					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
                         				</a>
                         				<p class="plus">+</p>
-                        				<a href="#" class="slide-container__product">
-                        					<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                        					<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-                        				</a>
+                        				<div class="vertical-slider-wrapper">
+                        					<i class="fa fa-angle-up"></i>
+                        					<div class="add-prod-vertical-slider">
+                        						<div class="vert-gallery">
+                        							<a href="#" class="slide-container__product add-product">
+                        								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                        								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+                        							</a>
+                        							<a href="#" class="slide-container__product add-product">
+                        								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                        								<p class="product-description">Мышь Logitech M185 Wireless Grey hjkhjk hjkhkj</p>
+                        							</a>
+                        						</div>
+                        					</div>
+                        					<i class="fa fa-angle-down"></i>
+                        				</div>
                         			</div>
                         			<p class="equal">=</p>
                         			<div class="slide-container__result">
@@ -3726,10 +3743,18 @@
                         					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
                         				</a>
                         				<p class="plus">+</p>
-                        				<a href="#" class="slide-container__product">
-                        					<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                        					<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-                        				</a>
+                        				<div class="vertical-slider-wrapper">
+                        					<i class="fa fa-angle-up"></i>
+                        					<div class="add-prod-vertical-slider">
+                        						<div class="vert-gallery">
+                        							<a href="#" class="slide-container__product add-product">
+                        								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                        								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+                        							</a>
+                        						</div>
+                        					</div>
+                        					<i class="fa fa-angle-down"></i>
+                        				</div>
                         			</div>
                         			<p class="equal">=</p>
                         			<div class="slide-container__result">
@@ -3758,6 +3783,40 @@
                         		</div>
                         	</div>
                         </div>
+                        <!-- <script>
+                        document.addEventListener( 'DOMContentLoaded', function() {
+                        
+                            var getStyle = getComputedStyle(document.querySelector('.slide-container__product.add-product'));
+                            var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
+                        
+                            var slideElemHeight = document.getElementsByClassName('add-product')[0].offsetHeight + marginTopSlideElem;
+                            var lis = document.getElementsByClassName('add-product');
+                            for (var i = 0; i < lis.length; i++) {
+                              lis[i].style.position = 'relative';
+                              var span = document.createElement('span');
+                              span.style.cssText = 'position:absolute;left:0;top:0';
+                              span.innerHTML = i + 1;
+                              lis[i].appendChild(span);
+                            }
+                            var height = slideElemHeight;
+                            var count = 1;
+                        
+                            var carousel = document.querySelector('.category-widgets');
+                            var list = document.querySelector('.widget-carousel');
+                            var listElems = carousel.querySelectorAll('li');
+                        
+                            var position = 0;
+                            carousel.querySelector('.prev').onclick = function() {
+                              position = Math.min(position + height * count, 0)
+                              list.style.marginTop = position + 'px';
+                            };
+                         
+                            carousel.querySelector('.next').onclick = function() {
+                              position = Math.max(position - height * count, -height * (listElems.length - count));
+                              list.style.marginTop = position + 'px';
+                            };
+                        });
+                        </script> -->
                         <script>
                         	$(document).ready(function(){
                         		$(".discount-variant .discount-variant__carousel").owlCarousel({
@@ -4388,10 +4447,22 @@
                             					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
                             				</a>
                             				<p class="plus">+</p>
-                            				<a href="#" class="slide-container__product">
-                            					<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                            					<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-                            				</a>
+                            				<div class="vertical-slider-wrapper">
+                            					<i class="fa fa-angle-up"></i>
+                            					<div class="add-prod-vertical-slider">
+                            						<div class="vert-gallery">
+                            							<a href="#" class="slide-container__product add-product">
+                            								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                            								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+                            							</a>
+                            							<a href="#" class="slide-container__product add-product">
+                            								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                            								<p class="product-description">Мышь Logitech M185 Wireless Grey hjkhjk hjkhkj</p>
+                            							</a>
+                            						</div>
+                            					</div>
+                            					<i class="fa fa-angle-down"></i>
+                            				</div>
                             			</div>
                             			<p class="equal">=</p>
                             			<div class="slide-container__result">
@@ -4425,10 +4496,18 @@
                             					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
                             				</a>
                             				<p class="plus">+</p>
-                            				<a href="#" class="slide-container__product">
-                            					<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                            					<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-                            				</a>
+                            				<div class="vertical-slider-wrapper">
+                            					<i class="fa fa-angle-up"></i>
+                            					<div class="add-prod-vertical-slider">
+                            						<div class="vert-gallery">
+                            							<a href="#" class="slide-container__product add-product">
+                            								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                            								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+                            							</a>
+                            						</div>
+                            					</div>
+                            					<i class="fa fa-angle-down"></i>
+                            				</div>
                             			</div>
                             			<p class="equal">=</p>
                             			<div class="slide-container__result">
@@ -4457,6 +4536,40 @@
                             		</div>
                             	</div>
                             </div>
+                            <!-- <script>
+                            document.addEventListener( 'DOMContentLoaded', function() {
+                            
+                                var getStyle = getComputedStyle(document.querySelector('.slide-container__product.add-product'));
+                                var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
+                            
+                                var slideElemHeight = document.getElementsByClassName('add-product')[0].offsetHeight + marginTopSlideElem;
+                                var lis = document.getElementsByClassName('add-product');
+                                for (var i = 0; i < lis.length; i++) {
+                                  lis[i].style.position = 'relative';
+                                  var span = document.createElement('span');
+                                  span.style.cssText = 'position:absolute;left:0;top:0';
+                                  span.innerHTML = i + 1;
+                                  lis[i].appendChild(span);
+                                }
+                                var height = slideElemHeight;
+                                var count = 1;
+                            
+                                var carousel = document.querySelector('.category-widgets');
+                                var list = document.querySelector('.widget-carousel');
+                                var listElems = carousel.querySelectorAll('li');
+                            
+                                var position = 0;
+                                carousel.querySelector('.prev').onclick = function() {
+                                  position = Math.min(position + height * count, 0)
+                                  list.style.marginTop = position + 'px';
+                                };
+                             
+                                carousel.querySelector('.next').onclick = function() {
+                                  position = Math.max(position - height * count, -height * (listElems.length - count));
+                                  list.style.marginTop = position + 'px';
+                                };
+                            });
+                            </script> -->
                             <script>
                             	$(document).ready(function(){
                             		$(".discount-variant .discount-variant__carousel").owlCarousel({
@@ -5937,6 +6050,50 @@
             		});
             		//height of the .popup-delivery-slider
             		slideContainer.css("height", adressHeight + "px");
+            	});
+            </script>            <script>
+            	$(document).ready(function() {
+            
+            		var vertCarouselWrapper = $(".vertical-slider-wrapper");
+            		var vertCarousel = $(".add-prod-vertical-slider");
+            		var slideCont = $(".add-prod-vertical-slider .vert-gallery");
+            		var slideElem = $(".add-prod-vertical-slider .add-product");
+            		var upToggler = $(".vertical-slider-wrapper .fa-angle-up");
+            		var downToggler = $(".vertical-slider-wrapper .fa-angle-down");
+            		var arr = [];
+            		slideElem.each(function() {
+            			arr.push($(this).outerHeight(true));
+            		});
+            
+            		function getMaxOfArray(numArray) {
+            			return Math.max.apply(null, numArray);
+            		};
+            
+            		var height = getMaxOfArray(arr);
+            
+            		vertCarousel.css("height", height + "px");
+            		slideElem.css("height", height + "px")
+            
+            		vertCarouselWrapper.each(function(i) {
+            			slideCont.attr("style", "0px");
+            
+            			$(this).find(".fa-angle-down").click(function() {
+            				var attribute = slideCont.eq(i).attr("style");
+            				var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+            				console.log(currentPosition);
+            
+            				slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
+            			});
+            
+            			upToggler.eq(i).click(function() {
+            
+            				var attribute = slideCont.eq(i).attr("style");
+            				var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+            				console.log(currentPosition);
+            
+            				slideCont.eq(i).css("margin-top", -currentPosition + height + "px");
+            			});
+            		});
             	});
             </script>        <script src="static/js/main.js"></script>
         

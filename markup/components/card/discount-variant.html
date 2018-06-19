@@ -10,10 +10,22 @@
 					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
 				</a>
 				<p class="plus">+</p>
-				<a href="#" class="slide-container__product">
-					<img src="%=static=%img/general/card/mouse.png" alt="image" class="product-image">
-					<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-				</a>
+				<div class="vertical-slider-wrapper">
+					<i class="fa fa-angle-up"></i>
+					<div class="add-prod-vertical-slider">
+						<div class="vert-gallery">
+							<a href="#" class="slide-container__product add-product">
+								<img src="%=static=%img/general/card/mouse.png" alt="image" class="product-image">
+								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+							</a>
+							<a href="#" class="slide-container__product add-product">
+								<img src="%=static=%img/general/card/mouse.png" alt="image" class="product-image">
+								<p class="product-description">Мышь Logitech M185 Wireless Grey hjkhjk hjkhkj</p>
+							</a>
+						</div>
+					</div>
+					<i class="fa fa-angle-down"></i>
+				</div>
 			</div>
 			<p class="equal">=</p>
 			<div class="slide-container__result">
@@ -47,10 +59,18 @@
 					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
 				</a>
 				<p class="plus">+</p>
-				<a href="#" class="slide-container__product">
-					<img src="%=static=%img/general/card/mouse.png" alt="image" class="product-image">
-					<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-				</a>
+				<div class="vertical-slider-wrapper">
+					<i class="fa fa-angle-up"></i>
+					<div class="add-prod-vertical-slider">
+						<div class="vert-gallery">
+							<a href="#" class="slide-container__product add-product">
+								<img src="%=static=%img/general/card/mouse.png" alt="image" class="product-image">
+								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+							</a>
+						</div>
+					</div>
+					<i class="fa fa-angle-down"></i>
+				</div>
 			</div>
 			<p class="equal">=</p>
 			<div class="slide-container__result">
@@ -79,6 +99,40 @@
 		</div>
 	</div>
 </div>
+<!-- <script>
+document.addEventListener( 'DOMContentLoaded', function() {
+
+    var getStyle = getComputedStyle(document.querySelector('.slide-container__product.add-product'));
+    var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
+
+    var slideElemHeight = document.getElementsByClassName('add-product')[0].offsetHeight + marginTopSlideElem;
+    var lis = document.getElementsByClassName('add-product');
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].style.position = 'relative';
+      var span = document.createElement('span');
+      span.style.cssText = 'position:absolute;left:0;top:0';
+      span.innerHTML = i + 1;
+      lis[i].appendChild(span);
+    }
+    var height = slideElemHeight;
+    var count = 1;
+
+    var carousel = document.querySelector('.category-widgets');
+    var list = document.querySelector('.widget-carousel');
+    var listElems = carousel.querySelectorAll('li');
+
+    var position = 0;
+    carousel.querySelector('.prev').onclick = function() {
+      position = Math.min(position + height * count, 0)
+      list.style.marginTop = position + 'px';
+    };
+ 
+    carousel.querySelector('.next').onclick = function() {
+      position = Math.max(position - height * count, -height * (listElems.length - count));
+      list.style.marginTop = position + 'px';
+    };
+});
+</script> -->
 <script>
 	$(document).ready(function(){
 		$(".discount-variant .discount-variant__carousel").owlCarousel({
