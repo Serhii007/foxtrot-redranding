@@ -1598,19 +1598,30 @@ body {
   padding: 1.5% 2% 2%;
 }
 
+.discount-variant__carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
 .discount-variant__title {
   font: 18px/1 Montserrat Bold;
   margin-bottom: 10px;
 }
 
 .discount-variant .slide-container {
-  width: 90%;
+  min-width: 100%;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
 }
 
 .discount-variant .slide-container .flex-container {
@@ -1625,12 +1636,17 @@ body {
 }
 
 .discount-variant .slide-container .vertical-slider-wrapper {
-  width: 30%;
+  width: auto;
+}
+
+.discount-variant .slide-container .vertical-slider-wrapper .semi-transparent {
+  opacity: .4;
 }
 
 .discount-variant .slide-container .vertical-slider-wrapper .fa {
   cursor: pointer;
   display: block;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   font-size: 22px;
@@ -1654,6 +1670,16 @@ body {
 .discount-variant .slide-container .add-prod-vertical-slider .vert-gallery {
   -webkit-transition: margin-top .3s;
   transition: margin-top .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.discount-variant .slide-container__product.main {
+  width: 35%;
 }
 
 .discount-variant .slide-container__product {
@@ -1673,8 +1699,8 @@ body {
   -ms-flex-item-align: start;
   align-self: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -1692,12 +1718,14 @@ body {
 .discount-variant .slide-container .product-image {
   height: 91px;
   width: auto;
+  margin-bottom: 10px;
 }
 
 .discount-variant .slide-container .product-description {
   font: 14px/17px Montserrat Regular;
   text-align: center;
   width: 100%;
+  max-width: 170px;
 }
 
 .discount-variant .slide-container__result {

@@ -8,6 +8,10 @@
 		var upToggler = $(".vertical-slider-wrapper .fa-angle-up");
 		var downToggler = $(".vertical-slider-wrapper .fa-angle-down");
 		var arr = [];
+		var galleryTop = slideCont.offset().top;
+		var slideElemTop = slideElem.offset().top;
+		console.log(galleryTop);
+		console.log(slideElem.eq(0).offset().top);
 		slideElem.each(function() {
 			arr.push($(this).outerHeight(true));
 		});
@@ -22,23 +26,31 @@
 		slideElem.css("height", height + "px")
 
 		vertCarouselWrapper.each(function(i) {
-			slideCont.attr("style", "0px");
+			slideCont.attr("style", "margin-top: 0px;");
 
-			$(this).find(".fa-angle-down").click(function() {
-				var attribute = slideCont.eq(i).attr("style");
-				var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
-				console.log(currentPosition);
+			downToggler.eq(i).click(function() {
 
-				slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
+					var attribute = slideCont.eq(i).attr("style");
+					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+					console.log(currentPosition);
+
+					slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
 			});
 
+			if (slideCont.attr("style") == "margin-top: 0px;" ) {
+				upToggler.addClass("semi-transparent");
+			}
 			upToggler.eq(i).click(function() {
 
-				var attribute = slideCont.eq(i).attr("style");
-				var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
-				console.log(currentPosition);
+				if (slideCont.eq(i).attr("style") == "margin-top: 0px;" ) {
 
-				slideCont.eq(i).css("margin-top", -currentPosition + height + "px");
+					return false;
+				} else {
+					var attribute = slideCont.eq(i).attr("style");
+					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+
+					slideCont.eq(i).css("margin-top", -currentPosition + height + "px");
+				}
 			});
 		});
 	});

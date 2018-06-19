@@ -3713,57 +3713,56 @@
                         	<div class="discount-variant__title">
                         		<h3 class="title">Вместе дешевле</h3>
                         	</div>
-                        	<div class="discount-variant__carousel owl-carousel owl-theme">
-                        		<div class="slide-container owl-lazy" data-src="/static/img/general/transparent.png">
-                        			<div class="flex-container">
-                        				<a href="#" class="slide-container__product">
+                        	<div class="discount-variant__carousel">
+                        		<div class="slide-container">
+                        			<!-- <div class="flex-container"> -->
+                        				<a href="#" class="slide-container__product main">
                         					<img src="/static/img/general/card/asus-notebook.png" alt="image" class="product-image">
                         					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
                         				</a>
                         				<p class="plus">+</p>
                         				<div class="vertical-slider-wrapper">
-                        					<i class="fa fa-angle-up"></i>
                         					<div class="add-prod-vertical-slider">
                         						<div class="vert-gallery">
-                        							<a href="#" class="slide-container__product add-product">
-                        								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                        								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-                        							</a>
-                        							<a href="#" class="slide-container__product add-product">
-                        								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                        								<p class="product-description">Мышь Logitech M185 Wireless Grey hjkhjk hjkhkj</p>
-                        							</a>
+                        							<div class="add-product-wrapper">
+                        								<i class="fa fa-angle-up"></i>
+                        								<a href="#" class="slide-container__product add-product">
+                        									<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                        									<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+                        								</a>
+                        								<i class="fa fa-angle-down"></i>
+                        							</div>
+                        
+                        							<p class="equal">=</p>
+                        							<div class="slide-container__result">
+                        								<div class="price">
+                        									<div class="price__not-relevant">
+                        										<span class="numb">14 925</span><span class="currency">грн</span>
+                        									</div>
+                        									<div class="price__relevant">
+                        										<span class="numb">1100 999</span><span class="currency">грн</span>
+                        									</div>
+                        								</div>
+                        								<div class="bonus">
+                        									<img src="/static/img/general/icons/grn.svg" alt="rolling-product" class="bonus__icon">
+                        									<span class="bonus__calculation">x15</span>
+                        									<span class="bonus__sum">+ 200</span>
+                        									<span class="bonus__currency">грн бонусов</span>
+                        									<div class="answer-wrapper">
+                        										<img src="/static/img/general/icons/answer.svg" alt="icon" class="answer-icon">
+                        										<div class="answer-popup">
+                        											<p class="answer-text">Вы можете оплатить часть покупки бонусами</p>
+                        										</div>
+                        									</div>
+                        								</div>
+                        								<button class="discount-button" type="submit">Купить комплект</button>
+                        							</div>
                         						</div>
                         					</div>
-                        					<i class="fa fa-angle-down"></i>
                         				</div>
-                        			</div>
-                        			<p class="equal">=</p>
-                        			<div class="slide-container__result">
-                        				<div class="price">
-                        					<div class="price__not-relevant">
-                        						<span class="numb">14 925</span><span class="currency">грн</span>
-                        					</div>
-                        					<div class="price__relevant">
-                        						<span class="numb">1100 999</span><span class="currency">грн</span>
-                        					</div>
-                        				</div>
-                        				<div class="bonus">
-                        					<img src="/static/img/general/icons/grn.svg" alt="rolling-product" class="bonus__icon">
-                        					<span class="bonus__calculation">x15</span>
-                        					<span class="bonus__sum">+ 200</span>
-                        					<span class="bonus__currency">грн бонусов</span>
-                        					<div class="answer-wrapper">
-                        						<img src="/static/img/general/icons/answer.svg" alt="icon" class="answer-icon">
-                        						<div class="answer-popup">
-                        							<p class="answer-text">Вы можете оплатить часть покупки бонусами</p>
-                        						</div>
-                        					</div>
-                        				</div>
-                        				<button class="discount-button" type="submit">Купить комплект</button>
-                        			</div>
+                        			<!-- </div> -->
                         		</div>
-                        		<div class="slide-container owl-lazy" data-src="/static/img/general/transparent.png">
+                        		<div class="slide-container">
                         						<div class="flex-container">
                         				<a href="#" class="slide-container__product">
                         					<img src="/static/img/general/card/asus-notebook.png" alt="image" class="product-image">
@@ -3809,56 +3808,7 @@
                         			</div>
                         		</div>
                         	</div>
-                        </div>
-                        <!-- <script>
-                        document.addEventListener( 'DOMContentLoaded', function() {
-                        
-                            var getStyle = getComputedStyle(document.querySelector('.slide-container__product.add-product'));
-                            var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
-                        
-                            var slideElemHeight = document.getElementsByClassName('add-product')[0].offsetHeight + marginTopSlideElem;
-                            var lis = document.getElementsByClassName('add-product');
-                            for (var i = 0; i < lis.length; i++) {
-                              lis[i].style.position = 'relative';
-                              var span = document.createElement('span');
-                              span.style.cssText = 'position:absolute;left:0;top:0';
-                              span.innerHTML = i + 1;
-                              lis[i].appendChild(span);
-                            }
-                            var height = slideElemHeight;
-                            var count = 1;
-                        
-                            var carousel = document.querySelector('.category-widgets');
-                            var list = document.querySelector('.widget-carousel');
-                            var listElems = carousel.querySelectorAll('li');
-                        
-                            var position = 0;
-                            carousel.querySelector('.prev').onclick = function() {
-                              position = Math.min(position + height * count, 0)
-                              list.style.marginTop = position + 'px';
-                            };
-                         
-                            carousel.querySelector('.next').onclick = function() {
-                              position = Math.max(position - height * count, -height * (listElems.length - count));
-                              list.style.marginTop = position + 'px';
-                            };
-                        });
-                        </script> -->
-                        <script>
-                        	$(document).ready(function(){
-                        		$(".discount-variant .discount-variant__carousel").owlCarousel({
-                        			items: 1,
-                        			lazyLoad: true,
-                        			loop: false,
-                        			autoplay: false,
-                        			autoplayTimeout: 5000,
-                        			dots: false,
-                        			nav:true,
-                        			autoplayHoverPause: true,
-                        			navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
-                        		});
-                        	});
-                        </script>                        <div class="product-main-information">
+                        </div>                        <div class="product-main-information">
                         	<div class="characteristic" id="characteristic">
                         		<div class="title-wrapper">
                         				<h3 class="title">Характеристики</h3>
@@ -4500,57 +4450,56 @@
                             	<div class="discount-variant__title">
                             		<h3 class="title">Вместе дешевле</h3>
                             	</div>
-                            	<div class="discount-variant__carousel owl-carousel owl-theme">
-                            		<div class="slide-container owl-lazy" data-src="/static/img/general/transparent.png">
-                            			<div class="flex-container">
-                            				<a href="#" class="slide-container__product">
+                            	<div class="discount-variant__carousel">
+                            		<div class="slide-container">
+                            			<!-- <div class="flex-container"> -->
+                            				<a href="#" class="slide-container__product main">
                             					<img src="/static/img/general/card/asus-notebook.png" alt="image" class="product-image">
                             					<p class="product-description">Ноутбук HP ProBook 430 G4 (W6P97AV_V9)</p>
                             				</a>
                             				<p class="plus">+</p>
                             				<div class="vertical-slider-wrapper">
-                            					<i class="fa fa-angle-up"></i>
                             					<div class="add-prod-vertical-slider">
                             						<div class="vert-gallery">
-                            							<a href="#" class="slide-container__product add-product">
-                            								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                            								<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
-                            							</a>
-                            							<a href="#" class="slide-container__product add-product">
-                            								<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
-                            								<p class="product-description">Мышь Logitech M185 Wireless Grey hjkhjk hjkhkj</p>
-                            							</a>
+                            							<div class="add-product-wrapper">
+                            								<i class="fa fa-angle-up"></i>
+                            								<a href="#" class="slide-container__product add-product">
+                            									<img src="/static/img/general/card/mouse.png" alt="image" class="product-image">
+                            									<p class="product-description">Мышь Logitech M185 Wireless Grey</p>
+                            								</a>
+                            								<i class="fa fa-angle-down"></i>
+                            							</div>
+                            
+                            							<p class="equal">=</p>
+                            							<div class="slide-container__result">
+                            								<div class="price">
+                            									<div class="price__not-relevant">
+                            										<span class="numb">14 925</span><span class="currency">грн</span>
+                            									</div>
+                            									<div class="price__relevant">
+                            										<span class="numb">1100 999</span><span class="currency">грн</span>
+                            									</div>
+                            								</div>
+                            								<div class="bonus">
+                            									<img src="/static/img/general/icons/grn.svg" alt="rolling-product" class="bonus__icon">
+                            									<span class="bonus__calculation">x15</span>
+                            									<span class="bonus__sum">+ 200</span>
+                            									<span class="bonus__currency">грн бонусов</span>
+                            									<div class="answer-wrapper">
+                            										<img src="/static/img/general/icons/answer.svg" alt="icon" class="answer-icon">
+                            										<div class="answer-popup">
+                            											<p class="answer-text">Вы можете оплатить часть покупки бонусами</p>
+                            										</div>
+                            									</div>
+                            								</div>
+                            								<button class="discount-button" type="submit">Купить комплект</button>
+                            							</div>
                             						</div>
                             					</div>
-                            					<i class="fa fa-angle-down"></i>
                             				</div>
-                            			</div>
-                            			<p class="equal">=</p>
-                            			<div class="slide-container__result">
-                            				<div class="price">
-                            					<div class="price__not-relevant">
-                            						<span class="numb">14 925</span><span class="currency">грн</span>
-                            					</div>
-                            					<div class="price__relevant">
-                            						<span class="numb">1100 999</span><span class="currency">грн</span>
-                            					</div>
-                            				</div>
-                            				<div class="bonus">
-                            					<img src="/static/img/general/icons/grn.svg" alt="rolling-product" class="bonus__icon">
-                            					<span class="bonus__calculation">x15</span>
-                            					<span class="bonus__sum">+ 200</span>
-                            					<span class="bonus__currency">грн бонусов</span>
-                            					<div class="answer-wrapper">
-                            						<img src="/static/img/general/icons/answer.svg" alt="icon" class="answer-icon">
-                            						<div class="answer-popup">
-                            							<p class="answer-text">Вы можете оплатить часть покупки бонусами</p>
-                            						</div>
-                            					</div>
-                            				</div>
-                            				<button class="discount-button" type="submit">Купить комплект</button>
-                            			</div>
+                            			<!-- </div> -->
                             		</div>
-                            		<div class="slide-container owl-lazy" data-src="/static/img/general/transparent.png">
+                            		<div class="slide-container">
                             						<div class="flex-container">
                             				<a href="#" class="slide-container__product">
                             					<img src="/static/img/general/card/asus-notebook.png" alt="image" class="product-image">
@@ -4596,56 +4545,7 @@
                             			</div>
                             		</div>
                             	</div>
-                            </div>
-                            <!-- <script>
-                            document.addEventListener( 'DOMContentLoaded', function() {
-                            
-                                var getStyle = getComputedStyle(document.querySelector('.slide-container__product.add-product'));
-                                var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
-                            
-                                var slideElemHeight = document.getElementsByClassName('add-product')[0].offsetHeight + marginTopSlideElem;
-                                var lis = document.getElementsByClassName('add-product');
-                                for (var i = 0; i < lis.length; i++) {
-                                  lis[i].style.position = 'relative';
-                                  var span = document.createElement('span');
-                                  span.style.cssText = 'position:absolute;left:0;top:0';
-                                  span.innerHTML = i + 1;
-                                  lis[i].appendChild(span);
-                                }
-                                var height = slideElemHeight;
-                                var count = 1;
-                            
-                                var carousel = document.querySelector('.category-widgets');
-                                var list = document.querySelector('.widget-carousel');
-                                var listElems = carousel.querySelectorAll('li');
-                            
-                                var position = 0;
-                                carousel.querySelector('.prev').onclick = function() {
-                                  position = Math.min(position + height * count, 0)
-                                  list.style.marginTop = position + 'px';
-                                };
-                             
-                                carousel.querySelector('.next').onclick = function() {
-                                  position = Math.max(position - height * count, -height * (listElems.length - count));
-                                  list.style.marginTop = position + 'px';
-                                };
-                            });
-                            </script> -->
-                            <script>
-                            	$(document).ready(function(){
-                            		$(".discount-variant .discount-variant__carousel").owlCarousel({
-                            			items: 1,
-                            			lazyLoad: true,
-                            			loop: false,
-                            			autoplay: false,
-                            			autoplayTimeout: 5000,
-                            			dots: false,
-                            			nav:true,
-                            			autoplayHoverPause: true,
-                            			navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
-                            		});
-                            	});
-                            </script>                        </div>
+                            </div>                        </div>
                     </div>
                 </div>
                 <!-- rolling-section block -->
@@ -6112,51 +6012,64 @@
             		//height of the .popup-delivery-slider
             		slideContainer.css("height", adressHeight + "px");
             	});
-            </script>            <script>
-            	$(document).ready(function() {
-            
-            		var vertCarouselWrapper = $(".vertical-slider-wrapper");
-            		var vertCarousel = $(".add-prod-vertical-slider");
-            		var slideCont = $(".add-prod-vertical-slider .vert-gallery");
-            		var slideElem = $(".add-prod-vertical-slider .add-product");
-            		var upToggler = $(".vertical-slider-wrapper .fa-angle-up");
-            		var downToggler = $(".vertical-slider-wrapper .fa-angle-down");
-            		var arr = [];
-            		slideElem.each(function() {
-            			arr.push($(this).outerHeight(true));
-            		});
-            
-            		function getMaxOfArray(numArray) {
-            			return Math.max.apply(null, numArray);
-            		};
-            
-            		var height = getMaxOfArray(arr);
-            
-            		vertCarousel.css("height", height + "px");
-            		slideElem.css("height", height + "px")
-            
-            		vertCarouselWrapper.each(function(i) {
-            			slideCont.attr("style", "0px");
-            
-            			$(this).find(".fa-angle-down").click(function() {
-            				var attribute = slideCont.eq(i).attr("style");
-            				var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
-            				console.log(currentPosition);
-            
-            				slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
-            			});
-            
-            			upToggler.eq(i).click(function() {
-            
-            				var attribute = slideCont.eq(i).attr("style");
-            				var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
-            				console.log(currentPosition);
-            
-            				slideCont.eq(i).css("margin-top", -currentPosition + height + "px");
-            			});
-            		});
-            	});
-            </script>        <script src="static/js/main.js"></script>
+            </script>            <!-- <script>
+	$(document).ready(function() {
+
+		var vertCarouselWrapper = $(".vertical-slider-wrapper");
+		var vertCarousel = $(".add-prod-vertical-slider");
+		var slideCont = $(".add-prod-vertical-slider .vert-gallery");
+		var slideElem = $(".add-prod-vertical-slider .add-product");
+		var upToggler = $(".vertical-slider-wrapper .fa-angle-up");
+		var downToggler = $(".vertical-slider-wrapper .fa-angle-down");
+		var arr = [];
+		var galleryTop = slideCont.offset().top;
+		var slideElemTop = slideElem.offset().top;
+		console.log(galleryTop);
+		console.log(slideElem.eq(0).offset().top);
+		slideElem.each(function() {
+			arr.push($(this).outerHeight(true));
+		});
+
+		function getMaxOfArray(numArray) {
+			return Math.max.apply(null, numArray);
+		};
+
+		var height = getMaxOfArray(arr);
+
+		vertCarousel.css("height", height + "px");
+		slideElem.css("height", height + "px")
+
+		vertCarouselWrapper.each(function(i) {
+			slideCont.attr("style", "margin-top: 0px;");
+
+			downToggler.eq(i).click(function() {
+
+					var attribute = slideCont.eq(i).attr("style");
+					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+					console.log(currentPosition);
+
+					slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
+			});
+
+			if (slideCont.attr("style") == "margin-top: 0px;" ) {
+				upToggler.addClass("semi-transparent");
+			}
+			upToggler.eq(i).click(function() {
+
+				if (slideCont.eq(i).attr("style") == "margin-top: 0px;" ) {
+
+					return false;
+				} else {
+					var attribute = slideCont.eq(i).attr("style");
+					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+
+					slideCont.eq(i).css("margin-top", -currentPosition + height + "px");
+				}
+			});
+		});
+	});
+</script> -->
+        <script src="static/js/main.js"></script>
         
         
     </body>

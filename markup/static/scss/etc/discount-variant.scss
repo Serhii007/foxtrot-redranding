@@ -5,18 +5,29 @@
 			box-sizing: border-box;
 	background-color: #FFFFFF;
 	padding: 1.5% 2% 2%;
+	&__carousel {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		overflow: hidden;
+		width: 100%;
+	}
 	&__title {
 		font: 18px/1 Montserrat Bold;
 		margin-bottom: 10px;
 	}
 	.slide-container {
-		width: 90%;
+		min-width: 100%;
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-align: center;
 			-ms-flex-align: center;
 				align-items: center;
+		-ms-flex-pack: distribute;
+			justify-content: space-around;
 		.flex-container {
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -28,10 +39,14 @@
 					align-items: center;
 		}
 		.vertical-slider-wrapper {
-			width: 30%;
+			width: auto;
+			.semi-transparent {
+				opacity: .4;
+			}
 			.fa {
 				cursor: pointer;
 				display: block;
+				width: 100%;
 				margin: 0 auto;
 				text-align: center;
 				font-size: 22px;
@@ -49,8 +64,19 @@
 			width: 100%;
 			overflow: hidden;
 			.vert-gallery {
+				-webkit-transition: margin-top .3s;
+				-o-transition: margin-top .3s;
 				transition: margin-top .3s;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+					-ms-flex-align: center;
+						align-items: center;
 			}
+		}
+		&__product.main {
+			width: 35%;
 		}
 		&__product {
 			color: #000000;
@@ -68,7 +94,9 @@
 					flex-direction: column;
 			-ms-flex-item-align: start;
 				align-self: center;
-			justify-content: center;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
 			position: relative;
 		}
 		.plus, .equal {
@@ -84,11 +112,13 @@
 		.product-image {
 			height: 91px;
 			width: auto;
+			margin-bottom: 10px;
 		}
 		.product-description {
 			font: 14px/17px Montserrat Regular;
 			text-align: center;
 			width: 100%;
+			max-width: 170px;
 		}
 		&__result {
 			text-align: center;
