@@ -16,26 +16,6 @@
 }
 .characteristic {
 	margin-top: 20px;
-    .characteristic__core-list{
-        display: flex;
-        margin-top: 22px;
-        .characteristic__core-list-item{
-            margin-right: 20px;
-            .answer-wrapper:hover:before{
-                left: 18px;
-            }
-            .answer-wrapper {
-                 margin-left: 0;
-                 width: auto;
-                 height: auto;
-            }
-        }
-        .characteristic__core-list-item:first-child{
-            .answer-wrapper .answer-popup {
-                left: 97px;
-            }
-        }
-    }
 	&__block {
 		margin-top: 3%;
 	}
@@ -46,11 +26,11 @@
 	display: flex;
 	-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-	-webkit-box-pack:
+	-webkit-box-pack: 
 	justify;
-		-ms-flex-pack:
+		-ms-flex-pack: 
 	justify;
-			justify-content:
+			justify-content: 
 	space-between;
 	.point.hide {
 		display: none;
