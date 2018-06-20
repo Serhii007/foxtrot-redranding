@@ -14,9 +14,12 @@
 	}
 	&__title {
 		font: 18px/1 Montserrat Bold;
-		margin-bottom: 10px;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 	.slide-container {
+		position: relative;
 		min-width: 100%;
 		-webkit-box-sizing: border-box;
 				box-sizing: border-box;

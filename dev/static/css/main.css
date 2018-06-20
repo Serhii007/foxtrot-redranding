@@ -1608,10 +1608,13 @@ body {
 
 .discount-variant__title {
   font: 18px/1 Montserrat Bold;
-  margin-bottom: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .discount-variant .slide-container {
+  position: relative;
   min-width: 100%;
   box-sizing: border-box;
   display: -webkit-box;
