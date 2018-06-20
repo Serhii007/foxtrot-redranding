@@ -1609,6 +1609,96 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 }
 
 /*-------------end breadcrumbs block--------------*/
+/* -----------callback-popup --------*/
+.popup-wrapper.callback {
+  display: none;
+  left: 50%;
+  top: 10px;
+  width: 850px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: auto;
+}
+
+.popup-wrapper.callback .callback-popup {
+  color: #000000;
+  text-transform: initial;
+  position: relative;
+  background-color: #FFFFFF;
+  width: 850px;
+  box-sizing: border-box;
+  padding: 10px 50px 50px;
+}
+
+.popup-wrapper.callback .callback-popup__close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+}
+
+.popup-wrapper.callback .callback-popup .title {
+  margin: 50px 0 40px;
+}
+
+.popup-wrapper.callback .callback-popup .proposition {
+  font: 14px/17px Montserrat Regular;
+}
+
+.popup-wrapper.callback .connection {
+  margin-top: 40px;
+}
+
+.popup-wrapper.callback .connection__title {
+  font: 12px/15px Montserrat Bold;
+}
+
+.popup-wrapper.callback .callback-choise:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.popup-wrapper.callback .callback-choise {
+  position: relative;
+  margin-top: 10px;
+  font: 12px/15px Montserrat Medium;
+  border: 1px solid #BDBDBD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4px 12px;
+  box-sizing: border-box;
+}
+
+.popup-wrapper.callback .callback-choise .dropdown-arrow {
+  display: block;
+  width: 12px;
+  height: 10px;
+}
+
+.popup-wrapper.callback .callback-choise__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 2px);
+}
+
+.popup-wrapper.callback .dd-list__item {
+  list-style: none;
+  border: 1px solid #BDBDBD;
+  padding: 4px 12px;
+  background-color: #FFFFFF;
+}
+
+/* -----------end callback-popup --------*/
 /*discount-variant block*/
 .discount-variant {
   position: relative;

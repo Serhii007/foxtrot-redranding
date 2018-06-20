@@ -1,0 +1,76 @@
+/* -----------callback-popup --------*/
+.popup-wrapper.callback {
+	display: none;
+	left: 50%;
+	top: 10px;
+	width: 850px;
+	transform: translateX(-50%);
+	height: auto;
+	.callback-popup {
+		color: #000000;
+		text-transform: initial;
+		position: relative;
+		background-color: #FFFFFF;
+		width: 850px;
+		box-sizing: border-box;
+		padding: 10px 50px 50px;
+		&__close-icon {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+		}
+		.title {
+			margin: 50px 0 40px;
+		}
+		.proposition {
+			font: 14px/17px Montserrat Regular;
+		}
+	}
+	.connection {
+		margin-top: 40px;
+		&__title {
+			font: 12px/15px Montserrat Bold;
+		}
+	}
+	.callback-choise:hover {
+		box-shadow: 0 2px 6px rgba(0,0,0,.4);
+	}
+	.callback-choise {
+		position: relative;
+		margin-top: 10px;
+		font: 12px/15px Montserrat Medium;
+		border: 1px solid #BDBDBD;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 4px 12px;
+		box-sizing: border-box;
+		.dropdown-arrow {
+			display: block;
+			width: 12px;
+			height: 10px;
+		}
+		&__dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: -1px;
+			width: calc(100% + 2px);
+		}
+	}
+	.dd-list {
+		&__item {
+			list-style: none;
+			border: 1px solid #BDBDBD;
+			padding: 4px 12px;
+			background-color: #FFFFFF;
+		}
+	}
+	.send {
+
+	}
+}
+/* -----------end callback-popup --------*/
