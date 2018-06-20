@@ -3146,7 +3146,14 @@
         					            </div>
         					            
         					        </div>
-        					    </div>					<img src="/static/img/general/icons/arrow-right.svg" alt="icon" class="right-arrow slide-right-arrow">
+        					    </div>
+        					    <script>
+        					        $(document).ready(function() {
+        					            $(".category-container .submenu-item__link, .navigation .submenu-item__link").click(function(e) {
+        					                e.preventDefault();
+        					            });
+        					        });
+        					    </script>					<img src="/static/img/general/icons/arrow-right.svg" alt="icon" class="right-arrow slide-right-arrow">
         				</li>
         				<li class="mm-list-item compare">
         					<a class="compare__link" href="#">
@@ -3240,12 +3247,6 @@
         				return;
         			}
         		});
-        	});
-        </script>
-        <script>
-        	document.addEventListener( 'DOMContentLoaded' , function() {
-        
-        		
         	});
         </script><div class="header-buffer"></div>
         <section class="page__wrapper">

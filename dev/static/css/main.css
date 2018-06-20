@@ -2256,8 +2256,7 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 }
 
 .categories {
-  width: 18.8%;
-  min-width: 231px;
+  width: 231px;
 }
 
 .categories a {
@@ -2333,8 +2332,8 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 }
 
 .link-arrow {
-  -webkit-transform: translate(-300%, 58%);
-  transform: translate(-300%, 58%);
+  -webkit-transform: translate(-200%, 58%);
+  transform: translate(-200%, 58%);
   float: right;
 }
 
@@ -2363,9 +2362,9 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   visibility: hidden;
   font-size: 12px;
   background-color: #FFFFFF;
-  position: fixed;
-  left: calc(2% + 230px);
-  top: 111px;
+  position: absolute;
+  left: 100%;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2377,9 +2376,9 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   border-bottom: none;
   border-top: none;
   border-radius: 3px;
-  width: calc(93% - 230px);
+  width: calc(93vw - 230px);
   max-width: 1000px;
-  min-height: 406px;
+  min-height: 408px;
 }
 
 .category-menu-wrapper .category-column {
@@ -2415,6 +2414,7 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 
 .category-item a {
   color: #000000;
+  font: 12px/17px Montserrat Regular;
 }
 
 .category-item .category-item.mobile {
