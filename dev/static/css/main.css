@@ -1049,6 +1049,14 @@ body {
   min-width: 700px;
 }
 
+body .basket-popup .owl-theme .owl-nav .owl-prev {
+  left: -2px;
+}
+
+body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
+  left: -8px;
+}
+
 .basket-popup {
   margin-bottom: 50px;
   position: relative;
@@ -1063,6 +1071,17 @@ body {
   padding: 20px 2.5%;
   box-sizing: border-box;
   z-index: 1001;
+}
+
+.basket-popup .owl-carousel.owl-drag .owl-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.basket-popup .owl-carousel.owl-drag .owl-stage .rolling-carousel-item {
+  margin: 0 2%;
+  border: 1px solid #E0E0E0;
 }
 
 .basket-popup__header {
