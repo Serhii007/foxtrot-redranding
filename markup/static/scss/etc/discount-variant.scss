@@ -1,36 +1,55 @@
 /*discount-variant block*/
 .discount-variant {
+	position: relative;
 	margin: 10px 0;
 	-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 	background-color: #FFFFFF;
 	padding: 1.5% 2% 2%;
 	&__carousel {
+		width: 100%;
+	}
+	.discount-variant__carousel.owl-carousel .owl-stage {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		overflow: hidden;
-		width: 100%;
 	}
 	&__title {
 		font: 18px/1 Montserrat Bold;
-		position: absolute;
-		top: 0;
-		left: 0;
+		margin-bottom: 10px;
+	}
+	.slide-container:after {
+		content: "";
+		display: block;
+		height: 2px;
+		width: 100%;
+		background-color: transparent;
 	}
 	.slide-container {
-		position: relative;
 		min-width: 100%;
-		-webkit-box-sizing: border-box;
-				box-sizing: border-box;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-align: center;
-			-ms-flex-align: center;
-				align-items: center;
-		-ms-flex-pack: distribute;
-			justify-content: space-around;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
+		-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+				justify-content: space-between;
+		.discount-product-container {
+			min-width: 100%;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			-ms-flex-pack: distribute;
+				justify-content: space-around;
+		}
 		.flex-container {
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -86,6 +105,7 @@
 		}
 		&__product.main {
 			width: 35%;
+			max-width: 200px;
 		}
 		&__product {
 			color: #000000;
@@ -211,7 +231,7 @@
 	}
 }
 body .discount-variant__carousel.owl-theme .owl-nav {
-	top: 40%;
+	top: 50%;
 	width: 105%;
 	left: -2.5%;
 }
@@ -243,6 +263,12 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 		-webkit-box-direction: normal;
 			-ms-flex-direction: column;
 				flex-direction: column;
+		.discount-product-container {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+		}
 	}
 	.discount-variant .slide-container .product-image {
 		height: 91px;

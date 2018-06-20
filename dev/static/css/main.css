@@ -1611,6 +1611,7 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 /*-------------end breadcrumbs block--------------*/
 /*discount-variant block*/
 .discount-variant {
+  position: relative;
   margin: 10px 0;
   box-sizing: border-box;
   background-color: #FFFFFF;
@@ -1618,22 +1619,43 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 }
 
 .discount-variant__carousel {
+  width: 100%;
+}
+
+.discount-variant .discount-variant__carousel.owl-carousel .owl-stage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
-  width: 100%;
 }
 
 .discount-variant__title {
   font: 18px/1 Montserrat Bold;
-  position: absolute;
-  top: 0;
-  left: 0;
+  margin-bottom: 10px;
+}
+
+.discount-variant .slide-container:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: transparent;
 }
 
 .discount-variant .slide-container {
-  position: relative;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.discount-variant .slide-container .discount-product-container {
   min-width: 100%;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1709,6 +1731,7 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 
 .discount-variant .slide-container__product.main {
   width: 35%;
+  max-width: 200px;
 }
 
 .discount-variant .slide-container__product {
@@ -1850,7 +1873,7 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 }
 
 body .discount-variant__carousel.owl-theme .owl-nav {
-  top: 40%;
+  top: 50%;
   width: 105%;
   left: -2.5%;
 }
@@ -1877,6 +1900,12 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 
 @media only screen and (max-width: 991px) {
   .discount-variant .slide-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .discount-variant .slide-container .discount-product-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
