@@ -1643,6 +1643,13 @@ body {
   opacity: .4;
 }
 
+.discount-variant .slide-container .vertical-slider-wrapper .num-of-set-item {
+  font: 12px/16px Montserrat Regular;
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+}
+
 .discount-variant .slide-container .vertical-slider-wrapper .fa {
   cursor: pointer;
   display: block;
