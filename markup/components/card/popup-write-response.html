@@ -83,11 +83,8 @@
             $('.popup_response_wrap--write').css('display', 'block');
         });
 
-        $('.popup_response_wrap, .popup_respone .basket-close').on('click', function () {
+        $('.popup_response_wrap:not(.popup_respone), .popup_respone .basket-close').on('click', function () {
             $('.popup_response_wrap--write').css('display', 'none');
-        });
-        $(".popup_respone").click(function (event) {
-            event.stopPropagation();
         });
     }
     $(document).ready(writePopup);
