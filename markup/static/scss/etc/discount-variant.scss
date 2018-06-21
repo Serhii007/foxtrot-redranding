@@ -1,22 +1,55 @@
 /*discount-variant block*/
 .discount-variant {
+	position: relative;
 	margin: 10px 0;
 	-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 	background-color: #FFFFFF;
 	padding: 1.5% 2% 2%;
+	&__carousel {
+		width: 100%;
+	}
+	.discount-variant__carousel.owl-carousel .owl-stage {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
 	&__title {
 		font: 18px/1 Montserrat Bold;
 		margin-bottom: 10px;
 	}
+	.slide-container:after {
+		content: "";
+		display: block;
+		height: 2px;
+		width: 100%;
+		background-color: transparent;
+	}
 	.slide-container {
-		width: 90%;
+		min-width: 100%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-align: center;
-			-ms-flex-align: center;
-				align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
+		-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+				justify-content: space-between;
+		.discount-product-container {
+			min-width: 100%;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			-ms-flex-pack: distribute;
+				justify-content: space-around;
+		}
 		.flex-container {
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -27,10 +60,57 @@
 				-ms-flex-align: center;
 					align-items: center;
 		}
+		.vertical-slider-wrapper {
+			width: auto;
+			.semi-transparent {
+				opacity: .4;
+			}
+			.num-of-set-item {
+				font: 12px/16px Montserrat Regular;
+				display: block;
+				margin-top: 5px;
+				text-align: center;
+			}
+			.fa {
+				cursor: pointer;
+				display: block;
+				width: 100%;
+				margin: 0 auto;
+				text-align: center;
+				font-size: 22px;
+				line-height: 1;
+				color: #E54415;
+			}
+			.fa-angle-down {
+				margin-top : 10px;
+			}
+			.fa-angle-up {
+				margin-bottom : 10px;
+			}
+		}
+		.add-prod-vertical-slider {
+			width: 100%;
+			overflow: hidden;
+			.vert-gallery {
+				-webkit-transition: margin-top .3s;
+				-o-transition: margin-top .3s;
+				transition: margin-top .3s;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+					-ms-flex-align: center;
+						align-items: center;
+			}
+		}
+		&__product.main {
+			width: 35%;
+			max-width: 200px;
+		}
 		&__product {
 			color: #000000;
 			text-decoration: none;
-			width: 30%;
+			width: 100%;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
@@ -42,7 +122,10 @@
 				-ms-flex-direction: column;
 					flex-direction: column;
 			-ms-flex-item-align: start;
-				align-self: flex-start;
+				align-self: center;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
 			position: relative;
 		}
 		.plus, .equal {
@@ -58,11 +141,13 @@
 		.product-image {
 			height: 91px;
 			width: auto;
+			margin-bottom: 10px;
 		}
 		.product-description {
 			font: 14px/17px Montserrat Regular;
 			text-align: center;
 			width: 100%;
+			max-width: 170px;
 		}
 		&__result {
 			text-align: center;
@@ -146,7 +231,7 @@
 	}
 }
 body .discount-variant__carousel.owl-theme .owl-nav {
-	top: 40%;
+	top: 50%;
 	width: 105%;
 	left: -2.5%;
 }
@@ -178,6 +263,12 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 		-webkit-box-direction: normal;
 			-ms-flex-direction: column;
 				flex-direction: column;
+		.discount-product-container {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+		}
 	}
 	.discount-variant .slide-container .product-image {
 		height: 91px;

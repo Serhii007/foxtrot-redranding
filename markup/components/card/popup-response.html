@@ -1,0 +1,61 @@
+<div class="popup_response_wrap popup_response_wrap--send">
+    <div class="popup_respone">
+        <div class="basket-popup__header">
+            <h3 class="title">Ответить</h3>
+            <img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="basket-close">
+        </div>
+        <div class="popup_body">
+            <form>
+                <div class="popup_field">
+                    <div class="field_title">Ваш комментарий*</div>
+                    <div class="field_info">
+                        <div class="input-wrapper input-wrapper_comment">
+                            <input type="text" data-required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="popup_half_wrap">
+                    <div class="popup_field">
+                        <div class="field_title">Ваше имя*</div>
+                        <div class="field_info">
+                            <div class="input-wrapper input-wrapper_half">
+                                <input type="text" data-required="true" placeholder="Ваше имя">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup_field">
+                        <div class="field_title">Ваш email</div>
+                        <div class="field_info">
+                            <div class="input-wrapper input-wrapper_half">
+                                <input type="text" placeholder="Ваш email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup_field popup_field_mailResponse">
+                    <div class="field_info">
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="mailResponse" value="">
+                        </div>
+                    </div>
+                    <div class="field_title">Получить ответы на email</div>
+                </div>
+                <button type="button" class="popup_btn">Ответить</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+     function sendPopup() {
+         $('.feedback .answerto').on('click', function () {
+             $('.popup_response_wrap--send').css('display', 'block');
+         });
+         $('.popup_response_wrap, .popup_respone .basket-close').on('click', function () {
+             $('.popup_response_wrap--send').css('display', 'none');
+         });
+         $(".popup_respone").click(function (event) {
+             event.stopPropagation();
+         });
+     }
+      $(document).ready(sendPopup);
+</script>

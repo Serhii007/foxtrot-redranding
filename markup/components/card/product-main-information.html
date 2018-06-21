@@ -8,6 +8,40 @@
 				</p>
 			</div>
 		</div>
+        <div class="characteristic__core-list">
+            <div class="characteristic__core-list-item">
+                <div class="answer-wrapper">
+                    <img src="%=static=%img/general/card/core.png" alt="core">
+                    <div class="answer-popup">
+                        <p class="answer-text">2x ядерный процессор</p>
+                    </div>
+                </div>
+            </div>
+            <div class="characteristic__core-list-item">
+                <div class="answer-wrapper">
+                    <img src="%=static=%img/general/card/core.png" alt="core">
+                    <div class="answer-popup">
+                        <p class="answer-text">2x ядерный процессор</p>
+                    </div>
+                </div>
+            </div>
+            <div class="characteristic__core-list-item">
+                <div class="answer-wrapper">
+                    <img src="%=static=%img/general/card/core.png" alt="core">
+                    <div class="answer-popup">
+                        <p class="answer-text">2x ядерный процессор</p>
+                    </div>
+                </div>
+            </div>
+            <div class="characteristic__core-list-item">
+                <div class="answer-wrapper">
+                    <img src="%=static=%img/general/card/core.png" alt="core">
+                    <div class="answer-popup">
+                        <p class="answer-text">2x ядерный процессор</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<div class="characteristic__block">
 			<ul class="points-list">
 				<li class="point">
@@ -268,7 +302,7 @@
 			if (pureWrapperHeight < (stringHeight * 15) ) {
 				aboutToggler.hide();
 			} else {
-				
+
 				aboutToggler.click(function() {
 					aboutWrapper.toggleClass("overflow");
 					$(".about .more-arrow").toggleClass("rotate");
@@ -337,6 +371,7 @@
 				</div>
 				<button class="btn fright add-recall">Написать отзыв</button>
 			</div>
+            {{>card/popup-write-response}}
 			<div class="rating">
 				<p class="rating__name">Иван</p>
 				<div class="rating__stars">
@@ -369,6 +404,7 @@
 					<p class="no">Нет<span class="count">1</span></p>
 				</div>
 			</div>
+            {{>card/popup-response}}
 		</div>
 		<div class="wrapper-container">
 			<div class="feedback__top-container">

@@ -33,8 +33,7 @@
 	}
 }
 .categories {
-	width: 18.8%;
-	min-width: 231px;
+	width: 231px;
 	a {
 		text-decoration: none;
 	}
@@ -106,9 +105,9 @@
 	bottom: 5px;
 }
 .link-arrow {
-	-webkit-transform: translate(-300%, 58%);
-		-ms-transform: translate(-300%, 58%);
-			transform: translate(-300%, 58%);
+	-webkit-transform: translate(-200%, 58%);
+		-ms-transform: translate(-200%, 58%);
+			transform: translate(-200%, 58%);
 	float: right;
 }
 
@@ -140,9 +139,9 @@
 	visibility: hidden;
 	font-size: 12px;
 	background-color: #FFFFFF;
-	position: fixed;
-	left: calc(2% + 230px);
-	top: 111px;
+	position: absolute;
+	left: 100%;
+	top: 0;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -154,9 +153,10 @@
 	border-bottom: none;
 	border-top: none;
 	border-radius: 3px;
-	width: calc(93% - 230px);
+	width: calc(93vw - 230px);
 	max-width: 1000px;
-	min-height: 406px;
+	min-height: 436px;
+	box-sizing: border-box;
 	.category-column {
 		width: 70%;
 	}
@@ -186,6 +186,7 @@
 	}
 	a {
 		color: #000000;
+		font: 12px/17px Montserrat Regular;
 	}
 	.category-item.mobile {
 		display: none;

@@ -1,0 +1,57 @@
+<script>
+	$(document).ready(function() {
+
+		var vertCarouselWrapper = $(".vertical-slider-wrapper");
+		var vertCarousel = $(".add-prod-vertical-slider");
+		var slideCont = $(".add-prod-vertical-slider .vert-gallery");
+		var slideElem = $(".add-prod-vertical-slider .add-product");
+		var upToggler = $(".vertical-slider-wrapper .fa-angle-up");
+		var downToggler = $(".vertical-slider-wrapper .fa-angle-down");
+		var arr = [];
+		var galleryTop = slideCont.offset().top;
+		var slideElemTop = slideElem.offset().top;
+		console.log(galleryTop);
+		console.log(slideElem.eq(0).offset().top);
+		slideElem.each(function() {
+			arr.push($(this).outerHeight(true));
+		});
+
+		function getMaxOfArray(numArray) {
+			return Math.max.apply(null, numArray);
+		};
+
+		var height = getMaxOfArray(arr);
+
+		vertCarousel.css("height", height + "px");
+		slideElem.css("height", height + "px")
+
+		vertCarouselWrapper.each(function(i) {
+			slideCont.attr("style", "margin-top: 0px;");
+
+			downToggler.eq(i).click(function() {
+
+					var attribute = slideCont.eq(i).attr("style");
+					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+					console.log(currentPosition);
+
+					slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
+			});
+
+			if (slideCont.attr("style") == "margin-top: 0px;" ) {
+				upToggler.addClass("semi-transparent");
+			}
+			upToggler.eq(i).click(function() {
+
+				if (slideCont.eq(i).attr("style") == "margin-top: 0px;" ) {
+
+					return false;
+				} else {
+					var attribute = slideCont.eq(i).attr("style");
+					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
+
+					slideCont.eq(i).css("margin-top", -currentPosition + height + "px");
+				}
+			});
+		});
+	});
+</script>

@@ -8,6 +8,12 @@
 	max-width: 990px;
 	min-width: 700px;
 }
+body .basket-popup .owl-theme .owl-nav .owl-prev {
+	left: -2px;
+}
+body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
+	left: -8px;
+}
 .basket-popup {
 	margin-bottom: 50px;
 	position: relative;
@@ -24,6 +30,15 @@
 	-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 	z-index: 1001;
+	.owl-carousel.owl-drag .owl-stage {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		.rolling-carousel-item {
+			margin: 0 2%;
+			border: 1px solid #E0E0E0;
+		}
+	}
 	&__header {
 		display: -webkit-box;
 		display: -ms-flexbox;

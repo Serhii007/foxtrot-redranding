@@ -293,7 +293,111 @@
 		display: none;
 	}
 }
-
+.popup_response_wrap--send,
+.popup_response_wrap--write{
+    display: none;
+}
+.popup_response_wrap--write{
+    .popup_respone{
+        top: calc(50% - 362px);
+    }
+}
+.popup_response_wrap--send{
+    .popup_respone{
+        top: calc(50% - 268px);
+    }
+}
+.popup_response_wrap{
+    cursor: pointer;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    .popup_respone{
+        margin-bottom: 50px;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%, 60px);
+        transform: translate(-50%, 60px);
+        background-color: #FFFFFF;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 1001;
+        .basket-popup__header {
+            border-bottom: 1px solid #BDBDBD;
+            margin-bottom: 45px;
+            width: calc(100% + 30px);
+            margin-left: -20px;
+            .title{
+                margin-left: 10px;
+            }
+            .basket-close{
+                position: relative;
+                left: -10px;
+            }
+        }
+        ::placeholder {
+            font: 14px/17px "Montserrat Regular";
+            color: #828282;
+            opacity: 1;
+        }
+        .popup_half_wrap {
+            display: flex;
+            margin: 30px 0;
+            justify-content: space-between;
+            box-sizing: border-box;
+            .popup_field {
+                width: 48%;
+                .input-wrapper_half {
+                    height: 45px;
+                    input {
+                        padding: 14px 5px;
+                        display: inline-block;
+                        width: 92%;
+                    }
+                }
+            }
+        }
+        .popup_field{
+            .field_title{
+                font: 14px/17px Montserrat Regular;
+                margin-bottom: 10px;
+            }
+            .field_info{
+                .response-star{
+                        width: 28px;
+                }
+                .input-wrapper_comment input{
+                    height: 87px;
+                    width: 100%;
+                }
+            }
+        }
+        .popup_field_mailResponse{
+            display: flex;
+            input{
+                margin-right: 8px;
+            }
+        }
+        .popup_btn{
+            width: 178px;
+            background-color: #E54415;
+            font: 15px/18px "Montserrat Semibold";
+            text-align: center;
+            color: #fff;
+            margin: 50px auto;
+            display: block;
+            padding: 8px 0;
+            cursor: pointer;
+        }
+    }
+}
 @media only screen and (max-width: 1366px) {
 	.points-list {
 		display: block;
@@ -343,5 +447,16 @@
 
 		}
 	}
+}
+
+@media only screen and (max-width: 480px) {
+   .popup_response_wrap .popup_respone{
+       transform: translate(-50%, 0px);
+       position: relative;
+       top: 0;
+       min-height: 100vh;
+       height: 400px;
+       overflow: scroll;
+   }
 }
 /*-----end product-main-information---*/
