@@ -1,0 +1,35 @@
+<div class="popup_response_wrap popup_response_wrap--location">
+    <div class="popup_respone">
+        <div class="basket-popup__header">
+            <h3 class="title">Узнайте местонахождение вашего заказа</h3>
+            <img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="basket-close">
+        </div>
+        <div class="popup_body">
+                <div class="popup_field">
+                    <div class="field_title">Для этого перейдите по ссылке логической компании.<br>После введите номер товарно-транспортной накладной, высланной Вам в SMS</div>
+                    <div class="field_info">
+                        <a href="#">
+                            <img src="%=static=%img/general/card/np-logo.jpeg" alt="Новая почта">
+                        </a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<script>
+    function locationPopup() {
+        $('.header .info-list__item .call__track').on('click', function () {
+            $('.popup_response_wrap--location').css('display', 'block');
+        });
+        $('.mobile-menu .mm-list-item.find ').on('click', function () {
+
+        });
+            $('.popup_response_wrap, .popup_respone .basket-close').on('click', function () {
+            $('.popup_response_wrap--location').css('display', 'none');
+        });
+        $(".popup_respone").click(function (event) {
+            event.stopPropagation();
+        });
+    }
+    $(document).ready(locationPopup);
+</script>

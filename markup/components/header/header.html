@@ -50,8 +50,10 @@
         <img src="%=static=%img/general/header/logo.svg" alt="logo" class="logo-img">
     </div>
     <div class="header__search">
-        <input type="text" class="search-input" placeholder="Я хочу поймать..">
-        <img src="%=static=%img/general/header/icons/search.svg" alt="search" class="search-icon">
+        <form action="" class="header-search-form" name="header-search-form">
+            <input type="text" class="search-input" placeholder="Я хочу поймать..">
+            <img src="%=static=%img/general/header/icons/search.svg" alt="search" class="search-icon">
+        </form>
         {{>header/search-dropdown}}
     </div>
     <div class="header__main-information">
@@ -67,6 +69,7 @@
                 <a href="#" class="call__cal-me">Перезвоните мне</a>
                 <a href="#" class="call__track">Отследить покупку</a>
             </li>
+            {{>card/popup-location}}
             <li class="info-list__item entry">
                 <a href="#" class="entry_enter">Личный кабинет</a>
                 <!-- <a href="#" class="entry_registration">Зарегистрироваться</a> -->
