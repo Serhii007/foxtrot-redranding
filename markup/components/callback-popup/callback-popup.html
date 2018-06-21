@@ -8,11 +8,13 @@
 				<div class="connection">
 					<h3 class="connection__title">Тип обращения</h3>
 					<div class="callback-choise">
-						<p class="elected-type">Связаться с информационной службой</p>
-						<img src="%=static=%img/general/icons/arrow-down.png" alt="icon" class="dropdown-arrow">
-						<div class="callback-choise__dropdown">
+						<div class="elected-panel dropdown-toggler">
+							<p class="elected-type"></p>
+							<img src="%=static=%img/general/icons/arrow-down.png" alt="icon" class="dropdown-arrow">
+						</div>
+						<div class="callback-choise__dropdown slide-dropdown">
 							<ul class="dd-list">
-								<li class="dd-list__item">
+								<li class="dd-list__item active">
 									<p class="kind-callback">Связаться с информационной службой</p>
 								</li>
 								<li class="dd-list__item">
@@ -22,11 +24,77 @@
 						</div>
 					</div>
 				</div>
+				<script>
+					$(document).ready(function() {
+					// dropdown
+						var electedText = $(".callback-popup .elected-panel .elected-type");
+						var textPattern = $(".callback-popup .dd-list__item.active .kind-callback");
+						var ddItem = $(".callback-popup .dd-list__item");
+						var dDown = $(".callback-popup .slide-dropdown");
+						var dDownArrow = $(".callback-popup .dropdown-arrow");
+						var ddPanel = $(".callback-popup .callback-choise");
+
+						ddPanel.click(function() {
+							$(this).toggleClass("shadow");
+							dDown.toggleClass("shadow");
+						});
+
+						electedText.text(textPattern.text() );
+						ddItem.click(function() {
+							ddItem.removeClass("active");
+							$(this).addClass("active");
+							electedText.text($(this).find(".kind-callback").text() );
+							dDownArrow.removeClass("rotate");
+							dDown.slideUp();
+						});
+					});
+				</script>
 				<div class="phone">
-					
+					<h3 class="phone__title">Ваш телефон</h3>
+					<input type="text" class="phone__field" placeholder="+38 0хх хх хх">
 				</div>
 				<button class="send" type="submit">Отправить</button>
 			</form>
 		</div>
 	</div>
 </div>
+<script>
+	$(document).ready(function() {
+		var callBackToggler = $(".info-list__item.call .call__cal-me");
+		var callbackPopup = $(".popup-wrapper.callback");
+		var popupCloseIcon = $(".callback-popup__close-icon");
+
+		callBackToggler.click(function(e) {
+			e.preventDefault();
+			callbackPopup.addClass("show");
+			$("body").addClass("fixed");
+			$(".mask").addClass("full cover");
+		});
+
+		function hideCallbackPopup() {
+			callbackPopup.removeClass("show");
+			$(".mask").removeClass("full cover");
+			$("body").removeClass("fixed");
+		}
+
+		if (window.innerWidth > 768) {
+
+			$(".mask").click(hideCallbackPopup);
+			popupCloseIcon.click(hideCallbackPopup);
+		} else {
+			$(".mask").click(function() {
+				if ($(".mobile-menu").hasClass("active") ) {
+					$(".mask").removeClass("cover");
+					callbackPopup.removeClass("show");
+				}
+			});
+
+			popupCloseIcon.click(function() {
+				if ($(".mobile-menu").hasClass("active") ) {
+					$(".mask").removeClass("cover");
+					callbackPopup.removeClass("show");
+				}
+			});
+		}
+	});
+</script>

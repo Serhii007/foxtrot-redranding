@@ -1576,10 +1576,14 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 
 /*-------------end breadcrumbs block--------------*/
 /* -----------callback-popup --------*/
+.popup-wrapper.callback.show {
+  display: block;
+}
+
 .popup-wrapper.callback {
   display: none;
   left: 50%;
-  top: 10px;
+  top: 14px;
   width: 850px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1597,6 +1601,7 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 }
 
 .popup-wrapper.callback .callback-popup__close-icon {
+  cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1613,6 +1618,10 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
   font: 14px/17px Montserrat Regular;
 }
 
+.popup-wrapper.callback .callback-form {
+  width: 100%;
+}
+
 .popup-wrapper.callback .connection {
   margin-top: 40px;
 }
@@ -1621,15 +1630,23 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
   font: 12px/15px Montserrat Bold;
 }
 
-.popup-wrapper.callback .callback-choise:hover {
+.popup-wrapper.callback .callback-choise:hover,
+.popup-wrapper.callback .callback-choise.shadow {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .popup-wrapper.callback .callback-choise {
+  cursor: pointer;
   position: relative;
   margin-top: 10px;
   font: 12px/15px Montserrat Medium;
   border: 1px solid #BDBDBD;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.popup-wrapper.callback .callback-choise .elected-panel {
+  height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1639,14 +1656,17 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 4px 12px;
-  box-sizing: border-box;
+  width: 100%;
 }
 
 .popup-wrapper.callback .callback-choise .dropdown-arrow {
   display: block;
   width: 12px;
   height: 10px;
+}
+
+.popup-wrapper.callback .callback-choise__dropdown.shadow {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .popup-wrapper.callback .callback-choise__dropdown {
@@ -1658,10 +1678,92 @@ body .basket-popup .owl-theme .owl-nav .owl-prev:hover {
 }
 
 .popup-wrapper.callback .dd-list__item {
+  box-sizing: border-box;
+  height: 36px;
   list-style: none;
   border: 1px solid #BDBDBD;
-  padding: 4px 12px;
+  padding: 0 12px;
   background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup-wrapper.callback .send {
+  cursor: pointer;
+  font: 15px/18px Montserrat Semibold;
+  color: #FFFFFF;
+  background-color: #E54415;
+  padding: 10px 35px;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  margin-top: 40px;
+}
+
+.popup-wrapper.callback .phone {
+  margin-top: 40px;
+}
+
+.popup-wrapper.callback .phone__title {
+  font: 12px/15px Montserrat Bold;
+}
+
+.popup-wrapper.callback .phone__field::-webkit-input-placeholder {
+  color: #828282;
+}
+
+.popup-wrapper.callback .phone__field::-moz-placeholder {
+  color: #828282;
+}
+
+.popup-wrapper.callback .phone__field:-ms-input-placeholder {
+  color: #828282;
+}
+
+.popup-wrapper.callback .phone__field:-moz-placeholder {
+  color: #828282;
+}
+
+.popup-wrapper.callback .phone__field {
+  margin-top: 10px;
+  border: 1px solid #BDBDBD;
+  display: block;
+  width: 100%;
+  padding: 4px 12px;
+  font: 14px/17px Montserrat Regular;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 991px) {
+  .popup-wrapper.callback {
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 768px;
+  }
+  .popup-wrapper.callback .callback-popup {
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .popup-wrapper.callback {
+    width: 100%;
+  }
+  .popup-wrapper.callback .callback-popup {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .popup-wrapper.callback .callback-popup {
+    padding: 10px 20px 50px;
+  }
 }
 
 /* -----------end callback-popup --------*/
@@ -2939,7 +3041,7 @@ body .category-slider .owl-nav .owl-next:hover {
     width: calc(100% - 30px);
     display: block;
     position: fixed;
-    z-index: 1000;
+    z-index: 999;
     left: -100%;
     -webkit-transition: left .5s;
     transition: left .5s;

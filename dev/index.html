@@ -24,6 +24,7 @@
         <script src="/static/js/separate-js/jquery.min.js"></script>
         <script src="/static/js/separate-js/owl.carousel.min.js"></script>
         <script src="/static/js/separate-js/hammer.min.js"></script>
+        <script src="/static/js/separate-js/dropdowns.js"></script>
         
         <script>
             (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
@@ -195,8 +196,8 @@
                             <a href="#" class="call__track">Отследить покупку</a>
                         </li>
                         <li class="info-list__item entry">
-                            <a href="#" class="entry_enter">Войти</a>
-                            <a href="#" class="entry_registration">Зарегистрироваться</a>
+                            <a href="#" class="entry_enter">Личный кабинет</a>
+                            <!-- <a href="#" class="entry_registration">Зарегистрироваться</a> -->
                         </li>
                         <li class="info-list__item bonuses">
                             <img src="/static/img/general/icons/grn.svg" alt="icon" class="bonuses__icon">
@@ -214,7 +215,106 @@
                     </ul>
                 </div>
             </header>
-            <div class="popup-wrapper basket">
+            <div class="popup-wrapper callback">
+            	<div class="callback-popup">
+            		<img src="/static//img/general/icons/close-icon.svg" alt="icon" class="callback-popup__close-icon">
+            		<div class="callback-popup__main">
+            			<h3 class="title">Обратный звонок</h3>
+            			<p class="proposition">Оставьте свой номер - мы вам перезвоним!</p>
+            			<form action="" class="callback-form" id="callback-form" name="callback">
+            				<div class="connection">
+            					<h3 class="connection__title">Тип обращения</h3>
+            					<div class="callback-choise">
+            						<div class="elected-panel dropdown-toggler">
+            							<p class="elected-type"></p>
+            							<img src="/static/img/general/icons/arrow-down.png" alt="icon" class="dropdown-arrow">
+            						</div>
+            						<div class="callback-choise__dropdown slide-dropdown">
+            							<ul class="dd-list">
+            								<li class="dd-list__item active">
+            									<p class="kind-callback">Связаться с информационной службой</p>
+            								</li>
+            								<li class="dd-list__item">
+            									<p class="kind-callback">Заказать товар в Интернет-магазине</p>
+            								</li>
+            							</ul>
+            						</div>
+            					</div>
+            				</div>
+            				<script>
+            					$(document).ready(function() {
+            					// dropdown
+            						var electedText = $(".callback-popup .elected-panel .elected-type");
+            						var textPattern = $(".callback-popup .dd-list__item.active .kind-callback");
+            						var ddItem = $(".callback-popup .dd-list__item");
+            						var dDown = $(".callback-popup .slide-dropdown");
+            						var dDownArrow = $(".callback-popup .dropdown-arrow");
+            						var ddPanel = $(".callback-popup .callback-choise");
+            
+            						ddPanel.click(function() {
+            							$(this).toggleClass("shadow");
+            							dDown.toggleClass("shadow");
+            						});
+            
+            						electedText.text(textPattern.text() );
+            						ddItem.click(function() {
+            							ddItem.removeClass("active");
+            							$(this).addClass("active");
+            							electedText.text($(this).find(".kind-callback").text() );
+            							dDownArrow.removeClass("rotate");
+            							dDown.slideUp();
+            						});
+            					});
+            				</script>
+            				<div class="phone">
+            					<h3 class="phone__title">Ваш телефон</h3>
+            					<input type="text" class="phone__field" placeholder="+38 0хх хх хх">
+            				</div>
+            				<button class="send" type="submit">Отправить</button>
+            			</form>
+            		</div>
+            	</div>
+            </div>
+            <script>
+            	$(document).ready(function() {
+            		var callBackToggler = $(".info-list__item.call .call__cal-me");
+            		var callbackPopup = $(".popup-wrapper.callback");
+            		var popupCloseIcon = $(".callback-popup__close-icon");
+            
+            		callBackToggler.click(function(e) {
+            			e.preventDefault();
+            			callbackPopup.addClass("show");
+            			$("body").addClass("fixed");
+            			$(".mask").addClass("full cover");
+            		});
+            
+            		function hideCallbackPopup() {
+            			callbackPopup.removeClass("show");
+            			$(".mask").removeClass("full cover");
+            			$("body").removeClass("fixed");
+            		}
+            
+            		if (window.innerWidth > 768) {
+            
+            			$(".mask").click(hideCallbackPopup);
+            			popupCloseIcon.click(hideCallbackPopup);
+            		} else {
+            			$(".mask").click(function() {
+            				if ($(".mobile-menu").hasClass("active") ) {
+            					$(".mask").removeClass("cover");
+            					callbackPopup.removeClass("show");
+            				}
+            			});
+            
+            			popupCloseIcon.click(function() {
+            				if ($(".mobile-menu").hasClass("active") ) {
+            					$(".mask").removeClass("cover");
+            					callbackPopup.removeClass("show");
+            				}
+            			});
+            		}
+            	});
+            </script><div class="popup-wrapper basket">
             	<div class="basket-popup">
             		<div class="basket-popup__header">
             			<h3 class="title">Ваша корзина</h3>
@@ -271,56 +371,6 @@
             							</div>
             						</a>
             					</div>
-            					<!-- <div class="service">
-            						<div class="service__slider">
-            							<div class="slider">
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            							</div>
-            							<button class="add">Добавить</button>
-            						</div>
-            						<div class="service__extra">
-            							<div class="top-panel">
-            								<img src="/static/img/general/icons/service.svg" alt="icon" class="extra-service-icon">
-            								<p class="extra-service-text">Экстра сервис:</p>
-            							</div>
-            							<div class="elected-services">
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="sum">
-            									<span class="sum__numb">1400</span>
-            									<span class="sum__currency">грн</span>
-            								</div>
-            							</div>
-            						</div>
-            					</div> -->
             				</li>
             				<li class="basket-list__item">
             					<img src="/static/img/general/icons/close-icon.svg" alt="icon" class="basket-item-close-img">
@@ -371,56 +421,6 @@
             							</div>
             						</a>
             					</div>
-            					<!-- <div class="service">
-            						<div class="service__slider">
-            							<div class="slider">
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            							</div>
-            							<button class="add">Добавить</button>
-            						</div>
-            						<div class="service__extra">
-            							<div class="top-panel">
-            								<img src="/static/img/general/icons/service.svg" alt="icon" class="extra-service-icon">
-            								<p class="extra-service-text">Экстра сервис:</p>
-            							</div>
-            							<div class="elected-services">
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="sum">
-            									<span class="sum__numb">1400</span>
-            									<span class="sum__currency">грн</span>
-            								</div>
-            							</div>
-            						</div>
-            					</div> -->
             				</li>
             				<li class="basket-list__item">
             					<img src="/static/img/general/icons/close-icon.svg" alt="icon" class="basket-item-close-img">
@@ -471,56 +471,6 @@
             							</div>
             						</a>
             					</div>
-            					<!-- <div class="service">
-            						<div class="service__slider">
-            							<div class="slider">
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            							</div>
-            							<button class="add">Добавить</button>
-            						</div>
-            						<div class="service__extra">
-            							<div class="top-panel">
-            								<img src="/static/img/general/icons/service.svg" alt="icon" class="extra-service-icon">
-            								<p class="extra-service-text">Экстра сервис:</p>
-            							</div>
-            							<div class="elected-services">
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="sum">
-            									<span class="sum__numb">1400</span>
-            									<span class="sum__currency">грн</span>
-            								</div>
-            							</div>
-            						</div>
-            					</div> -->
             				</li>
             				<li class="basket-list__item">
             					<img src="/static/img/general/icons/close-icon.svg" alt="icon" class="basket-item-close-img">
@@ -571,56 +521,6 @@
             							</div>
             						</a>
             					</div>
-            					<!-- <div class="service">
-            						<div class="service__slider">
-            							<div class="slider">
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            							</div>
-            							<button class="add">Добавить</button>
-            						</div>
-            						<div class="service__extra">
-            							<div class="top-panel">
-            								<img src="/static/img/general/icons/service.svg" alt="icon" class="extra-service-icon">
-            								<p class="extra-service-text">Экстра сервис:</p>
-            							</div>
-            							<div class="elected-services">
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="sum">
-            									<span class="sum__numb">1400</span>
-            									<span class="sum__currency">грн</span>
-            								</div>
-            							</div>
-            						</div>
-            					</div> -->
             				</li>
             				<li class="basket-list__item has-promotion">
             					<img src="/static/img/general/icons/close-icon.svg" alt="icon" class="basket-item-close-img">
@@ -680,56 +580,6 @@
             							<p class="brand">MICROSOFT Office 365 Personal</p>
             						</div>
             					</div>
-            					<!-- <div class="service">
-            						<div class="service__slider">
-            							<div class="slider">
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            								<div class="slide__item">
-            									<img src="/static/img/general/icons/service.svg" alt="" class="item-img">
-            									<span class="company">"Мастер сервис"</span>
-            									<span class="time">3 года</span>
-            									<span class="price-numb">749</span>
-            									<span class="currency">грн</span>
-            								</div>
-            							</div>
-            							<button class="add">Добавить</button>
-            						</div>
-            						<div class="service__extra">
-            							<div class="top-panel">
-            								<img src="/static/img/general/icons/service.svg" alt="icon" class="extra-service-icon">
-            								<p class="extra-service-text">Экстра сервис:</p>
-            							</div>
-            							<div class="elected-services">
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="elected-services__item"><img src="/static/img/general/icons/close-icon.svg" alt="icon" class="close-service-icon"></div>
-            								<div class="sum">
-            									<span class="sum__numb">1400</span>
-            									<span class="sum__currency">грн</span>
-            								</div>
-            							</div>
-            						</div>
-            					</div> -->
             				</li>
             				<li class="basket-list__item result-item">
             					<ul class="result-list">

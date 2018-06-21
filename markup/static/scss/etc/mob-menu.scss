@@ -7,7 +7,7 @@
 		width: calc(100% - 30px);
 		display: block;
 		position: fixed;
-		z-index: 1000;
+		z-index: 999;
 		left: -100%;
 		-webkit-transition: left .5s;
 		-o-transition: left .5s;
