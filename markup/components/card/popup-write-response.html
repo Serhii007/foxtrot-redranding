@@ -79,12 +79,18 @@
 </div>
 <script>
     function writePopup() {
-        $('.feedback__top-container .add-recall').on('click', function () {
-            $('.popup_response_wrap--write').css('display', 'block');
+
+        $(".feedback__top-container .add-recall").click(function() {
+
+            $("body").addClass("fixed");
+            $(".popup_response_wrap.popup_response_wrap--write").addClass("show");
+            $(".mask").addClass("full cover");
         });
 
-        $('.popup_response_wrap:not(.popup_respone), .popup_respone .basket-close').on('click', function () {
-            $('.popup_response_wrap--write').css('display', 'none');
+        $(".mask, .popup_response_wrap--write .basket-close").click(function() {
+            $(".mask").removeClass("full cover");
+            $(".popup_response_wrap.popup_response_wrap--write").removeClass("show");
+            $("body").removeClass("fixed");
         });
     }
     $(document).ready(writePopup);

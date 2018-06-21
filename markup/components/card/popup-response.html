@@ -47,12 +47,26 @@
 </div>
 <script>
      function sendPopup() {
-         $('.feedback .answerto').on('click', function () {
-             $('.popup_response_wrap--send').css('display', 'block');
-         });
-         $('.popup_response_wrap:not(.popup_respone), .popup_respone .basket-close').on('click', function () {
-             $('.popup_response_wrap--send').css('display', 'none');
-         });
+         // $('.feedback .answerto').on('click', function () {
+         //     $('.popup_response_wrap--send').css('display', 'block');
+         // });
+         // $('.popup_response_wrap:not(.popup_respone), .popup_respone .basket-close').on('click', function () {
+         //     $('.popup_response_wrap--send').css('display', 'none');
+         // });
+
+
+         $(".feedback .answerto").click(function() {
+
+            $("body").addClass("fixed");
+            $(".popup_response_wrap.popup_response_wrap--send").addClass("show");
+            $(".mask").addClass("full cover");
+        });
+
+        $(".mask, .popup_response_wrap--send .basket-close").click(function() {
+            $(".mask").removeClass("full cover");
+            $(".popup_response_wrap.popup_response_wrap--send").removeClass("show");
+            $("body").removeClass("fixed");
+        });
      }
       $(document).ready(sendPopup);
 </script>

@@ -1,4 +1,4 @@
-<div class="popup-wrapper">
+<div class="popup-wrapper store">
 	<div class="stores-popup">
 		<img src="%=static=%img/general/icons/close-icon.svg" alt="" class="close-icon">
 		<div class="chiose-panel">
@@ -17,13 +17,13 @@
 		// show-hide store popup
 		$(".mask, .stores-popup .close-icon").click(function() {
 			$(".mask").removeClass("full cover");
-			$(".popup-wrapper").removeClass("show");
+			$(".popup-wrapper.store").removeClass("show");
 			$("body").removeClass("fixed");
 		});
 		$(".delivery-block .from-store__link, .product-widget .take__link").click(function(e) {
 			e.preventDefault();
 			$("body").addClass("fixed");
-			$(".popup-wrapper").addClass("show");
+			$(".popup-wrapper.store").addClass("show");
 			$(".mask").addClass("full cover");
 		});
 
