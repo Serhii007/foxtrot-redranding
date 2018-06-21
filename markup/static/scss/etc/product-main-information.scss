@@ -286,6 +286,23 @@
 			padding-right: 8px;
 		}
 	}
+	.recall-answer {
+		margin-top: 30px;
+		width: 87%;
+		margin-left: auto;
+		&__top-panel {
+			display: flex;
+			align-items: flex-end;
+		}
+		.answer-name {
+			font: 16px/20px Montserrat Semibold;
+		}
+		.date {
+			color: #828282;
+			font: 14px/18px Montserrat Regular;
+			margin-left: 10px;
+		}
+	}
 	.wrapper-container {
 		margin-top: 5%;
 	}

@@ -4595,6 +4595,31 @@ body .product-listing .listing-item__img-container .item-image {
   padding-right: 8px;
 }
 
+.feedback .recall-answer {
+  margin-top: 30px;
+  width: 87%;
+  margin-left: auto;
+}
+
+.feedback .recall-answer__top-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.feedback .recall-answer .answer-name {
+  font: 16px/20px Montserrat Semibold;
+}
+
+.feedback .recall-answer .date {
+  color: #828282;
+  font: 14px/18px Montserrat Regular;
+  margin-left: 10px;
+}
+
 .feedback .wrapper-container {
   margin-top: 5%;
 }
@@ -6301,7 +6326,7 @@ body .product-listing .listing-item__img-container .item-image {
   margin-right: 7px;
   text-align: center;
   text-decoration: none;
-  padding: 10px 35px;
+  padding: 7px 25px;
   background-color: #E54415;
   font-size: 16px;
   font-family: 'Montserrat Semibold';
