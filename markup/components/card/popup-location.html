@@ -18,28 +18,30 @@
 </div>
 <script>
     function locationPopup() {
-        // $('.header .info-list__item .call__track').on('click', function () {
-        //     $('.popup_response_wrap--location').css('display', 'block');
-        // });
-        // $('.mobile-menu .mm-list-item.find ').on('click', function () {
 
-        // });
-        //     $('.popup_response_wrap, .popup_respone .basket-close').on('click', function () {
-        //     $('.popup_response_wrap--location').css('display', 'none');
-        // });
-
-
-        $(".header .info-list__item .call__track").click(function() {
+        $(".header .info-list__item .call__track, .mobile-menu .mm-list-item.find").click(function() {
 
             $("body").addClass("fixed");
-            $(".popup_response_wrap.popup_response_wrap--location").addClass("show");
             $(".mask").addClass("full cover");
-        });
+            $(".popup_response_wrap.popup_response_wrap--location").addClass("show");
 
-        $(".mask, .popup_response_wrap--location .basket-close").click(function() {
-            $(".mask").removeClass("full cover");
-            $(".popup_response_wrap.popup_response_wrap--location").removeClass("show");
-            $("body").removeClass("fixed");
+            if (window.innerWidth <= 768){
+                $(".mask, .popup_response_wrap--location .basket-close").click(function() {
+                    $(".popup_response_wrap.popup_response_wrap--location").removeClass("show");
+                    $("body").removeClass("fixed");
+                    if ($(".mobile-menu").hasClass("active") ) {
+                                $(".mask").removeClass("cover");
+                        }
+                });
+                    $('.popup_response_wrap--location').addClass('popup_response_wrap-mobile');
+            } else {
+                $('.popup_response_wrap--location').removeClass('popup_response_wrap-mobile');
+                $(".mask, .popup_response_wrap--location .basket-close").click(function() {
+                    $(".mask").removeClass("full cover");
+                    $(".popup_response_wrap.popup_response_wrap--location").removeClass("show");
+                    $("body").removeClass("fixed");
+                });
+            }
         });
 
     }
