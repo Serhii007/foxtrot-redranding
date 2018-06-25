@@ -27,8 +27,8 @@ $(document).ready(function(){
 	});
 
 	// dropdown attributes js
-	let inputElem = $(".checked-block > input[type='checkbox']");
-	let labelElem = $(".checked-block > label");
+	let inputElem = $(".sidebar .checked-block > input[type='checkbox']");
+	let labelElem = $(".sidebar .checked-block > label");
 	inputElem.each(function(index, value){
 		$(this).attr("id", "sidebar-check-input-" + index);
 	});
