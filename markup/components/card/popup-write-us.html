@@ -1,0 +1,53 @@
+<div class="popup_response_wrap popup_response_wrap--write-us">
+    <div class="popup_respone">
+        <div class="basket-popup__header">
+            <h3 class="title">Напишите нам</h3>
+            <img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="basket-close">
+        </div>
+        <div class="popup_body">
+            <form>
+            <div class="popup_field">
+                <div class="field_title">Ваш комментарий*</div>
+                <div class="field_info">
+                    <div class="input-wrapper">
+                        <textarea data-required="true" cols="20"></textarea>
+                    </div>
+                </div>
+            </div>
+                <button type="button" class="popup_btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function writeUsPopup() {
+
+        $(".mobile-menu .mm-list-item.write-to-us").click(function() {
+
+            console.log('click');
+            $("body").addClass("fixed");
+            $(".mask").addClass("full cover");
+            $(".popup_response_wrap.popup_response_wrap--write-us").addClass("show");
+
+            if (window.innerWidth <= 768){
+                $(".mask, .popup_response_wrap--write-us .basket-close").click(function() {
+                    $(".popup_response_wrap.popup_response_wrap--write-us").removeClass("show");
+                    $("body").removeClass("fixed");
+                    if ($(".mobile-menu").hasClass("active") ) {
+                        $(".mask").removeClass("cover");
+                    }
+                });
+                $('.popup_response_wrap--write-us').addClass('popup_response_wrap-mobile');
+            } else {
+                $('.popup_response_wrap--write-us').removeClass('popup_response_wrap-mobile');
+                $(".mask, .popup_response_wrap--write-us .basket-close").click(function() {
+                    $(".mask").removeClass("full cover");
+                    $(".popup_response_wrap.popup_response_wrap--write-us").removeClass("show");
+                    $("body").removeClass("fixed");
+                });
+            }
+        });
+
+    }
+    $(document).ready(writeUsPopup);
+</script>
