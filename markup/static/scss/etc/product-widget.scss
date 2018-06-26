@@ -15,6 +15,10 @@
 	.brand-image {
 		display: block;
 		margin-top: 2%;
+		width: auto;
+		height: auto;
+		max-height: 50px;
+		max-width: 110px;
 	}
 	.widget-inner {
 		display: -webkit-box;
