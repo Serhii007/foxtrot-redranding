@@ -4,7 +4,7 @@
 }
 @media only screen and (max-width: 768px) {
 	.popup-wrapper.compare-popup {
-		// display: block;
+		display: block;
 		width: 100%;
 		top: 0;
 		.inner-wrapper {
@@ -93,16 +93,23 @@
 				font: 12px/15px Montserrat Regular;
 			}
 		}
+		.second-lev .compare-products {
+			height: auto;
+			min-height: auto;
+			display: flex;
+			padding: 0;
+		}
 		.compare-products {
 			padding: 0 4% 0;
 			position: relative;
 			margin-top: 15px;
 			height: 100%;
-			min-height: 500px;
+			// min-height: 500px;
 			.list-wrapper {
 				overflow: auto;
 				height: calc(100vh - 157px - 70px);
-				min-height: 500px;
+				// min-height: 500px;
+				padding-right: 12px;
 			}
 			.compare-product-list {
 				margin-bottom: 70px;
@@ -126,6 +133,7 @@
 		.listing-item__img-container {
 			display: block;
 			width: 57px;
+			min-width: 57px;
 			height: 57px;
 			position: relative;
 			margin: 0 20px;
@@ -240,6 +248,113 @@
 				&:checked + label:after {
 					opacity: 1;
 				}
+			}
+		}
+		.slide .compare-info.second-lev {
+			display: block;
+			height: 100%;
+			.compare-information {
+				.main-compare-info {
+					min-height: 180px;
+				}
+			}
+		}
+		.compare-info.second-lev {
+			display: none;
+			.compare-products {
+				&__product.first {
+					border-right: 1px solid #E0E0E0;
+				}
+				&__product {
+					box-sizing: border-box;
+					border-top: 1px solid #E0E0E0;
+					display: flex;
+					flex-direction: column;
+					padding: 0 5%;
+				}
+				.listing-item__img-container {
+					color: #000000;
+					text-decoration: none;
+					display: inline-block;
+					margin: 13px auto 10px;
+				}
+				.item-image {
+					display: block;
+					height: 57px;
+					width: auto;
+				}
+				.listing-link {
+					color: #000000;
+					text-decoration: none;
+					display: block;
+					font: 12px/15px Montserrat Medium;
+				}
+				.buy {
+					display: block;
+					border: 0;
+					border-radius: 0;
+					background-color: #E54415;
+					color: #FFFFFF;
+					font: 15px/18px Montserrat Semibold;
+					padding: 10px;
+					width: 80%;
+					max-width: 180px;
+					margin: 10px auto;
+				}
+			}
+		}
+		.compare-information {
+			background-color: #E0E0E0;
+			padding: 7px 2% 0;
+		}
+		.choise-panel {
+			display: flex;
+			&__toggler.active {
+				background-color: #FFFFFF;
+				.toggler-text {
+					color: #E54415;
+				}
+			}
+			&__toggler {
+				width: 50%;
+				padding: 7px 0;
+				.toggler-text {
+					text-align: center;
+				}
+			}
+		}
+		.main-compare-info.active {
+			display: block;
+		}
+		.main-compare-info {
+			display: none;
+			background-color: #FFFFFF;
+			padding: 0 5%;
+			overflow: auto;
+			// min-height: 300px;
+			.wrapper {
+				display: flex;
+			}
+			.compare-kind {
+				width: 50%;
+				box-sizing: border-box;
+				border-top: 1px solid #E0E0E0;
+				border-bottom: 1px solid #E0E0E0;
+				padding: 7px 0;
+				p {
+					font: 12px/15px Montserrat Regular;
+					text-align: center;
+				}
+			}
+			.compare-kind:first-child {
+				border-right: 1px solid #E0E0E0;
+			}
+		}
+		.compare-type {
+			padding: 7px 0;
+			&__text {
+				font: 12px/15px Montserrat Semibold;
+				text-align: center;
 			}
 		}
 	}
