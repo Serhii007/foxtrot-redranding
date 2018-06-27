@@ -614,6 +614,12 @@ body {
 		.phone, .call, .entry, .bonuses {
 			display: none;
 		}
+		.compare:hover .header-compare-list {
+			display: none;
+		}
+		.compare:hover:after {
+			content: none;
+		}
 		.phone-mobile {
 			display: block;
 			cursor: pointer;
