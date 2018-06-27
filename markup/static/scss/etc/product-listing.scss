@@ -228,7 +228,7 @@ body {
 		&__able {
 			font-size: 12px;
 			padding: 0 3%;
-			margin-top: 5px;
+			margin: 5px 0;
 		}
 		.able-text {
 			font-family: 'Montserrat Medium';
@@ -243,7 +243,7 @@ body {
 			-webkit-box-align: center;
 				-ms-flex-align: center;
 					align-items: center;
-			margin: 0 3% 5px;
+			margin: auto 3% 5px;
 			.compare-icon {
 				background-image: url("/static/img/general/header/icons/Group.svg");
 				background-repeat: no-repeat;
