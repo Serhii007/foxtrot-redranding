@@ -250,8 +250,12 @@ body {
 	height: 100%;
 	position: fixed;
 	top: 0;
+	-webkit-transition: left .3s;
+	-o-transition: left .3s;
 	transition: left .3s;
-	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+		-ms-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
 	overflow: auto;
 	z-index: 1001;
 }
@@ -348,7 +352,8 @@ body {
 			height: 30px;
 			border: 1px solid #A9A89F;
 			color: #A9A89F;
-			box-sizing: content-box;
+			-webkit-box-sizing: content-box;
+					box-sizing: content-box;
 		}
 		.search-icon {
 			position: absolute;
@@ -461,6 +466,22 @@ body {
 			display: block;
 		}
 	}
+	.compare:hover:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		-webkit-transform: rotate(45deg) translateX(-50%);
+			-ms-transform: rotate(45deg) translateX(-50%);
+				transform: rotate(45deg) translateX(-50%);
+		top: calc(100% + 5px);
+		left: 50%;
+		z-index: 2;
+		background-color: #FFFFFF;
+		border-top: 1px solid #BDBDBD;
+		border-left: 1px solid #BDBDBD;
+	}
 	.compare {
 		margin: 0 5px;
 		position: relative;
@@ -485,22 +506,31 @@ body {
 		}
 		.header-compare-list {
 			display: none;
-			box-shadow: 0 0 4px rgba(0,0,0,.2);
+			border: 1px solid #BDBDBD;
 			position: absolute;
-			top: calc(100% + 17px);
+			top: calc(100% + 6px);
 			right: 0;
+			-webkit-transform: translateX(20%);
+				-ms-transform: translateX(20%);
+					transform: translateX(20%);
 			background-color: #FFFFFF;
-			padding: 10px;
+			padding: 6px;
+			.compare-category.clean {
+				padding: 5px 0 0 5px;
+				a {
+					color: #2F80ED;
+				}
+			}
 			.compare-category {
 				position: relative;
 				background: #FFFFFF;
 				width: 100%;
-				padding: 5px;
+				padding: 1px 5px 0 0;
 				a {
 					color: #000000;
 					text-decoration: none;
 					font: 12px/16px Montserrat Regular;
-					width: 190px;
+					width: 230px;
 				}
 				.remove {
 					position: absolute;
@@ -632,10 +662,12 @@ body {
 		width: 100%;
 		max-width: 770px;
 		margin: 0;
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 		padding: 0;
 		.search-input {
-			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
 			height: 40px;
 			border-radius: 0;
 			border: 1px solid #A9A89F;
@@ -666,7 +698,10 @@ body {
 		width: auto;
 	}
 	.colums-wrapper.card {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
 		.left-col {
 			width: 100%;
 			margin: 0;
