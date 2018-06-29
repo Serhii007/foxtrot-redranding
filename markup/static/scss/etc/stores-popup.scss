@@ -577,3 +577,158 @@
         }
     }
 
+@media only screen and (max-width: 768px) {
+
+        .popup-wrapper.store.show {
+            position: fixed;
+            transform: none;
+            width: 100%;
+            height: auto;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            .stores-popup {
+                margin-bottom: 0;
+                transform: none;
+                left: 0;
+                .adress-table {
+                    border: 0;
+                    .table-row:first-child {
+                        display: none;
+                    }
+                    .table-row {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .cell-workingtime {
+                            height: 10px;
+                            margin: 15px 0;
+                        }
+                        .adres-text {
+                            margin: 10px 0;
+                        }
+                        .cell-able {
+                            //margin-top: 20px;
+                            height: 30px;
+                        }
+                        .cell-map {
+                            display: none;
+                            height: 150px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+                .popup-delivery-to-adress {
+                    .contents {
+                        padding: 0 0 22px 0;
+                        .delivery-cols {
+                            flex-direction: column;
+                            .col {
+                                width: 100%;
+                                p {
+                                    padding-left: 0;
+                                    margin-bottom: 20px;
+                                }
+                                .table-wrapper {
+                                    padding: 0;
+                                    .table-wrapper-inner {
+                                        padding: 0;
+                                        tr {
+                                            border-bottom: 0.5px solid #BDBDBD;
+                                            background-color: #fff;
+
+                                            th, td {
+                                                padding: 7px 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                .grey-block {
+                                    padding: 0;
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+                        .branch-map {
+                            border: 0;
+                            flex-direction: column;
+                            .col {
+                                width: 100%;
+                                border: 0;
+                                li{
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
+.store-mobile-bottom-price-js {
+    height: 50px;
+    background-color: #fff;
+    border-top: 1px solid #E0E0E0;
+    display: none;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0 !important;
+    z-index: 999999999999;
+    .cell-able {
+        font: 14px/17px "Montserrat Regular";
+        color: #1CA355;
+        margin: 0 25px;
+    }
+    .price__relevant {
+        font-size: 24px;
+        font-family: 'Montserrat Extrabold';
+        line-height: 1;
+    }
+}
+    @media only screen and (min-width: 768px) {
+        .popup-wrapper.store.show {
+            .stores-popup {
+                .adress-table {
+                    .table-row-height::after {
+                        content: '';
+                        display: block;
+                        height: 230px;
+                    }
+                    .table-row:first-child {
+                        display: inline-table;
+                        vertical-align: middle;
+                        margin-bottom: 15px;
+                        th{
+                            height: 44px;
+                        }
+                        .cell-adress{
+                            width: 34%;
+                        }
+                        .cell-workingtime{
+                            width: 21%;
+                            font: 14px/20px Montserrat Semibold;
+                        }
+                    }
+                    .table-row {
+                        position: relative;
+                        display: inline-table;
+                        vertical-align: top;
+                        width: 100%;
+                        .cell-map {
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            left: 0;
+                            padding-bottom: 110px;
+                            iframe {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
