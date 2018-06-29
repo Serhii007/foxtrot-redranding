@@ -1,9 +1,10 @@
 /*------stores-popup-------*/
 .popup-delivery-slider {
 	position: relative;
-	width: 100%;
+	//width: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden;
+    margin: 50px 0;
 	.popup-delivery-to-adress {
 		display: none;
 	}
@@ -28,6 +29,7 @@
 	box-sizing: border-box;
 	z-index: 1001;
 	.close-icon {
+        z-index: 9;
 		display: block;
 		cursor: pointer;
 		position: absolute;
@@ -37,12 +39,12 @@
 		height: 22px;
 	}
 	.chiose-panel {
+        z-index: 9;
 		margin-bottom: 20px;
 		display: flex;
-		padding-bottom: 35px;
 		border-bottom: 1px solid #F2F2F2;
 		p {
-			font: 14px/20px Montserrat Semibold;
+			font: 12px/20px Montserrat Semibold;
 			border-bottom: 1px dotted #EF4123;
 		}
 		p:nth-child(n+2) {
@@ -58,6 +60,10 @@
 		top: 0;
 		width: 100%;
 		background-color: #FFFFFF;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 65px 30px;
 	}
 	.adress-block {
 		left: 0;
@@ -76,6 +82,9 @@
 			text-align: left;
 			font: 14px/20px Montserrat Semibold;
 		}
+        .cell-map{
+            display: none;
+        }
 		td.cell-able.able {
 			color: #1CA355;
 		}
@@ -94,9 +103,10 @@
 				margin-right: 2%;
 			}
 			.about-text {
-				font: 12px/14px Montserrat Regular;
-				border-bottom: 1px solid #000000;
-				margin-top: 5px;
+                font: 14px/17px Montserrat Regular;
+                border-bottom: 1px solid #2F80ED;
+                margin-top: 5px;
+                color: #2F80ED;
 			}
 		}
 		.cell-take, .cell-workingtime {
@@ -136,10 +146,12 @@
 	.popup-delivery-to-adress {
 		left: -100%;
 		transition: left .3s;
+        display: none;
 		.contents {
 			font: 14px/17px Montserrat Regular;
 			width: 100%;
 			padding: 22px 0 0;
+            margin-top: 30px;
 			& * {
 				box-sizing: border-box;
 			}
@@ -168,10 +180,21 @@
 					p {
 						padding-left: 10px;
 					}
+                    h3{
+                        font: 14px/17px 'Montserrat Bold';
+                    }
+                    .special-delivery-city{
+                        font: 14px/20px Montserrat Regular;
+                        padding-left: 10px;
+                        span{
+                            font: 14px/17px 'Montserrat Bold';
+                        }
+                    }
 				}
 				h3 {
 					margin-top: 37px;
 					font: 18px/21px Montserrat Regular;
+                    padding-left: 10px;
 				}
 				.col+.col {
 					width: 30%;
@@ -203,7 +226,7 @@
 						width: 100%;
 						background: #fff;
 						padding: 10px;
-						border-top: 1px solid #ddd;
+						border-top: 1px solid #BDBDBD;
 						border-bottom: none;
 					}
 					.striped {
@@ -399,3 +422,158 @@
 	/*--------end popup-delivery-to-adress------*/
 }
 /*------end stores-popup-------*/
+@media only screen and (max-width: 768px) {
+
+        .popup-wrapper.store.show {
+            position: fixed;
+            transform: none;
+            width: 100%;
+            height: auto;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            .stores-popup {
+                margin-bottom: 0;
+                transform: none;
+                left: 0;
+                .adress-table {
+                    border: 0;
+                    .table-row:first-child {
+                        display: none;
+                    }
+                    .table-row {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .cell-workingtime {
+                            height: 10px;
+                            margin: 15px 0;
+                        }
+                        .adres-text {
+                            margin: 10px 0;
+                        }
+                        .cell-able {
+                            //margin-top: 20px;
+                            height: 30px;
+                        }
+                        .cell-map {
+                            display: none;
+                            height: 150px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+                .popup-delivery-to-adress {
+                    .contents {
+                        padding: 0 0 22px 0;
+                        .delivery-cols {
+                            flex-direction: column;
+                            .col {
+                                width: 100%;
+                                p {
+                                    padding-left: 0;
+                                    margin-bottom: 20px;
+                                }
+                                .table-wrapper {
+                                    padding: 0;
+                                    .table-wrapper-inner {
+                                        padding: 0;
+                                        tr {
+                                            border-bottom: 0.5px solid #BDBDBD;
+                                            background-color: #fff;
+
+                                            th, td {
+                                                padding: 7px 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                .grey-block {
+                                    padding: 0;
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+                        .branch-map {
+                            border: 0;
+                            flex-direction: column;
+                            .col {
+                                width: 100%;
+                                border: 0;
+                                li{
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
+.store-mobile-bottom-price-js {
+    height: 50px;
+    background-color: #fff;
+    border-top: 1px solid #E0E0E0;
+    display: none;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0 !important;
+    z-index: 999999999999;
+    .cell-able {
+        font: 14px/17px "Montserrat Regular";
+        color: #1CA355;
+        margin: 0 25px;
+    }
+    .price__relevant {
+        font-size: 24px;
+        font-family: 'Montserrat Extrabold';
+        line-height: 1;
+    }
+}
+    @media only screen and (min-width: 768px) {
+        .popup-wrapper.store.show {
+            .stores-popup {
+                .adress-table {
+                    .table-row-height::after {
+                        content: '';
+                        display: block;
+                        height: 230px;
+                    }
+                    .table-row:first-child {
+                        display: inline-table;
+                        vertical-align: middle;
+                        margin-bottom: 15px;
+                        th{
+                            height: 44px;
+                        }
+                        .cell-adress{
+                            width: 34%;
+                        }
+                        .cell-workingtime{
+                            width: 21%;
+                            font: 14px/20px Montserrat Semibold;
+                        }
+                    }
+                    .table-row {
+                        position: relative;
+                        display: inline-table;
+                        vertical-align: top;
+                        width: 100%;
+                        .cell-map {
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            left: 0;
+                            padding-bottom: 110px;
+                            iframe {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
