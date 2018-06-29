@@ -1,10 +1,8 @@
-<div class="popup-wrapper compare-popup show">
+<div class="popup-wrapper compare-popup">
 	<div class="inner-wrapper">
 		<div class="popup-body">
 			<section class="compare-elect">
 				<div class="back-button">
-					<img src="%=static=%img/general/icons/arrow-left.svg" alt="icon" class="left-icon second-controller">
-					<span class="back-button__text">Назад</span>
 					<img src="%=static=%img/general/icons/close-icon-white.svg" alt="icon" class="close-img">
 				</div>
 				<div class="title-panel">
@@ -22,7 +20,7 @@
 								<li class="compare-product-item">
 									<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="compare-item-close">
 									<div class="checked-block">
-										<input type="checkbox" class="disabled" value="None" name="check" id="test" />
+										<input type="checkbox" class="disabled" value="None" name="check" data-class-id="10" id="test" />
 										<label for="test"></label>
 									</div>
 									<a href="#" class="listing-item__img-container">
@@ -50,7 +48,7 @@
 								<li class="compare-product-item">
 									<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="compare-item-close">
 									<div class="checked-block">
-										<input type="checkbox" class="disabled" value="None" name="check" />
+										<input type="checkbox" class="disabled" value="None" name="check" data-class-id="10" />
 										<label></label>
 									</div>
 									<a href="#" class="listing-item__img-container">
@@ -78,7 +76,7 @@
 								<li class="compare-product-item">
 									<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="compare-item-close">
 									<div class="checked-block">
-										<input type="checkbox" class="disabled" value="None" name="check" />
+										<input type="checkbox" class="disabled" value="None" name="check" data-class-id="10" />
 										<label></label>
 									</div>
 									<a href="#" class="listing-item__img-container">
@@ -106,11 +104,11 @@
 								<li class="compare-product-item">
 									<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="compare-item-close">
 									<div class="checked-block">
-										<input type="checkbox" class="disabled" value="None" name="check" />
+										<input type="checkbox" class="disabled" value="None" name="check" data-class-id="11" />
 										<label></label>
 									</div>
 									<a href="#" class="listing-item__img-container">
-										<img src="%=static=%img/general/rolling/0.png" alt="rolling-image"	class="item-image">
+										<img src="%=static=%img/general/card/asus-notebook.png" alt="rolling-image"	class="item-image">
 									</a>
 									<div class="listing-item__info">
 										<a href="#" class="listing-link">
@@ -134,11 +132,11 @@
 								<li class="compare-product-item">
 									<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="compare-item-close">
 									<div class="checked-block">
-										<input type="checkbox" class="disabled" value="None" name="check" />
+										<input type="checkbox" class="disabled" value="None" name="check" data-class-id="11" />
 										<label></label>
 									</div>
 									<a href="#" class="listing-item__img-container">
-										<img src="%=static=%img/general/rolling/0.png" alt="rolling-image"	class="item-image">
+										<img src="%=static=%img/general/card/asus-notebook.png" alt="rolling-image"	class="item-image">
 									</a>
 									<div class="listing-item__info">
 										<a href="#" class="listing-link">
@@ -162,7 +160,7 @@
 								<li class="compare-product-item">
 									<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="compare-item-close">
 									<div class="checked-block">
-										<input type="checkbox" class="disabled" value="None" name="check" />
+										<input type="checkbox" class="disabled" value="None" name="check" data-class-id="10" />
 										<label></label>
 									</div>
 									<a href="#" class="listing-item__img-container">
@@ -195,7 +193,7 @@
 					</form>
 				</div>
 			</section>
-			<section class="compare-info">
+			<section class="compare-info second-lev">
 				<div class="back-button">
 					<img src="%=static=%img/general/icons/arrow-left.svg" alt="icon" class="left-icon second-controller">
 					<span class="back-button__text">Назад</span>
@@ -204,25 +202,279 @@
 				<div class="title-panel">
 					<p class="title-text">Сравнение товаров</p>
 				</div>
+				<div class="compare-wrapper">
+					<div class="compare-products">
+						<div class="compare-products__product first">
+							<a href="#" class="listing-item__img-container">
+								<img src="%=static=%img/general/rolling/0.png" alt="rolling-image"	class="item-image">
+							</a>
+							<div class="listing-item__info">
+								<a href="#" class="listing-link">
+									<p class="info">Ноутбук Del Latitude E6410 14" i5 4GB RAM 160GB</p>
+								</a>
+								<div class="price">
+									<div class="price__not-relevant">
+										<span class="numb">14 925</span><span class="currency">грн</span>
+									</div>
+									<div class="price__relevant">
+										<span class="numb">1100 999</span><span class="currency">грн</span>
+									</div>
+								</div>
+							</div>
+							<button class="buy">Купить</button>
+						</div>
+						<div class="compare-products__product second">
+							<a href="#" class="listing-item__img-container">
+								<img src="%=static=%img/general/rolling/0.png" alt="rolling-image"	class="item-image">
+							</a>
+							<div class="listing-item__info">
+								<a href="#" class="listing-link">
+									<p class="info">Ноутбук Del Latitude E6410 14" i5 4GB RAM 160GB</p>
+								</a>
+								<div class="price">
+									<div class="price__not-relevant">
+										<span class="numb">14 925</span><span class="currency">грн</span>
+									</div>
+									<div class="price__relevant">
+										<span class="numb">1100 999</span><span class="currency">грн</span>
+									</div>
+								</div>
+							</div>
+							<button class="buy">Купить</button>
+						</div>
+					</div>
+					<div class="compare-information">
+						<div class="choise-panel">
+							<div class="choise-panel__toggler all active">
+								<p class="toggler-text">Все параметры</p>
+							</div>
+							<div class="choise-panel__toggler differences">
+								<p class="toggler-text">Только отличия</p>
+							</div>
+						</div>
+						<div class="main-compare-info all-parameters active">
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Диагональ дисплея</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>15</p>
+									</div>
+									<div class="compare-kind">
+										<p>20</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Разрешение дисплея</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>1366х998</p>
+									</div>
+									<div class="compare-kind">
+										<p>991х600</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Тип матрицы</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Серия процессора</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="main-compare-info differences">
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+							<div class="compare-detail">
+								<div class="compare-type">
+									<p class="compare-type__text">Конструкция</p>
+								</div>
+								<div class="wrapper">
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+									<div class="compare-kind">
+										<p>Классическая</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
 	</div>
 </div>
 <script>
 	$(document).ready(function() {
+
+		// show compare popup
+
+		var comparePopupToggler = $(".mm-list-item.compare");
+
+		comparePopupToggler.click(function() {
+
+			$("body").addClass("fixed");
+			$(".popup-wrapper.compare-popup").addClass("show");
+		});
+
+
+
 		// dropdown attributes js
-		let inputElem = $(".compare-popup .checked-block > input[type='checkbox']");
-		let labelElem = $(".compare-popup .checked-block > label");
-		inputElem.each(function(index, value){
-			$(this).attr("id", "popup-check-input-" + index);
-		});
-		labelElem.each(function(index, value){
-			$(this).attr("for", "popup-check-input-" + index);
-		});
+
+		// let inputElem = $(".compare-popup .checked-block > input[type='checkbox']");
+		// let labelElem = $(".compare-popup .checked-block > label");
+		// inputElem.each(function(index, value){
+		// 	$(this).attr("id", "popup-check-input-" + index);
+		// });
+		// labelElem.each(function(index, value){
+		// 	$(this).attr("for", "popup-check-input-" + index);
+		// });
 
 		// slide
 		let slideToggler = $(".compare-popup .compare-button");
 		let slideElem = $(".compare-popup .popup-body");
+		let backSlide = $(".compare-popup .compare-info.second-lev .left-icon, .compare-popup .compare-info.second-lev .back-button__text");
+		let closeCompare = $(".compare-popup .back-button .close-img");
 
 		slideToggler.click(function(e) {
 			if ($(this).attr("disabled") ) {
@@ -230,9 +482,35 @@
 			} else {
 
 				slideElem.addClass("slide");
+				autoHeightOnVisibleSection();
 				return false;
 			}
 		});
+		backSlide.click(function() {
+			slideElem.removeClass("slide");
+		});
+		closeCompare.click(function() {
+			$(".popup-wrapper.compare-popup").removeClass("show");
+		});
+
+		// height of parameters block
+
+		function autoHeightOnVisibleSection() {
+			var backPanelHeight = $(".compare-info.second-lev .back-button").outerHeight(true);
+			var titleSectionHeight = $(".compare-info.second-lev .title-panel .title-text").outerHeight(true);
+			var productSectionHeight = $(".compare-info.second-lev .compare-products").outerHeight(true);
+			var choisePanelHeight = $(".compare-info.second-lev .choise-panel").outerHeight(true);
+			var compareSection = $(".compare-info.second-lev .main-compare-info");
+
+			function parametersHeight() {
+				let res = window.innerHeight - (backPanelHeight + titleSectionHeight + productSectionHeight + choisePanelHeight);
+				compareSection.css("height", res + "px");
+			}
+			parametersHeight();
+			$(window).resize(function() {
+				parametersHeight();
+			});
+		}
 
 		// quantity of  checked elements
 		let checkedElem = $(".compare-popup .checked-block label");
@@ -241,13 +519,68 @@
 		checkedElem.each(function(i) {
 			checkedElem.eq(i).click(function() {
 
-				checkedInput.eq(i).removeClass("disabled");
-				checkedInput.eq(i).addClass("able");
+				if (checkedInput.eq(i).attr("disabled") == "disabled") {
+					return false;
+
+				} else {
+					checkedInput.eq(i).toggleClass("disabled");
+					checkedInput.eq(i).toggleClass("able");
+					checkedElem.eq(i).toggleClass("checked");
+				}
+
 
 				if ($(".compare-popup .checked-block input.able").length == 2) {
 					$(".compare-popup .checked-block input.disabled").attr("disabled", "");
 					$(".compare-popup .compare-button").removeAttr("disabled");
+
+				} else if ($(".compare-popup .checked-block label.checked").length < 2) {
+
+					$(".compare-popup .compare-button").attr("disabled", "");
+						$(".compare-popup .checked-block input.disabled").removeAttr("disabled");
 				}
+
+				// sort by the category
+
+				if ($(".compare-popup .checked-block input.able").length == 1) {
+					var currentAttrData = $(this).siblings("input").attr("data-class-id");
+
+					checkedInput.each(function() {
+						if ($(this).attr("data-class-id") != currentAttrData) {
+							$(this).parents(".compare-product-item").addClass("disable");
+							$(this).attr("disabled", "");
+						}
+					});
+				} else if ($(".compare-popup .checked-block input.able").length == 0) {
+					$(".compare-product-item").removeClass("disable");
+					$(".compare-product-item.disable").removeAttr("disabled");
+				}
+
+			});
+		});
+
+		// clear all checkboxes
+
+		let dropCompareCheckbox = $(".compare-popup .clean-all");
+
+		dropCompareCheckbox.click(function() {
+			checkedInput.prop("checked", false);
+			checkedInput.removeClass("able").addClass("disabled");
+			checkedElem.removeClass("checked");
+			$(".compare-popup .checked-block input.disabled").removeAttr("disabled");
+			$(".compare-popup .compare-button").attr("disabled", "");
+			$(".compare-product-item").removeClass("disable");
+		});
+
+		// toggle paramerets
+		var togglerParam = $(".compare-info.second-lev .choise-panel__toggler");
+		var compareSection = $(".compare-info.second-lev .main-compare-info");
+
+		togglerParam.each(function(i) {
+			togglerParam.eq(i).click(function() {
+				togglerParam.removeClass("active");
+				togglerParam.eq(i).addClass("active");
+				compareSection.removeClass("active");
+				compareSection.eq(i).addClass("active");
 			});
 		});
 	});

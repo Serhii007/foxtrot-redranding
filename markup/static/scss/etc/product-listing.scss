@@ -228,7 +228,7 @@ body {
 		&__able {
 			font-size: 12px;
 			padding: 0 3%;
-			margin-top: 5px;
+			margin: 5px 0;
 		}
 		.able-text {
 			font-family: 'Montserrat Medium';
@@ -243,12 +243,31 @@ body {
 			-webkit-box-align: center;
 				-ms-flex-align: center;
 					align-items: center;
-			margin: 0 3% 5px;
-			img {
+			margin: auto 3% 5px;
+			.compare-icon {
+				background-image: url("/static/img/general/header/icons/Group.svg");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 				cursor: pointer;
 				display: block;
 				width: 35px;
 				height: 35px;
+				position: relative;
+				.fa {
+					display: none;
+					font-size: 14px;
+					color: #E54415;
+					position: absolute;
+					top: -4px;
+					right: -1px;
+				}
+			}
+			.compare-icon.active {
+				height: 30px;
+				background-image: url("/static/img/general/icons/compare-black.svg");
+				.fa {
+					display: block;
+				}
 			}
 			.buy-button {
 				display: block;
