@@ -9,8 +9,14 @@
 			{{>card/popup-adress-block}}
 			{{>card/popup-delivery-to-adress}}
 		</div>
-		
+
 	</div>
+    <div class="store-mobile-bottom-price">  <!-- add class hidden to store-mobile-bottom-price if you need to hide this block -->
+        <div class="cell-able able">В наличии</div>
+        <div class="price__relevant">
+            <span class="numb">1100 999</span><span class="currency">грн</span>
+        </div>
+    </div>
 </div>
 <script>
 	$(document).ready(function() {
@@ -46,5 +52,63 @@
 		});
 		//height of the .popup-delivery-slider
 		slideContainer.css("height", adressHeight + "px");
-	});
+
+        // for mobile
+        var bottomPrice = $('.store-mobile-bottom-price');
+        if (window.innerWidth <= 768){
+            if(bottomPrice.hasClass('hidden')){
+                $('.stores-popup').css('margin-bottom', '50');
+            } else {
+                $('.stores-popup').css('margin-bottom', '0');
+            }
+            adressTogler.click(function() {
+                bottomPrice.addClass('hidden');
+            });
+            storeTogler.click(function() {
+                bottomPrice.removeClass('hidden').addClass('store-mobile-bottom-price-js');
+            });
+            if($('.popup-delivery-slider').hasClass('slide')){
+                bottomPrice.addClass('hidden');
+            }
+        } else {
+            $('.table-row::before').css('display', 'block');
+        }
+
+        $(document).on('click', function(){
+            if(storeTogler.hasClass('active') && $('.popup-wrapper.store').hasClass('show') ){
+                bottomPrice.removeClass('hidden').addClass('store-mobile-bottom-price-js').css('display', 'flex');
+            } else {
+                bottomPrice.addClass('hidden');
+            }
+            if (window.innerWidth > 768){
+                bottomPrice.addClass('hidden');
+            }
+        });
+
+        //changes for google map
+        $('.adress-table .table-row .cell-adress a').on('click', function(){
+            $(this).parent().siblings('.cell-map').toggleClass('visible');
+            $(this).parent().parent().toggleClass('table-row-height');
+            console.log($(this).parent().parent());
+        });
+
+        // desktop popups toggle with styles
+            $('.chiose-panel').on('click', function(){
+                $(this).css('position', 'absolute');
+
+                if(adressTogler.hasClass('active')){
+                    $('.popup-wrapper.store.show .popup-delivery-to-adress').css({
+                        'left': '0',
+                        'padding': '50px 20px',
+                        'display' : 'block'
+                    });
+                } else if(storeTogler.hasClass('active')){
+                    $('.popup-wrapper.store.show .popup-delivery-to-adress').css({
+                        'left': '-100%',
+                        'display': 'none'
+                    });
+                }
+            });
+
+    });
 </script>
