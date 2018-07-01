@@ -12,8 +12,11 @@
         %=symbols=%
         <section class="page__wrapper">
             {{> header/header}}
-            {{> navigation/navigation}}
-            {{> main-categories/main-categories}}
+            <div class="hp-navigation-wrapper">
+                {{> navigation/navigation}}
+                {{> main-categories/main-categories}}
+            </div>
+
             <div class="main-content">
                 {{> special-offers/special-offers}}
                 {{> visited/visited}}

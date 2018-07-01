@@ -10,7 +10,7 @@
 		<div class="large-banners__inner">
 			<a href="#" class="banners-link">
 				<h3 class="title">Холодильники</h3>
-				<img src="%=static=%img/general/banners/refrigerator.png" alt="banner" class="large-img not-full">
+				<img src="%=static=%img/general/rolling/offer-tv.png" alt="banner" class="large-img not-full">
 			</a>
 		</div>
 	</div>
@@ -40,5 +40,18 @@
 				<img src="%=static=%img/general/banners/init-oven.png" alt="image" class="small-img">
 			</a></div>
 	</div>
+	<script>
+		$(document).ready(function() {
+			var autoSizeImage = $(".simple-banners .large-img.not-full");
+			var imageParent = autoSizeImage.parents(".large-banners__inner");
+
+			imageParent.each(function(i) {
+				if (autoSizeImage.eq(i).outerWidth(true) > imageParent.eq(i).outerWidth(true)) {
+					autoSizeImage.eq(i).addClass("resize");
+				}
+			});
+
+		});
+	</script>
 </section>
 <!-- end simple-banners block -->

@@ -7,7 +7,9 @@
 	left: 50%;
 	top: 14px;
 	width: 850px;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
 	height: auto;
 	.callback-popup {
 		color: #000000;
@@ -15,7 +17,8 @@
 		position: relative;
 		background-color: #FFFFFF;
 		width: 850px;
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 		padding: 10px 50px 50px;
 		&__close-icon {
 			cursor: pointer;
@@ -44,7 +47,8 @@
 	}
 	.callback-choise:hover,
 	.callback-choise.shadow {
-		box-shadow: 0 2px 6px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.4);
+				box-shadow: 0 2px 6px rgba(0,0,0,.4);
 	}
 	.callback-choise {
 		cursor: pointer;
@@ -53,12 +57,19 @@
 		font: 12px/15px Montserrat Medium;
 		border: 1px solid #BDBDBD;
 		padding: 0 12px;
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 		.elected-panel {
 			height: 36px;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+					justify-content: space-between;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
 			width: 100%;
 		}
 		.dropdown-arrow {
@@ -67,7 +78,8 @@
 			height: 10px;
 		}
 		&__dropdown.shadow {
-			box-shadow: 0 2px 6px rgba(0,0,0,.4);
+			-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.4);
+					box-shadow: 0 2px 6px rgba(0,0,0,.4);
 		}
 		&__dropdown {
 			display: none;
@@ -79,14 +91,19 @@
 	}
 	.dd-list {
 		&__item {
-			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
 			height: 36px;
 			list-style: none;
 			border: 1px solid #BDBDBD;
 			padding: 0 12px;
 			background-color: #FFFFFF;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
-			align-items: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
 		}
 	}
 	.send {
@@ -97,7 +114,8 @@
 		padding: 10px 35px;
 		border-radius: 0;
 		border: 0;
-		box-shadow: none;
+		-webkit-box-shadow: none;
+				box-shadow: none;
 		margin-top: 40px;
 	}
 	.phone {
@@ -125,7 +143,8 @@
 			padding: 4px 12px;
 			font: 14px/17px Montserrat Regular;
 			height: 36px;
-			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
 		}
 	}
 }
@@ -133,7 +152,9 @@
 @media only screen and (max-width: 991px) {
 	.popup-wrapper.callback {
 		top: 50%;
-		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
 		width: 768px;
 		.callback-popup {
 			width: 768px;

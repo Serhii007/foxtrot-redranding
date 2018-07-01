@@ -3,9 +3,6 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-			justify-content: space-between;
 	font-size: 0;
 	position: relative;
 	padding: 0 2%;
@@ -156,7 +153,8 @@
 	width: calc(93vw - 230px);
 	max-width: 1000px;
 	min-height: 436px;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
 	.category-column {
 		width: 70%;
 	}
@@ -246,10 +244,11 @@
 
 /* --------------- slider block ----------------- */
 .category-slider {
-	width: 55%;
 	max-width: 790px;
 	&__carousel {
 		position: relative;
+		overflow: hidden;
+		max-width: 790px;
 		.carousel-image {
 			display: block;
 			position: relative;
@@ -258,9 +257,28 @@
 			width: 100%;
 			max-width: 790px;
 		}
+		.carousel-image.resize {
+			width: auto;
+			height: 100%;
+			margin: 0 auto;
+		}
 	}
 	&__carousel.owl-carousel.owl-theme.owl-loaded.owl-drag {
 		z-index: auto;
+	}
+	&__carousel.owl-carousel .owl-item .slider-item {
+		width: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+	}
+	&__carousel.owl-carousel .owl-stage {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 	}
 	.owl-dots {
 		position: absolute;
@@ -414,7 +432,6 @@ body {
 }
 @media only screen and (max-width: 991px) {
 	.category-slider {
-		width: 50%;
 		&__carousel {
 			top: 15%;
 		}
@@ -472,7 +489,7 @@ body {
 /* --------------- category-widgets block ----------------- */
 .category-widgets {
 	width: 18%;
-	margin: auto 0;
+	margin-left: auto;
 	max-width: 240px;
 	height: 364px;
 	float: right;
@@ -489,6 +506,8 @@ body {
 	-webkit-box-align: center;
 		-ms-flex-align: center;
 			align-items: center;
+	-ms-flex-item-align: center;
+		align-self: center;
 	.fa {
 		font-size: 25px;
 		color: #EF4123;
@@ -594,10 +613,44 @@ body {
 	}
 }
 @media only screen and (max-width: 768px) {
+	.hp-navigation-wrapper {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
+		.navigation {
+			position: static;
+			-webkit-box-ordinal-group: 3;
+				-ms-flex-order: 2;
+					order: 2;
+		}
+	}
 	.category-menu-wrapper {
 		position: absolute;
 		top: 0;
 		left: 100%;
+	}
+	.category-container {
+		padding: 0;
+		.categories, 
+		.category-widgets, 
+		.category-slider__inform {
+			display: none;
+		}
+		.category-slider {
+			width: 100%;
+			&__carousel {
+				top: 0;
+				min-width: 100%;
+			}
+		}
+		.carousel-description {
+			top: 10%;
+			right: 1%;
+		}
 	}
 }
 /* --------------- end category-widgets block ----------------- */

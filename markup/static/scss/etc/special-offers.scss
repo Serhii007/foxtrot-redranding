@@ -159,4 +159,50 @@
 		}
 	}
 }
+@media only screen and (max-width: 768px) {
+	.special-offers {
+		.special-offers__content {
+			-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+		}
+		.offers-item {
+			margin: 0;
+		}
+		.offers-item.large {
+			width: 100%;
+		}
+		.offers-item.small {
+			width: 49.5%;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+			height: auto;
+			.offers-item__descr {
+				position: static;
+				-webkit-transform: translate(0, 0);
+					-ms-transform: translate(0, 0);
+						transform: translate(0, 0);
+				text-align: left;
+			}
+		}
+		.price {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+			-webkit-box-pack: start;
+				-ms-flex-pack: start;
+					justify-content: flex-start;
+			-webkit-box-align: start;
+				-ms-flex-align: start;
+					align-items: flex-start;
+			text-align: left;
+			& > div {
+				margin-top: 2px;
+			}
+			&__relevant {
+				margin-left: 0;
+			}
+		}
+	}
+}
 /*------------------end special-offers section--------------*/

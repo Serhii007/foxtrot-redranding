@@ -17,6 +17,8 @@
 .characteristic {
 	margin-top: 20px;
 	.characteristic__core-list{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		margin-top: 22px;
 		.characteristic__core-list-item{
@@ -291,8 +293,12 @@
 		width: 87%;
 		margin-left: auto;
 		&__top-panel {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
-			align-items: flex-end;
+			-webkit-box-align: end;
+				-ms-flex-align: end;
+					align-items: flex-end;
 		}
 		.answer-name {
 			font: 16px/20px Montserrat Semibold;
@@ -335,14 +341,16 @@
 .popup_response_wrap.popup_response_wrap--location {
 	top: 0;
 	-webkit-transform: translate(-50%, 60px);
-	transform: translate(-50%, 60px);
+	-ms-transform: translate(-50%, 60px);
+		transform: translate(-50%, 60px);
 }
 .popup_response_wrap{
 	width: 100%;
 	max-width: 500px;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 	cursor: pointer;
 	position: fixed;
 	top: 50%;
@@ -371,16 +379,36 @@
 				left: -10px;
 			}
 		}
+		::-webkit-input-placeholder {
+			font: 14px/17px "Montserrat Regular";
+			color: #828282;
+			opacity: 1;
+		}
+		:-ms-input-placeholder {
+			font: 14px/17px "Montserrat Regular";
+			color: #828282;
+			opacity: 1;
+		}
+		::-ms-input-placeholder {
+			font: 14px/17px "Montserrat Regular";
+			color: #828282;
+			opacity: 1;
+		}
 		::placeholder {
 			font: 14px/17px "Montserrat Regular";
 			color: #828282;
 			opacity: 1;
 		}
 		.popup_half_wrap {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 			margin: 30px 0;
-			justify-content: space-between;
-			box-sizing: border-box;
+			-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+					justify-content: space-between;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
 			.popup_field {
 				width: 48%;
 				.input-wrapper_half {
@@ -409,6 +437,8 @@
 			}
 		}
 		.popup_field_mailResponse{
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 			input{
 				margin-right: 8px;
@@ -451,74 +481,76 @@
 	}
 }
 .popup_response_wrap.popup_response_wrap-mobile{
-    max-width: 100vw;
-    .popup_respone{
-        height: 100vh;
-        top: -60px;
-        left: 50%;
-        transform: translate(-50%, 0);
-     }
+	max-width: 100vw;
+	.popup_respone{
+		height: 100vh;
+		top: -60px;
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+			-ms-transform: translate(-50%, 0);
+				transform: translate(-50%, 0);
+	 }
 }
 .popup_response_wrap-mobile.popup_response_wrap--write-us{
-    .popup_respone{
-        top: -1px;
-        width: 100%;
-        min-width: 100%;
-        .basket-popup__header{
-            border-bottom: 0;
-            margin-bottom: 0;
-        }
-        textarea{
-            width: 280px;
-            height: 190px;
-            border: 1px solid #E0E0E0;
-        }
-    }
+	.popup_respone{
+		top: -1px;
+		width: 100%;
+		min-width: 100%;
+		.basket-popup__header{
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+		textarea{
+			width: 280px;
+			height: 190px;
+			border: 1px solid #E0E0E0;
+		}
+	}
 }
 @media only screen and (max-width: 1366px) {
-    .points-list {
-        display: block;
-        .point {
-            width: 100%;
-            }
-    }
+	.points-list {
+		display: block;
+		.point {
+			width: 100%;
+			}
+	}
 }
 @media only screen and (max-width: 768px) {
 	.product-main-information  {
 		.title-wrapper {
-		    -webkit-box-orient: vertical;
-		    -webkit-box-direction: normal;
-		        -ms-flex-direction: column;
-		            flex-direction: column;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
 		}
 		.mark__text {
-		    margin: 10px 0 0 0;
+			margin: 10px 0 0 0;
 		}
 		.point__left-text {
-		    width: 48%;
-		    margin-right: 2%;
+			width: 48%;
+			margin-right: 2%;
 		}
 		.point__right-text {
-		    width: 50%;
-		    text-align: right;
+			width: 50%;
+			text-align: right;
 		}
 		}
 		.feedback {
 			.add-recall {
-			    margin-top: 10px;
+				margin-top: 10px;
 			}
 			.amount:after {
-			    content: ")";
+				content: ")";
 			}
 			.amount:before {
-			    content: "(";
+				content: "(";
 			}
 		}
 		.feedback__top-container {
 			-ms-flex-wrap: wrap;
-			    flex-wrap: wrap;
+				flex-wrap: wrap;
 			.wrapper {
-			    width: 100%;
+				width: 100%;
 			}
 			.add-recall {
 
@@ -528,7 +560,9 @@
 
 @media only screen and (max-width: 480px) {
 .popup_response_wrap .popup_respone{
-transform: translate(-50%, 0px);
+-webkit-transform: translate(-50%, 0px);
+	-ms-transform: translate(-50%, 0px);
+		transform: translate(-50%, 0px);
 position: relative;
 top: 0;
 min-height: 100vh;
