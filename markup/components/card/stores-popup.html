@@ -86,8 +86,8 @@
         });
 
         //changes for google map
-        $('.adress-table .table-row .cell-adress a').on('click', function(){
-            $(this).parent().siblings('.cell-map').toggleClass('visible');
+        $('.popup-wrapper.store .stores-popup .adress-table .table-row .cell-adress a').on('click', function(){
+            $(this).parent().siblings('.cell-map').toggleClass('visible-map');
             $(this).parent().parent().toggleClass('table-row-height');
             console.log($(this).parent().parent());
         });
