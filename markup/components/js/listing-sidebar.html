@@ -1,4 +1,15 @@
 <script>
+	$(document).ready(function() {
+		var dropCheckbox = $(".sidebar__head .drop");
+		var checkbox = $(".sidebar .dropdown-list input[type='checkbox']");
+
+		dropCheckbox.click(function() {
+			checkbox.prop('checked', false);
+			$(".dropdown-list__item").find("span").removeClass("checked");
+		});
+	});
+</script>
+<script>
 /* sidebar for listing page js */
 $(document).ready(function(){
 	//dropdowns js
@@ -21,6 +32,7 @@ $(document).ready(function(){
 		if (event.target.classList.contains("arrow-icon") || event.target.classList.contains("title") ){
 			$(this).children(".dropdown-main-container").slideToggle();
 			$(this).children(".dropdown-head-container").children(".arrow-icon").toggleClass("rotate");
+			countVisibleItems();
 		} else {
 			return;
 		}
@@ -55,8 +67,9 @@ $(document).ready(function(){
 
 			$(this).find(".more-item").hide();
 		} else {
-			// old
+
 			var aboutWrapper = $(".sidebar .dropdown-list");
+			var aboutWrapperHide = $(".dropdown-list.overflow");
 
 			aboutWrapper.toggleClass("overflow");
 
@@ -67,10 +80,47 @@ $(document).ready(function(){
 
 				$(this).children(".more__text.opened").toggle();
 				$(this).children(".more__text.closed").toggle();
+				aboutWrapper.eq(i).removeAttr("style");
+				countVisibleItems();
 			});
-			//old
+
 		}
+
 	});
+
+	//count visible items
+
+	function countVisibleItems() {
+		var ddList = $(".sidebar .dropdown-list");
+		var itemCount = 4;
+
+		ddList.each(function(i) {
+			if (ddList.eq(i).hasClass("overflow") ) {
+
+				var ddItems = ddList.eq(i).find(".dropdown-list__item");
+				var arr = [];
+
+				ddItems.each(function(j) {
+
+					if (j < itemCount) {
+
+						arr.push(ddItems.eq(j).outerHeight(true) );
+					}
+				});
+
+				var sum = 0;
+				$.each(arr, function(ind, it) {
+					sum = sum + it;
+				});
+
+				ddList.eq(i).css({
+					"height": sum + "px",
+			});
+			}
+		});
+	}
+	countVisibleItems();
+
 
 	/* slider range js */
 	$( function() {

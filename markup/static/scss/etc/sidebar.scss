@@ -154,7 +154,6 @@
 		&__item {
 			list-style: none;
 			margin-top: 8px;
-			height: 17px;
 			& > a {
 				font: 12px/17px Montserrat Regular;
 				color: #000000;
@@ -179,7 +178,6 @@
 	}
 	.dropdown-list.overflow {
 		overflow-y: hidden;
-		max-height: calc(25px * 4);
 		-webkit-transition: height .5s;
 		-o-transition: height .5s;
 		transition: height .5s;
@@ -243,9 +241,6 @@
 		z-index: 999;
 		.sidebar {
 			font: 14px/17px Montserrat Regular;
-			.dropdown-list.overflow {
-				max-height: calc(42px * 4);
-			}
 		}
 		.bottom-block {
 			display: block;
@@ -327,7 +322,6 @@
 					align-items: center;
 			margin-top: 14px;
 			margin-left: 5px;
-			height: 28px;
 			& > a {
 				font: 12px/28px Montserrat Regular;
 			}
