@@ -12,7 +12,15 @@ html, body {
 	position: relative;
 	width: 100%;
 }
-
+.required-text-error{
+	border-color: #ef4023;
+	box-shadow: 0 0 5px 1px #ff7c7c;
+}
+.errorText{
+	font: 14px/19px OpenSans-Bold;
+	color: red;
+	width: 100%;
+}
 body {
 	font-family: 'Montserrat Regular', sans-serif;
 	.owl-theme .owl-nav {
@@ -225,7 +233,7 @@ img.rotate {
 	display: none !important;
 }
 .visible-map {
-    display: block!important;
+	display: block!important;
 }
 .page__wrapper {
 	min-height: 100%;
@@ -570,43 +578,43 @@ body {
 
 .info-list__item.bonuses {
 	position: relative;
-    .bonus__tooltip::before{
-        content: '';
-        display: block;
-        width: 10px;
-        height: 10px;
-        border-left: 0.5px solid #BDBDBD;
-        position: absolute;
-        position: absolute;
-        top: -6px;
-        left: 50%;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        background-color: #fff;
-        border-top: 0.5px solid #BDBDBD;
-    }
-    .bonus__tooltip{
-        width: 223px;
-        position: absolute;
-        top: calc(100% + 5px);
-        left: 50%;
-        transform: translate(-50%, 0);
-        padding: 9px 15px;
-        box-sizing: border-box;
-        border: 0.5px solid #BDBDBD;
-        font: 12px/15px "Montserrat Regular";
-        transition: 0.3s;
-        visibility: hidden;
-        opacity: 0;
-        background-color: #FFFFFF;
-        span{
-            font: 12px/15px "Montserrat Bold";
-        }
-    }
+	.bonus__tooltip::before{
+		content: '';
+		display: block;
+		width: 10px;
+		height: 10px;
+		border-left: 0.5px solid #BDBDBD;
+		position: absolute;
+		position: absolute;
+		top: -6px;
+		left: 50%;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		background-color: #fff;
+		border-top: 0.5px solid #BDBDBD;
+	}
+	.bonus__tooltip{
+		width: 223px;
+		position: absolute;
+		top: calc(100% + 5px);
+		left: 50%;
+		transform: translate(-50%, 0);
+		padding: 9px 15px;
+		box-sizing: border-box;
+		border: 0.5px solid #BDBDBD;
+		font: 12px/15px "Montserrat Regular";
+		transition: 0.3s;
+		visibility: hidden;
+		opacity: 0;
+		background-color: #FFFFFF;
+		span{
+			font: 12px/15px "Montserrat Bold";
+		}
+	}
 }
 .info-list__item.bonuses:hover .bonus__tooltip{
-    visibility: visible;
-    opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }
 @media only screen and (max-width: 991px) {
 	.header {
@@ -632,41 +640,41 @@ body {
 		.info-list__item.bonuses {
 			font-size: 11px;
 			letter-spacing: -.5px;
-            .bonus__tooltip::before{
-                content: '';
-                display: block;
-                width: 10px;
-                height: 10px;
-                border-left: 0.5px solid #BDBDBD;
-                position: absolute;
-                top: -5px;
-                left: calc( 50% - 10px);
-                -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-                background-color: #fff;
-                border-top: 0.5px solid #BDBDBD;
-            }
-            .bonus__tooltip{
-                width: 223px;
-                position: absolute;
-                bottom: -50px;
-                left: 50%;
-                padding: 9px 15px;
-                box-sizing: border-box;
-                border: 0.5px solid #BDBDBD;
-                font: 12px/15px "Montserrat Regular";
-                transition: 0.3s;
-                visibility: hidden;
-                opacity: 0;
-                span{
-                    font: 12px/15px "Montserrat Bold";
-                }
-            }
+			.bonus__tooltip::before{
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-left: 0.5px solid #BDBDBD;
+				position: absolute;
+				top: -5px;
+				left: calc( 50% - 10px);
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background-color: #fff;
+				border-top: 0.5px solid #BDBDBD;
+			}
+			.bonus__tooltip{
+				width: 223px;
+				position: absolute;
+				bottom: -50px;
+				left: 50%;
+				padding: 9px 15px;
+				box-sizing: border-box;
+				border: 0.5px solid #BDBDBD;
+				font: 12px/15px "Montserrat Regular";
+				transition: 0.3s;
+				visibility: hidden;
+				opacity: 0;
+				span{
+					font: 12px/15px "Montserrat Bold";
+				}
+			}
 		}
-        .info-list__item.bonuses:hover .bonus__tooltip{
-        visibility: visible;
-        opacity: 1;
-    }
+		.info-list__item.bonuses:hover .bonus__tooltip{
+		visibility: visible;
+		opacity: 1;
+	}
 		.header__search {
 			min-width: 130px;
 		}
