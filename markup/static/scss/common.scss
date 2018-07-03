@@ -569,6 +569,7 @@ body {
 }
 
 .info-list__item.bonuses {
+	position: relative;
     .bonus__tooltip::before{
         content: '';
         display: block;
@@ -578,7 +579,7 @@ body {
         position: absolute;
         position: absolute;
         top: -6px;
-        left: 70%;
+        left: 50%;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
         background-color: #fff;
@@ -587,8 +588,9 @@ body {
     .bonus__tooltip{
         width: 223px;
         position: absolute;
-        bottom: -50px;
+        top: calc(100% + 5px);
         left: 50%;
+        transform: translate(-50%, 0);
         padding: 9px 15px;
         box-sizing: border-box;
         border: 0.5px solid #BDBDBD;

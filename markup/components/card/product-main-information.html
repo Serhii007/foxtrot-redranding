@@ -252,34 +252,34 @@
 	<div class="about" id="about">
 		<h3 class="title">О товаре</h3>
 		<div class="about-text-wrapper">
+			<p class="first-row">
+				Потрясающая производительность, привлекательный дизайн.
+			</p>
 			<p class="about__text">
-				<p class="first-row">
-					Потрясающая производительность, привлекательный дизайн.
-				</p>
 				Благодаря процессору нового поколения, поражающей богатой графикой и современным твердотельный накопителем, легкий 13.3-дюймовый ноутбук IdeaPad 710S поражает своей мощностью и портативностью. Среди других ключевых особенностей - автономный заряд, которого хватает на целый день работы устройства, ультрабыстрое подключения WiFi и впечатляющее пространственное звучание. В дополнение, ноутбук удивляет своей ультратонкой рамкой дисплея, которая почти на 50% тоньше за рамки других ноутбуков-конкурентов.
 			</p>
-			<p class="about__text">
-				<p class="first-row">
+			<p class="first-row">
 				ПОРТАТИВНОСТЬ И МОЩНОСТЬ
-				</p>
+			</p>
+			<p class="about__text">
 				Весом всего от 1.1 кг, Lenovo IdeaPad 710S является одним из самых тонких и легких ноутбуков в своем классе. Оснащен самым современным процессором Intel® Core™, данное устройство обеспечивает достаточно мощности и производительности для любых задач.
 			</p>
-			<p class="about__text">
-				<p class="first-row">
+			<p class="first-row">
 				ПРЕВОСХОДНЫЕ ВОЗМОЖНОСТИ С WINDOWS 10
-				</p>
-				Windows 10 Home предлагает все лучшее от ОС Windows, которую вы уже хорошо знаете, и множество замечательных улучшений, которые вы полюбите: быстрая загрузка системы, расширенное меню Пуск, обновленный браузер и личный цифровой помощник Cortana. Теперь, даже работая с несколькими устройствами, вы получаете прекрасную возможность выполнять задачи быстрее и качественнее.
 			</p>
 			<p class="about__text">
-				<p class="first-row">
+				Windows 10 Home предлагает все 
+			</p>
+			<p class="first-row">
 				ПОРТАТИВНОСТЬ И МОЩНОСТЬ
-				</p>
+			</p>
+			<p class="about__text">
 				Весом всего от 1.1 кг, Lenovo IdeaPad 710S является одним из самых тонких и легких ноутбуков в своем классе. Оснащен самым современным процессором Intel® Core™, данное устройство обеспечивает достаточно мощности и производительности для любых задач.
 			</p>
-			<p class="about__text">
-				<p class="first-row">
+			<p class="first-row">
 				ПРЕВОСХОДНЫЕ ВОЗМОЖНОСТИ С WINDOWS 10
-				</p>
+			</p>
+			<p class="about__text">
 				Windows 10 Home предлагает все лучшее от ОС Windows, которую вы уже хорошо знаете, и множество замечательных улучшений, которые вы полюбите: быстрая загрузка системы, расширенное меню Пуск, обновленный браузер и личный цифровой помощник Cortana. Теперь, даже работая с несколькими устройствами, вы получаете прекрасную возможность выполнять задачи быстрее и качественнее.
 			</p>
 		</div>
@@ -291,25 +291,22 @@
 	</div>
 	<script>
 		$(document).ready(function() {
-			var stringHeight = $(".about .first-row").outerHeight();
+
 			var aboutWrapper = $(".about-text-wrapper");
 			var aboutToggler = $(".about .more-toggler, .about .more-arrow");
-			var pureWrapperHeight = $(".about-text-wrapper").outerHeight();
 
-			$(".about .about__text").css("margin-top", stringHeight);
-
-			aboutWrapper.toggleClass("overflow");
-			if (pureWrapperHeight < (stringHeight * 15) ) {
-				aboutToggler.hide();
+			if (aboutWrapper.outerHeight(false) > 250 ) {
+				aboutWrapper.addClass("overflow");
 			} else {
-
-				aboutToggler.click(function() {
-					aboutWrapper.toggleClass("overflow");
-					$(".about .more-arrow").toggleClass("rotate");
-					$(".about .more-toggler.open").toggle();
-					$(".about .more-toggler.closed").toggle();
-				});
+				aboutToggler.hide();
 			}
+
+			aboutToggler.click(function() {
+				aboutWrapper.toggleClass("overflow");
+				$(".about .more-arrow").toggleClass("rotate");
+				$(".about .more-toggler.open").toggle();
+				$(".about .more-toggler.closed").toggle();
+			});
 		});
 	</script>
 	<div class="product-video" id="product-video">

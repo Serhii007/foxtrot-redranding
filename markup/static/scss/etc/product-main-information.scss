@@ -112,13 +112,15 @@
 	margin-top: 3%;
 	.about-text-wrapper.overflow {
 		overflow-y: hidden;
-		height: calc(16px * 15);
+		// height: calc(16px * 15);
+		height: 250px;
 	}
-	&__text {
+	&__text, .first-row {
 		font: 14px/20px Montserrat Regular;
 	}
 	.first-row {
 		text-transform: uppercase;
+		margin-top: 15px;
 	}
 }
 .product-video {
