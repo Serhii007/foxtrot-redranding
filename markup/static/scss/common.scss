@@ -12,13 +12,28 @@ html, body {
 	position: relative;
 	width: 100%;
 }
+.input-validation-error {
+	border-color: #ef4023;
+	-webkit-box-shadow: 0 0 5px 1px #ff7c7c;
+			box-shadow: 0 0 5px 1px #ff7c7c;
+}
+.input-validation-error:focus {
+	outline: none;
+}
+.field-validation-error {
+	span {
+		font: 14px/19px Montserrat Bold;
+		color: #ef4023;
+	}
+}
 .required-text-error{
 	border-color: #ef4023;
-	box-shadow: 0 0 5px 1px #ff7c7c;
+	-webkit-box-shadow: 0 0 5px 1px #ff7c7c;
+			box-shadow: 0 0 5px 1px #ff7c7c;
 }
 .errorText{
-	font: 14px/19px OpenSans-Bold;
-	color: red;
+	font: 14px/19px Montserrat Bold;
+	color: #ef4023;
 	width: 100%;
 }
 body {
@@ -589,7 +604,8 @@ body {
 		top: -6px;
 		left: 50%;
 		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
 		background-color: #fff;
 		border-top: 0.5px solid #BDBDBD;
 	}
@@ -598,11 +614,16 @@ body {
 		position: absolute;
 		top: calc(100% + 5px);
 		left: 50%;
-		transform: translate(-50%, 0);
+		-webkit-transform: translate(-50%, 0);
+			-ms-transform: translate(-50%, 0);
+				transform: translate(-50%, 0);
 		padding: 9px 15px;
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 		border: 0.5px solid #BDBDBD;
 		font: 12px/15px "Montserrat Regular";
+		-webkit-transition: 0.3s;
+		-o-transition: 0.3s;
 		transition: 0.3s;
 		visibility: hidden;
 		opacity: 0;
@@ -650,7 +671,8 @@ body {
 				top: -5px;
 				left: calc( 50% - 10px);
 				-webkit-transform: rotate(45deg);
-				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
 				background-color: #fff;
 				border-top: 0.5px solid #BDBDBD;
 			}
@@ -660,9 +682,12 @@ body {
 				bottom: -50px;
 				left: 50%;
 				padding: 9px 15px;
-				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+						box-sizing: border-box;
 				border: 0.5px solid #BDBDBD;
 				font: 12px/15px "Montserrat Regular";
+				-webkit-transition: 0.3s;
+				-o-transition: 0.3s;
 				transition: 0.3s;
 				visibility: hidden;
 				opacity: 0;
