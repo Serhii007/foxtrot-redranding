@@ -56,9 +56,44 @@
 			width: 16px;
 			height: 16px;
 		}
+		&__reviews {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: end;
+				-ms-flex-align: end;
+					align-items: flex-end;
+		}
 	}
 	.favorite, .compare {
 		cursor: pointer;
+	}
+	.compare {
+		background-image: url("/static/img/general/header/icons/Group.svg");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		cursor: pointer;
+		display: block;
+		width: 25px;
+		height: 25px;
+		margin-left: 5px;
+		position: relative;
+		.fa {
+			display: none;
+			font-size: 14px;
+			color: #E54415;
+			position: absolute;
+			top: -4px;
+			right: -4px;
+		}
+	}
+	.compare.active {
+		height: 25px;
+		margin-left: 5px;
+		background-image: url("/static/img/general/icons/compare-black.svg");
+		.fa {
+			display: block;
+		}
 	}
 	.price {
 		display: -webkit-box;
@@ -700,13 +735,22 @@
 					display: none;
 				}
 				.flex-wrapper {
-					flex-direction: column;
-					align-items: flex-start;
-					justify-content: space-between;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+						-ms-flex-direction: column;
+							flex-direction: column;
+					-webkit-box-align: start;
+						-ms-flex-align: start;
+							align-items: flex-start;
+					-webkit-box-pack: justify;
+						-ms-flex-pack: justify;
+							justify-content: space-between;
 					.to-adress, .new-post {
 						width: 100%;
 						margin-top: 10px;
-						justify-content: space-between;
+						-webkit-box-pack: justify;
+							-ms-flex-pack: justify;
+								justify-content: space-between;
 					}
 				}
 				.new-post:before {
@@ -720,7 +764,9 @@
 				}
 			}
 			.payment {
-				align-items: flex-start;
+				-webkit-box-align: start;
+					-ms-flex-align: start;
+						align-items: flex-start;
 				.mob-payment {
 					margin-left: 10px;
 					display: block;
@@ -740,10 +786,15 @@
 				}
 			}
 			.return {
-				flex-direction: column;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+						flex-direction: column;
 				&__item {
 					width: 100%;
-					align-items: center;
+					-webkit-box-align: center;
+						-ms-flex-align: center;
+							align-items: center;
 					margin-top: 15px;
 					.descr-text {
 						display: none;
