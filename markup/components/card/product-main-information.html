@@ -502,6 +502,10 @@
 			var rotatingArrow = $(".feedback .more-arrow");
 			var itemLimit = 0;
 
+			if (feedbackItem.length <= 1) {
+				$(".feedback .more-wrapper").hide();
+			}
+
 			feedbackItem.each(function(i) {
 
 				if (i > itemLimit) {
