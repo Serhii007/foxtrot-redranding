@@ -19,15 +19,26 @@
 			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473 (1).png" alt="image" class="slider-image">
 			<img src="%=static=%img/general/card/copy_lenovo_80xh00e4ra_596dee22bb07d_images_2093102473.png" alt="image" class="slider-image">
 		</div>
-
 		<script>
+			/* preload */
+			var preloadImg = $(".slider-main .slider-image");
+			preloadImg.css("opacity", 0);
+			$(document).ready(function () {
+				preloadImg.css("opacity", 1);
+			});
+		</script>
+		<script>
+			
 			$(document).ready(function(){
+
+				// owl-carousel config
 				$('.product-store-information__slider-block .slider-main').owlCarousel({
 					items: 1,
 					dots: true,
 					nav:true,
 					navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
 				});
+
 				var mainImage = $(".product-store-information .slider-image");
 				var thumbnail = $(".product-store-information .owl-dot");
 				var arr = [];
@@ -196,28 +207,28 @@
 		<script>
 			$(document).ready(function() {
 				 // bottom fixed position of buy button for mobile screens
-                var navPos, winPos, navHeight, purBlock;
-                function refreshPos() {
-                    purBlock = $('.product-store-information__manage .purchase');
-                    navPos = purBlock.offset().top;
-                    navHeight = purBlock.outerHeight(true);
-                }
-                refreshPos();
-                $(window).resize(refreshPos);
-                $('<div class="clone-purchase"></div>').insertBefore('.purchase').css('height', navHeight).hide();
-                $(window).scroll(function() {
-                    if( window.innerWidth <= 768){
-                        winPos = $(window).scrollTop();
-                        if (winPos >= navPos) {
-                            purBlock.addClass('fixed_purchase');
-                            $('.clone-purchase').show();
-                        }
-                        else {
-                            purBlock.removeClass('fixed_purchase');
-                            $('.clone-purchase').hide();
-                        }
-                    }
-                });
+				var navPos, winPos, navHeight, purBlock;
+				function refreshPos() {
+					purBlock = $('.product-store-information__manage .purchase');
+					navPos = purBlock.offset().top;
+					navHeight = purBlock.outerHeight(true);
+				}
+				refreshPos();
+				$(window).resize(refreshPos);
+				$('<div class="clone-purchase"></div>').insertBefore('.purchase').css('height', navHeight).hide();
+				$(window).scroll(function() {
+					if( window.innerWidth <= 768){
+						winPos = $(window).scrollTop();
+						if (winPos >= navPos) {
+							purBlock.addClass('fixed_purchase');
+							$('.clone-purchase').show();
+						}
+						else {
+							purBlock.removeClass('fixed_purchase');
+							$('.clone-purchase').hide();
+						}
+					}
+				});
 			});
 		</script>
 		<div class="callback">
