@@ -209,6 +209,12 @@
 	bottom: 0;
 	width: 100%;
 }
+.wrapper-block.absolute.fixed {
+	position: absolute;
+	bottom: 0;
+	top: auto;
+	width: 100%;
+}
 .wrapper-block.fixed {
 	position: fixed;
 	top: 61px;

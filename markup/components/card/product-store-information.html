@@ -251,7 +251,7 @@
 		</div>
 		<div class="city">
 			<p class="city__text">Ваш город:</p>
-			<p class="city__variant">Киев</p>
+			<p class="city__variant"></p>
 			<img src="%=static=%img/general/icons/arrow-down.png" alt="icon" class="city__arrow">
 			<div class="city__dropdown">
 				<div id="city-block">
@@ -262,7 +262,7 @@
 				</div>
 				<ul class="choise-list">
 					<li class="choise-list__item"><span class="city-target">Киев</span></li>
-					<li class="choise-list__item"><span class="city-target">Днепр</span></li>
+					<li class="choise-list__item"><span class="city-target active">Днепр</span></li>
 					<li class="choise-list__item"><span class="city-target">Запорожье</span></li>
 					<li class="choise-list__item"><span class="city-target">Львов</span></li>
 					<li class="choise-list__item"><span class="city-target">Полтава</span></li>
@@ -277,61 +277,84 @@
 			$(document).ready(function () {
 				$(".city .city__variant, .city .city__arrow").click(function() {
 					$(".city .city__arrow").toggleClass("rotate");
-					$(".city__dropdown").slideToggle(500);
+					$(".city__dropdown").slideToggle();
 				});
 				var cityButton = $(".city-button");
+				var city = $(".city-target");
+				var yourCity = $(".city .city__variant");
+				var cityInput = $(".city-input");
 
-				function boldCity() {
-					$(".city-target").each(function(i) {
-						if ($(this).text().toLowerCase() == $(".city .city__variant").text().toLowerCase() ) {
-							$(".city-target").removeClass("active");
-							$(this).addClass("active");
+				cityInput.keyup(function() {
+
+					city.each(function(i) {
+						if ($(this).text().toLowerCase().indexOf(cityInput.val().toLowerCase() ) > -1 ) {
+
+							$(this).removeClass("hidden");
+						}
+						else {
+
+							$(this).addClass("hidden");
 						}
 					});
+				});
+
+				function electedCity() {
+
+					yourCity.text($(".city-target.active").text() );
 				}
-				boldCity();
+				electedCity();
 
 				function dropDownCity() {
 					var arr = [];
-					var elctedCity = $(".city-input").val();
-					var cityText = $(".city-target").text();
+					var electedCityVal = cityInput.val();
+					var cityText = city.text();
 
-					$(".city-target").each(function(i) {
+					city.each(function(i) {
 						arr.push($(this).text() );
 					});
-					var noCity = arr.some(function(item) {
-						return elctedCity.toLowerCase() == item.toLowerCase();
+					var isCity = arr.some(function(item) {
+						return electedCityVal.toLowerCase() == item.toLowerCase();
 					});
 
-					arr.forEach(function(it,i) {
-						if (noCity) {
-							$(".city .city__variant").text(elctedCity);
-							$(".city__dropdown").slideUp(500);
-							boldCity();
+					city.each(function(i) {
+
+						if (isCity && cityInput.val().toLowerCase() == city.eq(i).text().toLowerCase() ) {
+
+							city.removeClass("active");
+							city.eq(i).addClass("active");
+							$(".city__dropdown").slideUp();
+							electedCity();
 						}
+
 					});
 
-					if (!noCity) {
-						alert("\"" + elctedCity + "\"" + " " + "нет в списке городов");
+					if (!isCity) {
+						alert("\"" + electedCityVal + "\"" + " " + "нет в списке городов");
 					}
 				}
 
 				cityButton.click(function() {
 					dropDownCity();
 					$(".city .city__arrow").toggleClass("rotate");
+					cityInput.val("");
 				});
-				$(".city-input").keypress(function(e) {
+				cityInput.keypress(function(e) {
 					if(e.which == 13) {
 						dropDownCity();
 						$(".city .city__arrow").toggleClass("rotate");
+						cityInput.val("");
 					}
 				});
-				$(".city-target").click(function() {
+				city.click(function() {
 					var clickedCity = $(this).text();
 					$(".city .city__arrow").toggleClass("rotate");
-					$(".city .city__variant").text(clickedCity);
-							$(".city__dropdown").slideUp(500);
-							boldCity();
+					yourCity.text(clickedCity);
+					city.removeClass("active");
+					$(this).addClass("active");
+					$(".city__dropdown").slideUp();
+					electedCity();
+					city.removeClass("hidden");
+					cityInput.val("");
 				});
 			});
 		</script>

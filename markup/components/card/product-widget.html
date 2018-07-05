@@ -80,7 +80,6 @@
 <script>
 $(document).ready( function(){
 	var stopTarget;
-
 	function stickyBlock() {
 		var header = $(".header");
 		var columnRight = document.querySelector(".right-col");
@@ -88,10 +87,8 @@ $(document).ready( function(){
 		var topBorder = columnRight.getBoundingClientRect().top;
 		var bottomBorder = columnRight.getBoundingClientRect().bottom;
 		var wrapperBottomBorder = document.querySelector(".right-col .wrapper-block").getBoundingClientRect().bottom;
-
 		if (window.innerWidth > 768) {
 			if (topBorder <= header.outerHeight(true) && bottomBorder > wrapperBottomBorder ) {
-
 				mainContainer.addClass("fixed");
 			} else if (topBorder >= header.outerHeight(true) ) {
 				mainContainer.removeClass("fixed");
@@ -110,7 +107,6 @@ $(document).ready( function(){
 		}
 	}
 	stickyBlock();
-
 	$(document).on('scroll', stickyBlock);
 });
 </script>

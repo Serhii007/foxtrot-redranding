@@ -294,14 +294,9 @@
 	}
 	.city {
 		position: relative;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: end;
-			-ms-flex-align: end;
-				align-items: flex-end;
 		&__text {
 			font-size: 14px;
+			display: inline-block;
 		}
 		&__variant {
 			cursor: pointer;
@@ -309,15 +304,16 @@
 			font-size: 22px;
 			line-height: 1;
 			margin: 0 7px;
+			display: inline-block;
 		}
 		&__arrow {
 			cursor: pointer;
 			width: 11px;
-			display: block;
 			margin-bottom: 5px;
+			display: inline-block;
 		}
 		&__dropdown {
-			display: none;
+			 display: none;
 			min-width: 300px;
 			z-index: 2;
 			position: absolute;
