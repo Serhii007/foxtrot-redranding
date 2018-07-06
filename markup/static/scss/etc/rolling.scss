@@ -5,6 +5,11 @@
 	margin-bottom: 30px;
 	font-family: 'Montserrat Bold';
 	}
+	.owl-stage {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
 	.owl-item {
 		display: -webkit-box;
 		display: -ms-flexbox;

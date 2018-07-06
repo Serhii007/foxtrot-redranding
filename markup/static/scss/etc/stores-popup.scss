@@ -20,10 +20,7 @@
 .stores-popup {
 	position: relative;
 	top: 0;
-	left: 50%;
-	-webkit-transform: translate(-50%, 0);
-		-ms-transform: translate(-50%, 0);
-			transform: translate(-50%, 0);
+	left: 0;
 	background-color: #FFFFFF;
 	padding: 50px 5.5%;
 	-webkit-box-sizing: border-box;
@@ -166,6 +163,7 @@
 		-o-transition: left .3s;
 		transition: left .3s;
 		display: none;
+		overflow: hidden;
 		.contents {
 			font: 14px/17px Montserrat Regular;
 			width: 100%;
