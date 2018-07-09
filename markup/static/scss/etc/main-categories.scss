@@ -521,28 +521,43 @@ body {
 	-ms-flex-item-align: center;
 		align-self: center;
 	.fa {
+		cursor: pointer;
 		font-size: 25px;
 		color: #EF4123;
 		position: absolute;
 		left: 50%;
-		width: 35px;
-		height: 35px;
+		width: 30px;
+		height: 30px;
 		text-align: center;
 		border-radius: 50%;
-	}
-	.fa:hover {
+
 		background-color: rgba(241, 241, 101, .7);
 		color: #EF4123;
 	}
+	.fa.disabled {
+		opacity: .5;
+	}
+	.fa:hover {
+		width: 37px;
+		height: 37px;
+	}
+	.fa-angle-down:hover {
+		bottom: 3px;
+		line-height: 1.55;
+	}
 	.fa-angle-down {
-		line-height: 1.5;
+		line-height: 1.25;
 		bottom: 0;
 		-webkit-transform: translate(-50%, 100%);
 			-ms-transform: translate(-50%, 100%);
 				transform: translate(-50%, 100%);
 	}
-	.fa-angle-up {
+	.fa-angle-up:hover {
+		top: 3px;
 		line-height: 1.25;
+	}
+	.fa-angle-up {
+		line-height: -.25;
 		top: 0;
 		-webkit-transform: translate(-50%, -100%);
 			-ms-transform: translate(-50%, -100%);
@@ -553,13 +568,12 @@ body {
 		overflow: hidden;
 	}
 	.widget-carousel {
-		height: 9999px;
 		margin: 0px;
 		padding: 0px;
 		list-style: none;
-		-webkit-transition: margin-top 250ms;
-		-o-transition: margin-top 250ms;
-		transition: margin-top 250ms;
+		-webkit-transition: margin-top 120ms;
+		-o-transition: margin-top 120ms;
+		transition: margin-top 120ms;
 	}
 	.category-widgets-item {
 		position: relative;
@@ -603,6 +617,22 @@ body {
 	}
 }
 
+@media only screen and (max-width: 1024px) {
+	.category-widgets {
+		.fa:hover {
+			width: 30px;
+			height: 30px;
+		}
+		.fa-angle-down:hover {
+			line-height: 1.25;
+			bottom: 0;
+		}
+		.fa-angle-up:hover {
+			line-height: 1;
+			top: 0;
+		}
+	}
+}
 @media only screen and (max-width: 991px) {
 	.category-widgets {
 		.category-widgets-item .widget-title {

@@ -1,34 +1,69 @@
 <script>
 document.addEventListener( 'DOMContentLoaded', function() {
-    // vertical slider js
-    var getStyle = getComputedStyle(document.querySelector('.category-widgets-item'));
-    var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
+      // vertical slider js
+      var getStyle = getComputedStyle(document.querySelector('.category-widgets-item'));
+      var marginTopSlideElem = +getStyle.marginTop.match(/\d/)*2;
 
-    var slideElemHeight = document.getElementsByClassName('category-widgets-item')[0].offsetHeight + marginTopSlideElem;
-    var lis = document.getElementsByClassName('category-widgets-item');
-    for (var i = 0; i < lis.length; i++) {
-      lis[i].style.position = 'relative';
-      var span = document.createElement('span');
-      span.style.cssText = 'position:absolute;left:0;top:0';
-      span.innerHTML = i + 1;
-      lis[i].appendChild(span);
-    }
-    var height = slideElemHeight;
-    var count = 1;
+      var slideElemHeight = document.getElementsByClassName('category-widgets-item')[0].offsetHeight + marginTopSlideElem;
+      var lis = document.getElementsByClassName('category-widgets-item');
+      for (var i = 0; i < lis.length; i++) {
+          lis[i].style.position = 'relative';
+          var span = document.createElement('span');
+          span.style.cssText = 'position:absolute;left:0;top:0';
+          span.innerHTML = i + 1;
+          lis[i].appendChild(span);
+      }
+      var height = slideElemHeight;
+      var count = 1;
 
-    var carousel = document.querySelector('.category-widgets');
-    var list = document.querySelector('.widget-carousel');
-    var listElems = carousel.querySelectorAll('li');
+      var carousel = document.querySelector('.category-widgets');
+      var list = document.querySelector('.widget-carousel');
+      var listElems = carousel.querySelectorAll('li');
 
-    var position = 0;
-    carousel.querySelector('.prev').onclick = function() {
-      position = Math.min(position + height * count, 0)
-      list.style.marginTop = position + 'px';
-    };
- 
-    carousel.querySelector('.next').onclick = function() {
-      position = Math.max(position - height * count, -height * (listElems.length - count));
-      list.style.marginTop = position + 'px';
-    };
+      var position = 0;
+      var carouselTopBorder = Math.round(list.getBoundingClientRect().top);
+      var galleryTopBorder = Math.round(document.querySelector('.category-widgets .gallery').getBoundingClientRect().top);
+      var galleryBottomBorder = Math.round(document.querySelector('.category-widgets .gallery').getBoundingClientRect().bottom);
+      var carouselBottomBorder = Math.round(list.getBoundingClientRect().bottom);
+      var quantityItems = document.getElementsByClassName('category-widgets-item').lenght;
+
+      list.style.height = height * quantityItems;
+
+      carousel.querySelector('.prev').classList.add('disabled');
+
+      carousel.querySelector('.prev').onclick = function() {
+          var carouselTopBorder = Math.round(list.getBoundingClientRect().top);
+          var galleryTopBorder = Math.round(document.querySelector('.category-widgets .gallery').getBoundingClientRect().top);
+
+          if (carouselTopBorder + height >= galleryTopBorder) {
+            carousel.querySelector('.prev').classList.add('disabled');
+          }
+          position = Math.min(position + height * count, 0)
+          list.style.marginTop = position + 'px';
+          carousel.querySelector('.next').classList.remove('disabled');
+      };
+
+      carousel.querySelector('.next').onclick = function() {
+          var galleryBottomBorder = Math.round(document.querySelector('.category-widgets .gallery').getBoundingClientRect().bottom);
+          var carouselBottomBorder = Math.round(list.getBoundingClientRect().bottom);
+
+          if ( (carouselBottomBorder - height) <= galleryBottomBorder) {
+
+            carousel.querySelector('.next').classList.add('disabled');
+          } else {
+
+              carousel.querySelector('.next').classList.remove('disabled');
+          }
+
+          if (carouselBottomBorder <= galleryBottomBorder) {
+
+            return false;
+          } else {
+            position = Math.max(position - height * count, -height * (listElems.length - count));
+              list.style.marginTop = position + 'px';
+              carousel.querySelector('.prev').classList.remove('disabled');
+          }
+
+      };
 });
 </script>
