@@ -20,47 +20,47 @@
                 </div>
                 <div class="popup_half_wrap">
                     <div class="popup_field">
-                        <div class="field_title">Ваше имя*</div>
+                        <div class="field_title"><label for="Name">Ваше имя</label>*</div>
                         <div class="field_info">
                             <div class="input-wrapper input-wrapper_half">
-                                <input id="firstName" type="text" data-required="true" placeholder="Ваше имя" data-val-required="Укажите имя">
-                                <label for="firstName" class="errorText"></label>
+                                <input value="" data-val="true" data-val-required="Укажите имя" id="Name" name="Name" placeholder="Ваше имя" type="text">
+                                <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
                             </div>
                         </div>
                     </div>
                     <div class="popup_field">
-                        <div class="field_title">Ваш email</div>
+                        <div class="field_title"> <label for="Email">Ваш email</label>*</div>
                         <div class="field_info">
                             <div class="input-wrapper input-wrapper_half">
-                                <input id="email" type="text" placeholder="Ваш email" data-val-required="Вы ввели некорректный Email">
-                                <label for="email" class="errorText"></label>
+                                <input value="" data-val="true" data-val-regex="Вы ввели некорректный Email" data-val-regex-pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" id="Email" name="Email" placeholder="Ваш email" type="text">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="popup_field">
-                    <div class="field_title">Ваш комментарий*</div>
+                    <div class="field_title"><label for="Comment">Ваш комментарий</label>*</div>
                     <div class="field_info">
                         <div class="input-wrapper input-wrapper_comment">
-                            <input id="comment" type="text" data-required="true" data-val-required="Оставьте отзыв">
-                            <label for="comment" class="errorText"></label>
+                            <textarea cols="63" data-val="true" data-val-required="Оставьте отзыв" id="Comment" name="Comment" rows="5"></textarea>
+                            <span class="field-validation-valid" data-valmsg-for="Comment" data-valmsg-replace="true"></span>
                         </div>
                     </div>
                 </div>
                 <div class="popup_half_wrap">
                     <div class="popup_field">
-                        <div class="field_title">Достоинства</div>
+                        <div class="field_title"><label for="Pros">Плюсы</label></div>
                         <div class="field_info">
                             <div class="input-wrapper input-wrapper_half">
-                                <input type="text">
+                                <textarea cols="29" id="Pros" name="Pros" rows="4"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="popup_field">
-                        <div class="field_title">Недостатки</div>
+                        <div class="field_title"><label for="Cons">Минусы</label></div>
                         <div class="field_info">
                             <div class="input-wrapper input-wrapper_half">
-                                <input type="text">
+                                <textarea cols="29" id="Cons" name="Cons" rows="4"></textarea>
                             </div>
                         </div>
                     </div>
@@ -68,24 +68,33 @@
                 <div class="popup_field popup_field_mailResponse">
                     <div class="field_info">
                         <div class="input-wrapper">
-                            <input type="checkbox" name="mailResponse" value="">
+                            <input data-val="true" data-val-required="The Получить ответы на email field is required." id="IsNotify" name="IsNotify" type="checkbox" value="true"><input name="IsNotify" type="hidden" value="false">
                         </div>
                     </div>
-                    <div class="field_title">Получить ответы на email</div>
+                    <div class="field_title"><label for="IsNotify">Получить ответы на email</label></div>
                 </div>
-                <button type="button" class="popup_btn">Отправить отзыв</button>
+                <button type="submit" click="sendComment" class="popup_btn">Отправить отзыв</button>
             </form>
         </div>
     </div>
 </div>
 <script>
     function writePopup() {
-
         $(".feedback__top-container .add-recall").click(function() {
 
             $("body").addClass("fixed");
             $(".popup_response_wrap.popup_response_wrap--write").addClass("show");
             $(".mask").addClass("full cover");
+
+            // large mob deveices configuration
+
+            function popupDevices() {
+                if (window.innerHeight < $(".popup_response_wrap--write").outerHeight(true) ) {
+                    $(".popup_response_wrap--write").addClass("device");
+                }
+            }
+            popupDevices();
+            $(window).resize(popupDevices);
         });
 
         $(".mask, .popup_response_wrap--write .basket-close").click(function() {
@@ -93,6 +102,7 @@
             $(".popup_response_wrap.popup_response_wrap--write").removeClass("show");
             $("body").removeClass("fixed");
         });
+
     }
     $(document).ready(writePopup);
 </script>
