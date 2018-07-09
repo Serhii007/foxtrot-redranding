@@ -88,6 +88,17 @@ $(document).ready(function(){
             }
         }
     });
+    $('.navigation__catalog').mouseover(function(e){
+
+        if (e.target.classList.contains("catalog-text") || e.target.tagName == "IMG" ) {
+
+            $('.navigation .catalog-submenu-wrapper').addClass('toggle');
+
+            if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+                $('.mask').addClass('full');
+            }
+        }
+    });
     var catalogItem = $(".catalog-submenu .submenu-item");
 
     catalogItem.each(function(i) {
