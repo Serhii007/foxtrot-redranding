@@ -1,0 +1,53 @@
+<section class="creators">
+	<h3 class="title">Лучшие производители</h3>
+	<div class="creators__carousel owl-carousel owl-theme">
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/apple.png">
+		</a>
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/samsung.png">
+		</a>
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/wile.png">
+		</a>
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/bravis.png">
+		</a>
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/delfa.png">
+		</a>
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/meizu.png">
+		</a>
+		<a href="#" class="creators-item owl-lazy" data-src="%=static=%img/general/transparent.png">
+			<img src="%=static=%img/general/banners/apple.png">
+		</a>
+	</div>
+</section>
+<script>
+	$(document).ready(function() {
+		$(".creators__carousel").owlCarousel({
+		lazyLoad: true,
+		loop: false,
+		nav:true,
+		dots: false,
+		autoplay: false,
+		navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+		responsiveClass: true,
+		responsive:{
+			0:{
+				items:2
+			},
+			480:{
+				items:3
+			},
+			768:{
+				items:5
+			},
+			991:{
+				items:6
+			}
+		}
+		});
+	});
+</script>
