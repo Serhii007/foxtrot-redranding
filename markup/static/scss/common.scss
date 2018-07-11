@@ -6,6 +6,33 @@
 html, body {
 	height: 100%;
 }
+.compare-icon {
+	background-image: url("/static/img/general/header/icons/Group.svg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+	display: block;
+	width: 30px;
+	height: 28px;
+	margin-left: 5px;
+	position: relative;
+	.fa {
+		display: none;
+		font-size: 14px;
+		color: #E54415;
+		position: absolute;
+		top: -4px;
+		right: -4px;
+	}
+}
+.compare-icon.active {
+	height: 25px;
+	margin-left: 5px;
+	background-image: url("/static/img/general/icons/compare-black.svg");
+	.fa {
+		display: block;
+	}
+}
 .fixed {
 	height: 100%;
 	overflow: hidden;

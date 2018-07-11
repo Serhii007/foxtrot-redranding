@@ -177,6 +177,11 @@ body {
 	}
 	&__bottom-panel {
 		margin-top: auto;
+		display: flex;
+		align-items: center;
+		.compare-icon {
+			margin: 0 0 3% 3%;
+		}
 		.buy-button {
 			display: block;
 			width: 30%;
