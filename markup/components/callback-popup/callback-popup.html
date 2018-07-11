@@ -90,10 +90,14 @@
 			});
 
 			popupCloseIcon.click(function() {
+
 				if ($(".mobile-menu").hasClass("active") ) {
 					$(".mask").removeClass("cover");
-					callbackPopup.removeClass("show");
+				} else {
+					$(".mask").removeClass("full cover");
 				}
+
+				callbackPopup.removeClass("show");
 			});
 		}
 	});
