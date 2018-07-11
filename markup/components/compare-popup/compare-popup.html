@@ -450,15 +450,38 @@
 		// show compare popup
 
 		var comparePopupToggler = $(".mm-list-item.compare");
+		var electedList = $(".popup-wrapper.compare-popup .list-wrapper");
 
 		comparePopupToggler.click(function() {
 
 			$("body").addClass("fixed");
 			$(".popup-wrapper.compare-popup").addClass("show");
+
+			electedListHeight();
 		});
 
+		// height property configuration of product list
+		function electedListHeight() {
+			if (window.innerWidth < window.innerHeight) {
+				var sum = $(".popup-wrapper.compare-popup .back-button").outerHeight(true) + $(".popup-wrapper.compare-popup .title-panel").outerHeight(true) + $(".popup-wrapper.compare-popup .compare-button-panel").outerHeight(true);
 
+				electedList.css("height", window.innerHeight - sum + "px");
+			} else {
+				electedList.css("height", "auto");
+			}
+		}
+		$(window).resize(function() {
 
+			if (window.innerWidth > 768 && $(".mobile-menu").hasClass("active") ) {
+
+				$(".mask").removeClass("full");
+				$("body").removeClass("fixed");
+				$(".header").removeClass("mask-covered");
+				$(".mobile-menu").removeClass("active");
+			}
+
+			electedListHeight();
+		});
 		// dropdown attributes js
 
 		// let inputElem = $(".compare-popup .checked-block > input[type='checkbox']");
@@ -482,7 +505,6 @@
 			} else {
 
 				slideElem.addClass("slide");
-				autoHeightOnVisibleSection();
 				return false;
 			}
 		});
@@ -492,25 +514,6 @@
 		closeCompare.click(function() {
 			$(".popup-wrapper.compare-popup").removeClass("show");
 		});
-
-		// height of parameters block
-
-		function autoHeightOnVisibleSection() {
-			var backPanelHeight = $(".compare-info.second-lev .back-button").outerHeight(true);
-			var titleSectionHeight = $(".compare-info.second-lev .title-panel .title-text").outerHeight(true);
-			var productSectionHeight = $(".compare-info.second-lev .compare-products").outerHeight(true);
-			var choisePanelHeight = $(".compare-info.second-lev .choise-panel").outerHeight(true);
-			var compareSection = $(".compare-info.second-lev .main-compare-info");
-
-			function parametersHeight() {
-				let res = window.innerHeight - (backPanelHeight + titleSectionHeight + productSectionHeight + choisePanelHeight);
-				compareSection.css("height", res + "px");
-			}
-			parametersHeight();
-			$(window).resize(function() {
-				parametersHeight();
-			});
-		}
 
 		// quantity of  checked elements
 		let checkedElem = $(".compare-popup .checked-block label");

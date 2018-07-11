@@ -9,7 +9,7 @@ html, body {
 .fixed {
 	height: 100%;
 	overflow: hidden;
-	position: relative;
+	position: fixed;
 	width: 100%;
 }
 .input-validation-error {
