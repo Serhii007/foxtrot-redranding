@@ -179,6 +179,7 @@ img.rotate {
 			transform: translateX(10%);
 	right: 0;
 	left: auto;
+	top: calc(100% + 5px);
 }
 .answer-popup {
 	display: none;
@@ -203,14 +204,14 @@ img.rotate {
 	content: "";
 	position: absolute;
 	top: 100%;
-	left: 50;
+	left: 50%;
 	display: block;
 	background-color: #FFFFFF;
 	width: 6px;
 	height: 6px;
-	-webkit-transform: translate(57%, 25%) rotate(-45deg);
-		-ms-transform: translate(57%, 25%) rotate(-45deg);
-			transform: translate(57%, 25%) rotate(-45deg);
+	-webkit-transform: translate(-50%, 25%) rotate(-45deg);
+		-ms-transform: translate(-50%, 25%) rotate(-45deg);
+			transform: translate(-50%, 25%) rotate(-45deg);
 	border-top: 1px solid #BDBDBD;
 	border-right: 1px solid #BDBDBD;
 	z-index: 21;
