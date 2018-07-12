@@ -468,6 +468,14 @@
 			display: flex;
 			input{
 				margin-right: 8px;
+				box-shadow: none;
+				border: 0;
+				outline: 0;
+			}
+			input:focus {
+				box-shadow: none;
+				border: 0;
+				outline: 0;
 			}
 		}
 		.popup_btn{
