@@ -579,7 +579,12 @@ body {
 				}
 			}
 			.compare-category {
-				position: relative;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: justify;
+					-ms-flex-pack: justify;
+						justify-content: space-between;
 				background: #FFFFFF;
 				width: 100%;
 				padding: 1px 5px 0 0;
@@ -587,12 +592,9 @@ body {
 					color: #000000;
 					text-decoration: none;
 					font: 12px/16px Montserrat Regular;
-					width: 230px;
+					width: 220px;
 				}
 				.remove {
-					position: absolute;
-					top: 8px;
-					right: 10px;
 					cursor: pointer;
 					display: block;
 					width: 10px;

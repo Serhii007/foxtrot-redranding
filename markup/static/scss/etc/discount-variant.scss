@@ -92,6 +92,7 @@
 			width: 100%;
 			overflow: hidden;
 			.vert-gallery {
+				min-height: 120px;
 				-webkit-transition: margin-top .3s;
 				-o-transition: margin-top .3s;
 				transition: margin-top .3s;
