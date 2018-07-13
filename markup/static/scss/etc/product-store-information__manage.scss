@@ -221,6 +221,16 @@
 			font-size: 12px;
 		}
 	}
+	.purchase.fixed_purchase{
+		background-color: #fff;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 9999;
+		width: 100vw;
+		justify-content: center;
+		margin: 0;
+	}
 	.purchase {
 		margin: 15px 0;
 		display: -webkit-box;

@@ -1,24 +1,13 @@
 <div class="about-product-panel">
 	<ul class="panel-list">
-		<li class="panel-list__item"><a href="#about" class="item-link">О товаре</a></li>
-		<li class="panel-list__item"><a href="#characteristic" class="item-link">Характеристики</a></li>
-		<li class="panel-list__item"><a href="#feedback" class="item-link">Отзывы</a></li>
-		<li class="panel-list__item"><a href="#accessories" class="item-link">Аксессуары</a></li>
-		<li class="panel-list__item"><a href="#product-video" class="item-link">Видео</a></li>
+		<li class="panel-list__item"><a href="#about" class="item-link has-anchor">О товаре</a></li>
+		<li class="panel-list__item"><a href="#characteristic" class="item-link has-anchor">Характеристики</a></li>
+		<li class="panel-list__item"><a href="#feedback" class="item-link has-anchor">Отзывы</a></li>
+		<li class="panel-list__item"><a href="#accessories" class="item-link has-anchor">Аксессуары</a></li>
+		<li class="panel-list__item"><a href="#product-video" class="item-link has-anchor">Видео</a></li>
 	</ul>
 	<div class="product-code">
 		<span class="product-code__text">Код товара:</span>
 		<span class="product-code__code">364098</span>
 	</div>
 </div>
-<script>
-	$(".item-link").click(function(e) {
-		e.preventDefault();
-		var dest = $(this).attr('href');
-		var headerHeight = document.querySelector(".header").offsetHeight;
-
-		$('html,body').animate({
-			scrollTop: $(dest).offset().top - headerHeight
-		}, 'slow');
-	});
-</script>
