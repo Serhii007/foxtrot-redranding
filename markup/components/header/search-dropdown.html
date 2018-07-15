@@ -92,3 +92,31 @@
             </div>
     </ul>
 </div>
+<script>
+    $(document).ready(function() {
+        function hideSearchDDown(e) {
+
+            var obj = $(".serch-dd").find("*");
+
+            var arr = Object.values(obj)
+
+            function isTarget(el) {
+                return el == e.target;
+            }
+
+            if (arr.some(isTarget) ) {
+                return;
+            } else {
+
+                $(".serch-dd").removeClass("visible");
+            }
+        }
+        $(document).keyup(function(e) {
+
+            if (e.keyCode === 27) {
+                $(".serch-dd").removeClass("visible");
+            }
+        });
+        $("body").click(hideSearchDDown);
+    });
+</script>
