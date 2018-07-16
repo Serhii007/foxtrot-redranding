@@ -1,12 +1,12 @@
 <footer class="footer-wrapper">
     <div class="content">
         <div class="footer-menu">
-            <div class="footer-item-mobile-title">
+            <div class="footer-item-mobile-title dropdown-toggler">
                 <p class="footer-toggler">Компания</p>
                 <img src="%=static=%img/general/icons/white-arrow.svg" alt="icon" class="arrow footer-toggler">
             </div>
             <div class="wrapper">
-                <ul class="footer-menu__item">
+                <ul class="footer-menu__item slide-dropdown">
                     <li>
                         <a href="#">Компания</a>
                     </li>
@@ -51,12 +51,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer-item-mobile-title">
+            <div class="footer-item-mobile-title dropdown-toggler">
                 <p class="footer-toggler">Гид покупателя</p>
                 <img src="%=static=%img/general/icons/white-arrow.svg" alt="icon" class="arrow footer-toggler">
             </div>
             <div class="wrapper">
-                <ul class="footer-menu__item">
+                <ul class="footer-menu__item slide-dropdown">
                     <li>
                         <a href="#">Гид покупателя</a>
                     </li>
@@ -177,12 +177,8 @@
             var title = $(".footer-item-mobile-title");
             title.each(function(i) {
                 $(this).click(function(e) {
-                    if (!e.target.classList.contains("footer-toggler") ) {
-                        return;
-                    } else {
-                        $(".footer-menu .wrapper .footer-menu__item").eq(i).slideToggle();
-                        $(".footer-item-mobile-title > img").eq(i).toggleClass("rotate");
-                    }
+
+                    $(".footer-item-mobile-title > img").eq(i).toggleClass("rotate");
                 });
             });
         }
