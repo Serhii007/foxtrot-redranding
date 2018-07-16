@@ -71,6 +71,9 @@ body {
 		line-height: 1.39;
 		margin-top: 0;
 		position: static;
+		button.disabled {
+			pointer-events: auto;
+		}
 		[class*='owl-'] {
 			margin: 0 10px;
 		}
@@ -522,6 +525,19 @@ body {
 		.header-compare-list {
 			display: block;
 		}
+	}
+	.compare:hover:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+		z-index: 2;
 	}
 	.compare:hover:after {
 		content: "";
