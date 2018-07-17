@@ -456,6 +456,7 @@
 				font: 14px/17px Montserrat Semibold;
 			}
 			.date-text {
+				display: none;
 				color: #828282;
 				font: 11px/13px Montserrat Semibold;
 			}
@@ -505,6 +506,7 @@
 			height: 1px;
 		}
 		.date {
+			display: none;
 			&__content {
 				display: -webkit-box;
 				display: -ms-flexbox;

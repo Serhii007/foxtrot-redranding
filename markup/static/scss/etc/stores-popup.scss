@@ -122,9 +122,9 @@
 			}
 			.about-text {
 				font: 14px/17px Montserrat Regular;
-				border-bottom: 1px solid #2F80ED;
+				border-bottom: 1px solid #000000;
 				margin-top: 5px;
-				color: #2F80ED;
+				color: #000000;
 			}
 		}
 		.cell-take, .cell-workingtime {
@@ -487,6 +487,12 @@
 				left: 0;
 				.adress-table {
 					border: 0;
+					.about-store .about-text {
+						font: 14px/17px Montserrat Regular;
+						border-bottom: 1px solid #2F80ED;
+						margin-top: 5px;
+						color: #2F80ED;
+					}
 					.cell-adress, .cell-workingtime,
 					.cell-able, .cell-button {
 						width: auto;
