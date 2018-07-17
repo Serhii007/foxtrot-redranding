@@ -71,34 +71,84 @@ document.addEventListener( 'DOMContentLoaded' , function() {
 <script>
 $(document).ready(function(){
     // navigation dropdown
-    if ($("body").hasClass("home-page")){
-        $('.navigation .catalog-submenu-wrapper').remove();
+    // if ($("body").hasClass("home-page")){
+    //     $('.navigation .catalog-submenu-wrapper').remove();
+    // }
+
+    function megaMenuDropDown() {
+        $('.navigation .catalog-submenu-wrapper').toggleClass('toggle');
+
+        if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+            $('.mask').addClass('full');
+        } else if (!$('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+            $('.mask').removeClass('full');
+            $('.mobile-menu').removeClass('active');
+        }
     }
-    $('.navigation__catalog').click(function(e){
 
-        if (e.target.classList.contains("catalog-text") || e.target.tagName == "IMG" ) {
+    $('.navigation__catalog .megamenu-toggler').click(function(e){
 
-            $('.navigation .catalog-submenu-wrapper').toggleClass('toggle');
+        if ($("body").hasClass("home-page") ){
+            var categoryBottom = $(".category-container").get(0).getBoundingClientRect().bottom;
+            var buffersHeight = $(".navigation-buffer").outerHeight(true) + $(".header-buffer").outerHeight(true);
 
-            if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
-                $('.mask').addClass('full');
-            } else if (!$('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
-                $('.mask').removeClass('full');
-                $('.mobile-menu').removeClass('active');
+            if (categoryBottom <= buffersHeight) {
+                megaMenuDropDown();
             }
+
+        } else if (!$("body").hasClass("home-page")) {
+
+            megaMenuDropDown();
         }
     });
-    $('.navigation__catalog').mouseover(function(e){
 
-        if (e.target.classList.contains("catalog-text") || e.target.tagName == "IMG" ) {
+    function hoverNavCatalog() {
+        $('.navigation .catalog-submenu-wrapper').addClass('toggle');
 
-            $('.navigation .catalog-submenu-wrapper').addClass('toggle');
+        if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+            $('.mask').addClass('full');
+        }
+    }
+    $('.navigation__catalog .megamenu-toggler').mouseenter(function(e){
 
-            if ( $('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
-                $('.mask').addClass('full');
+        if ($("body").hasClass("home-page") ){
+            var categoryBottom = $(".category-container").get(0).getBoundingClientRect().bottom;
+            var buffersHeight = $(".navigation-buffer").outerHeight(true) + $(".header-buffer").outerHeight(true);
+
+            if (categoryBottom <= buffersHeight) {
+                hoverNavCatalog();
             }
+
+        } else if (!$("body").hasClass("home-page")) {
+
+            hoverNavCatalog();
         }
     });
+
+    function leaveNavCatalog() {
+        $('.navigation .catalog-submenu-wrapper').removeClass('toggle');
+
+        if ( !$('.navigation .catalog-submenu-wrapper').hasClass('toggle') && window.innerWidth > 768 ) {
+            $('.mask').removeClass('full');
+        }
+    }
+
+    $('.navigation__catalog').mouseleave(function(e){
+
+        if ($("body").hasClass("home-page") ){
+            var categoryBottom = $(".category-container").get(0).getBoundingClientRect().bottom;
+            var buffersHeight = $(".navigation-buffer").outerHeight(true) + $(".header-buffer").outerHeight(true);
+
+            if (categoryBottom <= buffersHeight) {
+                leaveNavCatalog();
+            }
+
+        } else if (!$("body").hasClass("home-page")) {
+
+            leaveNavCatalog();
+        }
+    });
+
     var catalogItem = $(".catalog-submenu .submenu-item");
 
     catalogItem.each(function(i) {

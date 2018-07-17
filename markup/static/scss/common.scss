@@ -65,6 +65,10 @@ html, body {
 }
 body {
 	font-family: 'Montserrat Regular', sans-serif;
+	.owl-carousel.owl-drag .owl-item {
+		-ms-touch-action: auto;
+		touch-action: auto;
+	}
 	.owl-theme .owl-nav {
 		font-size: 30px;
 		color: #EF4123;
