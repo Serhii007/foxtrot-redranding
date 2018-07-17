@@ -590,6 +590,7 @@
 		.feedback {
 			.add-recall {
 				margin-top: 10px;
+				background-color: #FFFFFF;
 			}
 			.amount:after {
 				content: ")";
@@ -616,7 +617,7 @@
 				transform: none;
 		max-width: 100%;
 		overflow: auto;
-		min-height: 100vh;
+		min-height: 100%;
 		.popup_respone {
 			position: absolute;
 			left: 0;
@@ -644,8 +645,6 @@
 	.popup_response_wrap .popup_respone{
 		position: absolute;
 		top: 0;
-		/* min-height: 100%;*/
-		/* height: 100%;*/
 	}
 }
 /*-----end product-main-information---*/

@@ -74,6 +74,9 @@
 		a {
 			cursor: pointer;
 		}
+		.ru.active, .ua.active {
+			font: 14px/14px Montserrat Bold;
+		}
 	}
 	.toggle.catalog-submenu-wrapper {
 		display: block;
