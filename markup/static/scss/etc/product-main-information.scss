@@ -111,15 +111,18 @@
 	padding-top: 3%;
 	border-top: 1px solid #E5E5E5;
 	margin-top: 3%;
+	.title {
+		font: 18px/22px Montserrat Bold;
+		margin-top: 0;
+	}
 	.about-text-wrapper.overflow {
 		overflow-y: hidden;
-		/* height: calc(16px * 15);*/
 		height: 250px;
 	}
-	&__text, .first-row {
+	p, h3 {
 		font: 14px/20px Montserrat Regular;
 	}
-	.first-row {
+	h3 {
 		text-transform: uppercase;
 		margin-top: 15px;
 	}
