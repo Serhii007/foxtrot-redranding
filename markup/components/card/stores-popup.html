@@ -189,10 +189,14 @@
 
         //changes for google map
         var mapToggler = $('.stores-popup .adress-table .about-store');
+        var showMapToggler = $(".stores-popup .about-text.open");
+        var hideMapToggler = $(".stores-popup .about-text.close");
 
         mapToggler.each(function(i) {
             mapToggler.eq(i).click(function() {
                 $('.cell-map').eq(i).toggleClass('visible-map');
+                showMapToggler.eq(i).toggleClass("hidden");
+                hideMapToggler.eq(i).toggleClass("hidden");
                 $(this).parents(".table-row").toggleClass('table-row-height');
             });
         });
