@@ -22,16 +22,18 @@ document.addEventListener( 'DOMContentLoaded' , function() {
 
         if(Math.abs(lastScrollTop - st) <= delta)
             return;
-        
-        if (st > lastScrollTop && st > navbarHeight && !$('.mobile-menu').hasClass('active') ){
-            $('.navigation').addClass('nav-up');
-            $('.mask').removeClass('full');
-            $('.navigation .catalog-submenu-wrapper').removeClass('toggle');
-            $(".catalog-submenu .submenu-item").find(".category-menu-wrapper").removeClass("visible");
-        } else {
 
-            if(st + $(window).height() < $(document).height()) {
-                $('.navigation').removeClass('nav-up');
+        if (window.innerWidth > 768) {
+            if (st > lastScrollTop && st > navbarHeight && !$('.mobile-menu').hasClass('active') ){
+                $('.navigation').addClass('nav-up');
+                $('.mask').removeClass('full');
+                $('.navigation .catalog-submenu-wrapper').removeClass('toggle');
+                $(".catalog-submenu .submenu-item").find(".category-menu-wrapper").removeClass("visible");
+            } else {
+
+                if(st + $(window).height() < $(document).height()) {
+                    $('.navigation').removeClass('nav-up');
+                }
             }
         }
 
