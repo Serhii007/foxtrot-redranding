@@ -1,4 +1,11 @@
 /*-----------listing sidebar block-----------*/
+.promotions-sidebar {
+	.checked-block {
+		label {
+			border-radius: 50%;
+		}
+	}
+}
 .sidebar {
 	font-size: 12px;
 	width: 20%;
@@ -218,7 +225,8 @@
 						transform: rotate(-45deg);
 			}
 		}
-		input[type=checkbox] {
+		input[type=checkbox], 
+		input[type=radio] {
 			visibility: hidden;
 			width: 17px;
 			height: 17px;
@@ -309,7 +317,8 @@
 			margin-left: 10px;
 		}
 		.sidebar .checked-block label, 
-		.sidebar .checked-block input[type=checkbox] {
+		.sidebar .checked-block input[type=checkbox],
+		.sidebar .checked-block input[type=radio] {
 			width: 28px;
 			height: 28px;
 		}

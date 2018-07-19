@@ -39,7 +39,7 @@ $(document).ready(function(){
 	});
 
 	// dropdown attributes js
-	let inputElem = $(".sidebar .checked-block > input[type='checkbox']");
+	let inputElem = $(".sidebar .checked-block > input[type='checkbox'], .sidebar .checked-block > input[type='radio']");
 	let labelElem = $(".sidebar .checked-block > label");
 	inputElem.each(function(index, value){
 		$(this).attr("id", "sidebar-check-input-" + index);
@@ -120,6 +120,8 @@ $(document).ready(function(){
 		});
 	}
 	countVisibleItems();
+
+	$(window).resize(countVisibleItems);
 
 
 	/* slider range js */
