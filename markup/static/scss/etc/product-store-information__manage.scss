@@ -65,6 +65,9 @@
 					align-items: flex-end;
 		}
 	}
+	.favorite {
+		display: none;
+	}
 	.favorite, .compare {
 		cursor: pointer;
 	}
