@@ -10,8 +10,7 @@
 		var arr = [];
 		var galleryTop = slideCont.offset().top;
 		var slideElemTop = slideElem.offset().top;
-		console.log(galleryTop);
-		console.log(slideElem.eq(0).offset().top);
+
 		slideElem.each(function() {
 			arr.push($(this).outerHeight(true));
 		});
@@ -32,7 +31,6 @@
 
 					var attribute = slideCont.eq(i).attr("style");
 					var currentPosition = parseInt(attribute.match(/\d+/gi).join(''));
-					console.log(currentPosition);
 
 					slideCont.eq(i).css("margin-top", (-currentPosition) - height + "px");
 			});
