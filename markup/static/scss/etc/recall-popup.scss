@@ -1,0 +1,48 @@
+.popup-wrapper.recall {
+	max-width: 830px;
+	height: 245px;
+	top: 150px;
+	width: 100%;
+	.recall__body {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: #FFFFFF;
+		padding: 60px 45px;
+		box-sizing: border-box;
+	}
+	.recall-close {
+		position: absolute;
+		display: block;
+		width: 20px;
+		height: 20px;
+		right: 8px;
+		top: 9px;
+		cursor: pointer;
+	}
+	.recall-title {
+		font: 16px/20px Montserrat Bold;
+		margin-bottom: 10px;
+	}
+	.recal-descr {
+		font: 14px/17px Montserrat Regular;
+		margin-top: 9px;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.popup-wrapper.recall {
+		top: 111px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.popup-wrapper.recall {
+		top: 0;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.popup-wrapper.recall {
+		.recall__body {
+			padding: 60px 19px;
+		}
+	}
+}

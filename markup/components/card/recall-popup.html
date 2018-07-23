@@ -1,0 +1,25 @@
+<div class="popup-wrapper recall">
+	<div class="recall__body">
+		<img src="%=static=%img/general/icons/close-icon.svg" alt="icon" class="recall-close">
+		<p class="recall-title">Ваш заказ принят в обработку.</p>
+		<p class="recall-descr">В ближайшее время Вам перезвонит менеджер и согласует все вопросы по заказу.</p>
+		<p class="recal-descr">Спасибо за обращение!</p>
+	</div>
+</div>
+<script>
+	$(document).ready(function() {
+		//for make popup visible add this code
+		// $(".mask").addClass("full cover");
+		// $("body").addClass("fixed");
+		// $(".popup-wrapper.recall").addClass("show");
+
+		// for make popup hidden
+		let closeIcon = $(".popup-wrapper.recall .recall-close");
+		closeIcon.click(function() {
+
+			$(".popup-wrapper.recall").removeClass("show");
+			$(".mask").removeClass("full cover");
+			$("body").removeClass("fixed");
+		});
+	});
+</script>
