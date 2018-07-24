@@ -759,6 +759,18 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+	body .owl-carousel .owl-nav .owl-next:hover, 
+	body .owl-carousel .owl-nav .owl-prev:hover {
+		background-color: rgba(241, 241, 101, 0.7) !important;
+		width: 30px;
+		height: 30px;
+	}
+	body .owl-carousel .owl-nav .owl-prev:hover {
+		left: 0;
+	}
+	body .owl-carousel .owl-nav .owl-next:hover {
+		right: 0;
+	}
 	.header {
 		-webkit-box-sizing: border-box;
 				box-sizing: border-box;
