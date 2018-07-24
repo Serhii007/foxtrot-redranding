@@ -81,9 +81,15 @@
 				var list = $(".product-store-information__slider-block .slider-main .owl-dots");
 				list.wrap("<div class='wrapper'></div>");
 				var wrapper = $(".product-store-information__slider-block .wrapper");
+
 				wrapper.after("<i class='fa fa-angle-right second'></i>");
 				wrapper.before("<i class='fa fa-angle-left second'></i>");
 				wrapper.width(width * count).height(height);
+
+				var navButtons = $(".product-store-information__slider-block .slider-main .owl-nav button");
+
+				navButtons.css("top", "calc(50% - " + height + "px");
+
 				var listElems = $(".product-store-information__slider-block .slider-main .owl-dot");
 				var left = $(".product-store-information__slider-block .fa-angle-left.second");
 				var right = $(".product-store-information__slider-block .fa-angle-right.second");
