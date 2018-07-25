@@ -27,7 +27,7 @@
 		margin-left: 2%;
 		-webkit-box-sizing: border-box;
 				box-sizing: border-box;
-		width: 230px;
+		width: 231px;
 		min-width: 210px;
 		padding: 0 1%;
 		position: relative;
@@ -183,6 +183,9 @@
 		&__items {
 			width: 57%;
 		}
+	}
+	.navigation__catalog {
+		width: 226px;
 	}
 }
 @media only screen and (max-width: 768px) {

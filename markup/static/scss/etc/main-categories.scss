@@ -48,11 +48,11 @@
 @media only screen and (max-width: 991px) {
 	.category-container {
 		.catalog-submenu {
-			min-width: 226px;
+			width: 226px;
 		}
 	}
 	.categories {
-		min-width: 226px;
+		width: 226px;
 	}
 }
 /* ----------- end category-container common styles --------- */
@@ -61,10 +61,11 @@
 
 .submenu-item:hover {
 	border: 1px solid #E0E0E0;
-	border-right: 1px solid #FFFFFF;
+	//border-right: 1px solid #FFFFFF;
 	-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-	border-radius: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
 	padding: 0;
 	.link-text {
 		color: #EF4123;
@@ -74,10 +75,10 @@
 	content: "";
 	display: block;
 	float: right;
-	-webkit-transform: translate(270%, 1%);
-		-ms-transform: translate(270%, 1%);
-			transform: translate(270%, 1%);
-	height: 23px;
+	-webkit-transform: translate(270%, 0);
+		-ms-transform: translate(270%, 0);
+			transform: translate(270%, 0);
+	height: 1.46rem;
 	width: 3px;
 	background-color: #FFFFFF;
 	z-index: 999;
