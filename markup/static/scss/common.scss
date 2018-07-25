@@ -370,16 +370,16 @@ body {
 	&__logo {
 		width: 35%;
 		min-width:140px;
+		max-width: 230px;
 		.logo-img{
-			max-width: 100%;
+			max-width: 230px;
 			width: 100%;
 			display: block;
 		}
 	}
 	&__search {
-		margin: 0 25px;
+		margin: 0 45px;
 		width: 100%;
-		max-width: 700px;
 		min-width: 150px;
 		position: relative;
 		.search-input::-webkit-input-placeholder {
@@ -434,6 +434,7 @@ body {
 		position: relative;
 		width: 100%;
 		min-width: 600px;
+		max-width: 600px;
 	}
 }
 .info-list {
@@ -754,6 +755,7 @@ body {
 	}
 		.header__search {
 			min-width: 130px;
+			margin: 0 25px;
 		}
 	}
 }
