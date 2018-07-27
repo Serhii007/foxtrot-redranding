@@ -195,12 +195,73 @@
 	z-index: 999;
 	right: 0;
 	bottom: 0;
-	-webkit-transform: translate(12%, 15%);
-		-ms-transform: translate(12%, 15%);
-			transform: translate(12%, 15%);
 	&__img {
 		width: 100%;
 	}
+}
+.tehnika-dlia-kuhni.category-picture {
+	max-width: 260px;
+	-webkit-transform: translate(27%, 44%);
+		-ms-transform: translate(27%, 44%);
+			transform: translate(27%, 44%);
+}
+.tehnika-dlia-doma.category-picture, {
+	-webkit-transform: translate(0, 23%);
+		-ms-transform: translate(0, 23%);
+			transform: translate(0, 23%);
+}
+.smart-gadzhetifoni-i-telefoni.category-picture {
+	width: 35%;
+	max-width: 100%;
+	min-width: 300px;
+	-webkit-transform: translate(7%, 0);
+		-ms-transform: translate(7%, 0);
+			transform: translate(7%, 0);
+}
+.noutbuky-planshety-pk.category-picture {
+	-webkit-transform: translate(18%, 16%);
+		-ms-transform: translate(18%, 16%);
+			transform: translate(18%, 16%);
+}
+.televizori-audiotehnika.category-picture {
+	width: 41%;
+	max-width: 100%;
+	min-width: 400px;
+	transform: translate(0, 10%);
+}
+.foto-video-avto.category-picture {
+	width: 33%;
+	max-width: 100%;
+	min-width: 280px;
+	transform: translate(17%, 7%);
+}
+.dom-sad.category-picture {
+	width: 285px;
+}
+.posuda.category-picture {
+	max-width: 250px;
+	transform: translate(22%, 30%);
+}
+.instrument.category-picture {
+	width: 350px;
+	max-width: 100%;
+	transform: translate(16%, 19%);
+}
+.otdih-i-turizm.category-picture {
+	width: 380px;
+	max-width: 100%;
+}
+.smart-gadzheti.category-picture {
+	width: 42%;
+	max-width: 320px;
+	min-width: 290px;
+	transform: translate(10%, 7%);
+}
+.tovari-dlia-detei.category-picture {
+	width: 42%;
+	max-width: 334px;
+	min-width: 334px;
+	transform: translate(10%, 15%);
 }
 .category-list-item {
 	margin: 1.7% 0;
@@ -227,6 +288,30 @@
 		}
 	}
 }
+@media only screen and (max-width: 1200px) {
+	.category-menu-wrapper {
+		.tehnika-dlia-kuhni.category-picture {
+			width: 30%;
+			transform: translate(28%, 47%);
+		}
+	}
+	.tehnika-dlia-doma.category-picture {
+		-webkit-transform: translate(0, 15%);
+			-ms-transform: translate(0, 15%);
+				transform: translate(0, 15%);
+	}
+	.noutbuky-planshety-pk.category-picture {
+		-webkit-transform: translate(13%, 14%);
+			-ms-transform: translate(13%, 14%);
+				transform: translate(13%, 14%);
+	}
+	.televizori-audiotehnika.category-picture {
+		min-width: 360px;
+		-webkit-transform: translate(13%, 10%);
+			-ms-transform: translate(13%, 10%);
+				transform: translate(13%, 10%);
+	}
+}
 @media only screen and (max-width: 991px) {
 	.category-menu-wrapper {
 		font-size: 11px;
@@ -236,6 +321,52 @@
 		.category-picture {
 			width: 36%;
 		}
+	}
+	.tehnika-dlia-kuhni.category-picture {
+		width: 30%;
+		transform: translate(30%, 38%);
+	}
+	.tehnika-dlia-doma.category-picture {
+		-webkit-transform: translate(0, 0);
+			-ms-transform: translate(0, 0);
+				transform: translate(0, 0);
+	}
+	.smart-gadzhetifoni-i-telefoni.category-picture {
+		min-width: 240px;
+		-webkit-transform: translate(11%, 16%);
+			-ms-transform: translate(11%, 16%);
+				transform: translate(11%, 16%);
+	}
+	.televizori-audiotehnika.category-picture {
+		min-width: 330px;
+		transform: translate(14%, 38%);
+	}
+	.foto-video-avto.category-picture {
+		min-width: 240px;
+		transform: translate(21%, 15%);
+	}
+	.dom-sad.category-picture {
+		width: 245px;
+		transform: translate(21%, 15%);
+	}
+	.posuda.category-picture {
+		transform: translate(22%, 27%);
+	}
+	.instrument.category-picture {
+		width: 295px;
+	}
+	.otdih-i-turizm.category-picture {
+		width: 315px;
+	}
+	.smart-gadzheti.category-picture {
+		min-width: 210px;
+		transform: translate(17%, 7%);
+	}
+	.tovari-dlia-detei.category-picture {
+		width: 42%;
+		max-width: 320px;
+		min-width: 290px;
+		transform: translate(10%, 7%);
 	}
 }
 /* --------------- end category-menu-list ----------------- */

@@ -1,28 +1,17 @@
 <div class="navigation__catalog">
-        <div class="megamenu-toggler">
-            <span class="catalog-text">Каталог товаров</span>
-            <div class="catalog-arrow">
-                <img src="%=static=%img/general/navigation/arrow-down.svg" alt="arrow">
-            </div>
+    <div class="megamenu-toggler">
+        <span class="catalog-text">Каталог товаров</span>
+        <div class="catalog-arrow">
+            <img src="%=static=%img/general/navigation/arrow-down.svg" alt="arrow">
         </div>
-        <div class="catalog-submenu-wrapper show">
-            <div class="back-button second-controller">
-                <img src="%=static=%img/general/icons/arrow-left.svg" alt="icon" class="left-icon second-controller">
-                <span class="back-button__text second-controller">Назад</span>
-            </div>
-            <div class="dd-wrapper">
-                <ul class="catalog-submenu categories">
-                <li class="submenu-item">
-                    <a href="#" class="submenu-item__link">
-                    <div class="icon-wrapper">
-                        <img src="%=static=%img/general/navigation/Vector.svg" alt="icon" class="link-icon">
-                    </div>
-                        <span class="link-text">Акции</span>
-                        <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
-                    </a>
-                    {{> category-menu/category-menu-list}}
-                </li>
+    </div>
+    <div class="catalog-submenu-wrapper show">
+        <div class="back-button second-controller">
+            <img src="%=static=%img/general/icons/arrow-left.svg" alt="icon" class="left-icon second-controller">
+            <span class="back-button__text second-controller">Назад</span>
+        </div>
+        <div class="dd-wrapper">
+            <ul class="catalog-submenu categories">
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
                     <div class="icon-wrapper">
@@ -30,9 +19,8 @@
                     </div>
                         <span class="link-text">Техника для кухни</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-kitchen}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -41,9 +29,8 @@
                     </div>
                         <span class="link-text">Техника для дома</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-for-house}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -52,9 +39,8 @@
                     </div>
                         <span class="link-text">Смартфоны и телефоны</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-phones}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -63,9 +49,8 @@
                     </div>
                         <span class="link-text">Ноутбуки, планшеты, ПК</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-PC}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -74,9 +59,8 @@
                     </div>
                         <span class="link-text">Телевизоры, аудиотехника</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-TV}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -85,9 +69,8 @@
                     </div>
                         <span class="link-text">Фото,видео, авто</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-photo}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -96,9 +79,8 @@
                     </div>
                         <span class="link-text">Дом и сад</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-garden}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -107,9 +89,8 @@
                     </div>
                         <span class="link-text">Посуда</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-dishes}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -118,9 +99,8 @@
                     </div>
                         <span class="link-text">Инструмент</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-equipment}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -129,9 +109,8 @@
                     </div>
                         <span class="link-text">Отдых и туризм</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-rest}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -140,9 +119,8 @@
                     </div>
                         <span class="link-text">Смарт-гаджеты</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-smart}}
                 </li>
                 <li class="submenu-item">
                     <a href="#" class="submenu-item__link">
@@ -151,29 +129,17 @@
                     </div>
                         <span class="link-text">Товары для детей</span>
                         <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
                     </a>
-                    {{> category-menu/test-category}}
-                </li>
-                <li class="submenu-item">
-                    <a href="#" class="submenu-item__link">
-                    <div class="icon-wrapper">
-                        <img src="%=static=%img/general/navigation/XMLID 222.svg" alt="icon" class="link-icon">
-                    </div>
-                        <span class="link-text">Красота и здоровье</span>
-                        <img src="%=static=%img/general/navigation/Vector(13).svg" alt="arrow" class="link-arrow">
-                        <img src="%=static=%img/general/icons/arrow-right.svg" alt="icon" class="link-arrow mobile">
-                    </a>
-                    {{> category-menu/test-category}}
+                    {{> category-menu/category-menu-list-children}}
                 </li>
             </ul>
-            </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $(".category-container .submenu-item__link, .navigation .submenu-item__link").click(function(e) {
-                e.preventDefault();
-            });
+</div>
+<script>
+    $(document).ready(function() {
+        $(".category-container .submenu-item__link, .navigation .submenu-item__link").click(function(e) {
+            e.preventDefault();
         });
-    </script>
+    });
+</script>
