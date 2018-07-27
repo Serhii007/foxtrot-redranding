@@ -56,7 +56,7 @@
 
 .submenu-item:hover {
 	border: 1px solid #E0E0E0;
-	//border-right: 1px solid #FFFFFF;
+	/*border-right: 1px solid #FFFFFF;*/
 	-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 	border-top-left-radius: 2px;
@@ -227,25 +227,33 @@
 	width: 41%;
 	max-width: 100%;
 	min-width: 400px;
-	transform: translate(0, 10%);
+	-webkit-transform: translate(0, 10%);
+		-ms-transform: translate(0, 10%);
+			transform: translate(0, 10%);
 }
 .foto-video-avto.category-picture {
 	width: 33%;
 	max-width: 100%;
 	min-width: 280px;
-	transform: translate(17%, 7%);
+	-webkit-transform: translate(17%, 7%);
+		-ms-transform: translate(17%, 7%);
+			transform: translate(17%, 7%);
 }
 .dom-sad.category-picture {
 	width: 285px;
 }
 .posuda.category-picture {
 	max-width: 250px;
-	transform: translate(22%, 30%);
+	-webkit-transform: translate(22%, 30%);
+		-ms-transform: translate(22%, 30%);
+			transform: translate(22%, 30%);
 }
 .instrument.category-picture {
 	width: 350px;
 	max-width: 100%;
-	transform: translate(16%, 19%);
+	-webkit-transform: translate(16%, 19%);
+		-ms-transform: translate(16%, 19%);
+			transform: translate(16%, 19%);
 }
 .otdih-i-turizm.category-picture {
 	width: 380px;
@@ -255,13 +263,17 @@
 	width: 42%;
 	max-width: 320px;
 	min-width: 290px;
-	transform: translate(10%, 7%);
+	-webkit-transform: translate(10%, 7%);
+		-ms-transform: translate(10%, 7%);
+			transform: translate(10%, 7%);
 }
 .tovari-dlia-detei.category-picture {
 	width: 42%;
 	max-width: 334px;
 	min-width: 334px;
-	transform: translate(10%, 15%);
+	-webkit-transform: translate(10%, 15%);
+		-ms-transform: translate(10%, 15%);
+			transform: translate(10%, 15%);
 }
 .category-list-item {
 	margin: 1.7% 0;
@@ -292,7 +304,9 @@
 	.category-menu-wrapper {
 		.tehnika-dlia-kuhni.category-picture {
 			width: 30%;
-			transform: translate(28%, 47%);
+			-webkit-transform: translate(28%, 47%);
+				-ms-transform: translate(28%, 47%);
+					transform: translate(28%, 47%);
 		}
 	}
 	.tehnika-dlia-doma.category-picture {
@@ -324,7 +338,9 @@
 	}
 	.tehnika-dlia-kuhni.category-picture {
 		width: 30%;
-		transform: translate(30%, 38%);
+		-webkit-transform: translate(30%, 38%);
+			-ms-transform: translate(30%, 38%);
+				transform: translate(30%, 38%);
 	}
 	.tehnika-dlia-doma.category-picture {
 		-webkit-transform: translate(0, 0);
@@ -339,18 +355,26 @@
 	}
 	.televizori-audiotehnika.category-picture {
 		min-width: 330px;
-		transform: translate(14%, 38%);
+		-webkit-transform: translate(14%, 38%);
+			-ms-transform: translate(14%, 38%);
+				transform: translate(14%, 38%);
 	}
 	.foto-video-avto.category-picture {
 		min-width: 240px;
-		transform: translate(21%, 15%);
+		-webkit-transform: translate(21%, 15%);
+			-ms-transform: translate(21%, 15%);
+				transform: translate(21%, 15%);
 	}
 	.dom-sad.category-picture {
 		width: 245px;
-		transform: translate(21%, 15%);
+		-webkit-transform: translate(21%, 15%);
+			-ms-transform: translate(21%, 15%);
+				transform: translate(21%, 15%);
 	}
 	.posuda.category-picture {
-		transform: translate(22%, 27%);
+		-webkit-transform: translate(22%, 27%);
+			-ms-transform: translate(22%, 27%);
+				transform: translate(22%, 27%);
 	}
 	.instrument.category-picture {
 		width: 295px;
@@ -360,13 +384,17 @@
 	}
 	.smart-gadzheti.category-picture {
 		min-width: 210px;
-		transform: translate(17%, 7%);
+		-webkit-transform: translate(17%, 7%);
+			-ms-transform: translate(17%, 7%);
+				transform: translate(17%, 7%);
 	}
 	.tovari-dlia-detei.category-picture {
 		width: 42%;
 		max-width: 320px;
 		min-width: 290px;
-		transform: translate(10%, 7%);
+		-webkit-transform: translate(10%, 7%);
+			-ms-transform: translate(10%, 7%);
+				transform: translate(10%, 7%);
 	}
 }
 /* --------------- end category-menu-list ----------------- */
