@@ -1,0 +1,144 @@
+<div class="popup-wrapper registration show">
+    <div class="registration__body">
+        <img src="%=static=%img/general/icons/close-icon.svg" alt="icon"
+             class="registration-close-icon">
+        <div class="registration-forms">
+            <h3 class="registration-title">Вход / регистрация</h3>
+
+            <div class="phone-registration">
+                <form action="">
+                    <div class="choose-type">
+                        <p class="type-phone active">Ваш телефон</p>
+                        <p class="type-comfort-card">Номер карты комфорта</p>
+                    </div>
+                    <input type="text" class="phone-input" placeholder="+38 0хх хх хх ">
+                    <span class="field-validation-error">
+                    <span>Номер телефона может состоять только из символов 1,2,3,4,5,6,7,8,9,0 </span>
+                </span>
+                    <button type="button" class="registration-button">Далее</button>
+                </form>
+                <div class="registration__social">
+                    <p class="social-title">Войти через соц сети</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-links">
+                            <img src="%=static=%img/general/icons/facebook.svg" alt="icon" class="social-icon">
+                        </a>
+                        <a href="#" class="social-links">
+                            <img src="%=static=%img/general/icons/google+.svg" alt="icon" class="social-icon">
+                        </a>
+                        <a href="#" class="social-links">
+                            <img src="%=static=%img/general/icons/twitter.svg" alt="icon" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="code-registration">
+                <form action="">
+                    <div class="inform">
+                        <p class="inform-text">Введите код из SMS / Viber, отправленный на <span>3801234567</span></p>
+                    </div>
+                    <input type="text" class="phone-input" placeholder="Код из 6 цифр">
+                    <span class="field-validation-error">
+                    <span>Номер телефона может состоять только из символов 1,2,3,4,5,6,7,8,9,0 </span>
+                </span>
+                    <button type="button" class="registration-button">Далее</button>
+                </form>
+                <div class="sms-error">
+                    <p class="sms-question">Не приходит SMS с кодом?</p>
+                    <a href="#" class="sms-again">Отправить SMS еще раз</a>
+                    <a href="#" class="sms-another-number">Ввести другой номер</a>
+                </div>
+            </div>
+        </div>
+        <div class="registration-complete-form-block">
+            <h3 class="registration-title">Завершение регистрации</h3>
+            <div class="complete-registration-block">
+                <form action="">
+                    <div class="inform">
+                        <p class="inform-text">Вы почти завершили регистрацию! Пожалуйста, дополните данные о себе.</p>
+                    </div>
+                    <p class="tex-for-input">Телефон*</p>
+                    <div class="wrapper">
+                        <input type="text" class="phone-input" placeholder="+38 123 45 067">
+                        <span class="field-validation-error">
+                            <span>Поле обязательно для заполнения</span>
+                        </span>
+                    </div>
+
+                    <p class="tex-for-input">Имя*</p>
+                    <div class="wrapper">
+                        <input type="text" class="phone-input" placeholder="Как вас зовут?">
+                        <span class="field-validation-error">
+                            <span>Поле обязательно для заполнения</span>
+                        </span>
+                    </div>
+
+                    <p class="tex-for-input">Фамилия*</p>
+                    <div class="wrapper">
+                        <input type="text" class="phone-input" placeholder="Какая у вас фамилия?">
+                        <span class="field-validation-error">
+                            <span>Поле обязательно для заполнения</span>
+                        </span>
+                    </div>
+
+                    <p class="tex-for-input">Електронная почта*</p>
+                    <div class="wrapper">
+                        <input type="text" class="phone-input" placeholder="example@gmail.com">
+                        <span class="field-validation-error">
+                            <span>Поле обязательно для заполнения</span>
+                        </span>
+                    </div>
+
+                    <div class="agreement">
+                        <div class="checked-block">
+                            <input type="checkbox" value="None" name="check" id="check-input-0">
+                            <label for="check-input-0"></label>
+                        </div>
+                        <div class="agreement__text">
+                            <p>Предоставляя свои персональные данные</p>
+                            <a href="#">даю согласие на их обработку</a>
+                        </div>
+                    </div>
+
+                    <button type="button" class="registration-button">Далее</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        let popup = $(".popup-wrapper.registration");
+        // auto height if the registration popup
+        let wrapperHeight = () => {
+            if (window.innerWidth > 991) {
+                let popupBody = $(".popup-wrapper.registration .registration__body");
+                popup.css("height", popupBody.outerHeight(true) + "px" );
+            } else {
+                popup.css("height", "100%");
+            }
+        }
+        wrapperHeight();
+        $(window).resize(wrapperHeight);
+
+        // show registration popup
+        // let registrationPopupToggler = $(your selector);
+        //
+        // registrationPopupToggler.click(function () {
+        //         $(".mask").addClass("full cover");
+        //         $("body").addClass("fixed");
+        //         popup.addClass("show");
+        //
+        // });
+
+        // hide registration popup
+        let closeIcon = $(".registration-close-icon");
+        closeIcon.click(function() {
+
+            popup.removeClass("show");
+            $(".mask").removeClass("full cover");
+            $("body").removeClass("fixed");
+        });
+    });
+</script>

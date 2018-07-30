@@ -1,0 +1,256 @@
+.popup-wrapper.registration {
+    width: 830px;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    .registration__body {
+        position: relative;
+        padding: 55px 50px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background-color: #FFFFFF;
+    }
+    .registration-close-icon {
+        position: absolute;
+        top: 9px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .registration-title {
+        font: 16px/20px "Montserrat Bold";
+    }
+    .phone-registration,
+    .code-registration,
+    .registration-complete-form-block {
+        margin-top: 47px;
+    }
+    .choose-type {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        p {
+            font: 12px/15px "Montserrat Regular";
+            border-bottom: 1px dotted #2F80ED;
+            margin-right: 10px;
+        }
+        p.active {
+            font: 12px/15px "Montserrat Bold";
+            border-bottom: 0;
+        }
+        .type-comfort-card {
+            margin: 0;
+        }
+    }
+    .phone-input {
+        margin-top: 15px;
+    }
+    input {
+        width: 100%;
+        height: 33px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        border: 1px solid #BDBDBD;
+        padding-left: 14px;
+    }
+    input::-webkit-input-placeholder {
+        color: #828282;
+        font: 14px/17px "Montserrat Regular";
+    }
+    input:-ms-input-placeholder {
+        color: #828282;
+        font: 14px/17px "Montserrat Regular";
+    }
+    input::-ms-input-placeholder {
+        color: #828282;
+        font: 14px/17px "Montserrat Regular";
+    }
+    input::placeholder {
+        color: #828282;
+        font: 14px/17px "Montserrat Regular";
+    }
+    .registration-button {
+        background-color: #E54415;
+        border: 0;
+        border-radius: 0;
+        color: #FFFFFF;
+        font: 15px/15px "Montserrat Semibold";
+        width: 122px;
+        height: 32px;
+        display: block;
+        margin: 25px 0;
+        cursor: pointer;
+    }
+    .social-title {
+        font: 16px/20px "Montserrat Bold";
+    }
+    .social-icons {
+        margin-top: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        a {
+            display: block;
+            width: 33px;
+            height: 33px;
+            position: relative;
+            margin-right: 14px;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .inform-text {
+        font: 12px/15px "Montserrat Bold";
+    }
+    .sms-error {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        a {
+            font: 12px/15px "Montserrat Regular";
+            text-decoration: none;
+            color: #2F80ED;
+            margin-top: 15px;
+        }
+    }
+    .checked-block {
+        margin-right: 18px;
+        position: relative;
+        height: 17px;
+        width: 17px;
+        label {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background: #FFFFFF;
+            border: 1px solid #BDBDBD;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            &:after {
+                content: '';
+                width: 6px;
+                height: 3px;
+                position: absolute;
+                top: 8px;
+                left: 9px;
+                border: 1px solid #EF4123;
+                border-top: none;
+                border-right: none;
+                background: transparent;
+                opacity: 0;
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+        }
+        input[type=checkbox],
+        input[type=radio] {
+            visibility: hidden;
+            width: 17px;
+            height: 17px;
+            display: block;
+            &:checked + label:after {
+                opacity: 1;
+            }
+        }
+    }
+    .registration-complete-form-block {
+        .inform {
+            margin: 30px 0;
+        }
+        .tex-for-input {
+            margin-bottom: 10px;
+        }
+        .wrapper {
+            margin-bottom: 20px;
+            position: relative;
+            input {
+                margin: 0;
+            }
+            .field-validation-error {
+                position: absolute;
+                display: block;
+                bottom: -17px;
+                left: 0;
+                margin: 0;
+            }
+        }
+    }
+    .agreement {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin: 32px 0;
+        &__text {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            font: 12px/15px "Montserrat Regular";
+            a {
+                text-decoration: none;
+                color: #2F80ED;
+                margin-left: 12px;
+            }
+        }
+    }
+}
+body .popup-wrapper.registration {
+    .field-validation-error  {
+        margin-top: 12px;
+        display: block;
+        span {
+            font: 12px/15px "Montserrat Regular";
+        }
+    }
+}
+@media only screen and (max-width: 991px) {
+    .popup-wrapper.registration {
+        width: 100%;
+        max-width: 830px;
+        top: 0;
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+}
+@media only screen and (max-width: 768px) {
+    .popup-wrapper.registration {
+        .registration__body {
+            padding: 40px 38px;
+        }
+        .registration-close-icon {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+@media only screen and (max-width: 320px) {
+    .popup-wrapper.registration {
+        .registration__body {
+            padding: 40px 31px;
+        }
+    }
+}
