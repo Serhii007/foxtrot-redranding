@@ -37,7 +37,7 @@
               if (e.type == 'swiperight') {
                 // showMobMenu();
                 return;
-              } else {
+              } else if (mMenu.hasClass("active") ) {
                 hideMobMenu();
                 $(".mask").removeClass("full");
                 $('.catalog-submenu-wrapper').removeClass('toggle');
