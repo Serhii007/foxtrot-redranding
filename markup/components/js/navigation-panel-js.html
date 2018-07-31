@@ -152,12 +152,20 @@ $(document).ready(function(){
     catalogItem.each(function(i) {
 
         catalogItem.eq(i).mouseenter(function() {
-            catalogItem.find(".category-menu-wrapper").removeClass("visible");
-            $(this).find(".category-menu-wrapper").addClass("visible");
+            if (window.innerWidth > 768) {
+                catalogItem.find(".category-menu-wrapper").removeClass("visible");
+                $(this).find(".category-menu-wrapper").addClass("visible");
                 $(".mask").addClass("full");
+
+                $(this).append("<div class='border-breake'></div>");
+                $(".border-breake").css("height", ($(this).outerHeight(false) - 2) + "px" );
+            }
         });
         catalogItem.eq(i).mouseleave(function() {
-            $(this).find(".category-menu-wrapper").removeClass("visible");
+            if (window.innerWidth > 768) {
+                $(this).find(".category-menu-wrapper").removeClass("visible");
+                $(this).find(".border-breake").remove();
+            }
         });
     });
 });

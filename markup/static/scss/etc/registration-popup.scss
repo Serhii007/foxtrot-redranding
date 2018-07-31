@@ -1,4 +1,4 @@
-// registration popup
+/* registration popup*/
 .popup-wrapper.registration {
     width: 830px;
     top: 50%;
@@ -239,12 +239,33 @@ body .popup-wrapper.registration {
 }
 @media only screen and (max-width: 768px) {
     .popup-wrapper.registration {
+        .agreement__text {
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            p {
+                margin-right: 14px;
+            }
+            a {
+                margin: 0;
+            }
+        }
         .registration__body {
             padding: 40px 38px;
+            min-height: 100%;
         }
         .registration-close-icon {
             width: 14px;
             height: 14px;
+        }
+    }
+}
+@media only screen and (max-width: 480px) {
+    .popup-wrapper.registration {
+        .agreement__text {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }
     }
 }
@@ -255,9 +276,9 @@ body .popup-wrapper.registration {
         }
     }
 }
-//end registration popup
+/*end registration popup*/
 
-// code that not exist from common.scss
+/* code that not exist from common.scss*/
 
 .hidden {
     display: none !important;
@@ -299,8 +320,8 @@ body .popup-wrapper.registration {
     overflow-x: hidden;
     z-index: 1001;
 }
-.field-validation-error	span {
+.field-validation-error span {
     font: 14px/19px Montserrat Bold;
     color: #ef4023;
 }
-// end code that not exist from common.scss
+/* end code that not exist from common.scss*/
