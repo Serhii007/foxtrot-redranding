@@ -6,6 +6,13 @@
 html, body {
 	height: 100%;
 }
+.action-content {
+    .main.wide.shadow {
+        .text-full > img {
+            max-width: 100%;
+        }
+    }
+}
 .compare-icon {
 	background-image: url("/static/img/general/header/icons/Group.svg");
 	background-repeat: no-repeat;
