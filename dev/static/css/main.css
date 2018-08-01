@@ -4050,7 +4050,7 @@ body .category-slider .owl-nav .owl-next:hover {
   width: 100%;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1360px) {
   .category-slider__inform {
     margin-bottom: 1%;
   }
