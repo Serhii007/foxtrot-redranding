@@ -66,14 +66,17 @@
 		color: #EF4123;
 	}
 }
-.border-breake {
-    float: right;
-    -webkit-transform: translate(270%, 0);
-    -ms-transform: translate(270%, 0);
-    transform: translate(270%, 0);
-    width: 3px;
-    background-color: #FFFFFF;
-    z-index: 999;
+.submenu-item:hover:after {
+	content: "";
+	display: block;
+	float: right;
+	-webkit-transform: translate(270%, 0);
+		-ms-transform: translate(270%, 0);
+			transform: translate(270%, 0);
+	height: 1.46rem;
+	width: 3px;
+	background-color: #FFFFFF;
+	z-index: 999;
 }
 .icon-wrapper {
 	position: relative;
@@ -120,7 +123,7 @@
 	.link-text {
 		margin-left: 1%;
 	}
-    .border-breake {
+    .submenu-item:hover:after {
         -webkit-transform: translate(135%, 0);
         -ms-transform: translate(135%, 0);
         transform: translate(135%, 0);
