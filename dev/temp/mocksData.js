@@ -1,3 +1,10 @@
+'head': {
+    defaults: {
+        title: 'default title',
+        useSocialMetaTags: true
+    }
+},
+
 /* Module data structure */
 
 // moduleName: {
@@ -16,14 +23,10 @@ _template: {
     }
 },
 
-'head': {
-    defaults: {
-        title: 'default title',
-        useSocialMetaTags: true
-    }
-},
-
 __pages: [{
+                name: 'actions-listing',
+                href: 'actions-listing.html'
+             },{
                 name: 'card',
                 href: 'card.html'
              },{
@@ -32,4 +35,7 @@ __pages: [{
              },{
                 name: 'listing',
                 href: 'listing.html'
+             },{
+                name: 'promotions',
+                href: 'promotions.html'
              }]
