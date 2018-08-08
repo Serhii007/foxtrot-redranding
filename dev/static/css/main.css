@@ -1363,6 +1363,10 @@ body {
   border-bottom: none;
 }
 
+.owl-carousel1 .owl-stage-outer {
+  margin: 0 55px;
+}
+
 /*------------about-product-panel block----------*/
 .about-product-panel {
   display: -webkit-box;
@@ -2951,7 +2955,7 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 /* end discount-variant block*/
 /*-------------------footer block------------------*/
 .footer-wrapper {
-  padding: 7% 0 2%;
+  padding: 3% 0 1%;
   width: 100%;
   overflow: hidden;
   background-color: #2A2E37;
@@ -8718,9 +8722,8 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
   margin-top: 8px;
   display: inline-block;
   letter-spacing: 1px;
-  color: #000000;
+  color: #2F80ED;
   text-decoration: none;
-  border-bottom: 1px dashed #000000;
   font: 14px/17px Montserrat Medium;
 }
 
@@ -8802,9 +8805,8 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
 .serch-dd .search-bottom-panel .search_show_all {
   margin: 5px 0 3px;
   display: inline-block;
-  color: #000000;
+  color: #2F80ED;
   text-decoration: none;
-  border-bottom: 1px dashed #000000;
   font: 14px/17px Montserrat Medium;
   letter-spacing: 1px;
 }
