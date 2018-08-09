@@ -67,6 +67,16 @@ body {
 	.top-panel-informer {
 		font-size: 12px;
 		padding: 2px 8px;
+		position: relative;
+	}
+	.top-panel-informer .icon-opchas {
+		width: 20px;
+		height: 20px;
+		background-image: url("/static/img/general/icons/opchas.svg");
+		display: inline-block;
+		position: relative;
+		left: -9px;
+		top: 4px;
 	}
 	.exclusive {
 		background-color: #D1C4E9;
@@ -82,6 +92,9 @@ body {
 	}
 	.hit {
 		background-color: #B0F7B3;
+	}
+	.opchas {
+		background-color: #FFF969;
 	}
 	.top-panel-informer.bonus {
 		background-color: #FF766E;

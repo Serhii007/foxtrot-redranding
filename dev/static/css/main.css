@@ -3074,7 +3074,7 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   width: 60%;
   color: #828282;
   font-size: 12px;
-  margin: 7% 0 0 20%;
+  margin: 5px 0 0 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5161,6 +5161,10 @@ body .product-listing .listing-item__img-container .item-image {
   margin: 0 auto;
   width: auto;
   height: 140px;
+}
+
+.product-listing .listing-block {
+  margin-top: auto;
 }
 
 .product-listing .listing-item {
@@ -7429,6 +7433,22 @@ body .product-listing .listing-item__img-container .item-image {
 .product-store-information__slider-block .top-panel__informer {
   font-size: 12px;
   padding: 2px 8px;
+  position: relative;
+}
+
+.product-store-information__slider-block .top-panel__informer .icon-opchas {
+  width: 20px;
+  height: 20px;
+  background-image: url("/static/img/general/icons/opchas.svg");
+  display: inline-block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+}
+
+.product-store-information__slider-block .top-panel__informer.opchas {
+  padding-left: 20px;
+  background-color: #FFF969;
 }
 
 .product-store-information__slider-block .exclusive {
@@ -8466,6 +8486,17 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
 .rolling-carousel-item .top-panel-informer {
   font-size: 12px;
   padding: 2px 8px;
+  position: relative;
+}
+
+.rolling-carousel-item .top-panel-informer .icon-opchas {
+  width: 20px;
+  height: 20px;
+  background-image: url("/static/img/general/icons/opchas.svg");
+  display: inline-block;
+  position: relative;
+  left: -9px;
+  top: 4px;
 }
 
 .rolling-carousel-item .exclusive {
@@ -8486,6 +8517,10 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
 
 .rolling-carousel-item .hit {
   background-color: #B0F7B3;
+}
+
+.rolling-carousel-item .opchas {
+  background-color: #FFF969;
 }
 
 .rolling-carousel-item .top-panel-informer.bonus {
