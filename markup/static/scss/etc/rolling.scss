@@ -74,9 +74,13 @@ body {
 		height: 20px;
 		background-image: url("/static/img/general/icons/opchas.svg");
 		display: inline-block;
-		position: relative;
-		left: -9px;
-		top: 4px;
+		position: absolute;
+		left: -3px;
+    	top: -3px;
+	}
+	.top-panel-informer.opchas {
+		padding-left: 20px;
+		background-color: #FFF969;
 	}
 	.exclusive {
 		background-color: #D1C4E9;

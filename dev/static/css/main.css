@@ -5207,6 +5207,26 @@ body .product-listing .listing-item__img-container .item-image {
 .product-listing .listing-item .top-panel-informer {
   font-size: 12px;
   padding: 2px 8px;
+  position: relative;
+}
+
+.product-listing .listing-item .top-panel-informer .icon-opchas {
+  width: 20px;
+  height: 20px;
+  background-image: url("/static/img/general/icons/opchas.svg");
+  display: inline-block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+}
+
+.product-listing .listing-item .top-panel-informer.opchas {
+  padding-left: 20px;
+  background-color: #FFF969;
+}
+
+.product-listing .listing-item .opchas {
+  background-color: #FFF969;
 }
 
 .product-listing .listing-item .exclusive {
@@ -8494,9 +8514,14 @@ body .rolling-section .rolling-carousel-item__img-container .item-image {
   height: 20px;
   background-image: url("/static/img/general/icons/opchas.svg");
   display: inline-block;
-  position: relative;
-  left: -9px;
-  top: 4px;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+}
+
+.rolling-carousel-item .top-panel-informer.opchas {
+  padding-left: 20px;
+  background-color: #FFF969;
 }
 
 .rolling-carousel-item .exclusive {
