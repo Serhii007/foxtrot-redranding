@@ -38,4 +38,7 @@ __pages: [{
              },{
                 name: 'promotions',
                 href: 'promotions.html'
+             },{
+                name: 'search',
+                href: 'search.html'
              }]

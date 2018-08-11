@@ -1,0 +1,27 @@
+  <!-- 
+    Author: Julian  (telegram: @verstad)
+-->
+  <!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+    <body class="page">
+        <div class="mask"></div>
+        %=symbols=%
+        {{> header/header}}
+        {{> navigation/navigation}}
+        <section class="page__wrapper">
+
+
+
+            {{> search/search-content}}
+        </section>
+            {{> footer/footer}}
+        <script src="static/js/main.js"></script>
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+    </body>
+
+</html>
