@@ -3051,6 +3051,37 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   cursor: pointer;
 }
 
+.top-panel-informer {
+  display: inline-block;
+}
+
+.top-oplata {
+  font-size: 12px;
+  padding: 2px 8px;
+  position: relative;
+  margin-left: 7px;
+  display: inline-block;
+}
+
+.br-info {
+  display: block;
+}
+
+.top-oplata .icon-opchas {
+  width: 20px;
+  height: 20px;
+  background-image: url("/static/img/general/icons/opchas.svg");
+  display: inline-block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+}
+
+.top-oplata.oplata {
+  padding-left: 20px;
+  background-color: #FFF969;
+}
+
 /*-------------------footer block------------------*/
 .footer-wrapper {
   padding: 3% 0 1%;
