@@ -1729,12 +1729,16 @@
         		<div class="slide-header">
         			<div class="slide-header__top">
         				<div class="mm-logo">
-        					<img src="/static/img/general/header/logo.svg" alt="logo" class="logo-img">
+        					<a href="#">
+        						<img src="/static/img/general/header/logo.svg" alt="logo" class="logo-img">
+        					</a>
+        					
         				</div>
         				<div class="mm-lang">
         					<span class="uk">Ua</span>
         					<span class="ru active">Ru</span>
         				</div>
+        				<div class="mm-closed">x</div>
         			</div>
         			<div class="slide-header__bottom">
         				<ul class="info-list">
@@ -3292,14 +3296,14 @@
         				<a href="#" class="unregistered__link enter">
         					<span>Вход</span>
         				</a>
-        				<a href="#" class="unregistered__link registration">
+        				<!-- <a href="#" class="unregistered__link registration">
         					<span>Регистрация</span>
-        				</a>
+        				</a> -->
         			</div>
         			<div class="registered">
         				<div class="registered__profile">
         					<img src="/static/img/general/icons/profile-img.svg" alt="icon">
-        					<span class="name">Юля</span>
+        					<span class="name">Юля Макарова</span>
         				</div>
         				<div class="logout">
         					<span class="logout__text">Выйти</span>
@@ -3328,6 +3332,11 @@
         			if (e.target.classList.contains("category-item__title") ) {
         				$(this).addClass("active");
         			}
+        		});
+        		$(".mm-closed").click(function() {
+        			$(".mobile-menu").removeClass("active");
+        			$(".mask").removeClass("full");
+        			$("body").removeClass("fixed");
         		});
         
         		function scrollToTop() {

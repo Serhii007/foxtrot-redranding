@@ -6,6 +6,28 @@
 			<span class="top-panel__informer opchas">
 					<i class="icon-opchas"></i> оплата частями
 				</span>
+			<span class="top-plash promokod">
+				<span class="julian-promokod">
+					<i class="icon-promokod"></i> жми промокод
+				</span>
+				
+				<div class="popup-promokod">
+					<div class="popup-promokod-closed">x</div>
+					<span class="popup-promokod-titel">Твой Промо Код:</span>
+					<span class="popup-promokod-number">fox-promo</span>
+					<span class="popup-promokod-text">Успей использовать!</span>
+					<a class="popup-promokod-link">Подробнее</a>
+				</div>
+				
+			</span>
+			<script type="text/javascript">
+					 $( ".julian-promokod" ).click(function() {
+					  $( ".popup-promokod" ).toggleClass('open');
+					});
+					$( ".popup-promokod-closed" ).click(function() {
+					  $( ".popup-promokod" ).removeClass('open');
+					});
+			</script>
 			<div class="top-panel__brand">
 				<img src="%=static=%img/general/card/asus.png" alt="brand" class="brand-image">
 			</div>
