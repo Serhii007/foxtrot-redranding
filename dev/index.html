@@ -7054,7 +7054,28 @@
                 		<div class="rolling-carousel-item simple owl-lazy" data-src="/static/img/general/transparent.png">
                 			<div class="rolling-carousel-item__top-panel">
                 				<span class="top-panel-informer gift">подарок</span> 
-                				<span class="top-panel-informer new">эксклюзив</span>
+                				<span class="top-plash promokod">
+                					<span class="julian-promokod">
+                						<i class="icon-promokod"></i> жми промокод
+                					</span>
+                					
+                					<div class="popup-promokod">
+                						<div class="popup-promokod-closed">x</div>
+                						<span class="popup-promokod-titel">Твой Промо Код:</span>
+                						<span class="popup-promokod-number">fox-promo</span>
+                						<span class="popup-promokod-text">Успей использовать!</span>
+                						<a class="popup-promokod-link">Подробнее</a>
+                					</div>
+                					
+                				</span>
+                				<script type="text/javascript">
+                						 $( ".julian-promokod" ).click(function() {
+                						  $( ".popup-promokod" ).toggleClass('open');
+                						});
+                						$( ".popup-promokod-closed" ).click(function() {
+                						  $( ".popup-promokod" ).removeClass('open');
+                						});
+                				</script>
                 				<div class="top-panel-colors">
                 					<span class="color red"></span>
                 					<span class="color grey"></span>

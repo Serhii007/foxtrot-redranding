@@ -24,7 +24,7 @@
 }
 .popup-promokod {
 	position: absolute;
-    width: 235px;
+    width: 150%;
     height: 140px;
     z-index: 20;
     background: white;
@@ -120,4 +120,11 @@ font-size: 16px;
     overflow-x: hidden;
     background-color: #FFFFFF;
     height: 320px;
+}
+.about-text-wrapper {
+    line-height: 1.7;
+}
+.body .owl-carousel.owl-drag .owl-item {
+    position: relative;
+    z-index: 5;
 }

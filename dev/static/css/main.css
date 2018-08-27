@@ -2979,7 +2979,7 @@ body .discount-variant__carousel.owl-theme .owl-nav {
 
 .popup-promokod {
   position: absolute;
-  width: 235px;
+  width: 150%;
   height: 140px;
   z-index: 20;
   background: white;
@@ -3087,6 +3087,15 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   overflow-x: hidden;
   background-color: #FFFFFF;
   height: 320px;
+}
+
+.about-text-wrapper {
+  line-height: 1.7;
+}
+
+.body .owl-carousel.owl-drag .owl-item {
+  position: relative;
+  z-index: 5;
 }
 
 /*-------------------footer block------------------*/
@@ -5352,8 +5361,6 @@ body .product-listing .listing-item__img-container .item-image {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border: 5px solid #F0F0F0;
-  -webkit-transform: translateX(5px);
-  transform: translateX(5px);
 }
 
 .product-listing .listing-item__top-panel {
