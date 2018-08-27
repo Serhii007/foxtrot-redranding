@@ -3082,6 +3082,13 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   background-color: #FFF969;
 }
 
+.dd-wrapper {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  height: 320px;
+}
+
 /*-------------------footer block------------------*/
 .footer-wrapper {
   padding: 3% 0 1%;
