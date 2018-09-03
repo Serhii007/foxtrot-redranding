@@ -7,7 +7,7 @@ const jsFolderPath = 'markup/' + tars.config.fs.staticFolderName + '/js';
 /**
  * Watcher for js-files before and after components js
  */
-module.exports = () => {
+module.exports = () => { 
     if (tars.config.js.workflow === 'concat') {
 
         let jsPathToWatch = [];

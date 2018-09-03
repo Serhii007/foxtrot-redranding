@@ -30,6 +30,9 @@ __pages: [{
                 name: 'card',
                 href: 'card.html'
              },{
+                name: 'feedback',
+                href: 'feedback.html'
+             },{
                 name: 'index',
                 href: 'index.html'
              },{
