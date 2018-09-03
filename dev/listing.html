@@ -6708,14 +6708,7 @@
                 						</div>
                 						
                 					</span>
-                					<script type="text/javascript">
-                							 $( ".julian-promokod" ).click(function() {
-                							  $( ".popup-promokod" ).toggleClass('open');
-                							});
-                							$( ".popup-promokod-closed" ).click(function() {
-                							  $( ".popup-promokod" ).removeClass('open');
-                							});
-                					</script>
+                
                 					<div class="top-panel-colors">
                 						<span class="color red"></span>
                 						<span class="color grey"></span>
@@ -8246,6 +8239,27 @@
                     }
                 });
             </script>
+            <script type="text/javascript">
+                                 $( ".julian-promokod" ).click(function() {
+                                  $( ".popup-promokod" ).toggleClass('open');
+                                });
+                                $( ".popup-promokod-closed" ).click(function() {
+                                  $( ".popup-promokod" ).removeClass('open');
+                                });
+                                var pospop = $(".julian-promokod").offset();
+                                var pospopleft = pospop.left;
+                                var right1 = $(window).width(); 
+                                console.log(pospop);
+                                console.log(right1);
+                                console.log(pospopleft);
+            
+                                $(document).ready(function() {
+                                    if( right1 < (pospopleft + 150 ) ) { 
+                                        $( ".popup-promokod" ).css('left', '-85px');
+                                    }
+                                     
+                                });
+                        </script>
         
         
         <script src="/static/js/main.js"></script>

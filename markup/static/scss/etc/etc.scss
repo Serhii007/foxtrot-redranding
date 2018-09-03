@@ -24,7 +24,7 @@
 }
 .popup-promokod {
 	position: absolute;
-    width: 150%;
+    width: 220px;
     height: 140px;
     z-index: 20;
     background: white;
@@ -199,7 +199,9 @@ font-size: 16px;
           position: relative;
           cursor: pointer;
           padding: 0;
-          display: inline;
+          display: inline-block;
+          overflow-y: hidden;
+
           width: 100%; }
         .price__relevant .styled-radio + label:before {
           content: '';
@@ -216,7 +218,7 @@ font-size: 16px;
         .price__relevant .styled-radio:checked + label:after {
           content: '';
           position: absolute;
-              top: -15px;
+          top: 9px;
           left: 5px;
           width: 10px;
           height: 10px;
