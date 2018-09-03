@@ -3097,6 +3097,201 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   z-index: 5;
 }
 
+.bonus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+.bonus__left {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.product-store-information__manage .gift {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bonus__right {
+  width: 50%;
+}
+
+.product-store-information__manage .gift .title-wrapper {
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: end !important;
+  margin-bottom: 5px;
+}
+
+.product-store-information__manage .gift .model {
+  max-width: 160px;
+}
+
+.product-store-information__manage .gift {
+  display: inline-block;
+  width: auto !important;
+}
+
+.price__relevant_bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.price__relevant_bottom .answer-wrapper {
+  top: -3px;
+}
+
+.price__relevant_bottom p {
+  font-family: 'Montserrat Regular', sans-serif;
+  font-size: 12px;
+}
+
+.product-store-information__manage .price {
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+.product-store-information__manage .price .flex-wrapper {
+  -webkit-box-align: end !important;
+      -ms-flex-align: end !important;
+          align-items: end !important;
+}
+
+.price__relevant .input-radio .nor {
+  font-family: 'Montserrat Regular', sans-serif;
+  font-size: 16px;
+}
+
+.jul-top.price__relevant {
+  margin-right: 15px;
+}
+
+.jul-top.price__relevant .input-radio label {
+  position: relative;
+  top: -2px;
+}
+
+.price__relevant .styled-radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.price__relevant .styled-radio + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  display: inline;
+  width: 100%;
+}
+
+.price__relevant .styled-radio + label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 18px;
+  height: 18px;
+  float: left;
+  border: 1px solid #BDBDBD;
+  border-radius: 50%;
+  position: relative;
+  top: 4px;
+}
+
+.price__relevant .styled-radio:checked + label:after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E54415;
+}
+
+.price__relevant .input-radio label {
+  position: relative;
+}
+
+.price__relevant .input-radio label span {
+  top: 3px;
+  position: relative;
+}
+
+@media (max-width: 580px) {
+  .bonus__left {
+    width: 100%;
+  }
+  body .product-store-information .price .flex-wrapper .price__relevant {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .price__relevant .styled-radio + label:before {
+    display: none;
+  }
+  .price__relevant_bottom {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .price__relevant_bottom {
+    margin-left: 5px;
+  }
+  .product-store-information__manage .price__text {
+    display: none;
+  }
+  body .product-store-information .price .flex-wrapper .price__not-relevant {
+    display: none;
+  }
+}
+
 .feedback-back {
   background: #F2F2F2;
 }
