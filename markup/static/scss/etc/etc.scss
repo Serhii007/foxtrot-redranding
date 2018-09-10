@@ -198,6 +198,15 @@ font-size: 16px;
     flex-direction: column;
     justify-content: space-between;
 }
+.listing-item .product-code__text {
+    font-size: 12px;
+}
+.listing-item .product-code__code {
+    font-size: 12px;
+}
+.listing-item .product-code {
+    margin-bottom: 5px;
+}
 .price__relevant .styled-radio {
         position: absolute;
         opacity: 0; }
