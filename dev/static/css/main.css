@@ -3207,6 +3207,10 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   top: -2px;
 }
 
+.special-offers .offers-item.small .offers-item__descr {
+  height: 100%;
+}
+
 .price__relevant .styled-radio {
   position: absolute;
   opacity: 0;
