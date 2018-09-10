@@ -3233,6 +3233,12 @@ body .discount-variant__carousel.owl-theme .owl-nav {
   margin-bottom: 5px;
 }
 
+.stores-popup .adress-table .about-store .about-text {
+  color: #2f80ed !important;
+  text-decoration: none !important;
+  border-bottom: 2px dotted #2f80ed !important;
+}
+
 .price__relevant .styled-radio {
   position: absolute;
   opacity: 0;
