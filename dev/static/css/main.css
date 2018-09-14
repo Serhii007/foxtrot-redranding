@@ -3107,12 +3107,19 @@ body .discount-variant__carousel.owl-theme .owl-nav {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   -webkit-box-align: start !important;
       -ms-flex-align: start !important;
           align-items: flex-start !important;
+  position: relative;
+}
+
+.rolling-carousel-item .bonus__icon {
+  position: relative;
+  top: -6px;
+  margin-right: 5px;
 }
 
 .bonus__left {
@@ -3305,9 +3312,6 @@ body .discount-variant__carousel.owl-theme .owl-nav {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
-  }
-  .price__relevant .styled-radio + label:before {
-    display: none;
   }
   .price__relevant_bottom {
     -webkit-box-pack: end;
