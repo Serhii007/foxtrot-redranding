@@ -30,6 +30,9 @@ __pages: [{
                 name: 'card',
                 href: 'card.html'
              },{
+                name: 'comparisons',
+                href: 'comparisons.html'
+             },{
                 name: 'feedback',
                 href: 'feedback.html'
              },{
